@@ -1,17 +1,3 @@
-// // import { useState } from 'react'
-// import { ChakraProvider } from '@chakra-ui/react'
-// import './App.css'
-
-
-// function App() {
-//   return (
-//     <ChakraProvider>
-//     <SIgnUp />
-//   </ChakraProvider>
-//   )
-// }
-
-// export default App
 
 import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
@@ -22,8 +8,6 @@ import SIgnUp from './screens/SIgnUp'
 import BasicInfo from "./screens/BasicInfo";
 import BasicInfoNumber from "./screens/BasicInfoNumber";
 import ParentVerification from "./screens/ParentVerification";
-
-
 
 
 function App() {

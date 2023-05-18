@@ -8,7 +8,7 @@ export default function SIgnUp() {
   const navigate = useNavigate();
 
   const Login = () =>{
-    navigate('/BasicInfo')
+    navigate('/BasicInfoNumber')
   }
 
     const [formData, setFormData] = useState<any>({
