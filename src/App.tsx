@@ -20,6 +20,8 @@ import SignUpOrLogin from './screens/SignUpOrLogin'
 import Login from './screens/Login'
 import SIgnUp from './screens/SIgnUp'
 import BasicInfo from "./screens/BasicInfo";
+import BasicInfoNumber from "./screens/BasicInfoNumber";
+import ParentVerification from "./screens/ParentVerification";
 
 
 
@@ -33,6 +35,8 @@ function App() {
         <Route path="/Login" element={<Login />} />
         <Route path="/SignUp" element={<SIgnUp />}/>
         <Route path="/BasicInfo" element={<BasicInfo />}/>
+        <Route path="/BasicInfoNumber" element={<BasicInfoNumber />}/>
+        <Route path="/ParentVerification" element={<ParentVerification />}/>
       </Routes>
       </ChakraProvider>
     </Router>

@@ -1,4 +1,4 @@
-import { Box, Button, Flex,Image, Input, Text } from '@chakra-ui/react'
+import { Box, Button, Flex,Image, Input, Select, Text } from '@chakra-ui/react'
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 
@@ -58,10 +58,13 @@ export default function BasicInfo() {
           <Box key={input.name} mb={4}>
             <Flex flexDirection="row" justifyContent="space-between">
             <Text mb={1}>{input.label}</Text>
-            { input.forgot && (
-                <Text color="rgba(0, 69, 112, 1)" as="u">{input.forgot}</Text>
-            )}
             </Flex>
+            {input.name === "gender" ? ( 
+                <Select placeholder='Select'   borderColor="#282828">
+                <option value='Option1'>Male</option>
+                <option value='Option2'>Female</option>
+              </Select>
+            ):(
             <Input
               type={input.type}
               placeholder={input.placeholder}
@@ -69,9 +72,10 @@ export default function BasicInfo() {
               name={input.name}
               variant="outline"
               bgColor="white"
-              borderColor="black"
+              borderColor="#282828"
               width="313px"
             />
+       )}
           </Box>
         ))}
      </Box>
