@@ -1,7 +1,21 @@
 import { Box, Button, Image, Input, Text, InputGroup } from "@chakra-ui/react";
 import { useState } from "react";
+import { useLocation, useNavigate } from "react-router";
 
 export default function EnterOtp() {
+ 
+  const location = useLocation();
+  const params = location.state;
+  
+  const parm1 = params.param
+
+  const navigate = useNavigate();
+
+  const navigateTo = () =>{
+    navigate("/Verify")
+  }
+
+
   const [formData, setFormData] = useState<any>({
     number: "",
     phoneno: "",
@@ -27,23 +41,15 @@ export default function EnterOtp() {
       </Box>
 
       <Box mr={40} mt={10}>
-        <Text>Enter Mobile Number</Text>
+        <Text>{parm1}</Text>
       </Box>
       <Box display="flex" justifyContent="center">
         <form>
           <Box display="flex" justifyContent="center" >
             <InputGroup>
               <Input
-                type="number"
-                placeholder="+91"
-                height="30px"
-                width="80px"
-                borderRadius="10px"
-                ml={5}
-              />
-              <Input
                 type="text"
-                placeholder="9999999999"
+                placeholder="9546 7895 4512"
                 height="30px"
                 width="260px"
                 borderRadius="10px"
@@ -55,7 +61,7 @@ export default function EnterOtp() {
           <Box display="flex" justifyContent="center" mt={10}>
           <Input
             type="text"
-            placeholder="Ganarate OTP"
+            placeholder="Generate OTP"
             height="30px"
             width="260px"
             borderRadius="10px"
@@ -84,8 +90,9 @@ export default function EnterOtp() {
               size="lg"
               bg="rgba(0, 69, 112, 1)"
               width="333px"
+              onClick={() => navigateTo()}
             >
-              Login
+              Verify
             </Button>
           </Box>
         </form>

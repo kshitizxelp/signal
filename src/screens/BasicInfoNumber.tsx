@@ -1,4 +1,4 @@
-import { Box, Button, Flex,Image, Input, Text } from '@chakra-ui/react'
+import { Box, Button, Flex,Image, Input, Select, Text } from '@chakra-ui/react'
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 
@@ -34,21 +34,36 @@ export default function BasicInfoNumber() {
       ];
 
   return (
-    <Flex direction="column" alignItems="center" mt={0}> 
-    <Box boxSize="184px">
+    <Flex direction="column" alignItems="center" position="relative" >
+    <Box
+   boxShadow="dark-lg"
+   p="6"
+   rounded=""
+   bg="white"
+   borderRadius={60}
+   // height="620px"
+   width="500px"
+   alignItems="center"
+   justifyContent="center"
+ >
+   <Box boxSize="184px" marginLeft="135px" mt={4} >
       <Image src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov" />
     </Box>
     <Flex flexDirection="row">
-    <Box>
+    <Box justifyContent="center" alignItems="center" marginLeft="110px" mt={4} >
         <Text fontSize="22px" mr={35} color="rgba(0, 69, 112, 1)">Enter Basic Information</Text>
     </Box>
     </Flex>
-    <Box mt={8}>
+    <Box mt={4}>
      {inputs.map((input: any) => (
           <Box key={input.name} mb={4}>
-            <Flex flexDirection="row" justifyContent="space-between">
-            <Text mb={1}>{input.label}</Text>
-            </Flex>
+                        <Text mb={1}>{input.label}</Text>
+            {input.name === "gender" ? ( 
+                <Select placeholder='Select' width="313px" marginLeft="70px" borderColor="#282828">
+                <option value='Option1'>Male</option>
+                <option value='Option2'>Female</option>
+              </Select>
+            ):(
             <Input
               type={input.type}
               placeholder={input.placeholder}
@@ -59,6 +74,7 @@ export default function BasicInfoNumber() {
               borderColor="black"
               width="313px"
             />
+            )}
           </Box>
         ))}
      </Box>
@@ -66,6 +82,7 @@ export default function BasicInfoNumber() {
      <Button colorScheme="blue" size="lg" bg="rgba(0, 69, 112, 1)" width="313px" onClick={Login}>
           Save
         </Button>
+      </Box>
       </Box>
     </Flex>
   )

@@ -41,16 +41,25 @@ export default function SIgnUp() {
       ];
 
   return (
-    <Flex direction="column" alignItems="center" mt={0}> 
-      <Box boxSize="184px">
+    <Flex direction="column" alignItems="center" position="relative" >
+       <Box
+      boxShadow="dark-lg"
+      p="6"
+      rounded=""
+      bg="white"
+      borderRadius={60}
+      // height="620px"
+      width="500px"
+      alignItems="center"
+      justifyContent="center"
+    >
+      <Box boxSize="184px" marginLeft="135px" mt={4} >
         <Image src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov" />
       </Box>
      <Box mt={8}>
      {inputs.map((input: any) => (
-          <Box key={input.name} mb={4}>
-            <Flex flexDirection="row" justifyContent="space-between">
-            <Text mb={1}>{input.label}</Text>
-            </Flex>
+          <Box key={input.name} mb={4} alignItems="flex-start">
+            <Text mb={1}  >{input.label}</Text>
             <Input
               type={input.type}
               placeholder={input.placeholder}
@@ -120,6 +129,7 @@ export default function SIgnUp() {
       </Flex>
     </Button>
     </Flex>
+    </Box>
     </Flex>
   )
 }

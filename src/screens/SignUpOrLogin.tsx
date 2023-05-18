@@ -4,6 +4,7 @@ import { Button, ButtonGroup } from '@chakra-ui/react'
 import { useNavigate } from 'react-router-dom';
 
 
+
 export default function SignUpOrLogin() {
   const navigate = useNavigate();
 
@@ -15,8 +16,17 @@ export default function SignUpOrLogin() {
     navigate('SignUp');
   }
   return (
-    <Flex direction="column" alignItems="center" mt={82}>
-      <Box boxSize="184px">
+    <Flex direction="column" alignItems="center" position="relative" >
+       <Box
+      boxShadow="dark-lg"
+      p="6"
+      rounded=""
+      bg="white"
+      borderRadius={60}
+      height="620px"
+      width="500px"
+    >
+      <Box boxSize="185px" marginLeft="135px" mt={10} >
         <Image src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov" />
       </Box>
       <Box mt={81}>
@@ -28,6 +38,7 @@ export default function SignUpOrLogin() {
         <Button colorScheme="blue" size="lg" variant="outline" borderColor="rgba(0, 69, 112, 1)" color="rgba(0, 69, 112, 1)" width="313px" onClick={Login1}>
           Login
         </Button>
+      </Box>
       </Box>
     </Flex>
   )
