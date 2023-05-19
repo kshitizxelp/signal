@@ -49,7 +49,9 @@ export default function BasicInfo() {
       ];
 
   return (
-    <Flex direction="column" alignItems="center" mt={0}> 
+    
+    <Flex direction="column" alignItems="center" mt={0} > 
+   
     <Box boxSize="184px">
       <Image src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov" />
     </Box>
@@ -71,7 +73,7 @@ export default function BasicInfo() {
               value={formData[input.name]}
               name={input.name}
               variant="outline"
-              bgColor="white"
+              bgColor=""
               borderColor="#282828"
               width="313px"
             />
@@ -84,6 +86,7 @@ export default function BasicInfo() {
           Sign up
         </Button>
       </Box>
-    </Flex>
+       </Flex>
+   
   )
 }
