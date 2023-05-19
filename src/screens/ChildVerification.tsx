@@ -1,7 +1,18 @@
 import { Box, Button, Flex, Image, Text } from '@chakra-ui/react'
 import React from 'react'
+import { useNavigate } from 'react-router'
+
+import { VscDeviceCamera } from 'react-icons/all';
+
 
 export default function ChildVerification() {
+
+   const navigate = useNavigate();
+
+   const navigateTo = () => {
+    navigate("/ChildPhoto")
+   }
+
     return (
         <Flex direction="column" alignItems="center" position="relative" >
            <Box
@@ -37,7 +48,7 @@ export default function ChildVerification() {
      <Button colorScheme="blue" borderRadius="20px" mr={30} size="lg" bg="#F5F5F5" width="110px" color="black">
           Save
         </Button>
-        <Button colorScheme="blue" borderRadius="20px"  size="lg" bg="#004570" width="110px">
+        <Button colorScheme="blue" borderRadius="20px"  size="lg" bg="#004570" width="110px" onClick={() => navigateTo()}>
           Next
         </Button>
      </Flex>

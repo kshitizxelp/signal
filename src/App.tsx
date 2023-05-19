@@ -14,6 +14,8 @@ import Verify from "./screens/Verify";
 import CreateChild from "./screens/CreateChild";
 import ChildInterest from "./screens/ChildInterest";
 import ChildVerification from "./screens/ChildVerification";
+import ChildPhoto from "./screens/ChildPhoto";
+import ChildAvatar from "./screens/ChildAvatar";
 
 
 function App() {
@@ -32,7 +34,9 @@ function App() {
         <Route path="/Verify" element={<Verify/>} />
         <Route path="CreateChild" element={<CreateChild/>} />
         <Route path="/ChildInterest" element={<ChildInterest />} />
-        <Route path="/ChildVerification" element={<ChildVerification/>}  />
+        <Route path="/ChildVerification" element={<ChildVerification />}  />
+        <Route path="/ChildPhoto" element={<ChildPhoto />}  />
+        <Route path="/ChildAvatar" element={<ChildAvatar />} />
       </Routes>
       </ChakraProvider>
     </Router>

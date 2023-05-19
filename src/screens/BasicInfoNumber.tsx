@@ -50,7 +50,7 @@ export default function BasicInfoNumber() {
       <Image src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov" />
     </Box>
     <Flex flexDirection="row">
-    <Box justifyContent="center" alignItems="center" marginLeft="110px" mt={4} >
+    <Box justifyContent="center" textAlign="left" alignItems="center" marginLeft="110px" mt={4} >
         <Text fontSize="22px" mr={35} color="rgba(0, 69, 112, 1)">Enter Basic Information</Text>
     </Box>
     </Flex>
