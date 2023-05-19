@@ -45,7 +45,7 @@ export default function CreateChild() {
 
 
   return (
-    <Flex direction="column">
+    <Flex direction="column" justifyContent="center">
       <Box
    boxShadow="dark-lg"
    p="6"
@@ -56,7 +56,7 @@ export default function CreateChild() {
    alignItems="center"
    justifyContent="center"
  >
-       <Box textAlign="left" mt={4}>
+       <Box  mt={4}>
        <Text fontSize="20px" as="b" color="#004570" >Create Child Account</Text>
         </Box>
         <Box mt={8}>

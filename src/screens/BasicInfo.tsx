@@ -80,7 +80,7 @@ export default function BasicInfo() {
               value={formData[input.name]}
               name={input.name}
               variant="outline"
-              bgColor="white"
+              bgColor=""
               borderColor="#282828"
               width="313px"
             />

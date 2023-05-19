@@ -1,4 +1,4 @@
-import { Box, Image, Flex, Text } from '@chakra-ui/react'
+import { Box, Image, Flex, Text, Button } from '@chakra-ui/react'
 import React from 'react'
 
 import { VscDeviceCamera } from 'react-icons/all';
@@ -38,7 +38,7 @@ export default function ChildPhoto() {
     <Box mt={4} marginLeft="70px" textAlign="center" width="313px" height="280">
       <Image src="src/assets/Mask Group 1@3x.png"/>
        </Box>
-   <Box mt={20} as="button" onClick={() => navigateTo()} mb={20} marginLeft="210px">
+   <Box mt={15} mb={15} marginLeft="210px">
     <VscDeviceCamera onClick={() => navigateTo()} size={30}/>
    </Box>
    </Box>

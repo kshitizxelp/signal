@@ -26,7 +26,7 @@ export default function Verify() {
       <Image src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov" />
     </Box>
     
-    <Box mt={10}>
+    <Box mt={10} textAlign="center">
         <Text color="red" as="b" >Yay!</Text>
         <Text as="b" mt={2} >
             <br></br>
@@ -39,7 +39,7 @@ export default function Verify() {
         </Text>
     </Box>
       
-    <Box mt={12}>
+    <Box mt={12} textAlign="center" >
      <Button colorScheme="blue" size="lg" bg="#004570" width="313px" onClick={() => navigateTo()} >
           Next
         </Button>
