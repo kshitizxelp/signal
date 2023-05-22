@@ -8,6 +8,14 @@ import SIgnUp from './screens/SIgnUp'
 import BasicInfo from "./screens/BasicInfo";
 import BasicInfoNumber from "./screens/BasicInfoNumber";
 import ParentVerification from "./screens/ParentVerification";
+import AadharPan from "./screens/AadharPan";
+import EnterOtp from "./screens/EnteOtp";
+import Verify from "./screens/Verify";
+import CreateChild from "./screens/CreateChild";
+import ChildInterest from "./screens/ChildInterest";
+import ChildVerification from "./screens/ChildVerification";
+import ChildPhoto from "./screens/ChildPhoto";
+import ChildAvatar from "./screens/ChildAvatar";
 
 import Nav from "./pages/Nav";
 import Welcomeback from "./pages/Welcomeback";
@@ -18,12 +26,7 @@ function App() {
   return (
     <ChakraProvider>
     <Router>
-      
       <Routes>
-     
-        
-      {/* <Route path="/" element={<Nav/>} /> */}
-
         <Route path="/" element={<SignUpOrLogin />} />
         <Route path="/Login" element={<Login />} />
         <Route path="/SignUp" element={<SIgnUp />}/>
@@ -32,6 +35,14 @@ function App() {
         <Route path="/ParentVerification" element={<ParentVerification />}/>
         <Route path="/welcomeback" element={<Welcomeback/>} />
         <Route path="/mydashbord" element={<Mydashbord/>} />
+        <Route path="/AadharPan" element={<AadharPan />}  />
+        <Route path="/EnterOtp" element={<EnterOtp/>}/>
+        <Route path="/Verify" element={<Verify/>} />
+        <Route path="CreateChild" element={<CreateChild/>} />
+        <Route path="/ChildInterest" element={<ChildInterest />} />
+        <Route path="/ChildVerification" element={<ChildVerification />}  />
+        <Route path="/ChildPhoto" element={<ChildPhoto />}  />
+        <Route path="/ChildAvatar" element={<ChildAvatar />} />
       </Routes>
     </Router>
     </ChakraProvider>

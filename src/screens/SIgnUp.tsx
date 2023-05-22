@@ -41,16 +41,30 @@ export default function SIgnUp() {
       ];
 
   return (
-    <Flex direction="column" alignItems="center" mt={0}> 
-      <Box boxSize="184px">
-        <Image src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov" />
+    <Box bg={'gray'}>
+    <Flex direction="column" alignItems="center" position="relative" >
+      <Box
+      boxShadow="dark-lg"
+      p="1"
+      rounded=""
+      bg="white"
+      borderRadius={60}
+      // height="620px"
+      width="600px"
+      alignItems="center"
+      justifyContent="center"
+    >
+     <Flex display={'flex'} justifyContent={'center'}>
+      <Box>
+      <Image src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov"  height={200}/>
       </Box>
+      </Flex>
+
+    <Flex display={'flex'} justifyContent={'center'}>
      <Box mt={8}>
      {inputs.map((input: any) => (
-          <Box key={input.name} mb={4}>
-            <Flex flexDirection="row" justifyContent="space-between">
-            <Text mb={1}>{input.label}</Text>
-            </Flex>
+         <Box key={input.name} mb={4} alignItems="flex-start">
+            <Text mb={1}  >{input.label}</Text>
             <Input
               type={input.type}
               placeholder={input.placeholder}
@@ -62,18 +76,29 @@ export default function SIgnUp() {
               width="313px"
             />
           </Box>
-        ))}
+         ))}
      </Box>
-     <Box mt={8}>
-     <Button colorScheme="blue" size="lg" bg="rgba(0, 69, 112, 1)" width="313px" onClick={Login}>
+      </Flex>
+     
+      <Flex display={'flex'} justifyContent={'center'}>
+        <Box mt={5}>
+        <Button colorScheme="blue" size="lg" bg="rgba(0, 69, 112, 1)" width="313px" onClick={Login}>
           Sign Up
         </Button>
-      </Box>
-      <Box mt={4}>
-           <Text>or</Text>
-            <Text mt={2}>Signup using</Text>
         </Box>
-        <Flex direction="row"  justifyContent="space-between"  mt={5} >
+        </Flex>
+
+             <Flex display={'flex'} justifyContent={'center'}>
+             <Box mt={4}>
+              <Text>or</Text>
+               <Text mt={2}>Signup using</Text>
+              </Box>
+           </Flex>
+      
+    
+      <Box display={"flex"}
+            flexDirection={"row"}
+            justifyContent={"space-evenly"}>  
       <Button
       leftIcon={<SiGoogle color="#DB4437" />}
       variant="solid"
@@ -119,7 +144,12 @@ export default function SIgnUp() {
         <Text mt={1}>Mobile</Text>
       </Flex>
     </Button>
+   
+    </Box>
+    </Box>
     </Flex>
-    </Flex>
+    
+    
+    </Box>
   )
 }

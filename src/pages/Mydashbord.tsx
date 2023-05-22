@@ -38,7 +38,7 @@ function Mydashbord() {
     <Box bg={'gray.300'}>
         <Nav/>
         <Box mt={10} pl={5}>
-        <Text fontSize={16} fontWeight={'bold'}>My Dashboard</Text>
+        <Text fontSize={16} fontWeight={'bold'} color={'#004570'}>My Dashboard</Text>
         </Box>
       
         {dataObj.map((item) => (
@@ -62,7 +62,7 @@ function Mydashbord() {
         ))}
         <Flex display={'flex'} justifyContent={'center'}>
         <Box pt={30} mb={20}>
-            <Button colorScheme="blue" size="sm" bg="rgba(0, 69, 112, 1)" width="413px">Add Child</Button>
+            <Button colorScheme="blue" size="sm" bg="rgba(0, 69, 112, 1)" width="513px" height={50}>Add Child</Button>
         </Box>
         </Flex>
     </Box>
