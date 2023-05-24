@@ -1,8 +1,13 @@
-import { Box, Image, Flex, Text } from '@chakra-ui/react'
+import { Box, Image, Flex, Text ,Button} from '@chakra-ui/react'
 import React from 'react'
 
 import { VscDeviceCamera } from 'react-icons/all';
+import { useNavigate } from 'react-router'
 export default function ChildAvatar() {
+  const navigate = useNavigate()
+  const Next =()=>{
+    navigate("/addedavathar")
+  }
     return (
         <Flex direction="column" alignItems="center" position="relative" >
         <Box
@@ -12,14 +17,16 @@ export default function ChildAvatar() {
        bg="white"
        borderRadius={60}
        // height="620px"
-       width="500px"
+       width="400px"
+      
        alignItems="center"
        justifyContent="center"
+       mt={20}
      >
       
       <Flex display={'flex'} justifyContent={'center'}>
        <Box>
-         <Image src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov" height={200} />
+         <Image src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov" height={120} />
        </Box>
        </Flex>
     
@@ -33,15 +40,34 @@ export default function ChildAvatar() {
            
           <Flex display={'flex'} justifyContent={'center'}>
           <Box mt={2} >
-          <Image src="src/assets/Mask Group 1@3x.png" alt="Dan Abramov"  width="313px" height="280"/>
+          <Image src="src/assets/Mask Group 1@3x.png" alt="Dan Abramov"  width="213px" height="180"/>
            </Box>
           </Flex>
         
+        <Flex display={'flex'} justifyContent={'center'}> 
+        <Box mt={1}>
+        <Text p={5} noOfLines={[1,2,3]}>Child Avatar Preview Estimated Age : 5-8 years</Text>
+        <Text></Text>
+       </Box>
+       </Flex>
+
     
-        
-        <Box mt={20}  mb={20} marginLeft="210px">
+        <Flex display={'flex'} justifyContent={'center'}>
+        <Box mt={0}  mb={0}>
         <VscDeviceCamera size={30}/>
         </Box>
+        </Flex>
+        
+        
+        <Flex display={'flex'} justifyContent={'center'}>
+       <Button colorScheme="blue" borderRadius="20px" mb={50} mr={30} size="sm" bg="#F5F5F5" width="100px" color="black"  >
+        Retake
+       </Button>
+
+       <Button colorScheme="blue" borderRadius="20px"  size="sm" bg="#004570" width="100px" onClick={Next} >
+         Next
+        </Button>
+        </Flex>  
     
     
        </Box>

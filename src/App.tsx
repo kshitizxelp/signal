@@ -20,6 +20,9 @@ import ChildAvatar from "./screens/ChildAvatar";
 import Nav from "./pages/Nav";
 import Welcomeback from "./pages/Welcomeback";
 import Mydashbord from "./pages/Mydashbord";
+import Addchildinterest from "./pages/Addchildinterest";
+import Addedavathar from "./screens/Addedavathar";
+import More from "./pages/More";
 
 
 function App() {
@@ -43,6 +46,12 @@ function App() {
         <Route path="/ChildVerification" element={<ChildVerification />}  />
         <Route path="/ChildPhoto" element={<ChildPhoto />}  />
         <Route path="/ChildAvatar" element={<ChildAvatar />} />
+        <Route path="/addchildinterests" element={<Addchildinterest/>} />
+        <Route path="/addedavathar" element={<Addedavathar/>} />
+        <Route path="/more" element={<More/>} />
+        
+        
+
       </Routes>
     </Router>
     </ChakraProvider>

@@ -1,7 +1,7 @@
 import { Box, Button, Flex, Radio, RadioGroup, Stack, Text ,ChakraProvider,Image,Checkbox} from '@chakra-ui/react'
 import React from 'react'
 
-import {BsPlusCircle} from "react-icons/all"
+import {BsPlusCircle ,FaAngleUp} from "react-icons/all"
 import { useNavigate } from 'react-router'
 
 export default function ChildInterest() {
@@ -16,9 +16,13 @@ export default function ChildInterest() {
       navigate("/CreateChild")
   }
 
+  const LoginTo =()=>{
+    navigate("/addchildinterests")
+  }
+
   return (
 
-<Box bg={'gray-500'}>
+<Box bg={'gray.400'}>
   
  
   <Box  display={"flex"}
@@ -44,8 +48,14 @@ export default function ChildInterest() {
           height={200}
         >
           
-          <Box bg={'gray.300'}>
-           <Text>Outdoor Games</Text> 
+          <Box bg={'gray.300'} 
+               display={"flex"}
+               flexDirection={"row"}
+               justifyContent={"space-between"}
+               alignItems={"center"}
+           >
+          <Text pl={5}>Outdoor Games</Text> 
+          <Text fontSize={30}  pr={5} onClick={LoginTo}><FaAngleUp /></Text> 
           </Box>
           
           <Box mt={10}>
@@ -94,8 +104,14 @@ export default function ChildInterest() {
           height={200}
         >
           
-          <Box bg={'gray.300'}>
-           <Text>Board Games</Text> 
+          <Box bg={'gray.300'}
+           display={"flex"}
+           flexDirection={"row"}
+           justifyContent={"space-between"}
+           alignItems={"center"}
+           >
+           <Text pl={5}>Board Games</Text> 
+           <Text fontSize={30} pr={5} onClick={LoginTo}><FaAngleUp /></Text> 
           </Box>
           
           <Box mt={10}>
@@ -143,8 +159,14 @@ export default function ChildInterest() {
           height={200}
         >
           
-          <Box bg={'gray.300'}>
-           <Text>Creative Arts</Text> 
+          <Box bg={'gray.300'}
+          display={"flex"}
+          flexDirection={"row"}
+          justifyContent={"space-between"}
+          alignItems={"center"}
+          >
+           <Text pl={5}>Creative Arts</Text> 
+           <Text fontSize={30} pr={5} onClick={LoginTo}><FaAngleUp /></Text> 
           </Box>
           
           <Box mt={10}>
@@ -192,8 +214,14 @@ export default function ChildInterest() {
           height={200}
         >
           
-          <Box bg={'gray.300'}>
-           <Text>Indoor Activities</Text> 
+          <Box bg={'gray.300'} 
+          display={"flex"}
+          flexDirection={"row"}
+          justifyContent={"space-between"}
+          alignItems={"center"}
+          >
+           <Text pl={5}>Indoor Activities</Text> 
+           <Text fontSize={30} pr={5} onClick={LoginTo}><FaAngleUp/></Text> 
           </Box>
           
           <Box mt={10}>
