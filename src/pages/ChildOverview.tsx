@@ -1,7 +1,10 @@
 import { Box, Flex, Text } from '@chakra-ui/react'
-import React, { useEffect } from 'react'
-import { Outlet, useLocation, useNavigate } from 'react-router-dom'
+// import React, { useEffect } from 'react'
+import { Outlet,useNavigate } from 'react-router-dom'
 import Header from '../component/Header';
+
+// import faker from 'faker';
+
 
 import {
     Chart as ChartJS,
@@ -10,14 +13,20 @@ import {
     LineElement,
     Filler,
     Tooltip,
-    Legend
+    Legend,
+    LinearScale,
+    CategoryScale,
+    Title
   } from "chart.js";
-  import { Radar } from "react-chartjs-2";
+  import { Radar, Line } from "react-chartjs-2";
   
   ChartJS.register(
+    CategoryScale,
+    LinearScale,
     RadialLinearScale,
     PointElement,
     LineElement,
+    Title,
     Filler,
     Tooltip,
     Legend
@@ -25,11 +34,66 @@ import {
   
 
 export default function ChildOverview() {
+
+    // console.log("====>pppp",param1)
   
     const navigate = useNavigate();
-    const location = useLocation();
 
     const isChildTasksRoute = location.pathname   === '/ChildOverview'
+   
+
+    const options1 = {
+      responsive: true,
+      plugins: {
+        legend: {
+          position: 'top',
+        },
+        title: {
+          display: true,
+          text: 'Chart.js Line Chart',
+        },
+      },
+      elements: {
+        line: {
+          tension: 0.4, // Set the curve tension for rounded lines
+          borderRadius: 10, // Set the border radius for rounded lines
+        },
+      },
+    };
+    
+    const labels1 = ['2', '3', '4', '5', '6', '7', '8'];
+    
+    const data1 = {
+      labels:labels1,
+      // datasets: [
+      //   {
+      //     fill: true,
+      //     label: 'Dataset 2',
+      //     // data: labels1.map(() => faker.datatype.number({ min: 0, max: 1000 })),
+      //     data: [100, 200, 300, 400, 500, 600, 700], // Update the data values here
+
+      //     borderColor: 'rgb(53, 162, 235)',
+      //     backgroundColor: 'rgba(53, 162, 235, 0.5)',
+      //   },
+      // ],
+      datasets: [
+        {
+          fill: true,
+          label: 'Dataset 1',
+          data: [2/20, 4/40, 3/30, 5/50, 2/20, 5/50, 6/60], // Update the data values for Dataset 1
+          borderColor: 'rgb(53, 162, 235)',
+          backgroundColor: 'rgba(53, 162, 235, 0.5)',
+        },
+        {
+          fill: true,
+          label: 'Dataset 2',
+          data: [3/30, 2/20, 3/30, 7/70, 2/20, 5/40, 7/70], // Update the data values for Dataset 2
+          borderColor: 'rgb(255, 99, 132)',
+          backgroundColor: 'rgba(255, 99, 132, 0.5)',
+        },
+      ]
+    };
+  
 
     const data = {
         labels: ["Curiosity and Interest", "Creativity", "Wednesday", "Higher Order Thinking Skills",  "Integrated Learning", "Self Regulation","Learning Strategies", ],
@@ -75,12 +139,39 @@ export default function ChildOverview() {
           <Header />
           {isChildTasksRoute && (
             <>
-          <Box>
-            in Overview
-          </Box>
-          <Box height="400px" width="400px">
+            <Flex justifyContent="center" alignItems="center" bg={'gray.300'} w="100%" flexDirection="column" >
+          <Box height="600px" width="600px" boxShadow="dark-lg"
+   p="0"
+   rounded=""
+   bg="white"
+   roundedTopLeft="220px"
+   roundedTopRight="220px"
+//    border ={60}
+    mt={5}
+    mb={100}
+   alignItems="center"
+   justifyContent="center">
+    <Box marginTop="20px">
              <Radar  data={data} options={radarOptions} />
+             </Box>
           </Box>
+
+          <Box height="600px" width="600px" boxShadow="dark-lg"
+   p="0"
+   rounded=""
+   bg="white"
+   roundedTopLeft="220px"
+   roundedTopRight="220px"
+//    border ={60}
+    mt={5}
+    mb={100}
+   alignItems="center"
+   justifyContent="center">
+    <Box marginTop="20px">
+             <Line  data={data1} options={options1} />
+             </Box>
+          </Box>
+          </Flex>
           </>
           )}
           <Outlet />

@@ -1,15 +1,19 @@
 import React from 'react'
 import { Box, Image, Flex, Text ,Button} from '@chakra-ui/react'
 import {FaRegSun ,FaRegUser ,FaRegQuestionCircle,VscSignOut ,GiChainLightning ,MdBookOnline} from "react-icons/all"
+import { useNavigate } from 'react-router-dom'
 
 const More = () => {
+  
+  const navigate = useNavigate();
+
+  const navigateTo = () => {
+    navigate("/")
+  }
+
+
   return (
    <Box bg={'gray.300'}>
-    
-    <Box width="100%" bg={'white'}>
-    <Image src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov" height={100} pr={10}/> 
-    </Box>
-
     <Box display="grid" gridTemplateColumns="repeat( 1fr)" gap={4} p={10}>
       
  <Box 
@@ -105,6 +109,7 @@ const More = () => {
       borderRadius={10}
       ml={1}
       alignItems={'center'}
+      onClick={() => navigateTo() }
       >
         <Text pl={5}><VscSignOut/></Text>
         <Text ml={10}>Sign Out</Text>

@@ -25,6 +25,12 @@ import More from "./pages/More";
 import ChildOverview from "./pages/ChildOverview";
 import ChildTasks from "./pages/ChildTasks";
 import ChildRewards from "./pages/ChildRewards";
+import Notifications from "./pages/Notifications";
+import Rewards from "./pages/Rewards";
+import RewardSetup from "./pages/RewardSetup";
+import CreateNewTask1 from "./pages/CreateNewTask1";
+import ExploreLibrary from "./pages/ExploreLibrary";
+import AddVideos from "./pages/AddVideos";
 
 
 function App() {
@@ -39,7 +45,14 @@ function App() {
         <Route path="/BasicInfoNumber" element={<BasicInfoNumber />}/>
         <Route path="/ParentVerification" element={<ParentVerification />}/>
         <Route path="/welcomeback" element={<Welcomeback/>} />
-        <Route path="/mydashbord" element={<Mydashbord/>} />
+        <Route path="/Mydashbord" element={<Mydashbord/>}> 
+          <Route path="/Mydashbord/more" element={<More/>} />
+          <Route path="/Mydashbord/Notifications" element={<Notifications/>} />
+        </Route>
+        <Route path="/Rewards" element={<Rewards/>}> 
+          <Route  path="/Rewards/RewardSetup" element={<RewardSetup/>}  />
+        </Route>
+
         <Route path="/AadharPan" element={<AadharPan />}  />
         <Route path="/EnterOtp" element={<EnterOtp/>}/>
         <Route path="/Verify" element={<Verify/>} />
@@ -50,13 +63,17 @@ function App() {
         <Route path="/ChildAvatar" element={<ChildAvatar />} />
         <Route path="/addchildinterests" element={<Addchildinterest/>} />
         <Route path="/addedavathar" element={<Addedavathar/>} />
-        <Route path="/more" element={<More/>} />
         <Route path="/ChildOverview" element={<ChildOverview/>}>
                  <Route path="/ChildOverview/ChildTasks" element={<ChildTasks/>} /> 
                  <Route path="/ChildOverview/ChildRewards" element={<ChildRewards/>} />
         </Route>
 
-        
+        <Route  path="/CreateNewTask1"  element={<CreateNewTask1/>} />
+
+        <Route path="/ExploreLibrary" element={<ExploreLibrary/>} />
+
+        <Route path="/AddVideos" element={<AddVideos/>} />
+
 
       </Routes>
     </Router>

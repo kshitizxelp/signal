@@ -11,7 +11,7 @@ import {
   Spacer,
   HStack,
 } from "@chakra-ui/react";
-import Nav from "./Nav";
+import Nav from "../component/Nav";
 import { useNavigate, useNavigation } from "react-router-dom";
 
 
@@ -38,7 +38,7 @@ export default function Welcomeback() {
   const navigate = useNavigate();
 
   const Login = () => {
-    navigate("/mydashbord");
+    navigate("/Mydashbord");
   };
   return (
     <>
