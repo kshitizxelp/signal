@@ -23,6 +23,8 @@ import Mydashbord from "./pages/Mydashbord";
 import Addchildinterest from "./pages/Addchildinterest";
 import Addedavathar from "./screens/Addedavathar";
 import More from "./pages/More";
+import Tasks from "./pages/Tasks";
+import Rewards from "./pages/Rewards";
 
 
 function App() {
@@ -49,6 +51,8 @@ function App() {
         <Route path="/addchildinterests" element={<Addchildinterest/>} />
         <Route path="/addedavathar" element={<Addedavathar/>} />
         <Route path="/more" element={<More/>} />
+        <Route path="/tasks" element={<Tasks/>} />
+        <Route path="/rewards" element={<Rewards/>} />
         
         
 
