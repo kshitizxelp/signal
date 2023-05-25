@@ -19,39 +19,55 @@ export default function AadharPan() {
     }
 
   return (
-    <Flex direction="column" alignItems="center" position="relative" >
+    <Box bg={'gray'} pt={100}>
+    <Flex direction="column" alignItems="center" >
     <Box
    boxShadow="dark-lg"
-   p="6"
+   p="0"
    rounded=""
    bg="white"
    borderRadius={60}
-   height="620px"
-   width="500px"
+    mt={5}
+    mb={100}
+   width="600px"
    alignItems="center"
    justifyContent="center"
  >
-   <Box boxSize="184px" marginLeft="135px" mt={4} >
-      <Image src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov" />
-    </Box>
-    <Box  mt={10}>
+      <Flex display={'flex'} justifyContent={'center'}>
+       <Box mt={4} >
+       <Image src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov" height={200} />
+       </Box>
+       </Flex>
+    <Flex display={'flex'} justifyContent={'center'}>
+     <Box  mt={10}>
       <Text fontSize="20px" as="b" color="#004570" ml={0} >Parent Verification</Text>
       <Text mt={5} >{param1}</Text>
-    </Box>
-        <Box>
-        <Input
+     </Box>
+     </Flex>
+        
+         <Flex display={'flex'} justifyContent={'center'}>
+          <Box>
+          <Input
               type="text"
               variant="outline"
               bgColor="white"
               borderColor="black"
               width="313px"
             />
-    </Box>
+           </Box>
+           </Flex>
+           
+           <Flex display={'flex'} justifyContent={'center'}>
+           <Box pt={50} mb={10}>
+           <Button  colorScheme="blue" size="lg" bg="rgba(0, 69, 112, 1)" width="313px" onClick={() => navigateTo()}>
+             Generate OTP
+           </Button>
+           </Box>
+           </Flex>
 
-    <Button mt={10} colorScheme="blue" size="lg" bg="rgba(0, 69, 112, 1)" width="313px" onClick={() => navigateTo()}>
-          Generate OTP
-        </Button>
+       
      </Box>
     </Flex>
+    </Box>
   )
 }

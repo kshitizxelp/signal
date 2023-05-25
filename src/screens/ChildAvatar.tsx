@@ -1,16 +1,13 @@
-import { Box, Image, Flex, Text, Button } from '@chakra-ui/react'
+import { Box, Image, Flex, Text ,Button} from '@chakra-ui/react'
 import React from 'react'
 
 import { VscDeviceCamera } from 'react-icons/all';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router'
 export default function ChildAvatar() {
-   
-  const navigate = useNavigate();
-
-  const navigateTo = () => {
-    navigate("/mydashbord")
+  const navigate = useNavigate()
+  const Next =()=>{
+    navigate("/addedavathar")
   }
-
     return (
         <Flex direction="column" alignItems="center" position="relative" >
         <Box
@@ -20,40 +17,58 @@ export default function ChildAvatar() {
        bg="white"
        borderRadius={60}
        // height="620px"
-       width="500px"
+       width="400px"
+      
        alignItems="center"
        justifyContent="center"
+       mt={20}
      >
-       <Box boxSize="184px" marginLeft="135px" mt={4} >
-         <Image src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov" />
-       </Box>
-    
-    
-       <Box ml={4} mt={4} textAlign="center">
-           <Text fontSize="20px" as="b" color="#004570" >Child Verification</Text>
-        </Box>
-           
-        <Box mt={4} marginLeft="70px" textAlign="center" width="313px" height="280">
-          <Image src="src/assets/Mask Group 2@3x.png" alt="Dan Abramov" />
-           </Box>
-         
-        <Box mt={4} textAlign="center">
-          <Text>Child Avatar Preview 
-            <br></br>
-            Estimated Age : 5-8 years
-          </Text>
-        </Box>
       
+      <Flex display={'flex'} justifyContent={'center'}>
+       <Box>
+         <Image src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov" height={120} />
+       </Box>
+       </Flex>
+    
+          <Flex display={'flex'} justifyContent={'center'}>
+           <Box mt={4}>
+           <Text fontSize="20px" as="b" color="#004570" >Child Verification</Text>
+    
+           <Text mt={4}>Please take a face closeup photo of the child</Text>
+            </Box>
+            </Flex>
+           
+          <Flex display={'flex'} justifyContent={'center'}>
+          <Box mt={2} >
+          <Image src="src/assets/Mask Group 1@3x.png" alt="Dan Abramov"  width="213px" height="180"/>
+           </Box>
+          </Flex>
+        
+        <Flex display={'flex'} justifyContent={'center'}> 
+        <Box mt={1}>
+        <Text p={5} noOfLines={[1,2,3]}>Child Avatar Preview Estimated Age : 5-8 years</Text>
+        <Text></Text>
+       </Box>
+       </Flex>
 
-          
-    <Flex flexDirection="row" mt={10} justifyContent="center">
-     <Button colorScheme="blue" borderRadius="20px" mr={30} size="lg" bg="#F5F5F5" width="110px" color="black">
-          Save
+    
+        <Flex display={'flex'} justifyContent={'center'}>
+        <Box mt={0}  mb={0}>
+        <VscDeviceCamera size={30}/>
+        </Box>
+        </Flex>
+        
+        
+        <Flex display={'flex'} justifyContent={'center'}>
+       <Button colorScheme="blue" borderRadius="20px" mb={50} mr={30} size="sm" bg="#F5F5F5" width="100px" color="black"  >
+        Retake
+       </Button>
+
+       <Button colorScheme="blue" borderRadius="20px"  size="sm" bg="#004570" width="100px" onClick={Next} >
+         Next
         </Button>
-        <Button colorScheme="blue" borderRadius="20px"  size="lg" bg="#004570" width="110px" onClick={() => navigateTo()}>
-          Next
-        </Button>
-     </Flex>
+        </Flex>  
+    
     
        </Box>
     

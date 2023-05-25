@@ -13,8 +13,16 @@ import {
     Avatar
   } from "@chakra-ui/react";
 import Nav from './Nav';
+import { useNavigate } from 'react-router-dom';
 
 function Mydashbord() {
+   
+  const navigate = useNavigate();
+
+  const navigateTo = () => {
+      navigate("/ChildOverview")
+  }
+
     const dataObj = [
         {
           image: "src/assets/girl@3x.png" ,
@@ -22,7 +30,7 @@ function Mydashbord() {
         },
         {
             image: "src/assets/boy@3x.png" ,
-            text: "GopiSunkara",
+            text: "Vineet",
           },
           {
             image: "src/assets/girl@3x.png" ,
@@ -30,7 +38,7 @@ function Mydashbord() {
           },
           {
             image: "src/assets/boy@3x.png" ,
-            text: "GS",
+            text: "Vineet Agarwal",
           },
         
       ];
@@ -38,7 +46,7 @@ function Mydashbord() {
     <Box bg={'gray.300'}>
         <Nav/>
         <Box mt={10} pl={5}>
-        <Text fontSize={16} fontWeight={'bold'}>My Dashboard</Text>
+        <Text fontSize={16} fontWeight={'bold'} color={'#004570'}>My Dashboard</Text>
         </Box>
       
         {dataObj.map((item) => (
@@ -52,8 +60,8 @@ function Mydashbord() {
             width={500}
             height={100}
             bg={'white'}
-            mb={10}>
-    {/* <Image src={item.image} alt="Dan Abramov"  height={90} width={100} borderRadius={10}/> */}
+            mb={10} 
+            onClick={() => navigateTo()}>
     <Avatar name='Dan Abrahmov' size='xl' src={item.image} />
     <Text>{item.text}</Text>
     </Box>   
@@ -62,7 +70,7 @@ function Mydashbord() {
         ))}
         <Flex display={'flex'} justifyContent={'center'}>
         <Box pt={30} mb={20}>
-            <Button colorScheme="blue" size="sm" bg="rgba(0, 69, 112, 1)" width="413px">Add Child</Button>
+            <Button colorScheme="blue" size="sm" bg="rgba(0, 69, 112, 1)" width="513px" height={50}>Add Child</Button>
         </Box>
         </Flex>
     </Box>

@@ -34,8 +34,9 @@ export default function BasicInfoNumber() {
       ];
 
   return (
-    <Flex direction="column" alignItems="center" position="relative" >
-    <Box
+    <Box bg={'gray'}>
+  <Flex direction="column" alignItems="center" position="relative" >
+  <Box
    boxShadow="dark-lg"
    p="6"
    rounded=""
@@ -45,21 +46,27 @@ export default function BasicInfoNumber() {
    width="500px"
    alignItems="center"
    justifyContent="center"
+   mt={5}
  >
-   <Box boxSize="184px" marginLeft="135px" mt={4} >
-      <Image src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov" />
-    </Box>
+  <Flex display={'flex'} justifyContent={'center'}>
+      <Box>
+      <Image src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov" height={200}/>
+      </Box>
+      </Flex>
+    
     <Flex flexDirection="row">
     <Box justifyContent="center" textAlign="left" alignItems="center" marginLeft="110px" mt={4} >
         <Text fontSize="22px" mr={35} color="rgba(0, 69, 112, 1)">Enter Basic Information</Text>
     </Box>
     </Flex>
+   
+    <Flex display={'flex'} justifyContent={'center'}>
     <Box mt={4}>
      {inputs.map((input: any) => (
           <Box key={input.name} mb={4}>
                         <Text mb={1}>{input.label}</Text>
             {input.name === "gender" ? ( 
-                <Select placeholder='Select' width="313px" marginLeft="70px" borderColor="#282828">
+                <Select placeholder='Select' width="313px"  borderColor="#282828">
                 <option value='Option1'>Male</option>
                 <option value='Option2'>Female</option>
               </Select>
@@ -78,12 +85,18 @@ export default function BasicInfoNumber() {
           </Box>
         ))}
      </Box>
+     </Flex>
+     
+     <Flex display={'flex'} justifyContent={'center'}>
      <Box mt={8}>
-     <Button colorScheme="blue" size="lg" bg="rgba(0, 69, 112, 1)" width="313px" onClick={Login}>
+        <Button colorScheme="blue" size="lg" bg="rgba(0, 69, 112, 1)" width="313px" onClick={Login}>
           Save
         </Button>
       </Box>
+      </Flex>
+     
       </Box>
     </Flex>
+    </Box>
   )
 }

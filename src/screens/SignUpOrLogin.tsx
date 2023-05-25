@@ -26,19 +26,29 @@ export default function SignUpOrLogin() {
       height="620px"
       width="500px"
     >
-      <Box boxSize="185px" marginLeft="135px" mt={10} >
-        <Image src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov" />
+      
+      <Flex display={'flex'} justifyContent={'center'}>
+      <Box>
+      <Image src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov" height={200} />
       </Box>
-      <Box mt={81}>
-        <Button colorScheme="blue" size="lg" bg="rgba(0, 69, 112, 1)" width="313px" onClick={Login2}>
+      </Flex>
+      
+      <Flex display={'flex'} justifyContent={'center'}>
+         <Box mt={81}>
+         <Button colorScheme="blue"  size="lg" bg="rgba(0, 69, 112, 1)" width="313px" onClick={Login2}>
           Sign Up
         </Button>
-      </Box>
-      <Box mt={10}>
-        <Button colorScheme="blue" size="lg" variant="outline" borderColor="rgba(0, 69, 112, 1)" color="rgba(0, 69, 112, 1)" width="313px" onClick={Login1}>
+        </Box>
+        </Flex>
+       
+        <Flex display={'flex'} justifyContent={'center'}>
+        <Box mt={10}>
+        <Button colorScheme="blue"   size="lg" variant="outline" borderColor="rgba(0, 69, 112, 1)" color="rgba(0, 69, 112, 1)" width="313px" onClick={Login1}>
           Login
         </Button>
-      </Box>
+        </Box>
+        </Flex>
+
       </Box>
     </Flex>
   )

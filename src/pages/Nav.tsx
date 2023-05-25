@@ -9,7 +9,7 @@ export default function Nav() {
     const navigate = useNavigate();
 
     const Login = () =>{
-        navigate('')
+        navigate('/more')
     }
 
    
@@ -29,7 +29,7 @@ export default function Nav() {
         <AiTwotoneBell/> 
         <MdDashboardCustomize/>
         <GiWantedReward/> 
-        <AiFillMessage/>
+<Text onClick={Login}><AiFillMessage /></Text>
       </HStack>
       </Box>
      

@@ -19,24 +19,27 @@ import ChildAvatar from "./screens/ChildAvatar";
 // import Nav from "./pages/Nav";
 import Welcomeback from "./pages/Welcomeback";
 import Mydashbord from "./pages/Mydashbord";
+import Addchildinterest from "./pages/Addchildinterest";
+import Addedavathar from "./screens/Addedavathar";
+import More from "./pages/More";
+import ChildOverview from "./pages/ChildOverview";
+import ChildTasks from "./pages/ChildTasks";
+import ChildRewards from "./pages/ChildRewards";
 
 
 function App() {
   return (
     <ChakraProvider>
     <Router>
-      
       <Routes>
-     
-        
-      {/* <Route path="/" element={<Nav/>} /> */}
-
         <Route path="/" element={<SignUpOrLogin />} />
         <Route path="/Login" element={<Login />} />
         <Route path="/SignUp" element={<SIgnUp />}/>
         <Route path="/BasicInfo" element={<BasicInfo />}/>
         <Route path="/BasicInfoNumber" element={<BasicInfoNumber />}/>
         <Route path="/ParentVerification" element={<ParentVerification />}/>
+        <Route path="/welcomeback" element={<Welcomeback/>} />
+        <Route path="/mydashbord" element={<Mydashbord/>} />
         <Route path="/AadharPan" element={<AadharPan />}  />
         <Route path="/EnterOtp" element={<EnterOtp/>}/>
         <Route path="/Verify" element={<Verify/>} />
@@ -45,8 +48,16 @@ function App() {
         <Route path="/ChildVerification" element={<ChildVerification />}  />
         <Route path="/ChildPhoto" element={<ChildPhoto />}  />
         <Route path="/ChildAvatar" element={<ChildAvatar />} />
-        <Route path="/welcomeback" element={<Welcomeback/>} />
-        <Route path="/mydashbord" element={<Mydashbord/>} />
+        <Route path="/addchildinterests" element={<Addchildinterest/>} />
+        <Route path="/addedavathar" element={<Addedavathar/>} />
+        <Route path="/more" element={<More/>} />
+        <Route path="/ChildOverview" element={<ChildOverview/>}>
+                 <Route path="/ChildOverview/ChildTasks" element={<ChildTasks/>} /> 
+                 <Route path="/ChildOverview/ChildRewards" element={<ChildRewards/>} />
+        </Route>
+
+        
+
       </Routes>
     </Router>
     </ChakraProvider>

@@ -45,8 +45,9 @@ export default function CreateChild() {
 
 
   return (
-    <Flex direction="column" justifyContent="center">
-      <Box
+    <Box bg={'gray'}>
+  <Flex direction="column"  alignItems={'center'}>
+   <Box
    boxShadow="dark-lg"
    p="6"
    rounded=""
@@ -55,10 +56,15 @@ export default function CreateChild() {
    width="500px"
    alignItems="center"
    justifyContent="center"
+   mt={5}
+   mb={15}
  >
+     <Flex display={'flex'} justifyContent={'center'}>
        <Box  mt={4}>
        <Text fontSize="20px" as="b" color="#004570" >Create Child Account</Text>
         </Box>
+        </Flex>
+        <Flex display={'flex'} justifyContent={'center'}>
         <Box mt={8}>
      {inputs.map((input: any) => (
           <Box key={input.name} mb={4} textAlign="left" >
@@ -75,10 +81,17 @@ export default function CreateChild() {
           </Box>
         ))}
      </Box>
+     </Flex>
+
+     <Flex display={'flex'} justifyContent={'center'}>
      <Box textAlign="left">
         <Text>Gender</Text>
      </Box>
-     <Flex mt={2} flexDirection="row">
+     </Flex>
+     
+     <Flex display={'flex'} justifyContent={'center'}>
+     <Box>
+     {/* <Flex mt={2} flexDirection="row"> */}
      <Radio ml={4} mr={4} borderColor="black" colorScheme='green' value='1'>
       Boy
     </Radio>
@@ -88,7 +101,10 @@ export default function CreateChild() {
     <Radio borderColor="black" colorScheme='green' value='3'>
       Prefer not to disclose
     </Radio>
+     {/* </Flex> */}
+     </Box>
      </Flex>
+     
      <Flex flexDirection="row" mt={10} justifyContent="center">
      <Button colorScheme="blue" borderRadius="20px" mr={30} size="lg" bg="#F5F5F5" width="110px" color="black">
           Save
@@ -99,5 +115,6 @@ export default function CreateChild() {
      </Flex>
         </Box>  
     </Flex>
+    </Box>
   )
 }

@@ -1,4 +1,4 @@
-import { Box, Button, Image, Input, Text, InputGroup } from "@chakra-ui/react";
+import { Box, Button, Image, Input, Text, InputGroup, Flex } from "@chakra-ui/react";
 import { useState } from "react";
 import { useLocation, useNavigate } from "react-router";
 
@@ -20,33 +20,47 @@ export default function EnterOtp() {
     number: "",
     phoneno: "",
   });
+  
+
+ 
 
   
   return (
+    <Box bg={'gray'} pt={50} >
+    <Flex direction="column" alignItems="center">
     <Box
       boxShadow="dark-lg"
-      p="6"
+      p="5"
       rounded=""
       bg="white"
       borderRadius={60}
-      height="700px"
+      // height="700px"
       width="500px"
+      mt={2}
+      mb={50}
+      
     >
-      <Box display="flex" justifyContent="center">
+        <Flex display={'flex'} justifyContent={'center'}>
+        <Box display="flex" justifyContent="center">
         <Image
           src=" src/assets/SIGNAL LOGO (2)@3x.png"
           alt="Dan Abramov"
           height={150}
         />
       </Box>
-
+      </Flex>
+    <Flex display={'flex'} justifyContent={'center'}>
       <Box mr={40} mt={10}>
         <Text>{parm1}</Text>
       </Box>
+      </Flex>
+      
       <Box display="flex" justifyContent="center">
         <form>
-          <Box display="flex" justifyContent="center" >
-            <InputGroup>
+          
+          
+          <Flex display={'flex'} justifyContent={'center'}>
+          <Box  >
               <Input
                 type="text"
                 placeholder="9546 7895 4512"
@@ -54,25 +68,32 @@ export default function EnterOtp() {
                 width="260px"
                 borderRadius="10px"
                 ml={2}
+                borderColor="black"
               />
-              
-            </InputGroup>
-          </Box>
-          <Box display="flex" justifyContent="center" mt={10}>
+                
+                </Box>
+            </Flex>
+          
+       <Flex display={'flex'} justifyContent={'center'}>   
+          <Box  mt={10}>
           <Input
             type="text"
             placeholder="Generate OTP"
             height="30px"
             width="260px"
             borderRadius="10px"
-            pl={10}
-           
-          />
+            borderColor="black"
+            
+            />
           </Box>
+          </Flex>
          
-          <Box mr={60} mt={10}>
-            <Text>Enter OTP</Text>
-          </Box>
+           <Flex display={'flex'} justifyContent={'center'}>
+            <Box  pt={20}>
+             <Text>Enter OTP</Text>
+            </Box>
+            </Flex>
+          
           <Box display="flex" justifyContent="center" mt={10}>
             <Input
               type="text"
@@ -80,10 +101,12 @@ export default function EnterOtp() {
               height="30px"
               width="260px"
               borderRadius="10px"
+              borderColor="black"
               ml={3}
             />
           </Box>
 
+          <Flex display={'flex'} justifyContent={'center'}>
           <Box mt={10}>
             <Button
               colorScheme="blue"
@@ -95,8 +118,11 @@ export default function EnterOtp() {
               Verify
             </Button>
           </Box>
+          </Flex>
         </form>
       </Box>
+    </Box>
+    </Flex>
     </Box>
   );
 }

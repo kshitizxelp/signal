@@ -1,13 +1,14 @@
 import { Box, Button, Flex, Image, Text } from '@chakra-ui/react'
 import React from 'react'
 import { useNavigate } from 'react-router'
+import {FaRegCheckCircle} from "react-icons/all"
 
-export default function Verify() {
+export default function Addedavathar() {
   
     const navigate = useNavigate();
 
     const navigateTo = () =>{
-         navigate("/CreateChild")
+         navigate("/mydashbord")
     }
 
 
@@ -20,7 +21,7 @@ export default function Verify() {
       rounded=""
       bg="white"
       borderRadius={60}
-      height="620px"
+    //   height="620px"
       width="500px"
       mt={5}
       mb={10}
@@ -30,26 +31,37 @@ export default function Verify() {
       <Image src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov" height={200} />
      </Box>
      </Flex>
+
+    
+    <Flex display={'flex'} justifyContent={'center'}>
+    <Image src="src/assets/Mask Group 1@3x.png" alt="Dan Abramov" height={100} width={100} mr={5}/>
+   <Text mt={6} mr={2}>Avathar Added</Text>
+    <Text fontSize={70} color={'green'} > <FaRegCheckCircle /></Text>
+    </Flex>
+   
+   
+
+
     
      <Flex display={'flex'} justifyContent={'center'}>
          <Box mt={10}>
-          <Text color="red" as="b" >Yay!</Text>
+          <Text color="orange" as="b" >Yay!</Text>
           <Text as="b" mt={2} >
             <br></br>
-            We are exited to have
+             We are excited to 
             <br></br>
             you onboard!
             <br></br>
             <br></br>
-            Let us onboard your child now.
+            have your child onboard!
           </Text>
           </Box>
           </Flex>
       
         <Flex display={'flex'} justifyContent={'center'}>
         <Box mt={12}>
-        <Button colorScheme="blue" size="lg" bg="#004570" width="313px" onClick={() => navigateTo()} >
-          Next
+        <Button colorScheme="blue" size="lg" bg="#004570" width="313px" borderRadius={20}  onClick={navigateTo} >
+          Let's get started
         </Button>
       </Box>
       </Flex>

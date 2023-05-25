@@ -47,7 +47,8 @@ export default function Login() {
             { input.forgot && (
                 <Text color="rgba(0, 69, 112, 1)" as="u">{input.forgot}</Text>
             )}
-            </Flex>
+            </Flex >
+           
             <Input
               type={input.type}
               placeholder={input.placeholder}
@@ -58,25 +59,26 @@ export default function Login() {
               borderColor="black"
               width="313px"
             />
+           
           </Box>
         ))}
      </Box>
      <Box mt={8}>
      <Button colorScheme="blue" size="lg" bg="rgba(0, 69, 112, 1)" width="313px" onClick={Login}>
           Login
-        </Button>
+       </Button>
       </Box>
       <Box mt={8}>
-           <Text>or</Text>
-            <Text mt={2}>Login Using</Text>
-        </Box>
-        <Flex direction="row"  justifyContent="space-between"  mt={5} >
+      <Text>or</Text>
+      <Text mt={2}>Login Using</Text>
+      </Box>
+      <Flex direction="row"  justifyContent="space-between"  mt={5} >
       <Button
       leftIcon={<SiGoogle color="#DB4437" />}
       variant="solid"
       size="lg"
       display="flex"
-      alignItems="center"
+      // alignItems="center"
       justifyContent="center"
       borderColor="rgba(40, 40, 40, 0.3)"
       bg="white"

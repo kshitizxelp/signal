@@ -23,13 +23,17 @@ export default function ChildVerification() {
           borderRadius={60}
           width="500px"
         >
-          <Box boxSize="185px" marginLeft="135px" >
-            <Image src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov" />
-          </Box>
+          <Flex display={'flex'} justifyContent={'center'}>
+            <Box>
+            <Image src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov" height={200}/>
+           </Box>
+           </Flex>
 
-          <Box textAlign="left" mt={4}>
-       <Text fontSize="20px" as="b" color="#004570" >Child Verification</Text>
-        </Box>
+           <Flex display={'flex'} justifyContent={'center'}>
+          <Box >
+           <Text fontSize="20px" as="b" color="#004570" >Child Verification</Text>
+         </Box>
+         </Flex>
 
         <Box textAlign="left" mt={2}>
             <Text>Online safety of children is top priority to us. 
@@ -45,7 +49,7 @@ export default function ChildVerification() {
 
         </Box>
         <Flex flexDirection="row" mt={10} justifyContent="center">
-     <Button colorScheme="blue" borderRadius="20px" mr={30} size="lg" bg="#F5F5F5" width="110px" color="black">
+        <Button colorScheme="blue" borderRadius="20px" mr={30} size="lg" bg="#F5F5F5" width="110px" color="black">
           Save
         </Button>
         <Button colorScheme="blue" borderRadius="20px"  size="lg" bg="#004570" width="110px" onClick={() => navigateTo()}>
