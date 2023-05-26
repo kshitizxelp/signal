@@ -93,8 +93,11 @@ const SelectedTaskAssign = () => {
             rewardvaluesecond:"50pts",
           },
     ]
+
+   
+
   return (
-    <Box bg={'gray.300'}>
+    <Box bg={'gray.300'} width="100%">
      <Box  display={"flex"}
             flexDirection={"row"}
             justifyContent={"space-between"}

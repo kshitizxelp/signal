@@ -15,7 +15,7 @@ import ChildInterest from "./screens/ChildInterest";
 import ChildVerification from "./screens/ChildVerification";
 import ChildPhoto from "./screens/ChildPhoto";
 import ChildAvatar from "./screens/ChildAvatar";
-
+// utfuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuftu
 // import Nav from "./pages/Nav";
 import Welcomeback from "./pages/Welcomeback";
 import Mydashbord from "./pages/Mydashbord";
@@ -27,6 +27,7 @@ import ChildTasks from "./pages/ChildTasks";
 import ChildRewards from "./pages/ChildRewards";
 import SelectTasks from "./pages/SelectTasks";
 import SelectedTaskAssign from "./pages/SelectedTaskAssign";
+import CreateNewTask from "./pages/CreateNewTask";
 
 
 function App() {
@@ -55,6 +56,8 @@ function App() {
         <Route path="/more" element={<More/>} />
         <Route path="/selecttasks" element={<SelectTasks/>} />
         <Route path="/selectedtasksassign" element={<SelectedTaskAssign/>} />
+        <Route path="/createNewtask" element={<CreateNewTask/>} />
+
         <Route path="/ChildOverview" element={<ChildOverview/>}>
                  <Route path="/ChildOverview/ChildTasks" element={<ChildTasks/>} /> 
                  <Route path="/ChildOverview/ChildRewards" element={<ChildRewards/>} />
