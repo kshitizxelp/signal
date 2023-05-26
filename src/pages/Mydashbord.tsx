@@ -12,25 +12,33 @@ import {
     HStack,
     Avatar
   } from "@chakra-ui/react";
-import Nav from './Nav';
+import Nav from '../component/Nav'
+import { useNavigate } from 'react-router-dom';
 
 function Mydashbord() {
+   
+  const navigate = useNavigate();
+
+  const navigateTo = () => {
+      navigate("/ChildOverview")
+  }
+
     const dataObj = [
         {
-          image: "src/assets/SIGNAL LOGO (2)@3x.png" ,
+          image: "src/assets/girl@3x.png" ,
           text: "Gopi",
         },
         {
-            image: "src/assets/SIGNAL LOGO (2)@3x.png" ,
+            image: "src/assets/boy@3x.png" ,
+            text: "Vineet",
+          },
+          {
+            image: "src/assets/girl@3x.png" ,
             text: "GopiSunkara",
           },
           {
-            image: "src/assets/SIGNAL LOGO (2)@3x.png" ,
-            text: "GopiSunkara",
-          },
-          {
-            image: "src/assets/SIGNAL LOGO (2)@3x.png" ,
-            text: "GS",
+            image: "src/assets/boy@3x.png" ,
+            text: "Vineet Agarwal",
           },
         
       ];
@@ -52,8 +60,8 @@ function Mydashbord() {
             width={500}
             height={100}
             bg={'white'}
-            mb={10}>
-    {/* <Image src={item.image} alt="Dan Abramov"  height={90} width={100} borderRadius={10}/> */}
+            mb={10} 
+            onClick={() => navigateTo()}>
     <Avatar name='Dan Abrahmov' size='xl' src={item.image} />
     <Text>{item.text}</Text>
     </Box>   

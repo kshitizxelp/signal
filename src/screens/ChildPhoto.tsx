@@ -1,4 +1,4 @@
-import { Box, Image, Flex, Text } from '@chakra-ui/react'
+import { Box, Image, Flex, Text, Button } from '@chakra-ui/react'
 import React from 'react'
 
 import { VscDeviceCamera } from 'react-icons/all';

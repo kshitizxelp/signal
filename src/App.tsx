@@ -1,5 +1,4 @@
 
-// import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { ChakraProvider } from '@chakra-ui/react';
 import SignUpOrLogin from './screens/SignUpOrLogin'
@@ -17,14 +16,17 @@ import ChildVerification from "./screens/ChildVerification";
 import ChildPhoto from "./screens/ChildPhoto";
 import ChildAvatar from "./screens/ChildAvatar";
 
-import Nav from "./pages/Nav";
+// import Nav from "./pages/Nav";
 import Welcomeback from "./pages/Welcomeback";
 import Mydashbord from "./pages/Mydashbord";
 import Addchildinterest from "./pages/Addchildinterest";
 import Addedavathar from "./screens/Addedavathar";
 import More from "./pages/More";
-import Tasks from "./pages/Tasks";
-import Rewards from "./pages/Rewards";
+import ChildOverview from "./pages/ChildOverview";
+import ChildTasks from "./pages/ChildTasks";
+import ChildRewards from "./pages/ChildRewards";
+import SelectTasks from "./pages/SelectTasks";
+import SelectedTaskAssign from "./pages/SelectedTaskAssign";
 
 
 function App() {
@@ -51,9 +53,13 @@ function App() {
         <Route path="/addchildinterests" element={<Addchildinterest/>} />
         <Route path="/addedavathar" element={<Addedavathar/>} />
         <Route path="/more" element={<More/>} />
-        <Route path="/tasks" element={<Tasks/>} />
-        <Route path="/rewards" element={<Rewards/>} />
-        
+        <Route path="/selecttasks" element={<SelectTasks/>} />
+        <Route path="/selectedtasksassign" element={<SelectedTaskAssign/>} />
+        <Route path="/ChildOverview" element={<ChildOverview/>}>
+                 <Route path="/ChildOverview/ChildTasks" element={<ChildTasks/>} /> 
+                 <Route path="/ChildOverview/ChildRewards" element={<ChildRewards/>} />
+        </Route>
+
         
 
       </Routes>
