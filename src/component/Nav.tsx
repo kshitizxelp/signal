@@ -9,8 +9,8 @@ export default function Nav() {
 
     const navigate = useNavigate();
 
-    const navigateTo = () =>{
-        navigate('/Mydashbord')
+    const Login = () =>{
+        navigate('/selectedtasksassign')
     }
    
    const navigateTo1 = () => {

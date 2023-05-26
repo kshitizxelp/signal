@@ -31,6 +31,9 @@ import RewardSetup from "./pages/RewardSetup";
 import CreateNewTask1 from "./pages/CreateNewTask1";
 import ExploreLibrary from "./pages/ExploreLibrary";
 import AddVideos from "./pages/AddVideos";
+import SelectedTaskAssign from "./pages/SelectedTaskAssign";
+import UserNameSuccess from "./screens/UserNameSuccess";
+import CreateNewTask from "./pages/CreateNewTask";
 
 
 function App() {
@@ -63,6 +66,7 @@ function App() {
         <Route path="/ChildAvatar" element={<ChildAvatar />} />
         <Route path="/addchildinterests" element={<Addchildinterest/>} />
         <Route path="/addedavathar" element={<Addedavathar/>} />
+        <Route path="/SelectedTaskAssign" element={<SelectedTaskAssign/>} />
         <Route path="/ChildOverview" element={<ChildOverview/>}>
                  <Route path="/ChildOverview/ChildTasks" element={<ChildTasks/>} /> 
                  <Route path="/ChildOverview/ChildRewards" element={<ChildRewards/>} />
@@ -73,6 +77,11 @@ function App() {
         <Route path="/ExploreLibrary" element={<ExploreLibrary/>} />
 
         <Route path="/AddVideos" element={<AddVideos/>} />
+
+        <Route path="/UserNameSuccess" element={<UserNameSuccess/>} />
+
+        <Route path="/CreateNewTask" element={<CreateNewTask/>} />
+
 
 
       </Routes>

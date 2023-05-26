@@ -100,7 +100,7 @@ export default function ChildRewards() {
         </Box>
         </Flex>
         <Box pl={5}>
-            <Text>Claimed rewards</Text>
+            <Text color={'#004570'}>Claimed rewards</Text>
         </Box>
        
         <ChakraProvider>
@@ -128,7 +128,7 @@ export default function ChildRewards() {
     
     
     <Box mt={20} pl={5}>
-    <Text>Available rewards</Text>
+    <Text color={'#004570'}>Available rewards</Text>
     </Box>
        
         <ChakraProvider>

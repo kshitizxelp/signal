@@ -135,7 +135,7 @@ export default function ChildOverview() {
 
 
   return (
-      <>
+      <Box bg={'gray.300'}>
           <Header />
           {isChildTasksRoute && (
             <>
@@ -174,8 +174,9 @@ export default function ChildOverview() {
           </Flex>
           </>
           )}
+        
           <Outlet />
-
-      </>
+         
+      </Box>
   )
 }
