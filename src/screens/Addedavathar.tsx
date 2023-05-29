@@ -8,7 +8,7 @@ export default function Addedavathar() {
     const navigate = useNavigate();
 
     const navigateTo = () =>{
-         navigate("/mydashbord")
+         navigate("/Mydashbord")
     }
 
 

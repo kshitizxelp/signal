@@ -25,7 +25,7 @@ import More from "./pages/More";
 import ChildOverview from "./pages/ChildOverview";
 import ChildTasks from "./pages/ChildTasks";
 import ChildRewards from "./pages/ChildRewards";
-import SelectTasks from "./pages/SelectTasks";
+// import SelectTasks from "./pages/SelectTasks";
 import SelectedTaskAssign from "./pages/SelectedTaskAssign";
 import CreateNewTask from "./pages/CreateNewTask";
 
@@ -54,7 +54,7 @@ function App() {
         <Route path="/addchildinterests" element={<Addchildinterest/>} />
         <Route path="/addedavathar" element={<Addedavathar/>} />
         <Route path="/more" element={<More/>} />
-        <Route path="/selecttasks" element={<SelectTasks/>} />
+        {/* <Route path="/selecttasks" element={<SelectTasks/>} /> */}
         <Route path="/selectedtasksassign" element={<SelectedTaskAssign/>} />
         <Route path="/createNewtask" element={<CreateNewTask/>} />
 
