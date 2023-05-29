@@ -3,12 +3,12 @@ import React from 'react'
 import { useNavigate } from 'react-router'
 import {FaRegCheckCircle} from "react-icons/all"
 
-export default function Addedavathar() {
+export default function ChildVerification3() {
   
     const navigate = useNavigate();
 
     const navigateTo = () =>{
-         navigate("/mydashbord")
+         navigate("/Mydashbord")
     }
 
 

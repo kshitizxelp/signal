@@ -54,7 +54,7 @@ function Mydashbord() {
          
         <Box>
         
-        <Text fontSize={16} fontWeight={'bold'} color={'#004570'}>My Dashboard</Text>
+        <Text fontSize={16} fontWeight={'bold'} color={'#004570'} ml={30}>My Dashboard</Text>
         </Box>
       
         {dataObj.map((item) => (

@@ -3,10 +3,10 @@ import React from 'react'
 
 import { VscDeviceCamera } from 'react-icons/all';
 import { useNavigate } from 'react-router'
-export default function ChildAvatar() {
+export default function ChildVerification2() {
   const navigate = useNavigate()
   const Next =()=>{
-    navigate("/addedavathar")
+    navigate("/ChildVerification3")
   }
     return (
         <Flex direction="column" alignItems="center" position="relative" >

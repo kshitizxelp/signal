@@ -9,7 +9,7 @@ export default function Nav() {
 
     const navigate = useNavigate();
 
-    const Login = () =>{
+    const navigateTo = () =>{
         navigate('/selectedtasksassign')
     }
    

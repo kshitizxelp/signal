@@ -4,14 +4,14 @@ import React from 'react'
 import { VscDeviceCamera } from 'react-icons/all';
 import { useNavigate } from 'react-router';
 
-export default function ChildPhoto() {
+export default function ChildVerification1() {
 
   const navigate = useNavigate();
 
   const navigateTo = () =>{
     console.log("he;;;ppp")
 
-        navigate("/ChildAvatar")
+        navigate("/ChildVerification2")
   }
 
   return (

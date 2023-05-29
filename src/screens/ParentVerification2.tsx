@@ -2,7 +2,7 @@ import { Box, Button, Image, Input, Text, InputGroup, Flex } from "@chakra-ui/re
 import { useState } from "react";
 import { useLocation, useNavigate } from "react-router";
 
-export default function EnterOtp() {
+export default function ParentVerification2() {
  
   const location = useLocation();
   const params = location.state;
@@ -12,7 +12,7 @@ export default function EnterOtp() {
   const navigate = useNavigate();
 
   const navigateTo = () =>{
-    navigate("/Verify")
+    navigate("/ParentVerification3")
   }
 
 

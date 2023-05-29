@@ -6,11 +6,11 @@ export default function ParentVerification() {
    
     const navigate = useNavigate();
     const Login1 = () => {
-        navigate('/AadharPan',{ state: { param1: 'Aadhaar NUmber' } }); 
+        navigate('/ParentVerification1',{ state: { param1: 'Aadhaar NUmber' } }); 
       };
 
     const Login2 = () =>{
-        navigate('/AadharPan',{ state: { param1: 'Pan Number' } }); 
+        navigate('/ParentVerification1',{ state: { param1: 'Pan Number' } }); 
 
     };
     
