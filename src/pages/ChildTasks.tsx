@@ -17,8 +17,20 @@ import {
     
   } from "@chakra-ui/react";
   import {GiTrophyCup ,FcCalendar ,FcAlarmClock } from 'react-icons/all';
+import { useNavigate } from 'react-router-dom';
 
 export default function ChildTasks() {
+
+  const navigate = useNavigate()
+
+  // const navigateTo = () => {
+  //   navigate("/CreateNewTask1")
+  // }
+  const navigateTo = () => {
+    navigate("/SelectedTaskAssign")
+  }
+  // SelectedTaskAssign
+
     const dataObj = [
         {
           image: "src/assets/SIGNAL LOGO (2)@3x.png" ,
@@ -103,11 +115,6 @@ const obj=[
             valuetwo:"50pts"
   
            },
-  
-  
-  
-
-
 ];
 
 
@@ -124,10 +131,9 @@ const obj=[
         <Box bg={'white'} borderRadius={10}>
         <Flex display={'flex'} justifyContent="space-between">
         
-            <Box p={5}>
+            <Box  p={5}>
             <Avatar name='' size='xl' src={item.image} />
            </Box>
-            
             
                <Box>
                
@@ -228,13 +234,14 @@ const obj=[
       
       </Box>
       </ChakraProvider>
-       
-      <Flex display={'flex'} justifyContent={'center'}>
-        <Box pt={30} mb={20}>
-            <Button colorScheme="blue" size="sm" bg="rgba(0, 69, 112, 1)" width="513px" height={50}>Add new</Button>
-        </Box>
-        </Flex>
-
+      
+     <Box display="flex" alignSelf="center" justifyContent="center"> 
+      <Button colorScheme="blue" marginBottom="10px" size="lg" bg="rgba(0, 69, 112, 1)" width="413px" alignSelf="center" onClick={() => navigateTo()} >
+          Add Task
+        </Button>
+        
+        
+     </Box>
     </Box>
   )
 }

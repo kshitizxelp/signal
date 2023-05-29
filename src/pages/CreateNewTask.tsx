@@ -9,7 +9,7 @@ export default function CreateNewTask() {
     const navigate = useNavigate()
 
     const navigateTo = () =>{
-        navigate("/ChildVerification")
+        navigate("/CreateNewTask1")
     }
 
     const Login = () =>{
@@ -50,11 +50,10 @@ export default function CreateNewTask() {
               },
               
   ];
-  
 
   return (
 
-<Box bg={'gray.400'}>
+<Box bg={'gray.400'} width="100%" height="100%">
   
  
   <Box  display={"flex"}
@@ -62,7 +61,8 @@ export default function CreateNewTask() {
             justifyContent={"space-between"}
             alignItems={"center"}
             bg={'white'}
-           >
+           width="100%"
+          >
             <Box display={'flex'}>
             <Text pl={10} color={'#004570'} fontWeight={'bold'}>  <FaArrowLeft/></Text>
             <Text pl={2} color={'#004570'} fontWeight={'bold'}>GopiSunkara</Text>
@@ -87,7 +87,8 @@ export default function CreateNewTask() {
           borderRadius="md"
           boxShadow="md"
           flexDirection="column"
-          height={200}
+          height="95%"
+          width="90%"
         >
           
           <Box bg={'gray.300'} 
@@ -95,7 +96,8 @@ export default function CreateNewTask() {
                flexDirection={"row"}
                justifyContent={"space-between"}
                alignItems={"center"}
-           >
+              
+         >
           <Text pl={5}>{item.head}</Text> 
           <Text fontSize={30}  pr={5} ><FaAngleUp /></Text> 
           </Box>
@@ -341,10 +343,6 @@ export default function CreateNewTask() {
          </Flex>
 
     </Box>
-
-
-
-
 
   )
 }

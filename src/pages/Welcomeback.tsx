@@ -38,7 +38,7 @@ export default function Welcomeback() {
   const navigate = useNavigate();
 
   const Login = () => {
-    navigate("/mydashbord");
+    navigate("/Mydashbord");
   };
   return (
     <>

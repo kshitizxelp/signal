@@ -12,15 +12,18 @@ import {
     HStack,
     Avatar
   } from "@chakra-ui/react";
-import Nav from '../component/Nav'
-import { useNavigate } from 'react-router-dom';
+import Nav from '../component/Nav';
+import { Outlet, useNavigate } from 'react-router-dom';
 
 function Mydashbord() {
+
+  const isChildTasksRoute = location.pathname   === "/Mydashbord"
+
    
   const navigate = useNavigate();
 
-  const navigateTo = () => {
-      navigate("/ChildOverview")
+  const navigateTo = ( par:any ) => {
+      navigate("/ChildOverview",{ state:{param1:par} })
   }
 
     const dataObj = [
@@ -43,9 +46,14 @@ function Mydashbord() {
         
       ];
   return (
+     <>
+    <Nav/>
+    { isChildTasksRoute && (
     <Box bg={'gray.300'}>
-        <Nav/>
-        <Box mt={10} pl={5}>
+        <Box>
+         
+        <Box>
+        
         <Text fontSize={16} fontWeight={'bold'} color={'#004570'}>My Dashboard</Text>
         </Box>
       
@@ -61,7 +69,7 @@ function Mydashbord() {
             height={100}
             bg={'white'}
             mb={10} 
-            onClick={() => navigateTo()}>
+            onClick={() => navigateTo(item.text)}>
     <Avatar name='Dan Abrahmov' size='xl' src={item.image} />
     <Text>{item.text}</Text>
     </Box>   
@@ -73,8 +81,11 @@ function Mydashbord() {
             <Button colorScheme="blue" size="sm" bg="rgba(0, 69, 112, 1)" width="513px" height={50}>Add Child</Button>
         </Box>
         </Flex>
+        </Box>
     </Box>
-    
+    )}
+    <Outlet/>
+    </>
   )
 }
 
