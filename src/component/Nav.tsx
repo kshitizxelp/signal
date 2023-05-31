@@ -10,7 +10,7 @@ export default function Nav() {
     const navigate = useNavigate();
 
     const navigateTo = () =>{
-        navigate('')
+        navigate('/Mydashbord')
     }
    
    const navigateTo1 = () => {

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
     Box,
     ChakraProvider,
@@ -13,12 +13,22 @@ import {
     HStack,
     Avatar,
     Checkbox,
-    Radio
+    Radio,
+    VStack
+   
+    
+
+    
   } from "@chakra-ui/react";
+  
   import { AiOutlineArrowLeft ,GiTrophyCup ,SlNote } from 'react-icons/all';
+import { useNavigate } from 'react-router-dom';
   
 
 const SelectedTaskAssign = () => {
+
+
+  
     const obj=[
         {
           innerbox:"Age 8"
@@ -37,6 +47,24 @@ const SelectedTaskAssign = () => {
           },
           {
             innerbox:"Age 13"
+          },
+          {
+            innerbox:"Age 14"
+          },
+          {
+            innerbox:"Age 14"
+          },
+          {
+            innerbox:"Age 11"
+          },
+          {
+            innerbox:"Age 12"
+          },
+          {
+            innerbox:"Age 13"
+          },
+          {
+            innerbox:"Age 14"
           },
           {
             innerbox:"Age 14"
@@ -93,19 +121,61 @@ const SelectedTaskAssign = () => {
             rewardvaluesecond:"50pts",
           },
     ]
+
+    const [btnColor, setBtnColor] = useState("gray")
+
+    // const [buttonColors, setButtonColors] = useState([]);
+    // const [isActive, setIsActive] = useState(false);
+
+    // const handleButtonClick = (index:any) => {
+    //   setButtonColors((prevColors) => {
+    //     const newColors = [...prevColors];
+    //     newColors[index] = newColors[index] === 'red' ? 'blue' : 'red';
+    //     return newColors;
+    //   });
+    // };
+
+    // const renderButtons = () => {
+    //   return buttonColors.map((color, index) => (
+    //     <Button
+    //       key={index}
+    //       colorScheme={color}
+    //       onClick={() => handleButtonClick(index)}
+    //     >
+    //       Button {index}
+    //     </Button>
+    //   ));
+    // };
+
+    // return <VStack spacing={4}>{renderButtons()}</VStack>;
+  
+
+
+
+    const navigate = useNavigate()
+    const navigateTo = () =>{
+        navigate("/UserNameSuccess")
+    }
+
+   
+  
+
+
   return (
-    <Box bg={'gray.300'} width="100">
+    <Box bg={'gray.300'} width="100%" height="100%">
      <Box  display={"flex"}
             flexDirection={"row"}
             justifyContent={"space-between"}
             alignItems={"center"}
             bg={'gray.200'}
-            >
+           width="100%"
+           >
+           
        <HStack gap={"5"} pr={5}>
        <Text marginLeft="10px" color={'#004570'} ><AiOutlineArrowLeft/></Text>
        <Text marginLeft="10px" color={'#004570'} >GopiSunkara (select Task)</Text>
        </HStack>
-       <Image marginRight="10px" src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov"  height={100}/>
+       <Image marginRight="10px" src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov"  height="100px"/>
       </Box> 
 
         <Box mt={5}>
@@ -116,18 +186,20 @@ const SelectedTaskAssign = () => {
         <Box ml={5}>
         <Text color={'#004570'}>Select the age below</Text>
         </Box>
+     
           
-          <Box width="95%">
-            <Flex display={'flex'} gap={10} pt={10} pb={10}  overflowX="scroll"  whiteSpace="nowrap" pl={2}>
-            
+          <Box style={{overflowX:"scroll",width: '100vw',  whiteSpace: 'nowrap' }} >
+            <Box style={{ width: '200vw' }}>
+            <Flex display={'flex'} gap={10} pt={10} pb={10}    pl={2}>
              {
                 obj.map((item)=>(
-              <Box bg={'white'}  borderRadius={10} justifyContent={'center'} p={2} w={200}  >
-              <Text textAlign={'center'}>{item.innerbox}</Text>
-             </Box>
+           
+            <Button borderEndRadius="10px" width="200px" colorScheme={btnColor} onClick={()=>{setBtnColor("green")}} >{item.innerbox}</Button>
              ))
             }
              </Flex>
+              </Box>
+            
              </Box>
              
              </Box>
@@ -198,7 +270,7 @@ const SelectedTaskAssign = () => {
         Cancel
        </Button>
 
-       <Button colorScheme="blue" borderRadius="20px"  size="lg" bg="#004570" width="110px" >
+       <Button colorScheme="blue" borderRadius="20px"  size="lg" bg="#004570" width="110px" onClick={navigateTo} >
          Assign
          </Button>
          </Flex>

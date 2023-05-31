@@ -183,9 +183,7 @@ const obj=[
        
       {
             obj.map((item)=>(
-        <Box>
-        {/* <Text pl={5} color={'#004570'}>Recently Completed Tasks</Text> */}
-       
+        <Box>       
         <Box bg={'white'} borderRadius={10}>
         <Flex display={'flex'} justifyContent="space-between">
         
@@ -219,14 +217,9 @@ const obj=[
                     <Text mr={10}fontSize={14}>{item.valuetwo}</Text>
                     </Flex>
                  </Box>
-
                 </Box>
-               
-              
-           
         </Flex>
         </Box>
-      
         </Box>
           ))
         }

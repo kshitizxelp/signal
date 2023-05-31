@@ -4,7 +4,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 
 
 
-export default function AadharPan() {
+export default function ParentVerification1() {
   
     const location = useLocation();
     const params = location.state;
@@ -15,7 +15,7 @@ export default function AadharPan() {
     const navigate = useNavigate();
 
     const navigateTo = () =>{
-        navigate("/EnterOtp",{  state : {param:param1}})
+        navigate("/ParentVerification2",{  state : {param:param1}})
     }
 
   return (

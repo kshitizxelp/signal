@@ -1,15 +1,11 @@
-import { Box, Text ,Input ,Select ,Flex ,Grid ,ChakraProvider,Link,Image} from '@chakra-ui/react'
 import React from 'react'
+import { Box,Text,Flex,ChakraProvider,Input,Select,Image,Link } from '@chakra-ui/react'
 import { useNavigate } from 'react-router-dom'
-import Login from '../screens/Login'
 
-export default function RewardSetup() {
+const RewardUpdate= () => {
 
-  const navigate = useNavigate()
+  
 
-  const Login =()=>{
-    navigate("/Rewards/RewardUpdate")
-  }
   const obg=[
     
     { 
@@ -41,24 +37,31 @@ export default function RewardSetup() {
     link:"Add"
 },
   ]
+
+  const navigate = useNavigate()
+
+  const Login =()=>{
+    navigate("/Rewards/RewardSetup")
+  }
+
   return (
-   <Box bg="gray.300" width="100%">
+    <Box bg="gray.300" width="100%">
     <Flex display={'flex'} justifyContent={'center'}>
       <form>
     <Box mt="10px">
      <Text>Reward Name</Text>
-    <Input placeholder='medium size' size='md'  variant="outline"
+    <Input placeholder='Super Math Spy' size='md'  variant="outline"
               bgColor="white"
               borderColor="black"
               width="333px"
               mt="4px" />
               <Text>Select Category</Text>
-   <Select placeholder='Select'  width="333px"   bgColor="white" borderColor="black"  mt="4px">
-    <option value='Option1'>math</option>
+   <Select placeholder='Math Activity'  width="333px"   bgColor="white" borderColor="black"  mt="4px">
+    <option value='Option1'>math activity</option>
     <option value='Option2'>maths</option>
    </Select>
    <Text>Target Points</Text>
-   <Input placeholder='medium size' size='md'  variant="outline"
+   <Input placeholder='2500' size='md'  variant="outline"
               bgColor="white"
               borderColor="black"
               width="333px"  mt="4px"/>
@@ -68,7 +71,7 @@ export default function RewardSetup() {
     </Flex>
     <Flex display={'flex'} justifyContent={'center'}>
     <Box mt="10px">
-      <Text borderRadius={10} textAlign={'center'} bg={'white'} width="300px">Add to catalogue</Text>
+      <Text borderRadius={10} textAlign={'center'} bg={'white'} width="280px" onClick={Login}>Update Reward</Text>
     </Box>
     </Flex>
     <Box borderBottom={'2px'} mt={'10px'} w="80%" ml="100px"></Box>
@@ -87,7 +90,7 @@ export default function RewardSetup() {
         <Flex display={'flex'} justifyContent={'center'}>  
         <Image src={item.image} alt="" w="100px"
           h="100px"
-         mt="25px" onClick={Login}/>
+         mt="25px"/>
         </Flex>
         <Flex justifyContent={'center'}>
         <Box mt="10px">
@@ -106,3 +109,5 @@ export default function RewardSetup() {
    </Box>
   )
 }
+
+export default RewardUpdate

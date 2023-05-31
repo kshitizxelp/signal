@@ -2,7 +2,7 @@ import { Box, Button, Flex, Image, Text } from '@chakra-ui/react'
 import React from 'react'
 import { useNavigate } from 'react-router'
 
-export default function Verify() {
+export default function ParentVerification3() {
   
     const navigate = useNavigate();
 

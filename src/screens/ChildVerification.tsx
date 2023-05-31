@@ -10,7 +10,7 @@ export default function ChildVerification() {
    const navigate = useNavigate();
 
    const navigateTo = () => {
-    navigate("/ChildPhoto")
+    navigate("/ChildVerification1")
    }
 
     return (

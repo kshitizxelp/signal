@@ -20,11 +20,11 @@ export default function ChildInterest() {
     navigate("/addchildinterests")
   }
 
+  
+
   return (
 
 <Box bg={'gray.400'}>
-  
- 
   <Box  display={"flex"}
             flexDirection={"row"}
             justifyContent={"space-between"}
@@ -34,8 +34,6 @@ export default function ChildInterest() {
     <Text pl={10} color={'#004570'} fontWeight={'bold'}> Add Child's Interests</Text>
     <Image src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov" height={100} pr={10}/>
    </Box>
-   
-    
     <ChakraProvider>
       <Box display="grid" gridTemplateColumns="repeat(3, 1fr)" gap={4} p={10}>
         {/* Card 1 */}
@@ -47,7 +45,6 @@ export default function ChildInterest() {
           flexDirection="column"
           height={200}
         >
-          
           <Box bg={'gray.300'} 
                display={"flex"}
                flexDirection={"row"}
@@ -64,37 +61,27 @@ export default function ChildInterest() {
              value="1"
              borderColor={'black'}
              colorScheme='green'
-          
-              />
+            />
             <Text mt={0}>Cricket</Text>
-     
-       
               <Radio
               value="2"
               borderColor={'black'}
               colorScheme='green'
               />
             <Text mt={0}>FootBall</Text>
-       
-          
               <Radio
                 value="3"
                 borderColor={'black'}
                 colorScheme='green'
               />
               <Text mt={0}>Badminton</Text>
-              
-            
             <Flex  alignItems="center" direction="column">
             <BsPlusCircle color="#004570" />
             <Text mt={2} color="#004570" as="u" >Add New</Text>
             </Flex>
-
             </Flex>
             </Box>
             </Flex>
-
-
             <Flex
           bg="gray.100"
           p={4}
@@ -273,13 +260,6 @@ export default function ChildInterest() {
         {/* Add more cards as needed */}
       </Box>
     </ChakraProvider>
-
-    {/* <Box display={"flex"}
-            flexDirection={"row"}
-            p={20}
-           
-           
-           > */}
     <Flex display={'flex'} justifyContent={'center'} m={20} mb={40}>
     <Checkbox colorScheme='green' defaultChecked>
     </Checkbox>
@@ -298,137 +278,5 @@ export default function ChildInterest() {
          </Flex>
 
     </Box>
-
-
-
-
-
-  //   <Flex direction="column">
-    
-  //   <Box textAlign="left">
-  //   <Text fontSize="20px" as="b" color="#004570">Add Child's Interests</Text>
-  //   </Box>
-
-   
-  //   <Box>
-  //   <Box
-  //   bg="gray"
-  //   borderRadius={2}
-  //   width="345px"
-  //   height="125px"
-  //   textAlign="center"
-  //   justifyContent="center"
-  //   alignContent="center"
-  //   >
-  //   <Text textAlign="left" ml={4}> Outdoor Games</Text> 
-
-  // <Stack ml={4} spacing={4} direction='row' mt={4} justifyContent="space-between" >
-  //      <Flex alignItems="center" direction="column">
-  //           <Radio
-  //               value="1"
-  //             />
-  //           <Text mt={2}>Cricket</Text>
-  //      </Flex>
-  //       <Flex alignItems="center" direction="column">
-  //             <Radio
-  //               value="2"
-  //             />
-  //           <Text mt={2}>FootBall</Text>
-  //       </Flex>
-  //           <Flex alignItems="center" direction="column">
-  //             <Radio
-  //               value="3"
-  //             />
-  //             <Text mt={2}>Badminton</Text>
-  //           </Flex>
-  //           <Flex  alignItems="center" direction="column">
-  //           <BsPlusCircle color="red" />
-  //           <Text mt={2} color="red" as="u" >Add New</Text>
-  //           </Flex>
-  // </Stack>
-  //   </Box>
-  //   <Box
-  //   bg="gray"
-  //   borderRadius={2}
-  //   width="345px"
-  //   mt={6}
-  //   height="125px"
-  //   >
-  //   <Text textAlign="left" ml={4}> Outdoor Games</Text> 
-
-  // <Stack ml={4} spacing={4} direction='row' mt={4} justifyContent="space-between" >
-  //      <Flex alignItems="center" direction="column">
-  //           <Radio
-  //               value="1"
-  //             />
-  //           <Text mt={2}>Cricket</Text>
-  //      </Flex>
-  //       <Flex alignItems="center" direction="column">
-  //             <Radio
-  //               value="2"
-  //             />
-  //           <Text mt={2}>FootBall</Text>
-  //       </Flex>
-  //           <Flex alignItems="center" direction="column">
-  //             <Radio
-  //               value="3"
-  //             />
-  //             <Text mt={2}>Badminton</Text>
-  //           </Flex>
-  //           <Flex  alignItems="center" direction="column">
-  //           <BsPlusCircle color="red" />
-  //           <Text mt={2} color="red" as="u" >Add New</Text>
-  //           </Flex>
-  //      </Stack>
-  //     </Box>
-  //     <Box
-  //      bg="gray"
-  //     borderRadius={2}
-  //      width="345px"
-  //      mt={6}
-  //     height="125px"
-  //   >
-  //   <Text textAlign="left" ml={4}> Outdoor Games</Text> 
-
-  // <Stack ml={4} spacing={4} direction='row' marginTop="32px" justifyContent="space-between" >
-  //      <Flex alignItems="center" direction="column">
-  //       <Radio
-  //        value="1"
-  //             />
-  //       <Text mt={2}>Cricket</Text>
-  //       </Flex>
-  //       <Flex alignItems="center" direction="column">
-  //        <Radio
-  //        value="2"
-  //             />
-  //       <Text mt={2}>FootBall</Text>
-  //       </Flex>
-  //       <Flex alignItems="center" direction="column">
-  //       <Radio
-  //       value="3"
-  //       />
-  //       <Text mt={2}>Badminton</Text>
-  //        </Flex>
-  //       <Flex  alignItems="center" direction="column">
-  //       <BsPlusCircle color="red" />
-  //       <Text mt={2} color="red" as="u" >Add New</Text>
-  //       </Flex>
-  // </Stack>
-  //   </Box>
-  //   </Box>
-    
-    
-  //   <Flex flexDirection="row" mt={10} justifyContent="center">
-  //    <Button colorScheme="blue" borderRadius="20px" mr={30} size="lg" bg="#F5F5F5" width="110px" color="black">
-  //         Save
-  //       </Button>
-  //       <Button colorScheme="blue" borderRadius="20px"  size="lg" bg="#004570" width="110px" onClick={() => navigateTo()}>
-  //         Next
-  //       </Button>
-  //    </Flex>
-
-   
-  //   </Flex>
-    
   )
 }

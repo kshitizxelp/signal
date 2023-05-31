@@ -14,6 +14,10 @@ export default function Login() {
   const Login = () => {
     navigate("/welcomeback");
   };
+
+  const navigateTo = () =>{
+    navigate("/LoginMobileOtp");
+  }
     
     const [formData, setFormData] = useState<any>({
         username: "",
@@ -114,9 +118,9 @@ export default function Login() {
       borderColor="rgba(40, 40, 40, 0.3)"
       bg="white"
     >
-      <Flex alignItems="center">
+      <Box alignItems="center" onClick={() => navigateTo()}>
         <Text mt={1}>Mobile</Text>
-      </Flex>
+      </Box>
     </Button>
     </Flex>
     <Box mt={4}>
