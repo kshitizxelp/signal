@@ -124,30 +124,7 @@ const SelectedTaskAssign = () => {
 
     const [btnColor, setBtnColor] = useState("gray")
 
-    // const [buttonColors, setButtonColors] = useState([]);
-    // const [isActive, setIsActive] = useState(false);
-
-    // const handleButtonClick = (index:any) => {
-    //   setButtonColors((prevColors) => {
-    //     const newColors = [...prevColors];
-    //     newColors[index] = newColors[index] === 'red' ? 'blue' : 'red';
-    //     return newColors;
-    //   });
-    // };
-
-    // const renderButtons = () => {
-    //   return buttonColors.map((color, index) => (
-    //     <Button
-    //       key={index}
-    //       colorScheme={color}
-    //       onClick={() => handleButtonClick(index)}
-    //     >
-    //       Button {index}
-    //     </Button>
-    //   ));
-    // };
-
-    // return <VStack spacing={4}>{renderButtons()}</VStack>;
+   
   
 
 
