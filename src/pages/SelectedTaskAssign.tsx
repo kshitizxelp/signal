@@ -13,22 +13,45 @@ import {
     HStack,
     Avatar,
     Checkbox,
-    Radio,
-    VStack
-   
-    
-
-    
+    Radio
   } from "@chakra-ui/react";
-  
   import { AiOutlineArrowLeft ,GiTrophyCup ,SlNote } from 'react-icons/all';
 import { useNavigate } from 'react-router-dom';
   
 
 const SelectedTaskAssign = () => {
+ 
+  const navigate = useNavigate()
+
+  const [selectedRadio, setSelectedRadio] = useState([]);
+
+  const [ischeckboxChecked,setIsCheckboxSelected] = useState<any>(false);
+
+  const handleCheckboxChange = () => {
+    setIsCheckboxSelected(!ischeckboxChecked);
+    setSelectedRadio([]);
+  };
 
 
+  const handleRadioChange = (value:any) => {
+    let updatedRadios = [...selectedRadio];
+    if (updatedRadios.includes(value)) {
+      updatedRadios = updatedRadios.filter((item) => item !== value);
+    } else {
+      updatedRadios.push(value);
+    }
+    setSelectedRadio(updatedRadios);
+    setIsCheckboxSelected(updatedRadios.length > 0);
+  };
   
+  const navigateTo = () => {
+    navigate("/UserNameSuccess")
+  }
+
+  const navigateTo1 = () => {
+    navigate("/CreateNewTask")
+  }
+
     const obj=[
         {
           innerbox:"Age 8"
@@ -47,24 +70,6 @@ const SelectedTaskAssign = () => {
           },
           {
             innerbox:"Age 13"
-          },
-          {
-            innerbox:"Age 14"
-          },
-          {
-            innerbox:"Age 14"
-          },
-          {
-            innerbox:"Age 11"
-          },
-          {
-            innerbox:"Age 12"
-          },
-          {
-            innerbox:"Age 13"
-          },
-          {
-            innerbox:"Age 14"
           },
           {
             innerbox:"Age 14"
@@ -121,38 +126,19 @@ const SelectedTaskAssign = () => {
             rewardvaluesecond:"50pts",
           },
     ]
-
-    const [btnColor, setBtnColor] = useState("gray")
-
-   
-  
-
-
-
-    const navigate = useNavigate()
-    const navigateTo = () =>{
-        navigate("/UserNameSuccess")
-    }
-
-   
-  
-
-
   return (
-    <Box bg={'gray.300'} width="100%" height="100%">
+    <Box bg={'gray.300'}>
      <Box  display={"flex"}
             flexDirection={"row"}
             justifyContent={"space-between"}
             alignItems={"center"}
             bg={'gray.200'}
-           width="100%"
-           >
-           
+            >
        <HStack gap={"5"} pr={5}>
        <Text marginLeft="10px" color={'#004570'} ><AiOutlineArrowLeft/></Text>
        <Text marginLeft="10px" color={'#004570'} >GopiSunkara (select Task)</Text>
        </HStack>
-       <Image marginRight="10px" src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov"  height="100px"/>
+       <Image marginRight="10px" src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov"  height={100}/>
       </Box> 
 
         <Box mt={5}>
@@ -163,15 +149,15 @@ const SelectedTaskAssign = () => {
         <Box ml={5}>
         <Text color={'#004570'}>Select the age below</Text>
         </Box>
-     
           
-          <Box style={{overflowX:"scroll",width: '100vw',  whiteSpace: 'nowrap' }} >
+         
+             <Box style={{overflowX:"scroll",width: '100vw',  whiteSpace: 'nowrap' }} >
             <Box style={{ width: '200vw' }}>
             <Flex display={'flex'} gap={10} pt={10} pb={10}    pl={2}>
              {
                 obj.map((item)=>(
            
-            <Button borderEndRadius="10px" width="200px" colorScheme={btnColor} onClick={()=>{setBtnColor("green")}} >{item.innerbox}</Button>
+            <Button borderEndRadius="10px" width="200px"  >{item.innerbox}</Button>
              ))
             }
              </Flex>
@@ -182,7 +168,7 @@ const SelectedTaskAssign = () => {
              </Box>
 
              <Box marginTop="20px">
-                <Checkbox pl={10} color={'black'}> Select</Checkbox>
+                <Checkbox pl={10} color={'black'}  isChecked={ischeckboxChecked}  onChange={handleCheckboxChange} > Select</Checkbox>
              </Box>
 
 
@@ -205,7 +191,13 @@ const SelectedTaskAssign = () => {
 
               <Box>
                 <Flex display={'flex'} justifyContent="space-evenly">
-                <Radio value='1'></Radio>
+                <Radio value="1"
+          // isChecked={selectedRadio === '1' || (ischeckboxChecked && selectedRadio !== null)}
+          isChecked={selectedRadio.includes('1')}
+
+          onChange={() => handleRadioChange('1')}
+                  
+                ></Radio>
                 <Avatar name='Dan Abrahmov' size='md' src={item.imageone} />
                 <Text pt={5}>Rewards:</Text>
                 <Text pt={5}>{item.rewardvaluefirst}</Text>
@@ -224,7 +216,13 @@ const SelectedTaskAssign = () => {
 
               <Box>
                 <Flex display={'flex'} justifyContent="space-evenly">
-                <Radio value='1'></Radio>
+                <Radio  value="2"
+          // isChecked={selectedRadio === '2' || (ischeckboxChecked && selectedRadio !== null)}
+          isChecked={selectedRadio.includes('2')}
+
+          onChange={() => handleRadioChange('2')}
+                  
+                ></Radio>
                 <Avatar name='Dan Abrahmov' size='md' src={item.imagetwo} />
                 <Text pt={5}>Rewards:</Text>
                 <Text pt={5}>{item.rewardvaluesecond}</Text>
@@ -246,10 +244,15 @@ const SelectedTaskAssign = () => {
        <Button colorScheme="blue" borderRadius="20px" mb={50} mr={30} size="lg" bg="#F5F5F5" width="110px" color="black" >
         Cancel
        </Button>
-
-       <Button colorScheme="blue" borderRadius="20px"  size="lg" bg="#004570" width="110px" onClick={navigateTo} >
-         Assign
+       {ischeckboxChecked ? (
+       <Button colorScheme="blue" borderRadius="20px"  size="lg" bg="#004570" width="110px" onClick={() => navigateTo()} >
+        Assign
          </Button>
+       ) :(
+        <Button colorScheme="blue" borderRadius="20px"  size="lg" bg="#004570" width="110px" onClick={() => navigateTo1()} >
+          Add New
+         </Button>
+       )}
          </Flex>
 
     </Box>

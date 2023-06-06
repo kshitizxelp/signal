@@ -41,30 +41,30 @@ export default function SIgnUp() {
       ];
 
   return (
-    <Box bg={'gray'}>
+    <Box bg={'gray'} pt={'50px'} pb={'70px'}>
     <Flex direction="column" alignItems="center" position="relative" >
       <Box
       boxShadow="dark-lg"
       p="1"
       rounded=""
       bg="white"
-      borderRadius={60}
-      // height="620px"
-      width="600px"
+      borderRadius={'40px'}
+      
+      width="500px"
       alignItems="center"
       justifyContent="center"
     >
      <Flex display={'flex'} justifyContent={'center'}>
       <Box>
-      <Image src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov"  height={200}/>
+      <Image src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov"  height={"100px"}/>
       </Box>
       </Flex>
 
     <Flex display={'flex'} justifyContent={'center'}>
-     <Box mt={8}>
+     <Box mt={'10px'}>
      {inputs.map((input: any) => (
-         <Box key={input.name} mb={4} alignItems="flex-start">
-            <Text mb={1}  >{input.label}</Text>
+         <Box key={input.name} pb={'4px'} alignItems="flex-start">
+            <Text mb={'1px'}  >{input.label}</Text>
             <Input
               type={input.type}
               placeholder={input.placeholder}
@@ -81,7 +81,7 @@ export default function SIgnUp() {
       </Flex>
      
       <Flex display={'flex'} justifyContent={'center'}>
-        <Box mt={5}>
+        <Box mt={'5px'}>
         <Button colorScheme="blue" size="lg" bg="rgba(0, 69, 112, 1)" width="313px" onClick={Login}>
           Sign Up
         </Button>
@@ -89,9 +89,9 @@ export default function SIgnUp() {
         </Flex>
 
              <Flex display={'flex'} justifyContent={'center'}>
-             <Box mt={4}>
+             <Box mt={'4px'}>
               <Text>or</Text>
-               <Text mt={2}>Signup using</Text>
+               <Text mt={'2px'}>Signup using</Text>
               </Box>
            </Flex>
       
@@ -108,11 +108,11 @@ export default function SIgnUp() {
       justifyContent="center"
       borderColor="rgba(40, 40, 40, 0.3)"
       bg="white"
-      mr={8}
+      mr={'8px'}
       
     >
       <Flex alignItems="center" >
-        <Text mt={1}>Google</Text>
+        <Text mt={'1px'}>Google</Text>
       </Flex>
     </Button>
     <Button
@@ -124,10 +124,10 @@ export default function SIgnUp() {
       justifyContent="center"
       borderColor="rgba(40, 40, 40, 0.3)"
       bg="white"
-      mr={8}
+      mr={'8px'}
     >
       <Flex alignItems="center">
-        <Text mt={1}>Office 365</Text>
+        <Text mt={'1px'}>Office 365</Text>
       </Flex>
     </Button>
     <Button
@@ -141,7 +141,7 @@ export default function SIgnUp() {
       bg="white"
     >
       <Flex alignItems="center">
-        <Text mt={1}>Mobile</Text>
+        <Text mt={'1px'}>Mobile</Text>
       </Flex>
     </Button>
    

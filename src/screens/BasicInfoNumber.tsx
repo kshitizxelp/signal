@@ -35,36 +35,36 @@ export default function BasicInfoNumber() {
 
   return (
     <Box bg={'gray'}>
-  <Flex direction="column" alignItems="center" position="relative" >
+  <Flex direction="column" alignItems="center" position="relative" pt={'60px'} pb={'100px'}>
   <Box
    boxShadow="dark-lg"
    p="6"
    rounded=""
    bg="white"
-   borderRadius={60}
-   // height="620px"
-   width="500px"
+   borderRadius={'50px'}
+   
+   width="450px"
    alignItems="center"
    justifyContent="center"
-   mt={5}
+   mt={'4px'}
  >
   <Flex display={'flex'} justifyContent={'center'}>
       <Box>
-      <Image src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov" height={200}/>
+      <Image src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov" height={'150px'}/>
       </Box>
       </Flex>
     
     <Flex flexDirection="row">
-    <Box justifyContent="center" textAlign="left" alignItems="center" marginLeft="110px" mt={4} >
-        <Text fontSize="22px" mr={35} color="rgba(0, 69, 112, 1)">Enter Basic Information</Text>
+    <Box justifyContent="center" textAlign="left" alignItems="center" marginLeft="110px" mt={'4px'} >
+        <Text fontSize="22px"  textAlign={'center'} color="rgba(0, 69, 112, 1)">Enter Basic Information</Text>
     </Box>
     </Flex>
    
     <Flex display={'flex'} justifyContent={'center'}>
-    <Box mt={4}>
+    <Box mt={'4px'}>
      {inputs.map((input: any) => (
-          <Box key={input.name} mb={4}>
-                        <Text mb={1}>{input.label}</Text>
+          <Box key={input.name} mb={'4px'}>
+                        <Text mb={'1px'}>{input.label}</Text>
             {input.name === "gender" ? ( 
                 <Select placeholder='Select' width="313px"  borderColor="#282828">
                 <option value='Option1'>Male</option>
@@ -88,7 +88,7 @@ export default function BasicInfoNumber() {
      </Flex>
      
      <Flex display={'flex'} justifyContent={'center'}>
-     <Box mt={8}>
+     <Box mt={'8px'}>
         <Button colorScheme="blue" size="lg" bg="rgba(0, 69, 112, 1)" width="313px" onClick={Login}>
           Save
         </Button>

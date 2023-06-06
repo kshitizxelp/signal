@@ -19,29 +19,29 @@ export default function ParentVerification1() {
     }
 
   return (
-    <Box bg={'gray'} pt={100}>
-    <Flex direction="column" alignItems="center" >
+    <Box bg={'gray'} >
+    <Flex direction="column" alignItems="center" pt={'100px'} pb={'200px'}>
     <Box
    boxShadow="dark-lg"
    p="0"
    rounded=""
    bg="white"
-   borderRadius={60}
-    mt={5}
-    mb={100}
-   width="600px"
+   borderRadius={'50px'}
+    mt={'5px'}
+   
+   width="450px"
    alignItems="center"
    justifyContent="center"
  >
       <Flex display={'flex'} justifyContent={'center'}>
-       <Box mt={4} >
-       <Image src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov" height={200} />
+       <Box mt={'4px'} >
+       <Image src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov" height={'150px'} />
        </Box>
        </Flex>
     <Flex display={'flex'} justifyContent={'center'}>
-     <Box  mt={10}>
-      <Text fontSize="20px" as="b" color="#004570" ml={0} >Parent Verification</Text>
-      <Text mt={5} >{param1}</Text>
+     <Box  mt={'10px'}>
+      <Text fontSize="20px" as="b" color="#004570"  >Parent Verification</Text>
+      <Text mt={'5px'} >{param1}</Text>
      </Box>
      </Flex>
         
@@ -58,7 +58,7 @@ export default function ParentVerification1() {
            </Flex>
            
            <Flex display={'flex'} justifyContent={'center'}>
-           <Box pt={50} mb={10}>
+           <Box pt={'50px'} pb={'20px'}>
            <Button  colorScheme="blue" size="lg" bg="rgba(0, 69, 112, 1)" width="313px" onClick={() => navigateTo()}>
              Generate OTP
            </Button>

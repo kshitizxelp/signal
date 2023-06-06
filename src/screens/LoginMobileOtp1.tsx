@@ -14,30 +14,35 @@ export default function LoginMobileOtp1() {
     number: "",
     phoneno: "",
   });
+  const { number ,phoneno} = formData ;
 
-  
+  const changeHandler = (e:any) => {
+    const val = e.target.value;
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+
+  };
+  console.log(setFormData)
   return (
     <Box bg={'gray.300'}>
-      <Flex display={'flex'} justifyContent={'center'}>
+      <Flex display={'flex'} justifyContent={'center'} pt={'100px'} pb={'200px'}>
     <Box
       boxShadow="dark-lg"
-      p="6"
+      p="5px"
       rounded=""
       bg="white"
-      borderRadius={60}
-      height="600px"
-      width="500px"
-      mt={10}
+      borderRadius={'50px'}
+      width="400px"
+      mt={'10px'}
     >
       <Box display="flex" justifyContent="center">
         <Image
           src=" src/assets/SIGNAL LOGO (2)@3x.png"
           alt="Dan Abramov"
-          height={150}
+          height={'150px'}
         />
       </Box>
 
-      <Box pl={20}>
+      <Box pl={'20px'}>
         <Text>Enter Mobile Number</Text>
       </Box>
       <Box display="flex" justifyContent="center">
@@ -47,11 +52,14 @@ export default function LoginMobileOtp1() {
             <InputGroup>
               <Input
                 type="number"
-                placeholder="+91"
+                placeholder="21"
                 height="30px"
-                width="80px"
-                borderRadius="10px"
-                ml={5}
+                width="50px"
+                borderRadius="5px"
+                ml={'5px'}
+                name="number"
+                // value="number"
+                onChange={changeHandler}
               />
               <Input
                 type="text"
@@ -59,39 +67,42 @@ export default function LoginMobileOtp1() {
                 height="30px"
                 width="260px"
                 borderRadius="10px"
-                ml={2}
+                ml={'2px'}
+                name="number"
+                // value="number"
+                onChange={changeHandler}
               />
               
             </InputGroup>
             </Flex>
           </Box>
-          <Box pl={200} color={'blue'}>
+          <Box pl={'200px'} color={'blue'}>
           <Link>Edit mobile number</Link>
           </Box>
 
           <Flex display={'flex'} justifyContent={'center'}>
-          <Box display="flex" justifyContent="center" mt={10}>
+          <Box display="flex" justifyContent="center" mt={'10px'}>
           <Input
             type="text"
             placeholder="Ganarate OTP"
             height="30px"
             width="260px"
             borderRadius="10px"
-            pl={10}
+            pl={'10px'}
            
           />
           </Box> 
           </Flex>
-          <Box pl={220} color={'blue'}>
+          <Box pl={'200px'} color={'blue'}>
           <Link>Resend OTP</Link>
           </Box>
          
-          <Box ml={50} mt={10} color={'blue'}>
+          <Box ml={'50px'} mt={'10px'} color={'blue'}>
             <Text>Enter OTP</Text>
           </Box>
           
           <Flex display={'flex'} justifyContent={'center'}>
-          <Box  mt={10}>
+          <Box  mt={'10px'}>
             <Input
               type="text"
               placeholder=""
@@ -99,12 +110,12 @@ export default function LoginMobileOtp1() {
               width="260px"
               borderRadius="10px"
               borderColor={'black'}
-              ml={3}
+              ml={'3px'}
             />
           </Box>
           </Flex>
       <Flex display={'flex'} justifyContent={'center'}>
-          <Box mt={10}>
+          <Box mt={'10px'}>
             <Button
               colorScheme="blue"
               size="lg"

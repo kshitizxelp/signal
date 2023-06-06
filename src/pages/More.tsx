@@ -7,7 +7,10 @@ const More = () => {
   
   const navigate = useNavigate();
 
-  const navigateTo = () => {
+  const settings = () => {
+    navigate("/Settings")
+  }
+  const signout= () => {
     navigate("/")
   }
 
@@ -81,6 +84,7 @@ const More = () => {
       borderRadius={10}
       ml={1}
       alignItems={'center'}
+      onClick={settings}
       >
         <Text pl={5}><FaRegSun/></Text>
         <Text ml={10}>Settings</Text>
@@ -109,7 +113,7 @@ const More = () => {
       borderRadius={10}
       ml={1}
       alignItems={'center'}
-      onClick={() => navigateTo() }
+     onClick={signout}
       >
         <Text pl={5}><VscSignOut/></Text>
         <Text ml={10}>Sign Out</Text>

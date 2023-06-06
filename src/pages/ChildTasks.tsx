@@ -119,7 +119,7 @@ const obj=[
 
 
   return (
-    <Box bg={'gray.300'}>
+    <Box bg={'gray.300'}  width={"100%"}>
 
      <ChakraProvider>
       <Box display="grid" gridTemplateColumns="repeat(3, 1fr)" gap={4} p={10}>

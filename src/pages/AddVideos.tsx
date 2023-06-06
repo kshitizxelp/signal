@@ -5,12 +5,21 @@ import {FiUpload  } from 'react-icons/all';
 
 import React from 'react'
 import VideoPlayer from '../component/VideoPlayer';
+import { useNavigate } from 'react-router-dom';
 
 export default function AddVideos() {
 
   const videoUrl = 'https://youtu.be/Y9i3OIMitRQ';
   const thumbnailUrl = 'src/assets/Mask Group 5@3x.png';
 
+  const navigate = useNavigate()
+  const next = ()=>{
+    navigate("/AddJumps")
+  }
+
+  const back = ()=>{
+    navigate("/CreateNewTask1")
+  }
   return (
     <Box display="flex" flexDirection="column" >
     <Box bg="gray"  >
@@ -29,7 +38,7 @@ export default function AddVideos() {
     <Image marginRight="10px" src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov"  height={100}/>
    </Box>
    </Box>
-   <Box  
+   {/* <Box  
       boxShadow="dark-lg"
       p="6"
 
@@ -41,7 +50,7 @@ export default function AddVideos() {
       justifyContent="center"
       alignSelf="center"
       flexDirection="column"
-    >
+    > */}
       <Flex flexDirection="column" justifyContent="center" alignSelf="center" >
         <Box marginRight="100px" >
           <Text color={'#004570'} as="b" marginBottom="10px" fontSize="15px">Add new Video</Text>
@@ -70,12 +79,12 @@ export default function AddVideos() {
               <VideoPlayer videoUrl={videoUrl} thumbnailUrl={thumbnailUrl}  />
            </Box>
            <Flex flexDirection="row" justifyContent="center"  >
-              <Button variant="ghost" marginRight="60px" >Back</Button>
-              <Button colorScheme="blue"> Next</Button>
+              <Button variant="ghost" marginRight="60px" onClick={back} >Back</Button>
+              <Button colorScheme="blue" onClick={next}> Next</Button>
            </Flex>
 
 
-    </Box>
+    {/* </Box> */}
    </Box>
   )
 }

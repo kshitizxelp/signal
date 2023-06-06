@@ -1,6 +1,6 @@
 import { Box , HStack, Image, Text, Modal, ModalOverlay, ModalContent,Flex, ModalHeader, ModalBody, ModalFooter, ModalCloseButton, Button, Radio } from '@chakra-ui/react'
 import React, { useState } from 'react'
-import {BsPlusCircle ,CiMenuKebab} from "react-icons/all"
+import {BsPlusCircle ,CiMenuKebab ,RiDeleteBinLine} from "react-icons/all"
 import { useNavigate } from 'react-router-dom';
 
 
@@ -38,22 +38,32 @@ export default function CreateNewTask1() {
     const data=[
 
         { 
+            head:"Learning",
+          
             title:"Light",
-            itemvalue:"2500RP"
+            itemvalue:"0 Pts"
         },
         { 
+
+            head:"Shadow Practice",
             title:"Critical Thinking",
-            itemvalue:"2500RP"
+            itemvalue:"0 Pts"
         },
         { 
-            title:"Critical Thinking",
-            itemvalue:"2500RP"
+            head:"Interests",
+            title:"Food",
+            itemvalue:"0 Pts"
         },
         { 
-            title:"Critical Thinking",
-            itemvalue:"2500RP"
+            head:"Better Me",
+            title:"Habits",
+            itemvalue:"0 Pts"
         },
     ]
+
+    const Back = ()=>{
+        navigate("/CreateNewTask")
+    }
 
 
   return (
@@ -84,13 +94,20 @@ export default function CreateNewTask1() {
         margin="80px"
       >
         {data.map((item, index) => (
-          <Box key={index} bg="gray.300" height="120px" justifyContent="space-between" width="500px" display="flex" flexDirection="row" marginBottom="30px">
-            <HStack spacing="40px" marginLeft="20px">
+            
+           
+          
+           
+            <Box key={index} bg="gray.300" height="120px"  width="500px"  >
+                <Text bg={'green'} pt={'5px'}  color={'white'} pl={'10px'}>{item.head}</Text>
+           
+            <HStack spacing="40px" marginLeft="20px" justifyContent="space-between" display="flex"  mt={'20px'}>
+                
             <Text as="b">{item.title}</Text>
             <Text>{item.itemvalue}</Text>
             <BsPlusCircle onClick={handleOpenModal} style={{ cursor: 'pointer' }} />
-            <Text as="u"  onClick={handleOpenModal} style={{ cursor: 'pointer' }} >Add Content</Text>
-            <CiMenuKebab/>
+            <Text as="u"  onClick={handleOpenModal} style={{ cursor: 'pointer' }} color={'blue'} >Add Content</Text>
+            <Text pr={'10px'}><RiDeleteBinLine/></Text>
             </HStack>
           </Box>
         ))}
@@ -102,8 +119,7 @@ export default function CreateNewTask1() {
                         <ModalHeader>Select the source of content</ModalHeader>
                         <ModalCloseButton />
                         <ModalBody>
-                            {/* Place your content for adding new content here */}
-                            {/* <Text>Content goes here...</Text> */}
+                       
                             <Flex direction="column" gap={4} justifyContent="center">
                             <Flex  display={'flex'} alignItems="center" direction="row" gap={2}>
             <Radio
@@ -139,6 +155,20 @@ export default function CreateNewTask1() {
                         </ModalFooter>
                     </ModalContent>
                 </Modal>
+
+
+                <Box>
+      <Flex flexDirection="row" justifyContent="center">
+       <Button colorScheme="blue" borderRadius="20px" mb={50} mr={30} size="lg" bg="#F5F5F5" width="110px" color="black" onClick={Back}>
+        Back
+       </Button>
+
+       <Button colorScheme="blue" borderRadius="20px"  size="lg" bg="#004570" width="110px" >
+         Next
+         </Button>
+         </Flex>
+
+          </Box>
 
 
    </Box>

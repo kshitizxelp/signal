@@ -38,6 +38,16 @@ import UserNameSuccess from "./screens/UserNameSuccess";
 import RewardUpdate from "./pages/RewardUpdate";
 import TopUp from "./pages/TopUp";
 import UserNameSuccessRewards from "./screens/UserNameSuccessRewards";
+import ContentSelection from "./pages/ContentSelection";
+import ContentSelection23 from "./pages/ContentSelecton23";
+import ContentSelection24 from "./pages/ContentSelection24";
+import ContentSelection25 from "./pages/ContentSelection25";
+import ContentSelection30 from "./pages/ContentSelection30";
+import ContentSelection33 from "./pages/ContentSelection33";
+import ContentSelection37 from "./pages/ContentSelection37";
+import ContentSelection2 from "./pages/ContentSelection2";
+import AddJumps from "./pages/AddJumps";
+import Settings from "./pages/Settings";
 // 
 
 
@@ -81,6 +91,18 @@ function App() {
         <Route path="/ChildVerification3" element={<ChildVerification3/>} />
         <Route path="/SelectedTaskAssign" element={<SelectedTaskAssign/>} />
         <Route path="/TopUp" element={<TopUp/>} />
+        <Route path="/ContentSelection" element={<ContentSelection/>} />
+        <Route path="/ContentSelection23" element={<ContentSelection23/>} />
+        <Route path="/ContentSelection24" element={<ContentSelection24/>} />
+        <Route path="/ContentSelection25" element={<ContentSelection25/>} />
+        <Route path="/ContentSelection30" element={<ContentSelection30/>} />
+        <Route path="/ContentSelection33" element={<ContentSelection33/>} />
+        <Route path="/ContentSelection37" element={<ContentSelection37/>} />
+        <Route path="/ContentSelection2" element={<ContentSelection2/>} />
+        <Route path="/AddJumps" element={<AddJumps/>} />
+        <Route path="/Settings" element={<Settings/>} />
+
+        
         <Route path="/UserNameSuccessRewards" element={<UserNameSuccessRewards/>} />
 
 
