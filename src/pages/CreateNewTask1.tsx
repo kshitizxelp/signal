@@ -68,16 +68,17 @@ export default function CreateNewTask1() {
 
   return (
     <Box display="flex" flexDirection="column" >
-    <Box bg="gray"   >
+    <Box   width="100%" >
      
     <Box  display={"flex"}
          flexDirection={"row"}
          justifyContent={"space-between"}
          alignItems={"center"}
          bg={'gray.200'}
+        
          >
     <Text marginLeft="20px" color={'#004570'} as="b" >Vineet</Text>
-    <Image marginRight="10px" src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov"  height={100}/>
+    <Image marginRight="10px" src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov"  height={'100px'}/>
    </Box>
 
    </Box>
@@ -88,20 +89,20 @@ export default function CreateNewTask1() {
 
    <Box
         display="grid"
-        gridTemplateColumns="repeat(2, 1fr)"
-        gridGap="10px"
-        // marginTop="10px"
-        margin="80px"
+        gridTemplateColumns={{base:'repeat(1,1fr)',md:'repeat(2,1fr)',lg:'repeat(3,1fr)'}}
+        gridGap="5px"
+        marginTop="10px"
+       
       >
         {data.map((item, index) => (
             
            
           
            
-            <Box key={index} bg="gray.300" height="120px"  width="500px"  >
+            <Box key={index} bg="gray.300" height="120px"  width="380px" m={'10px'} >
                 <Text bg={'green'} pt={'5px'}  color={'white'} pl={'10px'}>{item.head}</Text>
            
-            <HStack spacing="40px" marginLeft="20px" justifyContent="space-between" display="flex"  mt={'20px'}>
+            <HStack spacing="30px" marginLeft="18px" justifyContent="space-between" display="flex"  mt={'20px'}>
                 
             <Text as="b">{item.title}</Text>
             <Text>{item.itemvalue}</Text>

@@ -22,13 +22,14 @@ export default function AddVideos() {
   }
   return (
     <Box display="flex" flexDirection="column" >
-    <Box bg="gray"  >
+    <Box bg="gray" width="100%" >
      
     <Box  display={"flex"}
          flexDirection={"row"}
          justifyContent={"space-between"}
          alignItems={"center"}
          bg={'gray.200'}
+         width="100%"
          >
     <Box display={"flex"}
          flexDirection={"column"} >
@@ -38,24 +39,21 @@ export default function AddVideos() {
     <Image marginRight="10px" src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov"  height={100}/>
    </Box>
    </Box>
-   {/* <Box  
-      boxShadow="dark-lg"
-      p="6"
-
-      bg="white"
-      borderRadius={10}
-      height="100%"
-      width="95%"
-      display="flex"
-      justifyContent="center"
-      alignSelf="center"
-      flexDirection="column"
-    > */}
+  
       <Flex flexDirection="column" justifyContent="center" alignSelf="center" >
         <Box marginRight="100px" >
           <Text color={'#004570'} as="b" marginBottom="10px" fontSize="15px">Add new Video</Text>
           <Text  marginBottom="10px">Name of the Video</Text>
           <Input
+              type="text"
+              variant="outline"
+              bgColor="white"
+              borderColor="black"
+              width="373px"
+              marginBottom="10px"
+            /> <br/>
+          <Text> Video Url</Text>
+            <Input
               type="text"
               variant="outline"
               bgColor="white"
@@ -70,7 +68,7 @@ export default function AddVideos() {
             <Text marginTop="-6px" marginLeft="10px" fontSize="20px" as="b" >Upload Video</Text>
            </Box>
            <Box>
-           <Text marginBottom="10px" as="u" color={'#004570'}  >Or add video by URL</Text>
+           <Text marginBottom="10px" as="u" color={'#004570'} >Or add video by URL</Text>
            </Box>
            <Text as="b" color={'#004570'} >Preview</Text>
 
@@ -84,7 +82,7 @@ export default function AddVideos() {
            </Flex>
 
 
-    {/* </Box> */}
+    
    </Box>
   )
 }

@@ -137,21 +137,22 @@ const  login = ()=>{
             justifyContent={"space-between"}
             alignItems={"center"}
             bg={'gray.200'}
+            width={'100%'}
             >
-       <HStack gap={"5"} pr={5}>
+       <HStack gap={"5"} pr={'5px'}>
        <Text marginLeft="10px" color={'#004570'} ><AiOutlineArrowLeft/></Text>
        <Box>
        <Text marginLeft="10px" color={'#004570'} mb="2px" fontSize={12}>Add English Content for </Text>
        <Text marginLeft="10px" color={'#004570'}mb="3px" >GopiSunkara </Text>
        </Box>
        </HStack>
-       <Image marginRight="10px" src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov"  height={100}/>
+       <Image marginRight="10px" src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov"  height={'100px'}/>
       </Box> 
 
       <Box mt="10px" width="100%">
       <Flex display={'flex'} justifyContent={'center'}>
       <form>
-      <InputGroup width="500px" bg={'white'}>
+      <InputGroup width="350px" bg={'white'}>
         <Input
           type="text"
           placeholder="Search..."
@@ -172,15 +173,15 @@ const  login = ()=>{
       </Box>
 
       <Box>
-      <Box bg={'gray'} mt={20}  >
-        <Box ml={5}>
+      <Box bg={'gray'} mt={'20px'}  >
+        <Box ml={'5px'}>
         <Text color={'#004570'}>Select the age below</Text>
         </Box>
           
          
              <Box style={{overflowX:"scroll",width: '100vw',  whiteSpace: 'nowrap' }} >
             <Box style={{ width: '200vw' }}>
-            <Flex display={'flex'} gap={10} pt={10} pb={10}    pl={2}>
+            <Flex display={'flex'} gap={'10px'} pt={'10px'} pb={'10px'}    pl={'2px'}>
              {
                 obj.map((item)=>(
            
@@ -202,11 +203,11 @@ const  login = ()=>{
          
              <Box style={{overflowX:"scroll",width: '100vw',  whiteSpace: 'nowrap' }} >
             <Box style={{ width: '200vw' }}>
-            <Flex display={'flex'} gap={10} pt={10} pb={10}    pl={2}>
+            <Flex display={'flex'} gap={'10px'} pt={'10px'} pb={'10px'}    pl={'2px'}>
              {
                 data.map((item)=>(
            
-            <Button borderEndRadius="10px" width="200px"  >{item.innerbox}</Button>
+            <Button borderEndRadius="10px" width="200px" fontSize={'11px'} >{item.innerbox}</Button>
              ))
             }
              </Flex>
@@ -219,14 +220,14 @@ const  login = ()=>{
       </Box>
       <Box width="100%">
       <ChakraProvider>
-      <Box display="grid" gridTemplateColumns="repeat(3, 1fr)" gap={4} p={10}>
+      <Box display="grid" gridTemplateColumns= {{ base:'repeat(1,1fr)', md:'repeat(2,1fr)',lg:'repeat(3,1fr)'}} gap={'10px'} p={'10px'}>
         
         {card.map((item)=>(
-        <Box bg={'white'} borderRadius="10px" width="400px" height="150px">
+        <Box bg={'white'} borderRadius="10px" width="350px" height="150px">
         
         <Flex display={'flex'} justifyContent="space-between" >
         
-            <Box  p={5}>
+            <Box  p={'5px'}>
             <Avatar name='' size='xl' src={item.image} />
            </Box>
             
@@ -236,18 +237,18 @@ const  login = ()=>{
                
                 <Flex direction={'row'} justifyContent="space-between">
               
-                <Box p={5}>
+                <Box p={'5px'}>
                     <Text>{item.textone}</Text>
                     <Text>{item.texttwo}</Text>
                     <Text>{item.textthree}</Text>
                 </Box>
                 
-                <Box p={5}>
+                <Box p={'5px'}>
                  <Flex display={'flex'} justifyContent="space-evenly"> 
-                <Box mt={12}>
+                <Box mt={'12px'}>
                 <Text color={'yellow.900'}><GiTrophyCup/></Text>
                 </Box>
-                <Box pl={2}>
+                <Box pl={'2px'}>
                  <Text>{item.contentone}</Text>
                  <Text>{item.contenttwo}</Text>
                  <Text>{item.contentthree}</Text>

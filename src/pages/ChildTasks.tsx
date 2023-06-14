@@ -122,16 +122,16 @@ const obj=[
     <Box bg={'gray.300'}  width={"100%"}>
 
      <ChakraProvider>
-      <Box display="grid" gridTemplateColumns="repeat(3, 1fr)" gap={4} p={10}>
+      <Box display="grid" gridTemplateColumns= {{ base:'repeat(1,1fr)', md:'repeat(2,1fr)',lg:'repeat(3,1fr)'  }} gap={'10px'} p={'10px'}>
        
        {dataObj.map((item)=>(
         <Box>
-        <Text pl={5} color={'#004570'}>{item.Outertitle}</Text>
+        <Text pl={'5px'} color={'#004570'}>{item.Outertitle}</Text>
         
-        <Box bg={'white'} borderRadius={10}>
+        <Box bg={'white'} borderRadius={'10px'}>
         <Flex display={'flex'} justifyContent="space-between">
         
-            <Box  p={5}>
+            <Box  p={'5px'}>
             <Avatar name='' size='xl' src={item.image} />
            </Box>
             
@@ -174,12 +174,12 @@ const obj=[
        
     <Flex display={'flex'} justifyContent={'center'}>
     <Box>
-    <Text color={'#004570'} fontSize={16} fontWeight={'bold'}>Recently Completed Tasks</Text>
+    <Text color={'#004570'} fontSize={'16px'} fontWeight={'bold'}>Recently Completed Tasks</Text>
     </Box>
     </Flex>
 
       <ChakraProvider>
-      <Box display="grid" gridTemplateColumns="repeat(3, 1fr)" gap={4} p={10}>
+      <Box display="grid" gridTemplateColumns= {{ base:'repeat(1,1fr)', md:'repeat(2,1fr)',lg:'repeat(3,1fr)'}} gap={4} p={10}>
        
       {
             obj.map((item)=>(
