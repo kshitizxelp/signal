@@ -2,15 +2,21 @@ import React, { useRef, useState } from 'react'
 import { Box, Text,HStack,Image,Link, Flex,Button,ChakraProvider,Avatar,Progress ,Slider ,SliderTrack,SliderFilledTrack,SliderThumb} from '@chakra-ui/react'
 import { AiOutlineArrowLeft ,IoIosAddCircleOutline,BiEdit ,RiSurveyLine ,RiMedalLine} from 'react-icons/all';
 import ReactPlayer from 'react-player';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 
 const AddJumps = () => {
 
   const navigate = useNavigate()
+  const {state} = useLocation()
+
+  console.log("statefromjump",state?.data)
   const Back = ()=>{
     navigate("/AddVideos")
   }
+
+ 
+
 //     const videoUrl = 'https://youtu.be/Y9i3OIMitRQ';
 //     const thumbnailUrl = 'src/assets/Mask Group 5@3x.png';
     
@@ -54,9 +60,10 @@ const AddJumps = () => {
 
 // const nextscreen =()=>{
 //     navigate("/")
-// }
+// }  
 
 const [played, setPlayed] = useState(0);
+
 
 const handleProgress = (progress :any) => {
   setPlayed(progress.played);
@@ -184,9 +191,11 @@ const handleSeek = (value :any) => {
   <Box mt={'100px'} >
     <Flex  display={'flex'} justifyContent={'center'}>
       <ReactPlayer
-        url="https://www.youtube.com/watch?v=OP1yvauwAys"
+     
+        url={state?.data}
         controls
         onProgress={handleProgress}
+       
         width="50%"
         height="auto"
       />

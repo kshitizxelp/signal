@@ -1,25 +1,59 @@
-import { Box, Text ,Image, Input, Flex, Button } from '@chakra-ui/react'
+import { Box, Text ,Image, Input, Flex, Button,Slider,SliderTrack,SliderFilledTrack,SliderThumb } from '@chakra-ui/react'
+import ReactPlayer from 'react-player';
+
 
 
 import {FiUpload  } from 'react-icons/all';
 
-import React from 'react'
+import React, { useState } from 'react'
 import VideoPlayer from '../component/VideoPlayer';
 import { useNavigate } from 'react-router-dom';
 
 export default function AddVideos() {
 
-  const videoUrl = 'https://youtu.be/Y9i3OIMitRQ';
-  const thumbnailUrl = 'src/assets/Mask Group 5@3x.png';
+  // const videoUrl = 'https://youtu.be/Y9i3OIMitRQ';
+  // const thumbnailUrl = 'src/assets/Mask Group 5@3x.png';
 
   const navigate = useNavigate()
   const next = ()=>{
-    navigate("/AddJumps")
+    navigate("/AddJumps",{
+      state: {
+        data:data?.text
+      }
+    })
   }
 
   const back = ()=>{
     navigate("/CreateNewTask1")
   }
+
+  const [data, setData] = useState({
+    videoname: "",
+    text: "https://www.youtube.com/watch?v=OP1yvauwAys",
+   
+  });
+  // const {videoname,text} = data;
+
+  console.log("videname", data)
+
+  const changeHandler = (e:any) => {
+    setData({ ...data, [e.target.name]: e.target.value });
+    console.log('data')
+  };
+
+
+  const [played, setPlayed] = useState(0);
+
+const handleProgress = (progress :any) => {
+  setPlayed(progress.played);
+  
+};
+console.log(played,"played")
+
+const handleSeek = (value :any) => {
+  setPlayed(value);
+};
+
   return (
     <Box display="flex" flexDirection="column" >
     <Box bg="gray" width="100%" >
@@ -46,11 +80,13 @@ export default function AddVideos() {
           <Text  marginBottom="10px">Name of the Video</Text>
           <Input
               type="text"
+              name="videoname"
               variant="outline"
               bgColor="white"
               borderColor="black"
               width="373px"
               marginBottom="10px"
+              onChange={changeHandler}
             /> <br/>
           <Text> Video Url</Text>
             <Input
@@ -60,6 +96,8 @@ export default function AddVideos() {
               borderColor="black"
               width="373px"
               marginBottom="10px"
+              name="text"
+              onChange={changeHandler}
             />
             <Text color="#282828" fontSize="9px">Add Video</Text>
             </Box>
@@ -73,9 +111,38 @@ export default function AddVideos() {
            <Text as="b" color={'#004570'} >Preview</Text>
 
            </Flex>
-           <Box alignSelf="center" marginLeft="120px" > 
+           {/* <Box alignSelf="center" marginLeft="120px" > 
               <VideoPlayer videoUrl={videoUrl} thumbnailUrl={thumbnailUrl}  />
-           </Box>
+           </Box> */}
+
+<Flex  display={'flex'} justifyContent={'center'}>
+      <ReactPlayer
+        url={data?.text}
+        controls
+        onProgress={handleProgress}
+        width="50%"
+        height="250px"
+      />
+        </Flex>
+        <Flex  display={'flex'} justifyContent={'center'}> 
+      <Slider
+        value={played}
+        min={0}
+        max={1}
+        step={0.01}
+        onChange={handleSeek}
+        colorScheme="blue"
+        aria-label="Video progress" 
+        mt={4}
+        width="50%"
+      >
+        <SliderTrack bg="gray.200" >
+          <SliderFilledTrack bg="blue.500" />
+        </SliderTrack>
+        <SliderThumb boxSize={6} />
+      </Slider>
+      </Flex>
+      
            <Flex flexDirection="row" justifyContent="center"  >
               <Button variant="ghost" marginRight="60px" onClick={back} >Back</Button>
               <Button colorScheme="blue" onClick={next}> Next</Button>
