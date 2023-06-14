@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import ReactPlayer from 'react-player';
 import { Box, Image, IconButton } from '@chakra-ui/react';
 
-export default function VideoPlayer ({ videoUrl, thumbnailUrl }) {
+export default function VideoPlayer ({ videoUrl }) {
     const [isVideoPlaying, setIsVideoPlaying] = useState(false);
   
     const handlePlay = () => {
@@ -13,7 +13,7 @@ export default function VideoPlayer ({ videoUrl, thumbnailUrl }) {
       <Box position="relative" height="400px" width="800px" >
         {!isVideoPlaying && (
           <Box position="relative">
-            <Image src={thumbnailUrl} alt="Thumbnail" width="80%" height="auto" />
+            <Image src={"src/assets/Mask Group 5@3x.png"} alt="Thumbnail" width="80%" height="auto" />
             <Image
             src="src/assets/play@3x.png"
             alt="Play Button"
