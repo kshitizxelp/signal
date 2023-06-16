@@ -5,7 +5,7 @@ import ReactPlayer from 'react-player';
 
 import {FiUpload  } from 'react-icons/all';
 
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import VideoPlayer from '../component/VideoPlayer';
 import { useNavigate } from 'react-router-dom';
 
@@ -13,6 +13,7 @@ export default function AddVideos() {
 
   // const videoUrl = 'https://youtu.be/Y9i3OIMitRQ';
   // const thumbnailUrl = 'src/assets/Mask Group 5@3x.png';
+  const reactPlayerRef = useRef<any>(null);
 
   const navigate = useNavigate()
   const next = ()=>{
@@ -42,16 +43,20 @@ export default function AddVideos() {
   };
 
 
-  const [played, setPlayed] = useState(0);
+const [played, setPlayed] = useState(0);
 
 const handleProgress = (progress :any) => {
   setPlayed(progress.played);
+  const time = reactPlayerRef.current.getCurrentTime()
   
+   
 };
 console.log(played,"played")
 
 const handleSeek = (value :any) => {
   setPlayed(value);
+  reactPlayerRef.current.seekTo(value);
+ 
 };
 
   return (
@@ -117,6 +122,7 @@ const handleSeek = (value :any) => {
 
 <Flex  display={'flex'} justifyContent={'center'}>
       <ReactPlayer
+        ref={reactPlayerRef}
         url={data?.text}
         controls
         onProgress={handleProgress}

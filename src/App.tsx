@@ -48,6 +48,7 @@ import ContentSelection37 from "./pages/ContentSelection37";
 import ContentSelection2 from "./pages/ContentSelection2";
 import AddJumps from "./pages/AddJumps";
 import Settings from "./pages/Settings";
+import Jump from "./pages/Jump";
 // 
 
 
@@ -101,6 +102,7 @@ function App() {
         <Route path="/ContentSelection2" element={<ContentSelection2/>} />
         <Route path="/AddJumps" element={<AddJumps/>} />
         <Route path="/Settings" element={<Settings/>} />
+        <Route path="/Jump" element={<Jump/>} />
 
         
         <Route path="/UserNameSuccessRewards" element={<UserNameSuccessRewards/>} />
