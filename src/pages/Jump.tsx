@@ -12,10 +12,10 @@ const Jump = () => {
 
 const navigate = useNavigate()
 const Back = ()=>{
-    navigate("/")
+    navigate("/AddJumps")
 }
 const next = ()=>{
-    navigate("")
+    navigate("/AddSpeed")
 }
 
 
@@ -98,7 +98,7 @@ const handleSeek = (value :any) => {
 
       
         <Box ml="50px">
-            <Text color={'#004570'} fontWeight={'bold'}>Add Speed</Text>
+            <Text color={'#004570'} fontWeight={'bold'}>Add Jump</Text>
             <Text fontSize="14px" p="30px">Would you like to add Jumps to the Video? Play the video or drag the slider to reach a timestamp and hit 'Stop Jump' to specify the start/end timestamps for the portion of the video that needs to be skipped.</Text>
         </Box>
            <Flex display={'flex'} justifyContent={'center'}>
