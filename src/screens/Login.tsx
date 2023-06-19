@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Icon, IconButton, Image, Input,Text, InputGroup, InputLeftElement} from '@chakra-ui/react'
+import { Box, Button, Flex, Icon, IconButton, Image, Input,Text, InputGroup, InputLeftElement, Link} from '@chakra-ui/react'
 import React, { useState ,} from 'react'
 import { SiGoogle, SiMicrosoftoffice, AiOutlineMobile } from 'react-icons/all';
 import { useNavigate, useNavigation } from "react-router-dom";
@@ -39,11 +39,25 @@ export default function Login() {
       ];
 
   return (
-    <Flex direction="column" alignItems="center" mt={0}> 
-      <Box boxSize="184px">
-        <Image src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov" />
+    <Box bg={'gray.400'}>
+    <Flex direction="column" alignItems="center" pt={'50px'} pb={'100px'}> 
+    <Box
+      boxShadow="dark-lg"
+      p="6"
+      rounded=""
+      bg="white"
+      borderRadius={'50px'}
+      width="400px"
+      >
+     
+      <Box>
+      <Flex display={'flex'} justifyContent={'center'}>
+        <Image src="src/assets/SIGNAL LOGO (2)@3x.png" alt=""  height={'150px'}/>
+        </Flex>
       </Box>
-     <Box mt={8}>
+     
+     <Flex display={'flex'} justifyContent={'center'}>
+     <Box mt={'5px'}>
      {inputs.map((input: any) => (
           <Box key={input.name} mb={4}>
             <Flex flexDirection="row" justifyContent="space-between">
@@ -67,16 +81,24 @@ export default function Login() {
           </Box>
         ))}
      </Box>
-     <Box mt={8}>
+     </Flex>
+    
+    <Flex display={'flex'} justifyContent={'center'}>
+     <Box mt={'5px'}>
      <Button colorScheme="blue" size="lg" bg="rgba(0, 69, 112, 1)" width="313px" onClick={Login}>
           Login
        </Button>
       </Box>
-      <Box mt={8}>
+      </Flex>
+
+     <Flex display={'flex'} justifyContent={'center'}>
+      <Box mt={'5px'}>
       <Text>or</Text>
-      <Text mt={2}>Login Using</Text>
+      <Text mt={'2px'}>Login Using</Text>
       </Box>
-      <Flex direction="row"  justifyContent="space-between"  mt={5} >
+      </Flex> 
+
+      <Flex direction="row"  justifyContent="space-between"  mt={'5px'} >
       <Button
       leftIcon={<SiGoogle color="#DB4437" />}
       variant="solid"
@@ -86,7 +108,7 @@ export default function Login() {
       justifyContent="center"
       borderColor="rgba(40, 40, 40, 0.3)"
       bg="white"
-      mr={8}
+      mr={'5px'}
       
     >
       <Flex alignItems="center" >
@@ -102,10 +124,10 @@ export default function Login() {
       justifyContent="center"
       borderColor="rgba(40, 40, 40, 0.3)"
       bg="white"
-      mr={8}
+      mr={'5px'}
     >
       <Flex alignItems="center">
-        <Text mt={1}>Office 365</Text>
+        <Text mt={'1px'}>Office 365</Text>
       </Flex>
     </Button>
     <Button
@@ -119,13 +141,15 @@ export default function Login() {
       bg="white"
     >
       <Box alignItems="center" onClick={() => navigateTo()}>
-        <Text mt={1}>Mobile</Text>
+        <Text mt={'1px'}>Mobile</Text>
       </Box>
     </Button>
     </Flex>
-    <Box mt={4}>
-        <Text>If u don't have an account.Sign Up</Text>
+    <Box mt={'5px'}>
+        <Link color={'blue'}>If u don't have an account.Sign Up</Link>
+    </Box>
     </Box>
     </Flex>
+    </Box>
   )
 }

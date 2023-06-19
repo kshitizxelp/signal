@@ -15,42 +15,48 @@ export default function ChildVerification1() {
   }
 
   return (
-  <Flex direction="column" alignItems="center"  position="relative" >
+    <Box bg={'gray'} width={'100%'} >
+  <Flex direction="column" alignItems="center"  position="relative" pt={'100px'} pb={'200px'} >
     <Box
    boxShadow="dark-lg"
-   p="6"
+   p="0px"
    rounded=""
    bg="white"
-   borderRadius={60}
+   borderRadius={'50px'}
    // height="620px"
-   width="500px"
+   width="400px"
    alignItems="center"
    justifyContent="center"
  >
-    <Flex display={'flex'} justifyContent={'center'}>
       <Box>
-      <Image src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov" height={200}/>
+      <Flex display={'flex'} justifyContent={'center'}>
+      <Image src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov" height={'150px'}/>
+      </Flex>
       </Box>
-     </Flex>
+     
   
        <Flex display={'flex'} justifyContent={'center'}>
-        <Box mt={4}>
+        <Box mt={'4px'}>
          <Text fontSize="20px" as="b" color="#004570" >Child Verification</Text>
 
-        <Text mt={4}>Please take a face closeup photo of the child</Text>
+        <Text mt={'4px'}>Please take a face closeup photo of the child</Text>
         </Box> 
         </Flex>
 
       <Flex display={'flex'} justifyContent={'center'}>
-       <Box mt={4}>
-       <Image src="src/assets/Mask Group 1@3x.png"  height="280" width="313px"/>
+       <Box mt={'4px'}>
+       <Image src="src/assets/Mask Group 1@3x.png"  height="220px" width="223px"/>
        </Box>
        </Flex>
      
-     <Box mt={20} as="button" onClick={() => navigateTo()} mb={20} marginLeft="210px">
+    <Flex display={'flex'} justifyContent={'center'}>
+     <Box mt={'20px'} as="button" onClick={() => navigateTo()} mb={'20px'} >
      <VscDeviceCamera onClick={() => navigateTo()} size={30}/>
     </Box>
+    </Flex>
+   
     </Box>
     </Flex>
+    </Box>
   )
 }

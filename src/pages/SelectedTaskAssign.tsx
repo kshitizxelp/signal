@@ -127,12 +127,13 @@ const SelectedTaskAssign = () => {
           },
     ]
   return (
-    <Box bg={'gray.300'}>
+    <Box bg={'gray.300'} width={'100%'}>
      <Box  display={"flex"}
             flexDirection={"row"}
             justifyContent={"space-between"}
             alignItems={"center"}
             bg={'gray.200'}
+            width="100%"
             >
        <HStack gap={"5"} pr={5}>
        <Text marginLeft="10px" color={'#004570'} ><AiOutlineArrowLeft/></Text>
@@ -142,7 +143,7 @@ const SelectedTaskAssign = () => {
       </Box> 
 
         <Box mt={5}>
-         <Text p={2} noOfLines={[1, 2, 3]}>We have the following recommended tasks for Shreya. Please select or create additional tasks as needed.</Text>
+         <Text p={5} >We have the following recommended tasks for Shreya. Please select or create additional tasks as needed.</Text>
        </Box>
 
     <Box bg={'gray'} mt={20}  >
@@ -150,14 +151,14 @@ const SelectedTaskAssign = () => {
         <Text color={'#004570'}>Select the age below</Text>
         </Box>
           
-          <Box width="95%">
-            <Flex display={'flex'} gap={10} pt={10} pb={10}  overflowX="scroll"  whiteSpace="nowrap" pl={2}>
-            
+         
+             <Box style={{overflowX:"scroll",width: '100vw',  whiteSpace: 'nowrap' }} >
+            <Box style={{ width: '200vw' }}>
+            <Flex display={'flex'} gap={'10px'} pt={'10px'} pb={'10px'}    pl={'2px'}>
              {
                 obj.map((item)=>(
-              <Box bg={'white'}  borderRadius={10} justifyContent={'center'} p={2} w={200}  >
-              <Text textAlign={'center'}>{item.innerbox}</Text>
-             </Box>
+           
+            <Button borderEndRadius="10px" width="200px"  >{item.innerbox}</Button>
              ))
             }
              </Flex>
@@ -171,16 +172,16 @@ const SelectedTaskAssign = () => {
 
 
      <ChakraProvider>
-      <Box display="grid" gridTemplateColumns="repeat(3, 1fr)" gap={10} p={10}> 
+      <Box display="grid" gridTemplateColumns={{ base:'repeat(1,1fr)',md:'repeat(2,1fr)', lg: 'repeat(3, 1fr)'}} gap={'5px'} p={'10px'}> 
           
     {data.map((item)=>(
- <Box bg={'gray.100'}  width={370}height={200} >
-     <Text pl={10} color={'#004570'}>{item.outerhead}</Text>
+ <Box bg={'gray.100'}  width={'310px'}height={'200px'} >
+     <Text pl={'10px'} color={'#004570'}>{item.outerhead}</Text>
       
- <Box  bg={'gray-100'} pl={2}  >
+ <Box  bg={'gray-100'} pl={'2px'}  >
         
-        <Box bg={'white'} borderRadius={5} width={'350px'}  >    
-            <Box ml={20}>
+        <Box bg={'white'} borderRadius={'5px'} width={'280px'}  ml={'10px'}>    
+            <Box ml={'10px'}>
                <Flex display={'flex'} justifyContent="space-evenly">
                 <Text>{item.innerheadfirst}</Text>
                 <Text color={'blue'}><SlNote/></Text>
@@ -197,15 +198,15 @@ const SelectedTaskAssign = () => {
                   
                 ></Radio>
                 <Avatar name='Dan Abrahmov' size='md' src={item.imageone} />
-                <Text pt={5}>Rewards:</Text>
-                <Text pt={5}>{item.rewardvaluefirst}</Text>
-                <Text pt={5} color={'yellow.500'}><GiTrophyCup/></Text>
+                <Text pt={'5px'}>Rewards:</Text>
+                <Text pt={'5px'}>{item.rewardvaluefirst}</Text>
+                <Text pt={'5px'} color={'yellow.500'}><GiTrophyCup/></Text>
                 </Flex>
              </Box>
              </Box>
 
-        <Box bg={'white'} borderRadius={2} mt={4} width={'350px'}>    
-            <Box ml={20}>
+        <Box bg={'white'} borderRadius={'2px'} mt={'4px'} width={'280px'} ml={'10px'}>    
+            <Box ml={'10px'}>
                <Flex display={'flex'} justifyContent="space-evenly">
                 <Text>{item.innerheadsecond}</Text>
                 <Text color={'blue'}><SlNote/></Text>
@@ -222,9 +223,9 @@ const SelectedTaskAssign = () => {
                   
                 ></Radio>
                 <Avatar name='Dan Abrahmov' size='md' src={item.imagetwo} />
-                <Text pt={5}>Rewards:</Text>
-                <Text pt={5}>{item.rewardvaluesecond}</Text>
-                <Text pt={5} color={'yellow.500'}><GiTrophyCup/></Text>
+                <Text pt={'5px'}>Rewards:</Text>
+                <Text pt={'5px'}>{item.rewardvaluesecond}</Text>
+                <Text pt={'5px'} color={'yellow.500'}><GiTrophyCup/></Text>
                 </Flex>
              </Box>
              </Box>
@@ -253,6 +254,7 @@ const SelectedTaskAssign = () => {
        )}
          </Flex>
 
+    </Box>
     </Box>
   )
 }

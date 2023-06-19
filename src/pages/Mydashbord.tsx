@@ -29,15 +29,15 @@ function Mydashbord() {
     const dataObj = [
         {
           image: "src/assets/girl@3x.png" ,
-          text: "Gopi",
+          text: "vineet",
         },
         {
             image: "src/assets/boy@3x.png" ,
-            text: "Vineet",
+            text: "Gopi",
           },
           {
             image: "src/assets/girl@3x.png" ,
-            text: "GopiSunkara",
+            text: "Rani",
           },
           {
             image: "src/assets/boy@3x.png" ,

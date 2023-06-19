@@ -10,16 +10,15 @@ export default function LoginMobileOtp() {
   };
   return (
     <Box bg={'gray.300'}> 
-      <Flex display={'flex'} justifyContent={'center'}>
+      <Flex display={'flex'} justifyContent={'center'} pt={'150px'} pb={'200px'}>
       <Box
         boxShadow="dark-lg"
         p="1"
         rounded=""
         bg="white"
         borderRadius={90}
-        height="600px"
-        width={500}
-        mt={10}
+        width={'400px'}
+        mt={'10px'}
       >
       {/* <Flex justifyContent={"center"} > */}
 
@@ -27,13 +26,13 @@ export default function LoginMobileOtp() {
           <Image
             src=" src/assets/SIGNAL LOGO (2)@3x.png"
             alt="Dan Abramov"
-            height={150}
-            mt={20}
+            height={'150px'}
+            mt={'20px'}
           />
         </Box>
         <Box >
         
-        <Flex display={'flex'} justifyContent={'center'} mt={40}>
+        <Flex display={'flex'} justifyContent={'center'} mt={'10px'}>
         <form> 
 
         

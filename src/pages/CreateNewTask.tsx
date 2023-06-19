@@ -78,7 +78,7 @@ export default function CreateNewTask() {
         </Flex>
     
     <ChakraProvider>
-      <Box display="grid" gridTemplateColumns="repeat(3, 1fr)" gap={4} p={10}>
+      <Box display="grid" gridTemplateColumns={{base:'repeat(1,1fr)',md:'repeat(2,1fr)',lg:'repeat(3,1fr)'}} gap={4} p={10}>
         {/* Card 1 */}
        {data.map((item)=>(
         <Flex
@@ -325,10 +325,10 @@ export default function CreateNewTask() {
            
            
            > */}
-    <Flex display={'flex'} justifyContent={'center'} m={20} mb={40}>
+    <Flex display={'flex'} justifyContent={'center'} m={5} >
     <Checkbox colorScheme='green' defaultChecked>
     </Checkbox>
-    <Text p={10} noOfLines={[1,2,3]}>By checking this box you confirm that you have the right to provide this information either as a parent or carer (for learners under 13 years old) or that you have consent to provide such information (13years and over).</Text>
+    <Text p={1} >By checking this box you confirm that you have the right to provide this information either as a parent or carer (for learners under 13 years old) or that you have consent to provide such information (13years and over).</Text>
     </Flex>
     {/* </Box> */}
 

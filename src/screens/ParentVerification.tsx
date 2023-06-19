@@ -17,29 +17,29 @@ export default function ParentVerification() {
 
   return (
     <Box bg={'gray'}>
-    <Flex direction="column" alignItems="center"  >
+    <Flex direction="column" alignItems="center" pt={'40px'} pb={'50px'}>
        <Box
       boxShadow="dark-lg"
       p="0"
       rounded=""
       bg="white"
-      borderRadius={60}
+      borderRadius={'50px'}
       // height="620px"
-      width="600px"
+      width="450px"
       alignItems="center"
       justifyContent="center"
-      mt={10}
+      mt={'10px'}
     >
       <Flex display={'flex'} justifyContent={'center'}>
        <Box mt={4} >
-        <Image src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov" height={200} />
+        <Image src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov" height={'150px'} />
        </Box>
        </Flex>
      
        <Flex display={'flex'} justifyContent={'center'}>
-        <Box mt={4} textAlign="left">
-        <Text fontSize="20px" as="b" color="#004570">Parent Verification</Text>
-            <Text mt={6}>
+        <Box mt={'4px'} textAlign="left">
+        <Text fontSize="18px" as="b" color="#004570" m={'10px'}>Parent Verification</Text>
+            <Text mt={'6px'} m={'10px'} fontSize={'16px'}>
             Please help us in nurturing a safe online environment for children. 
          <br></br>
          <br></br>
@@ -53,8 +53,8 @@ export default function ParentVerification() {
       </Flex>
      
       <Flex display={'flex'} justifyContent={'center'}>
-      <Box pt={50} mb={30}>
-      <Button mt={12} colorScheme="blue" size="lg" bg="rgba(0, 69, 112, 1)" width="313px" onClick={Login1}>
+      <Box pt={'50px'} mb={'30px'}>
+      <Button mt={'12px'} colorScheme="blue" size="lg" bg="rgba(0, 69, 112, 1)" width="313px" onClick={Login1}>
           Aadhaar Card
         </Button>
         
@@ -62,8 +62,8 @@ export default function ParentVerification() {
         </Flex>
 
       <Flex display={'flex'} justifyContent={'center'}>
-      <Box mb={10}>
-        <Button mt={4} colorScheme="blue" size="lg" bg="rgba(0, 69, 112, 1)" width="313px" onClick={Login2} >
+      <Box mb={'10px'}>
+        <Button mt={'4px'} colorScheme="blue" size="lg" bg="rgba(0, 69, 112, 1)" width="313px" onClick={Login2} >
           Pan Card
         </Button>
         </Box>
