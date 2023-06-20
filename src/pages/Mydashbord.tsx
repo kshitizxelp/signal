@@ -69,7 +69,7 @@ function Mydashbord() {
             height={100}
             bg={'white'}
             mb={10} 
-            onClick={() => navigateTo(item.text)}>
+            onClick={() => navigateTo(item.text)} cursor={"pointer"}>
     <Avatar name='Dan Abrahmov' size='xl' src={item.image} />
     <Text>{item.text}</Text>
     </Box>   

@@ -12,8 +12,8 @@ export default function CreateNewTask() {
         navigate("/CreateNewTask1")
     }
 
-    const Login = () =>{
-      navigate("")
+    const Back = () =>{
+      navigate("/SelectedTaskAssign")
   }
 
   const LoginTo =()=>{
@@ -333,7 +333,7 @@ export default function CreateNewTask() {
     {/* </Box> */}
 
        <Flex flexDirection="row" justifyContent="center">
-       <Button colorScheme="blue" borderRadius="20px" mb={50} mr={30} size="lg" bg="#F5F5F5" width="110px" color="black" onClick={Login}>
+       <Button colorScheme="blue" borderRadius="20px" mb={50} mr={30} size="lg" bg="#F5F5F5" width="110px" color="black" onClick={Back}>
         Back
        </Button>
 

@@ -127,6 +127,9 @@ const navigate = useNavigate()
 const  login = ()=>{
   navigate("/ContentSelection")
 }
+const  Back = ()=>{
+  navigate("/CreateNewTask1")
+}
 
 
 
@@ -140,7 +143,7 @@ const  login = ()=>{
             width={'100%'}
             >
        <HStack gap={"5"} pr={'5px'}>
-       <Text marginLeft="10px" color={'#004570'} ><AiOutlineArrowLeft/></Text>
+       <Text marginLeft="10px" color={'#004570'} ><AiOutlineArrowLeft onClick={Back}/></Text>
        <Box>
        <Text marginLeft="10px" color={'#004570'} mb="2px" fontSize={12}>Add English Content for </Text>
        <Text marginLeft="10px" color={'#004570'}mb="3px" >GopiSunkara </Text>

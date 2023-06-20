@@ -50,6 +50,11 @@ import AddJumps from "./pages/AddJumps";
 import Settings from "./pages/Settings";
 import Jump from "./pages/Jump";
 import AddSpeed from "./pages/AddSpeed";
+import AddAnecdote from "./pages/AddAnecdote";
+import AddQuiz from "./pages/AddQuiz";
+import FinalContent from "./pages/FinalContent";
+import SelectedRewards from "./pages/SelectedRewards";
+
 // 
 
 
@@ -105,6 +110,10 @@ function App() {
         <Route path="/Settings" element={<Settings/>} />
         <Route path="/Jump" element={<Jump/>}/>
         <Route path="/AddSpeed" element={<AddSpeed/>}/>
+        <Route path="/AddAnecdote" element={<AddAnecdote/>}/>
+        <Route path="/AddQuiz" element={<AddQuiz/>}/>
+        <Route path="/FinalContent" element={<FinalContent/>}/>
+        <Route path="/SelectedRewards" element={<SelectedRewards/>}/>
         
 
         

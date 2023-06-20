@@ -60,7 +60,7 @@ const data=[
 ];
 const dataTwo=[
     {
-        headone:"Quation 1",
+        headone:"Quation 2",
         headtwo:"Quqtion Timestamp:",
         timestamp:"00:01:22",
         headthree:"Edit you Quation",
