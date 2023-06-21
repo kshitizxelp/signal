@@ -10,12 +10,13 @@ const FinalContent = () => {
      const Back =()=>{
         navigate("/AddQuiz")
      }
-     const Next =()=>{
-        navigate("")
+     const Save =()=>{
+        navigate("/VideoSuccessfullySaved")
      }
      const RelatedRewards =()=>{
         navigate("/SelectedRewards")
       }
+      
 
 
     const reactPlayerRef = useRef<any>(null);
@@ -126,7 +127,7 @@ const FinalContent = () => {
         Back
        </Button>
 
-       <Button colorScheme="blue" borderRadius="20px"  size="lg" bg="#004570" width="110px"  >
+       <Button colorScheme="blue" borderRadius="20px"  size="lg" bg="#004570" width="110px" onClick={Save} >
          Save
          </Button>
          </Flex>

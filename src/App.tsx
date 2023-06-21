@@ -54,6 +54,7 @@ import AddAnecdote from "./pages/AddAnecdote";
 import AddQuiz from "./pages/AddQuiz";
 import FinalContent from "./pages/FinalContent";
 import SelectedRewards from "./pages/SelectedRewards";
+import VideoSuccessfullySaved from "./screens/VideoSuccessfullySaved";
 
 // 
 
@@ -114,6 +115,8 @@ function App() {
         <Route path="/AddQuiz" element={<AddQuiz/>}/>
         <Route path="/FinalContent" element={<FinalContent/>}/>
         <Route path="/SelectedRewards" element={<SelectedRewards/>}/>
+        <Route path="/VideoSuccessfullySaved" element={<VideoSuccessfullySaved/>}/>
+
         
 
         

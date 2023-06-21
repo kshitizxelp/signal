@@ -1,6 +1,6 @@
 
 import React, { useRef, useState } from 'react'
-import { Box, Text,HStack,Image,Link, Flex,Button,ChakraProvider,Avatar,Select,Slider,SliderTrack,SliderFilledTrack,SliderThumb ,Radio} from '@chakra-ui/react'
+import { Box, Text,HStack,Image,Link, Flex,Button,ChakraProvider,Stack,Select,Slider,SliderTrack,SliderFilledTrack,SliderThumb ,Radio, RadioGroup,Input} from '@chakra-ui/react'
 import { AiOutlineArrowLeft ,RiDeleteBinLine,FiUpload} from 'react-icons/all';
 import ReactPlayer from 'react-player';
 import { useNavigate } from 'react-router-dom';
@@ -10,6 +10,8 @@ const AddSpeed = () => {
 
 const reactPlayerRef = useRef<any>(null);
 const [played, setPlayed] = useState(0);
+const [speed, setSpeed] = useState('1')
+const [des, setDes] = useState('')
 
 const handleProgress = (progress :any) => {
   setPlayed(progress.played);
@@ -38,17 +40,14 @@ const [inputValues, setInputValues] = useState({
     value:"",
    
 });
-const handleInputChange = (e:any) => {
-    setInputValues({
-        ...inputValues,[e.target.name]:e.target.value
-    });
-  
-  };
-  console.log("hi",inputValues)
-  
 
+console.log("speed",{speed})
 
+const finalPayload = {
+    speed,des
+}
 
+console.log("finalPayload",finalPayload)
 
   const navigate = useNavigate()
   const next=()=>{
@@ -148,49 +147,24 @@ text === 'Stop Speed'?
          
           <Box mt={'10px'}>
           <Flex display={'flex'} alignItems="center" direction="row" gap={2} ml={'100px'}>
-          <Radio
-             value="0.5x"
-             borderColor={'black'}
-             colorScheme='green'
-             name="Time"
-             onClick={handleInputChange}
-          
-              />
-            <Text mt={0}>0.5x</Text>
-     
-       
-              <Radio
-              value="0.75x"
-              borderColor={'black'}
-              colorScheme='green'
-              name="Time2"
-              onClick={handleInputChange}
-              />
-            <Text mt={0}>0.75x</Text>
-            <Radio
-              value="1.5x"
-              borderColor={'black'}
-              colorScheme='green'
-              name="Time3"
-              onClick={handleInputChange}
-             
-              />
-            <Text mt={0}>1.5x</Text>
-            <Radio
-              value="2x"
-              borderColor={'black'}
-              colorScheme='green'
-              name="Time4"
-              onClick={handleInputChange}
-              />
-            <Text mt={0}>2x</Text>
+         
+          <RadioGroup onChange={setSpeed} value={speed}>
+      <Stack direction='row'>
+        <Radio value='1.5'>1.5x</Radio>
+        <Radio value='2.5'>2.5x</Radio>
+        <Radio value='3'>3x</Radio>
+        <Radio value='4'>4x</Radio>
+      </Stack>
+    </RadioGroup>
             </Flex>
             </Box>
 
           <Flex display={'flex'} justifyContent={'center'}>
           <Box>
            <Text>Reason to Speed</Text>
-           <Text bg={'white'} borderRadius={'5px'} height={'50px'} width={'400px'}>(optional)</Text>
+           <Input bg={'white'} borderRadius={'5px'} height={'50px'} width={'400px'}
+            onChange={(e)=>setDes(e.target.value)}
+           ></Input>
           </Box>
           </Flex>
         

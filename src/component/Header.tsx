@@ -103,7 +103,7 @@ useEffect(() => {
             justifyContent={"space-between"}
             alignItems={"center"}
             bg={'white'}
-            >
+            cursor={'pointer'} >
         <Text pl={5} onClick={() => navigateTo() }>Overview</Text>
         <Text onClick={() => navigateTo1()}>Tasks</Text>
         <Text pr={5} onClick={() => navigateTo2()}>Rewards</Text>

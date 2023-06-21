@@ -136,12 +136,12 @@ const handleClick =()=>{
                 <Text m="10px">Anecdote Timestamp:</Text>
                 <Text  m="10px"bg={'white'} borderRadius="2px" width="100px" textAlign={'center'} marginRight="200px">00:22:22</Text>
               </Box>
-              <Box>
+              <Box >
                 <Text ml="20px">Select Anecdote Type:</Text>
-                <Flex display={'flex'} justifyContent={'center'}>
-                <Select placeholder='Select option' width="350px" onChange={handleChange} >
+                <Flex display={'flex'} justifyContent={'center'} >
+                <Select placeholder='Select option' width="350px" cursor={"pointer"}  onChange={handleChange}>
                  <option value='Video' >Video</option>
-                 <option value='Image'>Image</option>
+                 <option value='Image'  >Image</option>
                  <option value='Text'>Text</option>
                 </Select>
                 </Flex>

@@ -21,7 +21,7 @@ const Back = ()=>{
 }
 
 const nextscreen =()=>{
-    navigate("/ContentSelection23")
+    navigate("/FinalContent")
 }
 
 const videoedit =()=>{
@@ -126,7 +126,7 @@ const RelatedRewards =()=>{
         Back
        </Button>
 
-       <Button colorScheme="blue" borderRadius="20px"  size="lg" bg="#004570" width="110px" >
+       <Button colorScheme="blue" borderRadius="20px"  size="lg" bg="#004570" width="110px" onClick={nextscreen} >
          Next
          </Button>
          </Flex>
