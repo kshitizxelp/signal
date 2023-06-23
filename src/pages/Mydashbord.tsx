@@ -29,7 +29,7 @@ function Mydashbord() {
     const dataObj = [
         {
           image: "src/assets/girl@3x.png" ,
-          text: "vineet",
+          text: "Gayathri",
         },
         {
             image: "src/assets/boy@3x.png" ,
@@ -72,6 +72,7 @@ function Mydashbord() {
             onClick={() => navigateTo(item.text)} cursor={"pointer"}>
     <Avatar name='Dan Abrahmov' size='xl' src={item.image} />
     <Text>{item.text}</Text>
+    
     </Box>   
     </Flex>
    

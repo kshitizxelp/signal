@@ -2,16 +2,20 @@ import React, { useRef, useState } from 'react'
 import { Box, Text,HStack,Image,Link, Flex,Button,ChakraProvider,Input,Select,Slider,SliderTrack,SliderFilledTrack,SliderThumb} from '@chakra-ui/react'
 import { AiOutlineArrowLeft ,RiDeleteBinLine ,FiUpload} from 'react-icons/all';
 import ReactPlayer from 'react-player';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const AddQuiz = () => {
 
     const navigate = useNavigate()
      const Back =()=>{
-        navigate("/AddAnecdote")
+        navigate(-1)
      }
      const Next =()=>{
-        navigate("/FinalContent")
+        navigate("/FinalContent",{
+          state:{
+            add:state?.audi
+          }
+        })
      }
 
 
@@ -35,6 +39,9 @@ const AddQuiz = () => {
         setShow(!show)
 
     }
+
+    const {state} = useLocation();
+     console.log("datadata",state?.audi)
 
     return (
 
@@ -65,7 +72,7 @@ const AddQuiz = () => {
        <Flex  display={'flex'} justifyContent={'center'}>
         <ReactPlayer
         ref={reactPlayerRef}
-        url="https://www.youtube.com/watch?v=OP1yvauwAys"
+        url={state?.audi}
         controls
         onProgress={handleProgress}
         width="50%"

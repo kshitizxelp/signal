@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react'
 import { Box, Text,HStack,Image,Link, Flex,Button,ChakraProvider,Avatar,Select,Slider,SliderTrack,SliderFilledTrack,SliderThumb} from '@chakra-ui/react'
 import { AiOutlineArrowLeft ,RiDeleteBinLine,FiUpload} from 'react-icons/all';
 import ReactPlayer from 'react-player';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 
 
@@ -12,10 +12,14 @@ const Jump = () => {
 
 const navigate = useNavigate()
 const Back = ()=>{
-    navigate("/AddJumps")
+    navigate(-1)
 }
 const next = ()=>{
-    navigate("/AddSpeed")
+    navigate("/AddSpeed",{
+        state:{
+            nexsa:state?.next
+        }
+    })
 }
 
 
@@ -78,6 +82,8 @@ const handleSeek = (value :any) => {
         }
       };
 
+      const{state} = useLocation();
+      console.log("url",state?.next) 
   return (
    <Box bg={'gray.300'} width="100%">
      <Box  display={"flex"}
@@ -111,7 +117,7 @@ const handleSeek = (value :any) => {
            <Flex  display={'flex'} justifyContent={'center'}>
       <ReactPlayer
         ref={reactPlayerRef}
-        url="https://www.youtube.com/watch?v=OP1yvauwAys"
+        url={state?.next}
         controls
         onProgress={handleProgress}
         width="50%"

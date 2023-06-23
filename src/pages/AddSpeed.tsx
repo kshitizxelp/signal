@@ -3,7 +3,7 @@ import React, { useRef, useState } from 'react'
 import { Box, Text,HStack,Image,Link, Flex,Button,ChakraProvider,Stack,Select,Slider,SliderTrack,SliderFilledTrack,SliderThumb ,Radio, RadioGroup,Input} from '@chakra-ui/react'
 import { AiOutlineArrowLeft ,RiDeleteBinLine,FiUpload} from 'react-icons/all';
 import ReactPlayer from 'react-player';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import VideoPlayer from '../component/VideoPlayer';
 
 const AddSpeed = () => {
@@ -12,6 +12,11 @@ const reactPlayerRef = useRef<any>(null);
 const [played, setPlayed] = useState(0);
 const [speed, setSpeed] = useState('1')
 const [des, setDes] = useState('')
+
+const {state}= useLocation();
+ console.log("messg",state?.nexsa)
+    
+
 
 const handleProgress = (progress :any) => {
   setPlayed(progress.played);
@@ -51,12 +56,17 @@ console.log("finalPayload",finalPayload)
 
   const navigate = useNavigate()
   const next=()=>{
-    navigate("/AddAnecdote")
+    navigate("/AddAnecdote",{
+        state:{
+            benz:state?.nexsa
+        }
+    })
   }
   const Back=()=>{
-    navigate("/Jump")
+    navigate(-1)
   }
 
+   
   return (
   
     <Box bg={'gray.300'} width="100%">
@@ -88,7 +98,7 @@ console.log("finalPayload",finalPayload)
            <Flex  display={'flex'} justifyContent={'center'}>
       <ReactPlayer
         ref={reactPlayerRef}
-        url="https://www.youtube.com/watch?v=OP1yvauwAys"
+        url={state?.nexsa}
         controls
         onProgress={handleProgress}
         width="50%"

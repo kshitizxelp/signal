@@ -50,6 +50,8 @@ export default function CreateNewTask() {
               },
               
   ];
+  const [value, setValue] = React.useState('1');
+   console.log("hiii",value)
 
   return (
 
@@ -104,31 +106,15 @@ export default function CreateNewTask() {
           
           <Box mt={10}>
           <Flex display={'flex'} alignItems="center" direction="row" gap={2}>
-            <Radio
-             value="1"
-             borderColor={'black'}
-             colorScheme='green'
           
-              />
-            <Text mt={0}>{item.itemone}</Text>
-     
-       
-              <Radio
-              value="2"
-              borderColor={'black'}
-              colorScheme='green'
-              />
-            <Text mt={0}>{item.itemtwo}</Text>
-       
-          
-              <Radio
-                value="3"
-                borderColor={'black'}
-                colorScheme='green'
-              />
-              <Text mt={0}>{item.itemthree}</Text>
-              
-            
+          <RadioGroup onChange={setValue} value={value} >
+          <Stack direction='row'>
+          <Radio value={item.itemone} borderColor={'red.200'}>{item.itemone}</Radio>
+          <Radio value={item.itemtwo} borderColor={'red.200'}>{item.itemtwo}</Radio>
+          <Radio value={item.itemthree} borderColor={'red.200'}>{item.itemthree}</Radio>
+         </Stack>
+         </RadioGroup>
+           
             <Flex  alignItems="center" direction="column">
             <BsPlusCircle color="#004570" />
             <Text mt={2} color="#004570" as="u" >Add New</Text>
@@ -139,183 +125,7 @@ export default function CreateNewTask() {
             </Flex>
             ))}
 
-
-            {/* <Flex
-          bg="gray.100"
-          p={4}
-          borderRadius="md"
-          boxShadow="md"
-          flexDirection="column"
-          height={200}
-        >
-          
-          <Box bg={'gray.300'}
-           display={"flex"}
-           flexDirection={"row"}
-           justifyContent={"space-between"}
-           alignItems={"center"}
-           >
-           <Text pl={5}>Board Games</Text> 
-           <Text fontSize={30} pr={5} onClick={LoginTo}><FaAngleUp /></Text> 
-          </Box>
-          
-          <Box mt={10}>
-          <Flex display={'flex'} alignItems="center" direction="row" gap={2}>
-            <Radio
-             value="1"
-             borderColor={'black'}
-             colorScheme='green'
-              />
-            <Text mt={0}>Chess</Text>
-     
        
-              <Radio
-              value="2"
-              borderColor={'black'}
-              colorScheme='green'
-              />
-            <Text mt={0}>Scrabble</Text>
-       
-          
-              <Radio
-                value="3"
-                borderColor={'black'}
-                colorScheme='green'
-              />
-              <Text mt={0}>Lego</Text>
-              
-            
-            <Flex  alignItems="center" direction="column">
-            <BsPlusCircle color="#004570" />
-            <Text mt={2} color="#004570" as="u" >Add New</Text>
-            </Flex>
-
-             </Flex>
-            </Box>
-            </Flex> */}
-
-
-            {/* <Flex
-          bg="gray.100"
-          p={4}
-          borderRadius="md"
-          boxShadow="md"
-          flexDirection="column"
-          height={200}
-        >
-          
-          <Box bg={'gray.300'}
-          display={"flex"}
-          flexDirection={"row"}
-          justifyContent={"space-between"}
-          alignItems={"center"}
-          >
-           <Text pl={5}>Creative Arts</Text> 
-           <Text fontSize={30} pr={5} onClick={LoginTo}><FaAngleUp /></Text> 
-          </Box>
-          
-          <Box mt={10}>
-          <Flex display={'flex'} alignItems="center" direction="row" gap={2}>
-            <Radio
-             value="1"
-             borderColor={'black'}
-             colorScheme='green'
-              />
-            <Text mt={0}>Painting</Text>
-     
-       
-              <Radio
-              value="2"
-              borderColor={'black'}
-              colorScheme='green'
-              />
-            <Text mt={0}>Singing</Text>
-       
-          
-              <Radio
-                value="3"
-                borderColor={'black'}
-                colorScheme='green'
-              />
-              <Text mt={0}>Guitar</Text>
-              
-            
-            <Flex  alignItems="center" direction="column">
-            <BsPlusCircle color="#004570" />
-            <Text mt={2} color="#004570" as="u" >Add New</Text>
-            </Flex>
-  
-            </Flex>
-            </Box>
-            </Flex> */}
-
-
-            {/* <Flex
-          bg="gray.100"
-          p={4}
-          borderRadius="md"
-          boxShadow="md"
-          flexDirection="column"
-          height={200}
-        >
-          
-          <Box bg={'gray.300'} 
-          display={"flex"}
-          flexDirection={"row"}
-          justifyContent={"space-between"}
-          alignItems={"center"}
-          >
-           <Text pl={5}>Indoor Activities</Text> 
-           <Text fontSize={30} pr={5} onClick={LoginTo}><FaAngleUp/></Text> 
-          </Box>
-          
-          <Box mt={10}>
-          <Flex display={'flex'} alignItems="center" direction="row" gap={2}>
-            <Radio
-             value="1"
-             borderColor={'black'}
-             colorScheme='green'
-              />
-            <Text mt={0}>Baking</Text>
-     
-       
-              <Radio
-              value="2"
-              borderColor={'black'}
-              colorScheme='green'
-              />
-            <Text mt={0}>Origami</Text>
-       
-          
-              <Radio
-                value="3"
-                borderColor={'black'}
-                colorScheme='green'
-              />
-              <Text mt={0}>Mechanics</Text>
-              
-            
-            <Flex  alignItems="center" direction="column">
-            <BsPlusCircle color="#004570" />
-            <Text mt={2} color="#004570" as="u" >Add New</Text>
-            </Flex>
-
-            </Flex>
-            </Box>
-            </Flex> 
-
-
-          
-         */}
-
-          
-        
-
-          
-        
-        
-
-        {/* Add more cards as needed */}
       </Box>
     </ChakraProvider>
 

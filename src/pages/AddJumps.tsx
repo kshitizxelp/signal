@@ -29,12 +29,16 @@ const AddJumps = () => {
 
   console.log("statefromjump", state?.data);
   const Back = () => {
-    navigate("/AddVideos");
+    navigate(-1);
   };
   const next = ()=>{
-    navigate("/jump")
+    navigate("/jump",{
+      state:{
+        next:state?.data
+      }
+    })
   }
- 
+ data:state.data
   
   const [inputValues, setInputValues] = useState({});
   const [enterValues, setEnterValues] = useState([]);

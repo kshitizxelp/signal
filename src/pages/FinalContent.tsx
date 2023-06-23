@@ -1,14 +1,14 @@
 import React, { useRef, useState } from 'react'
-import { Box, Text,HStack,Image,Link, Flex,Button,ChakraProvider,Input,Select,Slider,SliderTrack,SliderFilledTrack,SliderThumb} from '@chakra-ui/react'
+import { Box, Text,HStack,Image,Link, Flex,Button,ChakraProvider,Input,Select,Slider,SliderTrack,SliderFilledTrack,SliderThumb,Tabs,TabList,Tab} from '@chakra-ui/react'
 import { AiOutlineArrowLeft ,  RiMedalLine, } from 'react-icons/all';
 import ReactPlayer from 'react-player';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const FinalContent = () => {
 
     const navigate = useNavigate()
      const Back =()=>{
-        navigate("/AddQuiz")
+        navigate(-1)
      }
      const Save =()=>{
         navigate("/VideoSuccessfullySaved")
@@ -33,6 +33,9 @@ const FinalContent = () => {
      reactPlayerRef.current.seekTo(value);
      
     };
+
+    const {state} = useLocation();
+      console.log("goooooo",state?.add)
 
     
 
@@ -65,14 +68,14 @@ const FinalContent = () => {
        <Flex  display={'flex'} justifyContent={'center'}>
         <ReactPlayer
         ref={reactPlayerRef}
-        url="https://www.youtube.com/watch?v=OP1yvauwAys"
+        url={state?.add}
         controls
         onProgress={handleProgress}
         width="50%"
         height="250px"
       />
         </Flex>
-        <Flex  display={'flex'} justifyContent={'center'}> 
+        <Flex  display={'flex'} justifyContent={'center'}>   
       <Slider
         value={played}
         min={0}
@@ -132,6 +135,7 @@ const FinalContent = () => {
          </Button>
          </Flex>
          </Box>
+      
 
       </Box>
 

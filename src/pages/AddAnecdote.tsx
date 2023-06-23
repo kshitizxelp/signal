@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react'
 import { Box, Text,HStack,Image,Link, Flex,Button,ChakraProvider,Input,Select,Slider,SliderTrack,SliderFilledTrack,SliderThumb} from '@chakra-ui/react'
 import { AiOutlineArrowLeft ,RiDeleteBinLine ,FiUpload} from 'react-icons/all';
 import ReactPlayer from 'react-player';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 
 
@@ -12,11 +12,15 @@ const AddAnecdote = () => {
 
 const navigate = useNavigate()
 const Back = ()=>{
-    navigate("/AddSpeed")
+    navigate(-1)
 }
 
 const Save = ()=>{
-    navigate("/AddQuiz")
+    navigate("/AddQuiz",{
+        state:{
+            audi:state?.benz
+        }
+    })
 }
 
 const [uploadShow,setuploadShow] = useState('')
@@ -55,6 +59,8 @@ const handleClick =()=>{
     }
 }
 
+const {state}= useLocation();
+ console.log("data",state?.benz)
  
   return (
    <Box bg={'gray.300'} width="100%">
@@ -84,7 +90,7 @@ const handleClick =()=>{
        <Flex  display={'flex'} justifyContent={'center'}>
         <ReactPlayer
         ref={reactPlayerRef}
-        url="https://www.youtube.com/watch?v=OP1yvauwAys"
+        url={state?.benz}
         controls
         onProgress={handleProgress}
         width="50%"
@@ -121,7 +127,7 @@ const handleClick =()=>{
 
 
         {
-        text==='AddAnecodes'?
+        text==='AddAnecodes'? 
          <Box>
          <Flex display={'flex'} justifyContent={'center'}>
            
