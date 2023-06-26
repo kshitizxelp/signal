@@ -1,3 +1,4 @@
+
 import React, { useRef, useState } from 'react'
 import { Box, Text,HStack,Image,Link, Flex,Button,ChakraProvider,Input,Select,Slider,SliderTrack,SliderFilledTrack,SliderThumb} from '@chakra-ui/react'
 import { AiOutlineArrowLeft ,RiDeleteBinLine ,FiUpload} from 'react-icons/all';
@@ -30,7 +31,8 @@ const AddQuiz = () => {
     
     const handleSeek = (value :any) => {
      setPlayed(value);
-     reactPlayerRef.current.seekTo(value);
+     reactPlayerRef.current?.seekTo(value);
+     reactPlayerRef.current?.getInternalPlayer()?.playVideo();
      
     };
 

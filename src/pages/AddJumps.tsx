@@ -66,47 +66,7 @@ const AddJumps = () => {
  
  
 
-  //     const videoUrl = 'https://youtu.be/Y9i3OIMitRQ';
-  //     const thumbnailUrl = 'src/assets/Mask Group 5@3x.png';
-
-  //     const [isVideoPlaying, setIsVideoPlaying] = useState(false);
-
-  // const videoRef = useRef(null);
-  // const [progress, setProgress] = useState(0);
-  // const [isSeeking, setIsSeeking] = useState(false);
-
-  // const handleTimeUpdate = () => {
-  //   const { currentTime, duration } = videoRef.current;
-  //   const progressPercent = (currentTime / duration) * 100;
-  //   if (!isSeeking) {
-  //     setProgress(progressPercent);
-  //   }
-  // };
-
-  // const handleSeek = (event:any) => {
-  //   const { duration } = videoRef.current;
-  //   const clickedTime = (event.nativeEvent.offsetX / event.currentTarget.offsetWidth) * duration;
-  //   videoRef.current.currentTime = clickedTime;
-  //   setProgress((clickedTime / duration) * 100);
-  //   setIsSeeking(true);
-  // };
-
-  // const handleSeekEnd = () => {
-  //   setIsSeeking(false);
-  // };
-
-  //     const handlePlay = () => {
-  //       setIsVideoPlaying(true);
-  //     };
-
-  // const navigate = useNavigate()
-  // const Back = ()=>{
-  //     navigate("/")
-  // }
-
-  // const nextscreen =()=>{
-  //     navigate("/")
-  // }
+ 
 
   const reactPlayerRef = useRef<any>(null);
     const [played, setPlayed] = useState(0);
