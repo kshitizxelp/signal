@@ -34,11 +34,29 @@ export default function SIgnUp() {
           type: "password",
         },
         {
-            name: "password",
+            name: "confirmpassword",
             label: "Confirm Password",
             type: "password",
         }
       ];
+      
+      const [data, setData] = useState({
+        email: "",
+        username: "",
+        password:"",
+        confirmpassword:"",
+       
+      });
+     
+    
+      console.log("ssssss", data)
+    
+        const changeHandler = (e:any) => {
+          console.log(e.target.value,e.target.name,"from mhandle changeeeeeeeeeeee")
+        setData({ ...data, [e.target.name]: e.target.value });
+      };
+      console.log('data',data)
+
 
   return (
     <Box bg={'gray'} pt={'50px'} pb={'70px'}>
@@ -68,13 +86,25 @@ export default function SIgnUp() {
             <Input
               type={input.type}
               placeholder={input.placeholder}
-              value={formData[input.name]}
+              // value={inputs.[input.name]}
               name={input.name}
               variant="outline"
               bgColor="white"
               borderColor="black"
               width="313px"
+              onChange={changeHandler}
             />
+             {/* <Input
+              type={inputs.type}
+              variant="outline"
+              bgColor="white"
+              borderColor="black"
+              width="373px"
+              marginBottom="10px"
+              name={inputs.name}
+              placeholder={input.placeholder}
+              onChange={changeHandler}
+            /> */}
           </Box>
          ))}
      </Box>

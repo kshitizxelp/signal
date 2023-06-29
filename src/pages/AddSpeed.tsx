@@ -26,8 +26,9 @@ console.log(played,"played")
 
 const handleSeek = (value :any) => {
  setPlayed(value);
- reactPlayerRef.current.seekTo(value);
- 
+ reactPlayerRef.current?.seekTo(value);
+ reactPlayerRef.current?.getInternalPlayer()?.playVideo();
+
 };
 
 const [text,SetText]=useState('Addspeed')

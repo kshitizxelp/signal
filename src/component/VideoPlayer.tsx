@@ -20,7 +20,9 @@ export default function VideoPlayer () {
     
     const handleSeek = (value :any) => {
       setPlayed(value);
-      reactPlayerRef.current.seekTo(value);
+      reactPlayerRef.current?.seekTo(value);
+      reactPlayerRef.current?.getInternalPlayer()?.playVideo();
+     
     };
   
     return (

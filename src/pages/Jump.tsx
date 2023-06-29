@@ -51,36 +51,72 @@ const next = ()=>{
 const reactPlayerRef = useRef<any>(null);
    
 const [played, setPlayed] = useState(0);
+const [playedduration, setPlayedDuration] = useState(0);
+const [jumpstartnn, setJumpStartnn] = useState({
+    currentTime:"",
+endTime:''
+   
+});
 
-const handleProgress = (progress :any) => {
-  setPlayed(progress.played);
-  const time = reactPlayerRef.current.getCurrentTime()
+
+
+// const handleProgress = (progress :any) => {
+//   setPlayed(progress.played);
+//   const time = reactPlayerRef.current.getCurrentTime()
+//   console.log(time,"ggggggggggggggggg")
+
   
    
-};
-console.log(played,"played")
+// };
+const handleProgress = (progress:any) => {
+    setPlayed(progress.played);
+    const { playedSeconds } = progress;
+    setPlayedDuration(playedSeconds);
+  };
+  
+console.log(playedduration,"played>>>>>>>>>>.")
+
 
 const handleSeek = (value :any) => {
   setPlayed(value);
-  reactPlayerRef.current.seekTo(value);
+  reactPlayerRef.current?.seekTo(value);
+  reactPlayerRef.current?.getInternalPlayer()?.playVideo();
+
  
 };
 
 
     const [text, setText] = useState('Jumpstart');
-    const handleClick = () => {
-        if 
-       (text === 'jumpstart') {
+    // const handleClick = (progress:any) => {
+    // //     if 
+    // //    (text === 'jumpstart') {
          
           
-          setText('jumpStop');
+    // //       setText('jumpStop');
          
-        } 
-        else {
-          setText('jumpstart');
+    // //     } 
+    // //     else {
+    // //       setText('jumpstart');
           
-        }
+    // //     }
+    // setPlayed(progress.played);
+    // const currentTime = reactPlayerRef.current.getCurrentTime();
+    // setJumpStartnn(currentTime);
+
+    //   };
+
+    const handleClick = (e:any) => {
+        const currentTime = reactPlayerRef.current.getCurrentTime();
+        // setJumpStartnn(currentTime);
+       console.log(playedduration,"inside hanbdle clicjk")
+       setJumpStartnn((prevState:any)=>({
+        ...prevState,
+        currentTime:playedduration
+       }))
+      
       };
+
+      console.log("jumpstart",jumpstartnn)
 
       const{state} = useLocation();
       console.log("url",state?.next) 

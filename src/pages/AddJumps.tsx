@@ -79,7 +79,9 @@ const AddJumps = () => {
     
     const handleSeek = (value :any) => {
       setPlayed(value);
-      reactPlayerRef.current.seekTo(value);
+      reactPlayerRef.current?.seekTo(value);
+      reactPlayerRef.current?.getInternalPlayer()?.playVideo();
+     
     };
 
   return (

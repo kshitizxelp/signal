@@ -13,7 +13,10 @@ import {
     HStack,
     Avatar,
     Checkbox,
-    Radio
+    Radio,
+    Tabs,
+    TabList,
+    Tab
   } from "@chakra-ui/react";
   import { AiOutlineArrowLeft ,GiTrophyCup ,SlNote } from 'react-icons/all';
 import { useNavigate } from 'react-router-dom';
@@ -158,9 +161,17 @@ const SelectedTaskAssign = () => {
              {
                 obj.map((item)=>(
            
-            <Button borderEndRadius="10px" width="200px"  >{item.innerbox}</Button>
+            <Button borderEndRadius="10px" width="200px">{item.innerbox}</Button>
+            
+            
              ))
             }
+
+         {/* <Tabs variant='unstyled'>
+         <TabList>
+          <Tab _selected={{ color: 'white', bg: 'blue.500' }}>Tab 1</Tab>
+          <Tab _selected={{ color: 'white', bg: 'green.400' }}>Tab 2</Tab>
+        </TabList> */}
              </Flex>
               </Box>
             

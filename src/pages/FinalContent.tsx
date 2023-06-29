@@ -30,8 +30,9 @@ const FinalContent = () => {
     
     const handleSeek = (value :any) => {
      setPlayed(value);
-     reactPlayerRef.current.seekTo(value);
-     
+     reactPlayerRef.current?.seekTo(value);
+     reactPlayerRef.current?.getInternalPlayer()?.playVideo();
+    
     };
 
     const {state} = useLocation();

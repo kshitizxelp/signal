@@ -55,7 +55,9 @@ console.log(played,"played")
 
 const handleSeek = (value :any) => {
   setPlayed(value);
-  reactPlayerRef.current.seekTo(value);
+  reactPlayerRef.current?.seekTo(value);
+  reactPlayerRef.current?.getInternalPlayer()?.playVideo();
+ 
  
 };
 
@@ -106,13 +108,13 @@ const handleSeek = (value :any) => {
             />
             <Text color="#282828" fontSize="9px">Add Video</Text>
             </Box>
-            <Box bg="gray.100" width="300px" marginBottom="10px" marginRight="80px" display="flex" flexDirection="row" alignSelf="center" >
+            {/* <Box bg="gray.100" width="300px" marginBottom="10px" marginRight="80px" display="flex" flexDirection="row" alignSelf="center" >
             <FiUpload  />
             <Text marginTop="-6px" marginLeft="10px" fontSize="20px" as="b" >Upload Video</Text>
-           </Box>
-           <Box>
+           </Box> */}
+           {/* <Box>
            <Text marginBottom="10px" as="u" color={'#004570'} >Or add video by URL</Text>
-           </Box>
+           </Box> */}
            <Text as="b" color={'#004570'} >Preview</Text>
 
            </Flex>
