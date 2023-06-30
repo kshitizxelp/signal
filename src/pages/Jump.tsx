@@ -54,7 +54,7 @@ const [played, setPlayed] = useState(0);
 const [playedduration, setPlayedDuration] = useState(0);
 const [jumpstartnn, setJumpStartnn] = useState({
     currentTime:"",
-endTime:''
+    endTime:''
    
 });
 
@@ -86,7 +86,7 @@ const handleSeek = (value :any) => {
 };
 
 
-    const [text, setText] = useState('Jumpstart');
+    const [text, setText] = useState('click');
     // const handleClick = (progress:any) => {
     // //     if 
     // //    (text === 'jumpstart') {
@@ -108,15 +108,42 @@ const handleSeek = (value :any) => {
     const handleClick = (e:any) => {
         const currentTime = reactPlayerRef.current.getCurrentTime();
         // setJumpStartnn(currentTime);
-       console.log(playedduration,"inside hanbdle clicjk")
-       setJumpStartnn((prevState:any)=>({
-        ...prevState,
-        currentTime:playedduration
-       }))
+       console.log(playedduration,"inside hanbdle clicjk"); 
+       if 
+       (text == 'jumpstart') {
+        setText('jumpStop');
+        // setJumpStartnn((prevState:any)=>({
+        //     ...prevState,
+        //     currentTime:playedduration 
+        //    }));
+        setJumpStartnn((e:any)=>({
+            ...e,
+            endTime:playedduration 
+           }));
+       }
+       else {
+        setText('jumpstart');
+        // setJumpStartnn((e:any)=>({
+        //     ...e,
+        //     endTime:playedduration 
+        //    }));
+           setJumpStartnn((prevState:any)=>({
+            ...prevState,
+            currentTime:playedduration 
+           }));
+       }
+
+    //    setJumpStartnn((prevState:any)=>({
+    //     ...prevState,
+    //     currentTime:playedduration 
+    //    }));
+       
+       
+       
       
       };
 
-      console.log("jumpstart",jumpstartnn)
+      console.log("jumpstarttt",jumpstartnn)
 
       const{state} = useLocation();
       console.log("url",state?.next) 
