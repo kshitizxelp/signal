@@ -53,6 +53,7 @@ const reactPlayerRef = useRef<any>(null);
 const [played, setPlayed] = useState(0);
 const [playedduration, setPlayedDuration] = useState(0);
 const [jumpstartnn, setJumpStartnn] = useState({
+  
     currentTime:"",
     endTime:''
    
@@ -81,12 +82,10 @@ const handleSeek = (value :any) => {
   setPlayed(value);
   reactPlayerRef.current?.seekTo(value);
   reactPlayerRef.current?.getInternalPlayer()?.playVideo();
-
- 
 };
 
 
-    const [text, setText] = useState('click');
+    const [text, setText] = useState('jumpstart');
     // const handleClick = (progress:any) => {
     // //     if 
     // //    (text === 'jumpstart') {
@@ -110,27 +109,27 @@ const handleSeek = (value :any) => {
         // setJumpStartnn(currentTime);
        console.log(playedduration,"inside hanbdle clicjk"); 
        if 
-       (text == 'jumpstart') {
+       (text == 'jumpstart') { 
         setText('jumpStop');
-        // setJumpStartnn((prevState:any)=>({
-        //     ...prevState,
-        //     currentTime:playedduration 
-        //    }));
-        setJumpStartnn((e:any)=>({
-            ...e,
-            endTime:playedduration 
+        setJumpStartnn((prevState:any)=>({
+            ...prevState,
+            currentTime:playedduration 
            }));
-       }
-       else {
-        setText('jumpstart');
         // setJumpStartnn((e:any)=>({
         //     ...e,
         //     endTime:playedduration 
         //    }));
-           setJumpStartnn((prevState:any)=>({
-            ...prevState,
-            currentTime:playedduration 
+       }
+       else {
+        setText('jumpstart');
+        setJumpStartnn((e:any)=>({
+            ...e,
+            endTime:playedduration 
            }));
+          //  setJumpStartnn((prevState:any)=>({
+          //   ...prevState,
+          //   currentTime:playedduration 
+          //  }));
        }
 
     //    setJumpStartnn((prevState:any)=>({
@@ -235,11 +234,11 @@ const handleSeek = (value :any) => {
       <Box display={'flex'} justifyContent="space-around">
            <Box display={'flex'} m="5px">
            <Text>Start Time:</Text>
-           <Text bg={'white'} borderRadius={'5px'}>02:00:12</Text>
+           <Text bg={'white'} borderRadius={'5px'}>{jumpstartnn?.currentTime}</Text>
           </Box>
           <Box display={'flex'} m="5px" >
            <Text>End Time:</Text>
-           <Text bg={'white'} borderRadius={'5px'}>02:00:12</Text>
+           <Text bg={'white'} borderRadius={'5px'}>{jumpstartnn?.endTime}</Text>
           </Box>
           </Box>
 

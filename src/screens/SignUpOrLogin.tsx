@@ -2,13 +2,21 @@ import React from 'react'
 import { Box, Flex, Image } from '@chakra-ui/react'
 import { Button, ButtonGroup } from '@chakra-ui/react'
 import { useNavigate } from 'react-router-dom';
+import {useDispatch, useSelector} from "react-redux"
+import { increment } from '../Slice';
 
 
 
 export default function SignUpOrLogin() {
   const navigate = useNavigate();
-
+// const dispatch = useDispatch()
+// const countNum = useSelector((state)=>state?.counter)
+// console.log("countNum",countNum)
+// const onClickBtn = () =>{
+//   dispatch(increment())
+// }
   const Login1 = () => {
+    // onClickBtn()
     navigate('/Login'); 
   };
 
@@ -33,6 +41,8 @@ export default function SignUpOrLogin() {
       <Image src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov" height={'150px'} />
       </Box>
       </Flex>
+
+      {/* {countNum} */}
       
       <Flex display={'flex'} justifyContent={'center'}>
          <Box mt={'40px'}>

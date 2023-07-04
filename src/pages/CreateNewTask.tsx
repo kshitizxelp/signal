@@ -82,7 +82,7 @@ export default function CreateNewTask() {
     <ChakraProvider>
       <Box display="grid" gridTemplateColumns={{base:'repeat(1,1fr)',md:'repeat(2,1fr)',lg:'repeat(3,1fr)'}} gap={4} p={10}>
         {/* Card 1 */}
-       {data.map((item)=>(
+       {data.map((item)=>(  
         <Flex
           bg="gray.100"
           p={4}

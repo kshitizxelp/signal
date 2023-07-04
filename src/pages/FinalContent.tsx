@@ -21,19 +21,35 @@ const FinalContent = () => {
 
     const reactPlayerRef = useRef<any>(null);
     const [played, setPlayed] = useState(0);
+    const [seconds, setSeconds] = useState(0);
     
-    const handleProgress = (progress :any) => {
+    // const handleProgress = (progress :any) => {
+    //   setPlayed(progress.played);
+    //   const time = reactPlayerRef.current.getCurrentTime()
+    //   };
+    // console.log(played,"played")
+
+    const handleProgress = (progress:any) => {
       setPlayed(progress.played);
-      const time = reactPlayerRef.current.getCurrentTime()
-      };
-    console.log(played,"played")
-    
-    const handleSeek = (value :any) => {
-     setPlayed(value);
-     reactPlayerRef.current?.seekTo(value);
-     reactPlayerRef.current?.getInternalPlayer()?.playVideo();
-    
+      const { playedSeconds } = progress;
+      setSeconds(playedSeconds);
     };
+    
+   console.log(seconds,">>>>>>>>>>>>>>>")
+   console.log(played,"played")
+    
+    // const handleSeek = (value :any) => {
+    //  setPlayed(value);
+    //  reactPlayerRef.current?.seekTo(value);
+    //  reactPlayerRef.current?.getInternalPlayer()?.playVideo();
+    
+    // };
+    const handleSeek = (value :any) => {
+      setPlayed(value);
+      reactPlayerRef.current?.seekTo(value);
+      reactPlayerRef.current?.getInternalPlayer()?.playVideo();
+     
+     };
 
     const {state} = useLocation();
       console.log("goooooo",state?.add)
