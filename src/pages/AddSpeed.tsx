@@ -5,6 +5,7 @@ import { AiOutlineArrowLeft ,RiDeleteBinLine,FiUpload} from 'react-icons/all';
 import ReactPlayer from 'react-player';
 import { useLocation, useNavigate } from 'react-router-dom';
 import VideoPlayer from '../component/VideoPlayer';
+import { useSelector } from 'react-redux';
 
 const AddSpeed = () => {
 
@@ -16,6 +17,7 @@ const [des, setDes] = useState('')
 const {state}= useLocation();
  console.log("messg",state?.nexsa)
     
+
 
 
 const handleProgress = (progress :any) => {

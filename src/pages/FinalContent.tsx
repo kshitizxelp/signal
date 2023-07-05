@@ -3,6 +3,7 @@ import { Box, Text,HStack,Image,Link, Flex,Button,ChakraProvider,Input,Select,Sl
 import { AiOutlineArrowLeft ,  RiMedalLine, } from 'react-icons/all';
 import ReactPlayer from 'react-player';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 const FinalContent = () => {
 
@@ -16,7 +17,9 @@ const FinalContent = () => {
      const RelatedRewards =()=>{
         navigate("/SelectedRewards")
       }
-      
+      const jumpdata = useSelector(state=>state?.auth?.jumpData)
+
+console.log("jumpdata",jumpdata)
 
 
     const reactPlayerRef = useRef<any>(null);
@@ -33,7 +36,7 @@ const FinalContent = () => {
       setPlayed(progress.played);
       const { playedSeconds } = progress;
       setSeconds(playedSeconds);
-    };
+    };  
     
    console.log(seconds,">>>>>>>>>>>>>>>")
    console.log(played,"played")
@@ -125,7 +128,7 @@ const FinalContent = () => {
         alignItems={"center"}
          >
         <Text p={'20px'} >Add Task Reward Points</Text>
-        <Text p={'20px'} bg={'white'} borderRadius={'10px'} >320pts</Text>
+        <Input htmlSize={4} width='auto' type='text' borderColor={'black'} />
      </Box>
      </Flex>
        

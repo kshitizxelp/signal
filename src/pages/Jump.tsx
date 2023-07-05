@@ -3,6 +3,8 @@ import { Box, Text,HStack,Image,Link, Flex,Button,ChakraProvider,Avatar,Select,S
 import { AiOutlineArrowLeft ,RiDeleteBinLine,FiUpload} from 'react-icons/all';
 import ReactPlayer from 'react-player';
 import { useLocation, useNavigate } from 'react-router-dom';
+import {useDispatch, useSelector} from "react-redux"
+import { setJumpData } from '../Slice';
 
 
 
@@ -11,10 +13,26 @@ const Jump = () => {
    
 
 const navigate = useNavigate()
+
+const dispatch = useDispatch()
+
+const reactPlayerRef = useRef<any>(null);
+   
+const [played, setPlayed] = useState(0);
+const [playedduration, setPlayedDuration] = useState(0);
+const [show,setShow] = useState(false);
+
+const [jumpstartnn, setJumpStartnn] = useState({
+  
+    currentTime:"",
+    endTime:''
+   
+});
 const Back = ()=>{
     navigate(-1)
 }
 const next = ()=>{
+  dispatch(setJumpData(jumpstartnn))
     navigate("/AddSpeed",{
         state:{
             nexsa:state?.next
@@ -48,16 +66,8 @@ const next = ()=>{
 
 
 
-const reactPlayerRef = useRef<any>(null);
-   
-const [played, setPlayed] = useState(0);
-const [playedduration, setPlayedDuration] = useState(0);
-const [jumpstartnn, setJumpStartnn] = useState({
-  
-    currentTime:"",
-    endTime:''
-   
-});
+
+
 
 
 
@@ -146,6 +156,12 @@ const handleSeek = (value :any) => {
 
       const{state} = useLocation();
       console.log("url",state?.next) 
+
+      const handle =()=>{
+         setShow(!show)
+      };
+
+      
   return (
    <Box bg={'gray.300'} width="100%">
      <Box  display={"flex"}
@@ -216,14 +232,18 @@ const handleSeek = (value :any) => {
 
         <Box mt="20px">
         <Flex display={'flex'} justifyContent={'center'} >
-        <Button colorScheme="blue" borderRadius="20px" mb={50} mr={30} size="lg" bg="#F45D01" width="150px" color="black" onClick={handleClick}>
+        {/* <Button colorScheme="blue" borderRadius="20px" mb={50} mr={30} size="lg" bg="#F45D01" width="150px" color="black" onClick={handleClick}>
         {text}
+       </Button> */}
+       <Button colorScheme="blue" borderRadius="20px" mb={50} mr={30} size="lg" bg="#F45D01" width="150px" color="black" onClick={handle}>
+        Click to start
        </Button>
        </Flex>
         </Box>
 
 {
-    text ==='jumpStop' ? <Flex display={'flex'} justifyContent={'center'}>
+    show ?<Flex display={'flex'} justifyContent={'center'}>
+      
     <Box width="500px" height="200px" bg={'gray'} borderRadius="5px">
          <Box display={'flex'} justifyContent="space-between">
            <Text padding="5px">Anecdote 1</Text>
@@ -247,6 +267,11 @@ const handleSeek = (value :any) => {
            <Text>Reason to Speed</Text>
            <Text bg={'white'} borderRadius={'5px'} height={'50px'} width={'400px'}>(optional)</Text>
           </Box>
+         </Flex>
+         <Flex display={'flex'} justifyContent={'center'} mt="10px">
+         <Button colorScheme="blue" borderRadius="20px" mb={50} mr={30} size="lg" bg="#F45D01" width="150px" color="black" onClick={handleClick}>
+           {text}
+          </Button>
           </Flex>
            
     </Box> 

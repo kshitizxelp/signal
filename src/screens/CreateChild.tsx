@@ -39,7 +39,7 @@ export default function CreateChild() {
         {
             name:"DOB",
             label: "Date of Birth",
-            type:"number"
+            type:"date"
         }
       ];
 

@@ -3,20 +3,21 @@ import { Box, Flex, Image } from '@chakra-ui/react'
 import { Button, ButtonGroup } from '@chakra-ui/react'
 import { useNavigate } from 'react-router-dom';
 import {useDispatch, useSelector} from "react-redux"
-import { increment } from '../Slice';
+import { getPosts } from '../Slice';
 
 
 
 export default function SignUpOrLogin() {
   const navigate = useNavigate();
-// const dispatch = useDispatch()
+const dispatch = useDispatch()
 // const countNum = useSelector((state)=>state?.counter)
-// console.log("countNum",countNum)
-// const onClickBtn = () =>{
-//   dispatch(increment())
-// }
+const countNum = useSelector((state)=>state?.auth?.posts)
+console.log("countNum",countNum)
+const onClickBtn = () =>{
+  dispatch(getPosts())
+}
   const Login1 = () => {
-    // onClickBtn()
+    onClickBtn()
     navigate('/Login'); 
   };
 
@@ -42,7 +43,16 @@ export default function SignUpOrLogin() {
       </Box>
       </Flex>
 
-      {/* {countNum} */}
+      {/* {countNum?.map((each: any) => (
+
+<Box>
+  {each?.title}
+</Box>
+
+
+      ))} */}
+
+   
       
       <Flex display={'flex'} justifyContent={'center'}>
          <Box mt={'40px'}>

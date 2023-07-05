@@ -45,8 +45,14 @@ const AddJumps = () => {
 
   const handleClick = () => {
     
-    setEnterValues((prevState)=> [...prevState,inputValues])
+    setEnterValues((prevState)=> [...prevState,inputValues]);
+    
+    setClickedtime ((e:any)=>({
+      ...e,
+      clicktime:playedvideo
+     }));
   };
+  
   console.log("enterValues",enterValues)
 
   const handleOnChange = (e:any) => {
@@ -70,11 +76,22 @@ const AddJumps = () => {
 
   const reactPlayerRef = useRef<any>(null);
     const [played, setPlayed] = useState(0);
-
-    const handleProgress = (progress :any) => {
+    const [playedvideo,setPlayedvideo] = useState(0);
+    const [clickedtime,setClickedtime]=useState({
+          
+            clicktime:"",
+ })
+    console.log(clickedtime,"timeeee")
+    // const handleProgress = (progress :any) => {
+    //   setPlayed(progress.played);
+    //   const time = reactPlayerRef.current.getCurrentTime()
+    // };
+    const handleProgress = (progress:any) => {
       setPlayed(progress.played);
-      const time = reactPlayerRef.current.getCurrentTime()
+      const { playedSeconds } = progress;
+      setPlayedvideo(playedSeconds);
     };
+    console.log(playedvideo,">>>>>>>")
     console.log(played,"played")
     
     const handleSeek = (value :any) => {
