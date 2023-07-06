@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react'
-import { Box, Text,HStack,Image,Link, Flex,Button,ChakraProvider,Avatar,Select,Slider,SliderTrack,SliderFilledTrack,SliderThumb} from '@chakra-ui/react'
+import { Box, Text,HStack,Image,Link, Flex,Button,ChakraProvider,Avatar,Select,Slider,SliderTrack,SliderFilledTrack,SliderThumb,Input} from '@chakra-ui/react'
 import { AiOutlineArrowLeft ,RiDeleteBinLine,FiUpload} from 'react-icons/all';
 import ReactPlayer from 'react-player';
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -265,7 +265,8 @@ const handleSeek = (value :any) => {
           <Flex display={'flex'} justifyContent={'center'}>
           <Box>
            <Text>Reason to Speed</Text>
-           <Text bg={'white'} borderRadius={'5px'} height={'50px'} width={'400px'}>(optional)</Text>
+           {/* <Text bg={'white'} borderRadius={'5px'} height={'50px'} width={'400px'}>(optional)</Text> */}
+           <Input placeholder='medium size' size='md' type="text" name=""/>
           </Box>
          </Flex>
          <Flex display={'flex'} justifyContent={'center'} mt="10px">

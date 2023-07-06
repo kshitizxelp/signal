@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   Box,
   Text,
@@ -22,6 +22,8 @@ import {
 } from "react-icons/all";
 import ReactPlayer from "react-player";
 import { useLocation, useNavigate } from "react-router-dom";
+import { useDispatch,useSelector } from "react-redux";
+import { setAddjump, setInsertclicktime } from "../Slice";
 
 const AddJumps = () => {
   const navigate = useNavigate();
@@ -42,24 +44,51 @@ const AddJumps = () => {
   
   const [inputValues, setInputValues] = useState({});
   const [enterValues, setEnterValues] = useState([]);
+  const reactPlayerRef = useRef<any>(null);
+  const [played, setPlayed] = useState(0);
+  const [playedvideo,setPlayedvideo] = useState(0);
+  const [clickedtime,setClickedtime]=useState({
+        
+          clicktime:"",
+})
+  const dispatch = useDispatch();
+  const addjump = useSelector<any>(state=>state?.auth?.addjump);
+  const insertclicktime= useSelector<any>(state=>state?.auth?.insertclicktime);
 
   const handleClick = () => {
-    
-    setEnterValues((prevState)=> [...prevState,inputValues]);
-    
-    setClickedtime ((e:any)=>({
+     setEnterValues((prevState)=> [...prevState,inputValues]);
+     setClickedtime ((e:any)=>({
       ...e,
       clicktime:playedvideo
      }));
-  };
-  
-  console.log("enterValues",enterValues)
+    //  dispatch(setInsertclicktime(clickedtime));
+
+    };
+    // console.log(insertclicktime,"clicks")
+
+
+
+useEffect(()=>{
+  dispatch(setAddjump(enterValues));
+},[enterValues]);
+console.log(addjump,"jjsjkjjjjjjs");
+
+useEffect(()=>{
+  dispatch(setInsertclicktime(clickedtime));
+},[clickedtime]);
+console.log(insertclicktime,"clicks");
+
+ 
+   
+ console.log("enterValues",enterValues)
+
 
   const handleOnChange = (e:any) => {
-    setInputValues(e.target.value)
-  };
-
+    setInputValues(e.target.value);
+    };
+ 
   console.log("inputValues",inputValues)
+
 
   const handleRemove = (index:any) => {
     setEnterValues((prevValues) => prevValues.filter((_, i) => i !== index));
@@ -74,13 +103,7 @@ const AddJumps = () => {
 
  
 
-  const reactPlayerRef = useRef<any>(null);
-    const [played, setPlayed] = useState(0);
-    const [playedvideo,setPlayedvideo] = useState(0);
-    const [clickedtime,setClickedtime]=useState({
-          
-            clicktime:"",
- })
+   
     console.log(clickedtime,"timeeee")
     // const handleProgress = (progress :any) => {
     //   setPlayed(progress.played);
@@ -140,7 +163,7 @@ const AddJumps = () => {
            ref={reactPlayerRef}
             url={state?.data}
             controls
-            onProgress={handleProgress}
+            onProgress={handleProgress} 
             width="50%"
             height="250px"
           />

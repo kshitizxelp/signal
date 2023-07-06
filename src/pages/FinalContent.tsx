@@ -17,9 +17,14 @@ const FinalContent = () => {
      const RelatedRewards =()=>{
         navigate("/SelectedRewards")
       }
-      const jumpdata = useSelector(state=>state?.auth?.jumpData)
+      const jumpdata = useSelector<any>(state=>state?.auth?.jumpData);
+      const addjump = useSelector<any>(state=>state?.auth?.addjump);
+      const insertclicktime= useSelector<any>(state=>state?.auth?.insertclicktime);
 
-console.log("jumpdata",jumpdata)
+
+console.log("jumpdata",jumpdata);
+console.log(addjump,"jjsjkjjjjjjs");
+console.log(insertclicktime,"clicktimee");
 
 
     const reactPlayerRef = useRef<any>(null);

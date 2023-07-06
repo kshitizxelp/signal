@@ -4,7 +4,9 @@ import { createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 const initialState = {
   posts:[],
-  jumpData:{}
+  jumpData:{},
+  addjump:[],
+  insertclicktime:{},
   
 };
 const authSlice = createSlice({
@@ -18,14 +20,26 @@ const authSlice = createSlice({
     setJumpData: (state, action) => {
       state.jumpData = action.payload;
     },
+    setAddjump:(state,action)=>{
+      state.addjump = action.payload;
+    },
+    setInsertclicktime:(state,action)=>{
+      state.insertclicktime= action.payload;
+    }, 
   
   },
 });
 export const {
   setPosts,
-  setJumpData
+  setJumpData,
+  setAddjump,
+  setInsertclicktime,
 } = authSlice.actions;
 export default authSlice.reducer;
+
+
+
+
 
 export const getPosts = () => (dispatch:any) => {
   const config = {

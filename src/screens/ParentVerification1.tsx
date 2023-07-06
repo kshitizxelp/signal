@@ -6,7 +6,7 @@ import {useSelector} from "react-redux"
 
 
 export default function ParentVerification1() {
-  const countNum = useSelector((state)=>state?.counter)
+  const countNum = useSelector <any>((state)=>state?.counter)
 
     const location = useLocation();
     const params = location.state;
@@ -40,7 +40,7 @@ export default function ParentVerification1() {
        <Image src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov" height={'150px'} />
        </Box>
        </Flex>
-       {countNum}
+       {/* {countNum} */}
     <Flex display={'flex'} justifyContent={'center'}>
      <Box  mt={'10px'}>
       <Text fontSize="20px" as="b" color="#004570"  >Parent Verification</Text>
