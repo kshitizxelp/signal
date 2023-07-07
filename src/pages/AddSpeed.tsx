@@ -11,8 +11,16 @@ const AddSpeed = () => {
 
 const reactPlayerRef = useRef<any>(null);
 const [played, setPlayed] = useState(0);
-const [speed, setSpeed] = useState('1')
-const [des, setDes] = useState('')
+const [speed, setSpeed] = useState('1');
+const [des, setDes] = useState('');
+const [text,SetText]=useState('Addspeed');
+const [show,setShow]=useState(false);
+const [playedtime, setPlayedtime]=useState(0);
+const [addspeed ,setAddspeed]=useState({
+       startspeedtime:"",
+       endspeedtime:"",
+});
+
 
 const {state}= useLocation();
  console.log("messg",state?.nexsa)
@@ -22,9 +30,13 @@ const {state}= useLocation();
 
 const handleProgress = (progress :any) => {
   setPlayed(progress.played);
-  const time = reactPlayerRef.current.getCurrentTime()
+  const { playedSeconds } = progress;
+  setPlayedtime(playedSeconds)
+  // const time = reactPlayerRef.current.getCurrentTime()
   };
 console.log(played,"played")
+console.log(playedtime)
+ 
 
 const handleSeek = (value :any) => {
  setPlayed(value);
@@ -33,14 +45,29 @@ const handleSeek = (value :any) => {
 
 };
 
-const [text,SetText]=useState('Addspeed')
+
 const handleClick = ()=>{
+  const time = reactPlayerRef.current.getCurrentTime()
     if(text === 'Add Speed'){
         SetText('Stop Speed');
+        setAddspeed((prevState:any)=>({
+          ...prevState,
+          startspeedtime:playedtime
+         }));
     }
     else{
         SetText('Add Speed');
+        setAddspeed((e:any)=>({
+          ...e,
+          endspeedtime:playedtime
+        }))
     }
+};
+console.log(addspeed,">>>>>>>>>>>>>>>>>>>>>>")
+
+
+const click =()=>{
+  setShow(!show)
 };
 
 const [inputValues, setInputValues] = useState({
@@ -131,14 +158,16 @@ console.log("finalPayload",finalPayload)
 
      <Box mt="20px">
         <Flex display={'flex'} justifyContent={'center'} >
-        <Button colorScheme="blue" borderRadius="20px" mb={50} mr={30} size="lg" bg="#F45D01" width="150px" color="black" onClick={handleClick}>
-        {text}
+        <Button colorScheme="blue" borderRadius="20px" mb={50} mr={30} fontSize="5xs" size="lg" bg="#F45D01" width="150px" color="black" onClick={click}>
+        click to AddSpeed
        </Button>
+        
        </Flex>
         </Box>
-
+{/* 
 { 
-text === 'Stop Speed'?
+text === 'Stop Speed'? */}
+{show?
         <Flex display={'flex'} justifyContent={'center'}>
     <Box width="500px" height="200px" bg={'gray'} borderRadius="5px">
          <Box display={'flex'} justifyContent="space-between">
@@ -150,11 +179,11 @@ text === 'Stop Speed'?
       <Box display={'flex'} justifyContent="space-around">
            <Box display={'flex'} m="5px">
            <Text>Start Time:</Text>
-           <Text bg={'white'} borderRadius={'5px'}>02:00:12</Text>
+           <Text bg={'white'} borderRadius={'5px'}>{addspeed.startspeedtime}</Text>
           </Box>
           <Box display={'flex'} m="5px" >
            <Text>End Time:</Text>
-           <Text bg={'white'} borderRadius={'5px'}>02:00:12</Text>
+           <Text bg={'white'} borderRadius={'5px'}>{addspeed.endspeedtime}</Text>
           </Box>
           </Box>
          
@@ -178,16 +207,23 @@ text === 'Stop Speed'?
            <Input bg={'white'} borderRadius={'5px'} height={'50px'} width={'400px'}
             onChange={(e)=>setDes(e.target.value)}
            ></Input>
+           
           </Box>
           </Flex>
+          <Flex justifyContent={'center'} >
+          <Button colorScheme="blue" borderRadius="20px" fontSize="5xs" mr={30} size="lg" bg="#F45D01" width="150px" color="black" onClick={handleClick}>
+        {text}
+       </Button>
+       </Flex>
         
            
     </Box> 
     </Flex> :null
-    }
+}
+    {/*:null } */}
 
-{
-    text ==='Stop Speed'?
+{/* {
+    text ==='Stop Speed'? */}
 <Box mt={'100px'}>
  <Flex flexDirection="row" justifyContent="center">
  <Button colorScheme="blue" borderRadius="20px" mb={50} mr={30} size="lg" bg="#F5F5F5" width="110px" color="black" onClick={Back}>
@@ -198,11 +234,11 @@ text === 'Stop Speed'?
    Next
    </Button>
    </Flex>
- </Box>:null
-}
+ </Box>
+ {/* :null} */}
 
 
-{
+{/* {
     text ==='Add Speed'?
 <Box>
 <Flex flexDirection="row" justifyContent="center">
@@ -216,7 +252,7 @@ text === 'Stop Speed'?
    </Flex>
 
 </Box>:null
-}
+} */}
 
     </Box>
   )

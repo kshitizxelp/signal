@@ -17,14 +17,15 @@ const FinalContent = () => {
      const RelatedRewards =()=>{
         navigate("/SelectedRewards")
       }
-      const jumpdata = useSelector<any>(state=>state?.auth?.jumpData);
+      const jumpdata = useSelector<any>(state=>state?.auth?.jumpData);  
       const addjump = useSelector<any>(state=>state?.auth?.addjump);
       const insertclicktime= useSelector<any>(state=>state?.auth?.insertclicktime);
 
 
-console.log("jumpdata",jumpdata);
-console.log(addjump,"jjsjkjjjjjjs");
-console.log(insertclicktime,"clicktimee");
+console.log("jumpdata..",jumpdata);
+console.log(addjump,"jjsjkjjjjjjs..");
+console.log(insertclicktime,"clicktimee..");
+
 
 
     const reactPlayerRef = useRef<any>(null);
@@ -45,6 +46,10 @@ console.log(insertclicktime,"clicktimee");
     
    console.log(seconds,">>>>>>>>>>>>>>>")
    console.log(played,"played")
+
+   if(seconds==insertclicktime){
+    console.log("gopi sunkara")
+   }
     
     // const handleSeek = (value :any) => {
     //  setPlayed(value);
@@ -83,6 +88,7 @@ console.log(insertclicktime,"clicktimee");
        </HStack>
        <Image marginRight="10px" src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov"  height={100}/>
       </Box> 
+
      
       <Box ml="50px">
             <Text color={'#004570'} fontWeight={'bold'}></Text>
