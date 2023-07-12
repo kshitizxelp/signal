@@ -48,6 +48,7 @@ const AddJumps = () => {
   const [played, setPlayed] = useState(0);
   const [playedvideo,setPlayedvideo] = useState(0);
   const [clickedtime,setClickedtime]=useState({
+    
         
           clicktime:"",
 })

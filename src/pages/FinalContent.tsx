@@ -1,177 +1,242 @@
-import React, { useRef, useState } from 'react'
-import { Box, Text,HStack,Image,Link, Flex,Button,ChakraProvider,Input,Select,Slider,SliderTrack,SliderFilledTrack,SliderThumb,Tabs,TabList,Tab} from '@chakra-ui/react'
-import { AiOutlineArrowLeft ,  RiMedalLine, } from 'react-icons/all';
-import ReactPlayer from 'react-player';
-import { useLocation, useNavigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import React, { useRef, useState } from "react";
+import {
+  Box,
+  Text,
+  HStack,
+  Image,
+  Link,
+  Flex,
+  Button,
+  ChakraProvider,
+  Input,
+  Select,
+  Slider,
+  SliderTrack,
+  SliderFilledTrack,
+  SliderThumb,
+  Tabs,
+  TabList,
+  Tab,
+} from "@chakra-ui/react";
+import { AiOutlineArrowLeft, RiMedalLine } from "react-icons/all";
+import ReactPlayer from "react-player";
+import { useLocation, useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const FinalContent = () => {
+  const navigate = useNavigate();
+  const Back = () => {
+    navigate(-1);
+  };
+  const Save = () => {
+    navigate("/VideoSuccessfullySaved");
+  };
+  const RelatedRewards = () => {
+    navigate("/SelectedRewards");
+  };
+  const jumpdata = useSelector<any>((state) => state?.auth?.jumpData);
+  const addjump = useSelector<any>((state) => state?.auth?.addjump);
+  const insertclicktime = useSelector<any>(
+    (state) => state?.auth?.insertclicktime
+  );
 
-    const navigate = useNavigate()
-     const Back =()=>{
-        navigate(-1)
-     }
-     const Save =()=>{
-        navigate("/VideoSuccessfullySaved")
-     }
-     const RelatedRewards =()=>{
-        navigate("/SelectedRewards")
-      }
-      const jumpdata = useSelector<any>(state=>state?.auth?.jumpData);  
-      const addjump = useSelector<any>(state=>state?.auth?.addjump);
-      const insertclicktime= useSelector<any>(state=>state?.auth?.insertclicktime);
+  console.log("jumpdata..", jumpdata);
+  console.log(addjump, "jjsjkjjjjjjs..");
+  console.log(insertclicktime, "clicktimee..");
+
+  const reactPlayerRef = useRef<any>(null);
+  const [played, setPlayed] = useState(0);
+  const [seconds, setSeconds] = useState(0);
+
+  // const handleProgress = (progress :any) => {
+  //   setPlayed(progress.played);
+  //   const time = reactPlayerRef.current.getCurrentTime()
+  //   };
+  // console.log(played,"played")
+
+  const handleProgress = (progress: any) => {
+    setPlayed(progress.played);
+    const { playedSeconds } = progress;
+    setSeconds(playedSeconds);
+  };
+
+  console.log(seconds, ">>>>>>>>>>>>>>>");
+  console.log(played, "played");
+
+  var num2 = insertclicktime.clicktime
+  console.log(num2, "typpppppppppp");
+  var formatNum2 = Math.floor(num2);
+  
 
 
-console.log("jumpdata..",jumpdata);
-console.log(addjump,"jjsjkjjjjjjs..");
-console.log(insertclicktime,"clicktimee..");
+  console.log("formatted number for jump ", formatNum2);
 
+  var num = seconds;
+  //  var startTime.split(':');
 
+  var formatNum = Math.floor(num);
 
-    const reactPlayerRef = useRef<any>(null);
-    const [played, setPlayed] = useState(0);
-    const [seconds, setSeconds] = useState(0);
+  console.log("formatted number for every second", formatNum);
+
+  if (formatNum == formatNum2) {
     
-    // const handleProgress = (progress :any) => {
-    //   setPlayed(progress.played);
-    //   const time = reactPlayerRef.current.getCurrentTime()
-    //   };
-    // console.log(played,"played")
+    alert("welcome gopi sunkara");
+    console.log("gopi sunkara");
+  }
 
-    const handleProgress = (progress:any) => {
-      setPlayed(progress.played);
-      const { playedSeconds } = progress;
-      setSeconds(playedSeconds);
-    };  
-    
-   console.log(seconds,">>>>>>>>>>>>>>>")
-   console.log(played,"played")
+  //  console.log(typeof (seconds),"typppppppppppssss");
 
-   if(seconds==insertclicktime){
-    console.log("gopi sunkara")
-   }
-    
-    // const handleSeek = (value :any) => {
-    //  setPlayed(value);
-    //  reactPlayerRef.current?.seekTo(value);
-    //  reactPlayerRef.current?.getInternalPlayer()?.playVideo();
-    
-    // };
-    const handleSeek = (value :any) => {
-      setPlayed(value);
-      reactPlayerRef.current?.seekTo(value);
-      reactPlayerRef.current?.getInternalPlayer()?.playVideo();
-     
-     };
+  // const handleSeek = (value :any) => {
+  //  setPlayed(value);
+  //  reactPlayerRef.current?.seekTo(value);
+  //  reactPlayerRef.current?.getInternalPlayer()?.playVideo();
 
-    const {state} = useLocation();
-      console.log("goooooo",state?.add)
+  // };
+  const handleSeek = (value: any) => {
+    setPlayed(value);
+    reactPlayerRef.current?.seekTo(value);
+    reactPlayerRef.current?.getInternalPlayer()?.playVideo();
+  };
 
-    
+  const { state } = useLocation();
+  console.log("goooooo", state?.add);
 
-    return (
-
-      <Box bg={'gray.300'} width="100%">
-
-     <Box  display={"flex"}
-            flexDirection={"row"}
-            justifyContent={"space-between"}
-            alignItems={"center"}
-            bg={'gray.200'}
-            width="100%">
-       <HStack gap={"5"} pr={5}>
-       <Text marginLeft="10px" color={'#004570'} ><AiOutlineArrowLeft/></Text>
-       <Box>
-       <Text marginLeft="10px" color={'#004570'} mb="2px" fontSize={12}>Add English Content for </Text>
-       <Text marginLeft="10px" color={'#004570'}mb="3px" >GopiSunkara </Text>
-       </Box>
-       </HStack>
-       <Image marginRight="10px" src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov"  height={100}/>
-      </Box> 
-
-     
-      <Box ml="50px">
-            <Text color={'#004570'} fontWeight={'bold'}></Text>
-            <Text fontSize="14px" p="20px">Great going Ann: Here is your final content preview for Shreya</Text>
-        </Box>
-
-        <Box mt={"100px"}>
-       <Flex  display={'flex'} justifyContent={'center'}>
-        <ReactPlayer
-        ref={reactPlayerRef}
-        url={state?.add}
-        controls
-        onProgress={handleProgress}
-        width="50%"
-        height="250px"
-      />
-        </Flex>
-        <Flex  display={'flex'} justifyContent={'center'}>   
-      <Slider
-        value={played}
-        min={0}
-        max={1}
-        step={0.01}
-        onChange={handleSeek}
-        colorScheme="blue"
-        aria-label="Video progress" 
-        mt={4}
-        width="50%"
-      >
-        <SliderTrack bg="gray.200" >
-          <SliderFilledTrack bg="blue.500" />
-        </SliderTrack>
-        <SliderThumb boxSize={6} />
-      </Slider>
-      </Flex>
-      </Box>
-     
-     <Flex display={'flex'} justifyContent={'center'} mt={'50px'}>
-     <Box>
-      <Text>Task due date</Text>
-     <Input placeholder='medium size' size='md' type='date' borderColor={'black'} width={'320px'}/>
-     </Box>
-     </Flex>
-
-     <Flex display={'flex'} justifyContent={'center'} mt={'50px'}>
-     <Box display={"flex"}
+  return (
+    <Box bg={"gray.300"} width="100%">
+      <Box
+        display={"flex"}
         flexDirection={"row"}
+        justifyContent={"space-between"}
         alignItems={"center"}
-         >
-        <Text p={'20px'} >Add Task Reward Points</Text>
-        <Input htmlSize={4} width='auto' type='text' borderColor={'black'} />
-     </Box>
-     </Flex>
-       
-     
-     <Box display={'flex'} justifyContent={'center'} mr={'100px'}>
-      <Box>
-      <Text pt={'6px'} ml={'20px'} color={'#F45D01'}><RiMedalLine /></Text> 
-      </Box>
-     <Box>
-     <Text><Link color={'#F45D01'} onClick={RelatedRewards}> View Related Rewards</Link> </Text>
-     </Box>
-     </Box>
-     
-
-
-     <Box mt={'50px'}>
-     <Flex flexDirection="row" justifyContent="center">
-       <Button colorScheme="blue" borderRadius="20px" mb={50} mr={30} size="lg" bg="#F5F5F5" width="110px" color="black" onClick={Back}>
-        Back
-       </Button>
-
-       <Button colorScheme="blue" borderRadius="20px"  size="lg" bg="#004570" width="110px" onClick={Save} >
-         Save
-         </Button>
-         </Flex>
-         </Box>
-      
-
+        bg={"gray.200"}
+        width="100%"
+      >
+        <HStack gap={"5"} pr={5}>
+          <Text marginLeft="10px" color={"#004570"}>
+            <AiOutlineArrowLeft />
+          </Text>
+          <Box>
+            <Text marginLeft="10px" color={"#004570"} mb="2px" fontSize={12}>
+              Add English Content for{" "}
+            </Text>
+            <Text marginLeft="10px" color={"#004570"} mb="3px">
+              GopiSunkara{" "}
+            </Text>
+          </Box>
+        </HStack>
+        <Image
+          marginRight="10px"
+          src="src/assets/SIGNAL LOGO (2)@3x.png"
+          alt="Dan Abramov"
+          height={100}
+        />
       </Box>
 
+      <Box ml="50px">
+        <Text color={"#004570"} fontWeight={"bold"}></Text>
+        <Text fontSize="14px" p="20px">
+          Great going Ann: Here is your final content preview for Shreya
+        </Text>
+      </Box>
 
-        )
-    }
-    
-    export default FinalContent
+      <Box mt={"100px"}>
+        <Flex display={"flex"} justifyContent={"center"}>
+          <ReactPlayer
+          
+            ref={reactPlayerRef}
+            url={state?.add}
+            controls
+            onProgress={handleProgress}
+            width="50%"
+            height="250px"
+          />
+        </Flex>
+        <Flex display={"flex"} justifyContent={"center"}>
+          <Slider
+            value={played}
+            min={0}
+            max={1}
+            step={0.01}
+            onChange={handleSeek}
+            colorScheme="blue"
+            aria-label="Video progress"
+            mt={4}
+            width="50%"
+          >
+            <SliderTrack bg="gray.200">
+              <SliderFilledTrack bg="blue.500" />
+            </SliderTrack>
+            <SliderThumb boxSize={6} />
+          </Slider>
+        </Flex>
+      </Box>
+
+      <Flex display={"flex"} justifyContent={"center"} mt={"50px"}>
+        <Box>
+          <Text>Task due date</Text>
+          <Input
+            placeholder="medium size"
+            size="md"
+            type="date"
+            borderColor={"black"}
+            width={"320px"}
+          />
+        </Box>
+      </Flex>
+
+      <Flex display={"flex"} justifyContent={"center"} mt={"50px"}>
+        <Box display={"flex"} flexDirection={"row"} alignItems={"center"}>
+          <Text p={"20px"}>Add Task Reward Points</Text>
+          <Input htmlSize={4} width="auto" type="text" borderColor={"black"} />
+        </Box>
+      </Flex>
+
+      <Box display={"flex"} justifyContent={"center"} mr={"100px"}>
+        <Box>
+          <Text pt={"6px"} ml={"20px"} color={"#F45D01"}>
+            <RiMedalLine />
+          </Text>
+        </Box>
+        <Box>
+          <Text>
+            <Link color={"#F45D01"} onClick={RelatedRewards}>
+              {" "}
+              View Related Rewards
+            </Link>{" "}
+          </Text>
+        </Box>
+      </Box>
+
+      <Box mt={"50px"}>
+        <Flex flexDirection="row" justifyContent="center">
+          <Button
+            colorScheme="blue"
+            borderRadius="20px"
+            mb={50}
+            mr={30}
+            size="lg"
+            bg="#F5F5F5"
+            width="110px"
+            color="black"
+            onClick={Back}
+          >
+            Back
+          </Button>
+
+          <Button
+            colorScheme="blue"
+            borderRadius="20px"
+            size="lg"
+            bg="#004570"
+            width="110px"
+            onClick={Save}
+          >
+            Save
+          </Button>
+        </Flex>
+      </Box>
+    </Box>
+  );
+};
+
+export default FinalContent;
