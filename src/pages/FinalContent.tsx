@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   Box,
   Text,
@@ -22,6 +22,12 @@ import { AiOutlineArrowLeft, RiMedalLine } from "react-icons/all";
 import ReactPlayer from "react-player";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import Swal from 'sweetalert2'
+
+
+
+
+
 
 const FinalContent = () => {
   const navigate = useNavigate();
@@ -36,9 +42,7 @@ const FinalContent = () => {
   };
   const jumpdata = useSelector<any>((state) => state?.auth?.jumpData);
   const addjump = useSelector<any>((state) => state?.auth?.addjump);
-  const insertclicktime = useSelector<any>(
-    (state) => state?.auth?.insertclicktime
-  );
+  const insertclicktime = useSelector<any>((state) => state?.auth?.insertclicktime);
 
   console.log("jumpdata..", jumpdata);
   console.log(addjump, "jjsjkjjjjjjs..");
@@ -47,23 +51,53 @@ const FinalContent = () => {
   const reactPlayerRef = useRef<any>(null);
   const [played, setPlayed] = useState(0);
   const [seconds, setSeconds] = useState(0);
+  const [selectplay,setSelectplay] = useState<any>({
+    playing:true
+  });
+  const {playing}=selectplay
+  // const [onplay,setOnplay] = useState<any>(true);
+  // const [alertDismissed, setAlertDismissed] = useState(false);
 
-  // const handleProgress = (progress :any) => {
-  //   setPlayed(progress.played);
-  //   const time = reactPlayerRef.current.getCurrentTime()
-  //   };
-  // console.log(played,"played")
 
-  const handleProgress = (progress: any) => {
-    setPlayed(progress.played);
-    const { playedSeconds } = progress;
-    setSeconds(playedSeconds);
+
+
+
+//   const successAlert = () => {
+//     Swal.fire({  
+//         title: 'Welcome',  
+//         text: 'You clicked the button.',
+//         icon: 'success',
+        
+//       }).then(() => {
+//         setAlertDismissed(true);
+//         setSelectplay(true);
+//       });
+     
+     
+// }
+
+
+
+  const handlePuase = () => {
+    // // setAlertDismissed(true);
+    // if (!selectplay) {
+    //   setSelectplay(true);
+     
+    //   console.log('Video started playing for the first time');
+    // }
+    setSelectplay((prevState :any) => ({
+      ...prevState,
+      playing: !prevState.playing
+    }))
+     
   };
+  // const handleonplay = ()=>{
+  //   setOnplay(true);
+  // }
 
-  console.log(seconds, ">>>>>>>>>>>>>>>");
-  console.log(played, "played");
+ 
 
-  var num2 = insertclicktime.clicktime
+  var num2  = insertclicktime.clicktime 
   console.log(num2, "typpppppppppp");
   var formatNum2 = Math.floor(num2);
   
@@ -78,11 +112,100 @@ const FinalContent = () => {
 
   console.log("formatted number for every second", formatNum);
 
-  if (formatNum == formatNum2) {
+
+
+  // useEffect(() => {
+  //   if (!alertDismissed) {
+  //     setSelectplay(false);
+  //   }
+  // }, [alertDismissed]);
+
+  // Rest of your code...
+
+
+
+  useEffect(() => {
+
+    if (formatNum === formatNum2) {
+
+      setSelectplay((prevState:any) => ({
+        ...prevState,
+        playing : false
+      }))
+
+
+
+      Swal.fire(`${addjump?.[0]}`)
+      .then((result) => {
+  
+       
+        setSelectplay((prevState:any) => ({
+          ...prevState,
+          playing: true
+        }))
+  
+  
+      })
+
+
+
+    }
+
+
+  }, [formatNum])
+
+
+  console.log(selectplay, "selectplayselectplayselectplay")
+
+
+
+
+
+
+
+  // if (formatNum == formatNum2) {
     
-    alert("welcome gopi sunkara");
-    console.log("gopi sunkara");
-  }
+  //   // alert("welcome gopi sunkara");
+  //   // successAlert();
+  //   // .then(() => {
+  //   //   setAlertDismissed(true);
+  //   //    setSelectplay(false);
+  //   // });
+  //   Swal.fire('Any fool can use a computer')
+  //   setSelectplay(false);
+    
+  //   console.log("video stop")
+   
+    
+     
+  //   console.log("gopi sunkara");
+  // }
+
+
+
+ 
+
+
+
+   // const handleProgress = (progress :any) => {
+  //   setPlayed(progress.played);
+  //   const time = reactPlayerRef.current.getCurrentTime()
+  //   };
+  // console.log(played,"played")
+
+  const handleProgress = (progress: any) => {
+    setPlayed(progress.played);
+    const { playedSeconds } = progress;
+    setSeconds(playedSeconds);
+   
+   
+  };
+
+  console.log(seconds, ">>>>>>>>>>>>>>>");
+  console.log(played, "played");
+
+
+
 
   //  console.log(typeof (seconds),"typppppppppppssss");
 
@@ -100,6 +223,8 @@ const FinalContent = () => {
 
   const { state } = useLocation();
   console.log("goooooo", state?.add);
+
+
 
   return (
     <Box bg={"gray.300"} width="100%">
@@ -139,18 +264,33 @@ const FinalContent = () => {
         </Text>
       </Box>
 
-      <Box mt={"100px"}>
-        <Flex display={"flex"} justifyContent={"center"}>
-          <ReactPlayer
+    
+
+      <Box mt={"100px"} position={'relative'}>
+      {/* <Flex  justifyContent={"center"}>
+      {formatNum === formatNum2 ?
+       <Box width="50%" height="250px" bg="white" position={'absolute'} >
+         <Text color="green.700">welcome signelfghghgjhjh</Text>
+      </Box> :null
+       }
+       </Flex> */}
+       
+        <Flex  justifyContent={"center"}>
           
+        
+          <ReactPlayer
             ref={reactPlayerRef}
             url={state?.add}
             controls
             onProgress={handleProgress}
             width="50%"
             height="250px"
+            playing={playing}
+            // onPause	={ handlePuase}
           />
+          
         </Flex>
+
         <Flex display={"flex"} justifyContent={"center"}>
           <Slider
             value={played}
