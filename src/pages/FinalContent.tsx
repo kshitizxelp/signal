@@ -44,7 +44,7 @@ const FinalContent = () => {
   const addjump = useSelector<any>((state) => state?.auth?.addjump);
   const insertclicktime = useSelector<any>((state) => state?.auth?.insertclicktime);
 
-  console.log("jumpdata..", jumpdata);
+  console.log("jumpdata", jumpdata);
   console.log(addjump, "jjsjkjjjjjjs..");
   console.log(insertclicktime, "clicktimee..");
 
@@ -96,23 +96,28 @@ const FinalContent = () => {
   // }
 
  
-
   var num2  = insertclicktime.clicktime 
   console.log(num2, "typpppppppppp");
   var formatNum2 = Math.floor(num2);
-  
-
-
   console.log("formatted number for jump ", formatNum2);
 
+
+ 
   var num = seconds;
-  //  var startTime.split(':');
+  var playerTime = Math.floor(num);
+  console.log("formatted number for every second finalscreen data", playerTime);
 
-  var formatNum = Math.floor(num);
+ 
 
-  console.log("formatted number for every second", formatNum);
-
-
+   var jumpstartTime = jumpdata.currentTime
+   console.log(jumpstartTime,"jumpstartTime");
+   var jumpstartTimeOnlySec = Math.floor(jumpstartTime)
+   console.log(" jump start time in seconds",jumpstartTimeOnlySec);
+   
+  var jumpendTime = jumpdata.endTime
+  console.log(jumpendTime,"jumpendTime");
+  var jumpendTimeOnlySec = Math.floor(jumpendTime)
+  console.log("jump of end time in seconds",jumpendTimeOnlySec)
 
   // useEffect(() => {
   //   if (!alertDismissed) {
@@ -126,7 +131,7 @@ const FinalContent = () => {
 
   useEffect(() => {
 
-    if (formatNum === formatNum2) {
+    if (playerTime === formatNum2) {
 
       setSelectplay((prevState:any) => ({
         ...prevState,
@@ -152,13 +157,18 @@ const FinalContent = () => {
     }
 
 
-  }, [formatNum])
+  }, [playerTime])
 
 
-  console.log(selectplay, "selectplayselectplayselectplay")
+  console.log(selectplay, "selectplayselectplayselectplay");
+
+if(playerTime===jumpstartTimeOnlySec){
+  reactPlayerRef.current?.seekTo(jumpendTimeOnlySec);
 
 
+}
 
+  
 
 
 
@@ -266,7 +276,7 @@ const FinalContent = () => {
 
     
 
-      <Box mt={"100px"} position={'relative'}>
+      <Box mt={"200px"} position={'relative'}>
       {/* <Flex  justifyContent={"center"}>
       {formatNum === formatNum2 ?
        <Box width="50%" height="250px" bg="white" position={'absolute'} >
@@ -274,6 +284,7 @@ const FinalContent = () => {
       </Box> :null
        }
        </Flex> */}
+       
        
         <Flex  justifyContent={"center"}>
           
