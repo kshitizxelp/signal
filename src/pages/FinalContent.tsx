@@ -43,10 +43,14 @@ const FinalContent = () => {
   const jumpdata = useSelector<any>((state) => state?.auth?.jumpData);
   const addjump = useSelector<any>((state) => state?.auth?.addjump);
   const insertclicktime = useSelector<any>((state) => state?.auth?.insertclicktime);
+  const AddSpeed = useSelector<any>((state)=>state?.auth?.speedofAdd);
+  const AddspeedValue= useSelector<any>((state)=>state?.auth?.speedofValue);
 
   console.log("jumpdata", jumpdata);
   console.log(addjump, "jjsjkjjjjjjs..");
   console.log(insertclicktime, "clicktimee..");
+  console.log(AddSpeed,"speed time ");
+  console.log(AddspeedValue,"add speed valuesss")
 
   const reactPlayerRef = useRef<any>(null);
   const [played, setPlayed] = useState(0);
@@ -54,6 +58,7 @@ const FinalContent = () => {
   const [selectplay,setSelectplay] = useState<any>({
     playing:true
   });
+  const [playbackRate, setPlaybackRate] = useState(1.0);
   const {playing}=selectplay
   // const [onplay,setOnplay] = useState<any>(true);
   // const [alertDismissed, setAlertDismissed] = useState(false);
@@ -109,7 +114,7 @@ const FinalContent = () => {
 
  
 
-   var jumpstartTime = jumpdata.currentTime
+   var jumpstartTime= jumpdata.currentTime
    console.log(jumpstartTime,"jumpstartTime");
    var jumpstartTimeOnlySec = Math.floor(jumpstartTime)
    console.log(" jump start time in seconds",jumpstartTimeOnlySec);
@@ -117,7 +122,17 @@ const FinalContent = () => {
   var jumpendTime = jumpdata.endTime
   console.log(jumpendTime,"jumpendTime");
   var jumpendTimeOnlySec = Math.floor(jumpendTime)
-  console.log("jump of end time in seconds",jumpendTimeOnlySec)
+  console.log("jump of end time in seconds",jumpendTimeOnlySec);
+
+  var speedtime = AddSpeed.currentTime
+  console.log(speedtime,"add speed current");
+  var AddSpeedstartTimeOnlySec = Math.floor(speedtime)
+  console.log("AddSpeed Start time only Seconds",AddSpeedstartTimeOnlySec);
+  
+  var speedendtime =AddSpeed.endTime
+  console.log(speedendtime,"Add speed end time");
+  var AddSpeedendTimeOnlySec =Math.floor(speedendtime)
+   console.log("AddSpeed End time only Seconds",AddSpeedendTimeOnlySec);
 
   // useEffect(() => {
   //   if (!alertDismissed) {
@@ -164,9 +179,7 @@ const FinalContent = () => {
 
 if(playerTime===jumpstartTimeOnlySec){
   reactPlayerRef.current?.seekTo(jumpendTimeOnlySec);
-
-
-}
+};
 
   
 
@@ -297,6 +310,7 @@ if(playerTime===jumpstartTimeOnlySec){
             width="50%"
             height="250px"
             playing={playing}
+            playbackRate={playbackRate} 
             // onPause	={ handlePuase}
           />
           

@@ -7,7 +7,8 @@ const initialState = {
   jumpData:{},
   addjump:[],
   insertclicktime:{},
-  dataofspeed:{},
+  speedofAdd:{},
+  speedofValue:{},
   
 };
 const authSlice = createSlice({
@@ -27,9 +28,12 @@ const authSlice = createSlice({
     setInsertclicktime:(state,action)=>{
       state.insertclicktime= action.payload;
     }, 
-    setDataofspeed:(state,action)=>{
-      state.dataofspeed=action.payload;
-    },
+   setspeedofAdd:(state,action)=>{
+    state.speedofAdd= action.payload;
+   },
+   setspeedofValue:(state,action)=>{
+    state.speedofValue= action.payload;
+   },
 
   
   },
@@ -39,6 +43,8 @@ export const {
   setJumpData,
   setAddjump,
   setInsertclicktime,
+  setspeedofAdd,
+  setspeedofValue,
 } = authSlice.actions;
 export default authSlice.reducer;
 

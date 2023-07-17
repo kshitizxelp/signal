@@ -1,11 +1,13 @@
 
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Box, Text,HStack,Image,Link, Flex,Button,ChakraProvider,Stack,Select,Slider,SliderTrack,SliderFilledTrack,SliderThumb ,Radio, RadioGroup,Input} from '@chakra-ui/react'
 import { AiOutlineArrowLeft ,RiDeleteBinLine,FiUpload} from 'react-icons/all';
 import ReactPlayer from 'react-player';
 import { useLocation, useNavigate } from 'react-router-dom';
 import VideoPlayer from '../component/VideoPlayer';
-import { useSelector } from 'react-redux';
+import { useSelector,useDispatch } from 'react-redux';
+import { setspeedofAdd, setspeedofValue } from '../Slice';
+
 
 const AddSpeed = () => {
 
@@ -13,14 +15,24 @@ const reactPlayerRef = useRef<any>(null);
 const [played, setPlayed] = useState(0);
 const [speed, setSpeed] = useState('1');
 const [des, setDes] = useState('');
-const [text,SetText]=useState('Addspeed');
+const [text,SetText]=useState('AddSpeed');
 const [show,setShow]=useState(false);
 const [playedtime, setPlayedtime]=useState(0);
-const [addspeed ,setAddspeed]=useState({
-       startspeedtime:"",
-       endspeedtime:"",
+const [addspeedtime ,setAddspeedtime]=useState({
+    currentTime:"",
+    endTime:"",
+   });
+const [inputValues, setInputValues] = useState({
+  name:"",
+  value:"",
+ 
 });
+const finalPayload = {
+  speed,des
+}
+console.log("finalPayload",finalPayload);
 
+const dispatch = useDispatch();
 
 const {state}= useLocation();
  console.log("messg",state?.nexsa)
@@ -28,9 +40,47 @@ const {state}= useLocation();
 
 
 
+
+const handleClick = (e:any) => {
+  const currentTime = reactPlayerRef.current.getCurrentTime();
+  // setJumpStartnn(currentTime);
+ console.log(playedtime,"inside hanbdle clicjk"); 
+ if 
+ (text == 'AddSpeed') { 
+  SetText('AddSpeedStop');
+  setAddspeedtime((prevState:any)=>({
+      ...prevState,
+      currentTime:playedtime 
+     }));
+  // setAddspeedtime((e:any)=>({
+  //     ...e,
+  //     endTime:playedtime 
+  //    }));
+ }
+ else {
+  SetText('AddSpeed');
+  setAddspeedtime((e:any)=>({
+      ...e,
+      endTime:playedtime 
+     }));
+  // setAddspeedtime((prevState:any)=>({
+  //     ...prevState,
+  //     currentTime:playedtime 
+  //    }));
+ }
+ 
+ };
+console.log(addspeedtime,"welllllllll")
+
+
+
+
+
+
+
 const handleProgress = (progress :any) => {
   setPlayed(progress.played);
-  const { playedSeconds } = progress;
+  const {playedSeconds} = progress;
   setPlayedtime(playedSeconds)
   // const time = reactPlayerRef.current.getCurrentTime()
   };
@@ -46,46 +96,22 @@ const handleSeek = (value :any) => {
 };
 
 
-const handleClick = ()=>{
-  const time = reactPlayerRef.current.getCurrentTime()
-    if(text === 'Add Speed'){
-        SetText('Stop Speed');
-        setAddspeed((prevState:any)=>({
-          ...prevState,
-          startspeedtime:playedtime
-         }));
-    }
-    else{
-        SetText('Add Speed');
-        setAddspeed((e:any)=>({
-          ...e,
-          endspeedtime:playedtime
-        }))
-    }
-};
-console.log(addspeed,">>>>>>>>>>>>>>>>>>>>>>")
-
 
 const click =()=>{
   setShow(!show)
 };
 
-const [inputValues, setInputValues] = useState({
-    name:"",
-    value:"",
-   
-});
+
 
 console.log("speed",{speed})
 
-const finalPayload = {
-    speed,des
-}
 
-console.log("finalPayload",finalPayload)
+
+
 
   const navigate = useNavigate()
   const next=()=>{
+    dispatch(setspeedofAdd(addspeedtime))
     navigate("/AddAnecdote",{
         state:{
             benz:state?.nexsa
@@ -95,6 +121,10 @@ console.log("finalPayload",finalPayload)
   const Back=()=>{
     navigate(-1)
   }
+
+  useEffect(()=>{
+  dispatch(setspeedofValue(finalPayload));
+  },[finalPayload]);
 
    
   return (
@@ -131,6 +161,7 @@ console.log("finalPayload",finalPayload)
         url={state?.nexsa}
         controls
         onProgress={handleProgress}
+        
         width="50%"
         height="250px"
       />
@@ -179,11 +210,11 @@ text === 'Stop Speed'? */}
       <Box display={'flex'} justifyContent="space-around">
            <Box display={'flex'} m="5px">
            <Text>Start Time:</Text>
-           <Text bg={'white'} borderRadius={'5px'}>{addspeed.startspeedtime}</Text>
+           <Text bg={'white'} borderRadius={'5px'}>{addspeedtime.currentTime}</Text>
           </Box>
           <Box display={'flex'} m="5px" >
            <Text>End Time:</Text>
-           <Text bg={'white'} borderRadius={'5px'}>{addspeed.endspeedtime}</Text>
+           <Text bg={'white'} borderRadius={'5px'}>{addspeedtime.endTime}</Text>
           </Box>
           </Box>
          
@@ -192,10 +223,11 @@ text === 'Stop Speed'? */}
          
           <RadioGroup onChange={setSpeed} value={speed}>
       <Stack direction='row'>
+        <Radio value='0.5'>0.5x</Radio>
+        <Radio value='1'>1x</Radio>
         <Radio value='1.5'>1.5x</Radio>
-        <Radio value='2.5'>2.5x</Radio>
-        <Radio value='3'>3x</Radio>
-        <Radio value='4'>4x</Radio>
+        <Radio value='2'>2x</Radio>
+       
       </Stack>
     </RadioGroup>
             </Flex>
@@ -211,9 +243,9 @@ text === 'Stop Speed'? */}
           </Box>
           </Flex>
           <Flex justifyContent={'center'} >
-          <Button colorScheme="blue" borderRadius="20px" fontSize="5xs" mr={30} size="lg" bg="#F45D01" width="150px" color="black" onClick={handleClick}>
-        {text}
-       </Button>
+          <Button colorScheme="blue" borderRadius="20px" mb={50} mr={30} size="lg" bg="#F45D01" width="150px" color="black" onClick={handleClick}>
+           {text}
+          </Button>
        </Flex>
         
            
