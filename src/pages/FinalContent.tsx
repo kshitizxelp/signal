@@ -58,7 +58,7 @@ const FinalContent = () => {
   const [selectplay,setSelectplay] = useState<any>({
     playing:true
   });
-  const [playbackRate, setPlaybackRate] = useState(1.0);
+  // const [playbackRate, setPlaybackRate] = useState(1.0);
   const {playing}=selectplay
   // const [onplay,setOnplay] = useState<any>(true);
   // const [alertDismissed, setAlertDismissed] = useState(false);
@@ -310,7 +310,7 @@ if(playerTime===jumpstartTimeOnlySec){
             width="50%"
             height="250px"
             playing={playing}
-            playbackRate={playbackRate} 
+            
             // onPause	={ handlePuase}
           />
           
