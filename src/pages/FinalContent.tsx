@@ -59,7 +59,7 @@ const FinalContent = () => {
   const [selectplay,setSelectplay] = useState<any>({
     playing:true
   });
-  // const [playbackRate, setPlaybackRate] = useState(1.0);
+  const [playbackRate, setPlaybackRate] = useState(+1.0);
   const {playing}=selectplay
   // const [onplay,setOnplay] = useState<any>(true);
   // const [alertDismissed, setAlertDismissed] = useState(false);
@@ -135,6 +135,9 @@ const FinalContent = () => {
   var AddSpeedendTimeOnlySec =Math.floor(speedendtime)
    console.log("AddSpeed End time only Seconds",AddSpeedendTimeOnlySec);
 
+   var speedofSpeed = AddspeedValue.speed
+   console.log(speedofSpeed,">>>>>>>>>>>>>>>>>>>>>>SssSSSsss")
+
   // useEffect(() => {
   //   if (!alertDismissed) {
   //     setSelectplay(false);
@@ -182,7 +185,11 @@ if(playerTime===jumpstartTimeOnlySec){
   reactPlayerRef.current?.seekTo(jumpendTimeOnlySec);
 };
 
-  
+if(playerTime === AddSpeedstartTimeOnlySec){
+ // playbackRate(speedofSpeed)
+
+};
+
 
 
 
@@ -311,7 +318,7 @@ if(playerTime===jumpstartTimeOnlySec){
             width="50%"
             height="250px"
             playing={playing}
-            
+            // playbackRate={playbackRate}
             // onPause	={ handlePuase}
           />
           
