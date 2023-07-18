@@ -59,7 +59,7 @@ const FinalContent = () => {
   const [selectplay,setSelectplay] = useState<any>({
     playing:true
   });
-  const [playbackRate, setPlaybackRate] = useState(+1.0);
+  const [playbackRate, setPlaybackRate] = useState(1.0);
   const {playing}=selectplay
   // const [onplay,setOnplay] = useState<any>(true);
   // const [alertDismissed, setAlertDismissed] = useState(false);
@@ -186,7 +186,9 @@ if(playerTime===jumpstartTimeOnlySec){
 };
 
 if(playerTime === AddSpeedstartTimeOnlySec){
- // playbackRate(speedofSpeed)
+
+  // setPlaybackRate(speedofSpeed)
+ reactPlayerRef.current?.changePlaybackRateRate(speedofSpeed);
 
 };
 
@@ -318,7 +320,8 @@ if(playerTime === AddSpeedstartTimeOnlySec){
             width="50%"
             height="250px"
             playing={playing}
-            // playbackRate={playbackRate}
+            // playbackRate={1.0}
+            changePlaybackRateRate={speedofSpeed}
             // onPause	={ handlePuase}
           />
           
