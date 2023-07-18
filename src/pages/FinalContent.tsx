@@ -324,6 +324,7 @@ if(playerTime === AddSpeedstartTimeOnlySec){
             changePlaybackRateRate={speedofSpeed}
             // onPause	={ handlePuase}
             //gfdfghgvvd
+            // kikihihgffgfg
            
           />
           
