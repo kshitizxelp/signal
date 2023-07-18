@@ -49,6 +49,7 @@
 import { Box, Image,Text } from '@chakra-ui/react';
 import React, { useEffect, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom';
+import { AiOutlineArrowLeft ,GiTrophyCup ,SlNote } from 'react-icons/all';
 
 export default function Header() {
 
@@ -83,7 +84,10 @@ useEffect(() => {
 
     const navigateTo2 = () => {
         navigate("/ChildOverview/ChildRewards")
-    }
+    };
+    // const back = () =>{
+    //   navigate("/")
+    // }
    
   return (
        <Box bg="gray"   >
@@ -94,8 +98,11 @@ useEffect(() => {
             alignItems={"center"}
             bg={'gray.200'}
             >
+        {/* <Text marginLeft="10px" color={'#004570'} onClick={back}  ><AiOutlineArrowLeft/></Text> */}
        <Text marginLeft="20px" color={'#004570'} as="b" >{param1}</Text>
-       <Image marginRight="10px" src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov"  height={100}/>
+       
+       <Image marginRight="10px" src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dhan"  height="100px"/>
+       
       </Box>
  
       <Box display={"flex"}

@@ -49,11 +49,15 @@ const SelectedTaskAssign = () => {
   
   const navigateTo = () => {
     navigate("/UserNameSuccess")
-  }
+  };
 
   const navigateTo1 = () => {
     navigate("/CreateNewTask")
+  };
+  const back = () =>{
+    navigate("/ChildOverview/ChildTasks")
   }
+
 
     const obj=[
         {
@@ -139,7 +143,7 @@ const SelectedTaskAssign = () => {
             width="100%"
             >
        <HStack gap={"5"} pr={5}>
-       <Text marginLeft="10px" color={'#004570'} ><AiOutlineArrowLeft/></Text>
+       <Text marginLeft="10px" color={'#004570'} onClick={back}  ><AiOutlineArrowLeft/></Text>
        <Text marginLeft="10px" color={'#004570'} >GopiSunkara (select Task)</Text>
        </HStack>
        <Image marginRight="10px" src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov"  height={100}/>

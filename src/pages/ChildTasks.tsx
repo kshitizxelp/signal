@@ -133,6 +133,7 @@ const obj=[
         
             <Box  p={'5px'}>
             <Avatar name='' size='xl' src={item.image} />
+            
            </Box>
             
                <Box>

@@ -185,14 +185,21 @@ if(playerTime===jumpstartTimeOnlySec){
   reactPlayerRef.current?.seekTo(jumpendTimeOnlySec);
 };
 
-if(playerTime === AddSpeedstartTimeOnlySec){
+// if(playerTime === AddSpeedstartTimeOnlySec){
+// //  setPlaybackRate(speedofSpeed)
+// //  reactPlayerRef.current?.changePlaybackRateRate(speedofSpeed);
 
-  // setPlaybackRate(speedofSpeed)
- reactPlayerRef.current?.changePlaybackRateRate(speedofSpeed);
-
-};
+// };
 
 
+// const changePlaybackRate = (speedofSpeed:any) => {
+//   if (playerTime === AddSpeedstartTimeOnlySec) {
+//     // reactplayerRef.current.setPlaybackRate(newPlaybackRate);
+//     reactPlayerRef.current?.setPlaybackRate(speedofSpeed);
+//   }
+// };
+
+ 
 
 
 
@@ -320,11 +327,10 @@ if(playerTime === AddSpeedstartTimeOnlySec){
             width="50%"
             height="250px"
             playing={playing}
-            // playbackRate={1.0}
-            changePlaybackRateRate={speedofSpeed}
+           
+            // changePlaybackRateRate={changePlaybackRate}
             // onPause	={ handlePuase}
-            //gfdfghgvvd
-            // kikihihgffgfg
+          
            
           />
           

@@ -90,7 +90,7 @@ export default function CreateNewTask1() {
    <Box
         display="grid"
         gridTemplateColumns={{base:'repeat(1,1fr)',md:'repeat(2,1fr)',lg:'repeat(3,1fr)'}}
-        gridGap="5px"
+        gridGap="10px"
         marginTop="10px"
        
       >
@@ -99,10 +99,10 @@ export default function CreateNewTask1() {
            
           
            
-            <Box key={index} bg="gray.300" height="120px"  width="380px" m={'10px'} >
+            <Box key={index} bg="gray.300" height="120px"  width={{base:'300px',md:'300px',lg:'400px'}} m={'5px'} >
                 <Text bg={'green'} pt={'5px'}  color={'white'} pl={'10px'}>{item.head}</Text>
            
-            <HStack spacing="30px" marginLeft="18px" justifyContent="space-between" display="flex"  mt={'20px'}>
+            <HStack spacing="20px" marginLeft="18px" justifyContent="space-between" display="flex"  mt={'20px'}>
                 
             <Text as="b">{item.title}</Text>
             <Text>{item.itemvalue}</Text>
