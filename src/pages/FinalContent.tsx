@@ -51,6 +51,7 @@ const FinalContent = () => {
   console.log(insertclicktime, "clicktimee..");
   console.log(AddSpeed,"speed time ");
   console.log(AddspeedValue,"add speed valuesss")
+  
 
   const reactPlayerRef = useRef<any>(null);
   const [played, setPlayed] = useState(0);
