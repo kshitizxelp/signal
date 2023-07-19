@@ -52,7 +52,7 @@ export default function SIgnUp() {
       console.log("ssssss", data)
     
         const changeHandler = (e:any) => {
-          console.log(e.target.value,e.target.name,"from mhandle changeeeeeeeeeeee")
+        console.log(e.target.value,e.target.name,"from mhandle changeeeeeeeeeeee")
         setData({ ...data, [e.target.name]: e.target.value });
       };
       console.log('data',data)

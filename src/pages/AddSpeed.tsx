@@ -13,7 +13,7 @@ const AddSpeed = () => {
 
 const reactPlayerRef = useRef<any>(null);
 const [played, setPlayed] = useState(0);
-const [speed, setSpeed] = useState('1');
+const [speed, setSpeed] = useState('');
 const [des, setDes] = useState('');
 const [text,SetText]=useState('AddSpeed');
 const [show,setShow]=useState(false);

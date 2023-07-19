@@ -100,7 +100,7 @@ useEffect(() => {
             >
         {/* <Text marginLeft="10px" color={'#004570'} onClick={back}  ><AiOutlineArrowLeft/></Text> */}
        <Text marginLeft="20px" color={'#004570'} as="b" >{param1}</Text>
-       
+      
        <Image marginRight="10px" src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dhan"  height="100px"/>
        
       </Box>

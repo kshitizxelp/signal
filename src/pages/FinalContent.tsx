@@ -54,6 +54,10 @@ const FinalContent = () => {
   
 
   const reactPlayerRef = useRef<any>(null);
+  const [finaldata,setFinaldata]=useState({
+      date:"",
+      rewardpoints:"",
+    })
   const [played, setPlayed] = useState(0);
   const [seconds, setSeconds] = useState(0);
   const [selectplay,setSelectplay] = useState<any>({
@@ -81,6 +85,13 @@ const FinalContent = () => {
      
      
 // }
+
+const handleChange =(e:any)=>{
+  setFinaldata({ ...finaldata, [e.target.name]: e.target.value })
+}
+console.log(finaldata,">>>>>>>>>>>>>>>")
+
+
 
 
 
@@ -138,6 +149,10 @@ const FinalContent = () => {
    var speedofSpeed = AddspeedValue.speed
    console.log(speedofSpeed,">>>>>>>>>>>>>>>>>>>>>>SssSSSsss")
 
+
+
+
+
   // useEffect(() => {
   //   if (!alertDismissed) {
   //     setSelectplay(false);
@@ -185,19 +200,22 @@ if(playerTime===jumpstartTimeOnlySec){
   reactPlayerRef.current?.seekTo(jumpendTimeOnlySec);
 };
 
-// if(playerTime === AddSpeedstartTimeOnlySec){
-// //  setPlaybackRate(speedofSpeed)
-// //  reactPlayerRef.current?.changePlaybackRateRate(speedofSpeed);
-
-// };
 
 
-// const changePlaybackRate = (speedofSpeed:any) => {
-//   if (playerTime === AddSpeedstartTimeOnlySec) {
-//     // reactplayerRef.current.setPlaybackRate(newPlaybackRate);
-//     reactPlayerRef.current?.setPlaybackRate(speedofSpeed);
-//   }
-// };
+
+
+
+
+
+// useEffect(()=>{
+//   if(playerTime===AddSpeedstartTimeOnlySec){
+//     reactPlayerRef.current?.seekTo(setPlaybackRate(speedofSpeed));
+//     }
+   
+// },[playbackRate])
+
+
+
 
  
 
@@ -225,7 +243,8 @@ if(playerTime===jumpstartTimeOnlySec){
 
  
 
-
+var a =265;
+var b=2;
 
    // const handleProgress = (progress :any) => {
   //   setPlayed(progress.played);
@@ -237,13 +256,46 @@ if(playerTime===jumpstartTimeOnlySec){
     setPlayed(progress.played);
     const { playedSeconds } = progress;
     setSeconds(playedSeconds);
+    // const playerTime = Math.floor(playedSeconds);
+
+    // AddSpeedstartTimeOnlySec and speedofSpeed should be defined with appropriate values
+    const AddSpeedstartTimeOnlySec = a; // Replace with your value
+    const speedofSpeed = b; // Replace with your value
+    
    
-   
+    if (playerTime === AddSpeedstartTimeOnlySec) {
+      // Update the playback rate
+      setPlaybackRate(playbackRate + speedofSpeed);
+    }
+    // var data =AddSpeedstartTimeOnlySec;
+    // var speed= speedofSpeed
+    // console.log(data,"dataaaaaaaaaaaaaaa")
+    // console.log(speed,"Speed")
+    // if(playerTime === data){
+    //   setPlaybackRate(playbackRate + speed)
+    // }
   };
+
 
   console.log(seconds, ">>>>>>>>>>>>>>>");
   console.log(played, "played");
+  
 
+  
+
+
+//  main handleprogress start>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+  // const handleProgress = (progress: any) => {
+  //   setPlayed(progress.played);
+  //    const { playedSeconds } = progress;
+  //    setSeconds(playedSeconds);
+  //  };
+ 
+  //  console.log(seconds, ">>>>>>>>>>>>>>>");
+  //  console.log(played, "played");
+ 
+//  main handleprogress start>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 
 
@@ -327,9 +379,8 @@ if(playerTime===jumpstartTimeOnlySec){
             width="50%"
             height="250px"
             playing={playing}
-           
-            // changePlaybackRateRate={changePlaybackRate}
-            // onPause	={ handlePuase}
+           playbackRate={playbackRate}
+           // onPause	={ handlePuase}
           
            
           />
@@ -363,8 +414,10 @@ if(playerTime===jumpstartTimeOnlySec){
             placeholder="medium size"
             size="md"
             type="date"
+            name="date"
             borderColor={"black"}
             width={"320px"}
+            onChange={handleChange}
           />
         </Box>
       </Flex>
@@ -372,7 +425,16 @@ if(playerTime===jumpstartTimeOnlySec){
       <Flex display={"flex"} justifyContent={"center"} mt={"50px"}>
         <Box display={"flex"} flexDirection={"row"} alignItems={"center"}>
           <Text p={"20px"}>Add Task Reward Points</Text>
-          <Input htmlSize={4} width="auto" type="text" borderColor={"black"} />
+          {/* <Input htmlSize={4} width="auto" type="text" borderColor={"black"}  /> */}
+          <Input
+            placeholder="medium size"
+            size="md"
+            type="number"
+            name="rewardpoints"
+            borderColor={"black"}
+            width={"220px"}
+            onChange={handleChange}
+          />
         </Box>
       </Flex>
 
