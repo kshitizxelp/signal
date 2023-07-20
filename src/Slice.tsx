@@ -53,29 +53,30 @@ export default authSlice.reducer;
 
 
 export const getPosts = () => (dispatch:any) => {
-  const config = {
-    method: "get",
-    url: "https://jsonplaceholder.typicode.com/posts",
-    headers: {
-      "Content-Type": "application/json",
-    },
+  // const config = {
+  //   method: "get",
+  //   url: "https://jsonplaceholder.typicode.com/posts",
+  //   headers: {
+  //     "Content-Type": "application/json",
+  //   },
     
-  };
-  axios(config)
+  // };
+  // axios(config)
 
-    .then((response) => {
+  //   .then((response) => {
 
-      console.log(response, "responseeeeeeeee")
+  //     console.log(response, "responseeeeeeeee")
      
-      dispatch(setPosts(response?.data));
+  //     dispatch(setPosts(response?.data));
      
      
-    })
-    .catch((error) => {
-      console.log("error", error);
+  //   })
+  //   .catch((error) => {
+  //     console.log("error", error);
      
-    });
-};
+  //   });.
+
+ };
 
 
 

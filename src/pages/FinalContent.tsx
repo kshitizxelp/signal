@@ -113,54 +113,47 @@ console.log(finaldata,">>>>>>>>>>>>>>>")
   // }
 
  
-  var num2  = insertclicktime.clicktime 
+  let num2  = insertclicktime.clicktime 
   console.log(num2, "typpppppppppp");
-  var formatNum2 = Math.floor(num2);
+  let formatNum2 = Math.floor(num2);
   console.log("formatted number for jump ", formatNum2);
 
 
  
-  var num = seconds;
-  var playerTime = Math.floor(num);
+  let num = seconds;
+  let playerTime = Math.floor(num);
   console.log("formatted number for every second finalscreen data", playerTime);
 
  
 
-   var jumpstartTime= jumpdata.currentTime
+   let jumpstartTime= jumpdata.currentTime
    console.log(jumpstartTime,"jumpstartTime");
-   var jumpstartTimeOnlySec = Math.floor(jumpstartTime)
+   let jumpstartTimeOnlySec = Math.floor(jumpstartTime)
    console.log(" jump start time in seconds",jumpstartTimeOnlySec);
    
-  var jumpendTime = jumpdata.endTime
+  let jumpendTime = jumpdata.endTime
   console.log(jumpendTime,"jumpendTime");
-  var jumpendTimeOnlySec = Math.floor(jumpendTime)
+  let jumpendTimeOnlySec = Math.floor(jumpendTime)
   console.log("jump of end time in seconds",jumpendTimeOnlySec);
 
-  var speedtime = AddSpeed.currentTime
+  let speedtime = AddSpeed.currentTime
   console.log(speedtime,"add speed current");
-  var AddSpeedstartTimeOnlySec = Math.floor(speedtime)
+  let AddSpeedstartTimeOnlySec = Math.floor(speedtime)
   console.log("AddSpeed Start time only Seconds",AddSpeedstartTimeOnlySec);
   
-  var speedendtime =AddSpeed.endTime
+  let speedendtime =AddSpeed.endTime
   console.log(speedendtime,"Add speed end time");
-  var AddSpeedendTimeOnlySec =Math.floor(speedendtime)
+  let AddSpeedendTimeOnlySec =Math.floor(speedendtime)
    console.log("AddSpeed End time only Seconds",AddSpeedendTimeOnlySec);
 
-   var speedofSpeed = AddspeedValue.speed
+   let speedofSpeed = AddspeedValue.speed
    console.log(speedofSpeed,">>>>>>>>>>>>>>>>>>>>>>SssSSSsss")
 
 
 
 
 
-  // useEffect(() => {
-  //   if (!alertDismissed) {
-  //     setSelectplay(false);
-  //   }
-  // }, [alertDismissed]);
-
-  // Rest of your code...
-
+  
 
 
   useEffect(() => {
@@ -207,44 +200,13 @@ if(playerTime===jumpstartTimeOnlySec){
 
 
 
-// useEffect(()=>{
-//   if(playerTime===AddSpeedstartTimeOnlySec){
-//     reactPlayerRef.current?.seekTo(setPlaybackRate(speedofSpeed));
-//     }
-   
-// },[playbackRate])
 
+let a = AddSpeedstartTimeOnlySec;
+console.log(a,"Adataaaa");
+console.log(typeof(a))
 
-
-
- 
-
-
-
-  // if (formatNum == formatNum2) {
-    
-  //   // alert("welcome gopi sunkara");
-  //   // successAlert();
-  //   // .then(() => {
-  //   //   setAlertDismissed(true);
-  //   //    setSelectplay(false);
-  //   // });
-  //   Swal.fire('Any fool can use a computer')
-  //   setSelectplay(false);
-    
-  //   console.log("video stop")
-   
-    
-     
-  //   console.log("gopi sunkara");
-  // }
-
-
-
- 
-
-var a =265;
-var b=2;
+let b= parseInt(speedofSpeed)
+console.log(typeof(b),"typeee offff bbb")
 
    // const handleProgress = (progress :any) => {
   //   setPlayed(progress.played);
@@ -256,7 +218,7 @@ var b=2;
     setPlayed(progress.played);
     const { playedSeconds } = progress;
     setSeconds(playedSeconds);
-    // const playerTime = Math.floor(playedSeconds);
+    
 
     // AddSpeedstartTimeOnlySec and speedofSpeed should be defined with appropriate values
     const AddSpeedstartTimeOnlySec = a; // Replace with your value
@@ -265,8 +227,17 @@ var b=2;
    
     if (playerTime === AddSpeedstartTimeOnlySec) {
       // Update the playback rate
-      setPlaybackRate(playbackRate + speedofSpeed);
-    }
+      setPlaybackRate(playbackRate + speedofSpeed)
+      // if(playerTime===AddSpeedendTimeOnlySec){
+      //   setPlaybackRate(playbackRate + 1 );
+    
+      //  }
+
+    }  
+   
+  
+  
+  //  }
     // var data =AddSpeedstartTimeOnlySec;
     // var speed= speedofSpeed
     // console.log(data,"dataaaaaaaaaaaaaaa")
@@ -278,7 +249,7 @@ var b=2;
 
 
   console.log(seconds, ">>>>>>>>>>>>>>>");
-  console.log(played, "played");
+  console.log(played, "played"); 
   
 
   
