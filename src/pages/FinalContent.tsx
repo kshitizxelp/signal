@@ -21,8 +21,9 @@ import {
 import { AiOutlineArrowLeft, RiMedalLine } from "react-icons/all";
 import ReactPlayer from "react-player";
 import { useLocation, useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector,useDispatch  } from "react-redux";
 import Swal from 'sweetalert2'
+import { setfinaldataofreward } from "../Slice";
 
 
 
@@ -31,15 +32,8 @@ import Swal from 'sweetalert2'
 
 const FinalContent = () => {
   const navigate = useNavigate();
-  const Back = () => {
-    navigate(-1);
-  };
-  const Save = () => {
-    navigate("/VideoSuccessfullySaved");
-  };
-  const RelatedRewards = () => {
-    navigate("/SelectedRewards");
-  };
+ 
+  const dispatch = useDispatch();
   const jumpdata = useSelector<any>((state) => state?.auth?.jumpData);
   const addjump = useSelector<any>((state) => state?.auth?.addjump);
   const insertclicktime = useSelector<any>((state) => state?.auth?.insertclicktime);
@@ -57,7 +51,8 @@ const FinalContent = () => {
   const [finaldata,setFinaldata]=useState({
       date:"",
       rewardpoints:"",
-    })
+    });
+
   const [played, setPlayed] = useState(0);
   const [seconds, setSeconds] = useState(0);
   const [selectplay,setSelectplay] = useState<any>({
@@ -184,7 +179,7 @@ console.log(finaldata,">>>>>>>>>>>>>>>")
     }
 
 
-  }, [playerTime])
+  }, [playerTime]);
 
 
   console.log(selectplay, "selectplayselectplayselectplay");
@@ -227,13 +222,14 @@ console.log(typeof(b),"typeee offff bbb")
    
     if (playerTime === AddSpeedstartTimeOnlySec) {
       // Update the playback rate
-      setPlaybackRate(playbackRate + speedofSpeed)
-      // if(playerTime===AddSpeedendTimeOnlySec){
-      //   setPlaybackRate(playbackRate + 1 );
+      setPlaybackRate(playbackRate + speedofSpeed);
     
-      //  }
 
-    }  
+    }
+    else if(playerTime === AddSpeedendTimeOnlySec){
+      setPlaybackRate(1.0);
+  
+     };
    
   
   
@@ -288,7 +284,20 @@ console.log(typeof(b),"typeee offff bbb")
   console.log("goooooo", state?.add);
 
 
+ 
+  const Back = () => {
+    navigate(-1);
+  };
+  const Save = () => {
+    dispatch(setfinaldataofreward(finaldata))
+    
+    navigate("/VideoSuccessfullySaved");
+  };
+  const RelatedRewards = () => {
+    navigate("/SelectedRewards");
+  };
 
+  
   return (
     <Box bg={"gray.300"} width="100%">
       <Box

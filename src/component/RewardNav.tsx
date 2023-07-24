@@ -1,4 +1,4 @@
-import { Box, Text, Image } from '@chakra-ui/react'
+import { Box, Text, Image ,Flex} from '@chakra-ui/react'
 import React from 'react'
 
 // import { TbCoins } from 'react-icons-all'
@@ -35,16 +35,20 @@ const navigateTo3 = () => {
     <Image src="src/assets/Group 780@3x.png" alt="Dan Abramov" margin="15px" height="60px" width="160px" />
    </Box>
    <Box w="100%">
-   <Box height="220px" bg="orange.300" width="500px" ml="380px" mb="10px" borderRadius={5}>
+    <Flex justifyContent={'center'} >
+    <Box height={{base:"150px",md:"180px",lg:"200px"}} bg="orange.300" width={{base:"350px",md:"400px",lg:"500px"}} mb="10px" borderRadius={5}>
      <Text fontWeight={'bold'} color={'white'} pl="30px">Reward points Balance</Text>
 
-     <Box ml="200px" pt="80px">
+     <Flex justifyContent={'center'}>
+     <Box  pt="50px">
      <Text fontWeight={'bold'} color={'white'} >23,000 pts</Text>
      <Text borderRadius={10} bg={'white'} width="100px" textAlign={'center'} onClick={navigateTo3}>Top Up</Text>
      </Box>
+     </Flex>
    
      <Text pt="10px" pl="20px"><TbCoins  color="yellow" height="200px" /></Text>
      </Box>
+     </Flex>
    </Box>
    <Box display={"flex"}
             flexDirection={"row"}

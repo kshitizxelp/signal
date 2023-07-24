@@ -14,17 +14,17 @@ const TopUp = () => {
         {
             name:"Enter amount in INR",
             label:"Amount",
-            type:"text",
+            type:"number",
         },
         {
           name: "Autofill",
           label: "Signal points",
-          type: "text",
+          type: "number",
         },
       
       ];
   return (
-    <Box bg={'gray.300'} width="100%" >
+    <Box bg={'gray.300'} width="100%"  >
       <Box>
       <Box  display={"flex"}
             flexDirection={"row"}
@@ -42,38 +42,41 @@ const TopUp = () => {
       </Box>
 
      <Box mt="5px" pb="2px">
-        <Box height="220px" bg="orange.300" width="500px" ml="380px" mb="10px" borderRadius={5}>
+      <Flex justifyContent={'center'}>
+        <Box height={{base:"150px",md:"180px",lg:"200px"}} bg="orange.300" width={{base:"300px",md:"400px", lg:"450px"}}  mb="10px" borderRadius={5}>
        <Text fontWeight={'bold'} color={'white'} pl="30px">Reward points Balance</Text>
 
-       <Box ml="200px" pt="80px">
+      <Flex justifyContent={'center'}>
+       <Box  pt="80px">
        <Text fontWeight={'bold'} color={'white'} >23,000 pts</Text>
-      
-        </Box>
+       </Box>
+       </Flex>
    
      <Text pt="10px" pl="20px"><TbCoins  color="yellow" height="200px" /></Text>
        </Box>
+       </Flex>
      </Box>
 
-     <Box ml="380px">
+      <Flex justifyContent={'center'}>
+     <Box >
         <Text color={'#004570'}>Top Up Signal Points</Text>
      </Box>
+     </Flex>
 
      
      {
      inputs.map((item :any)=>(
         <Box>
-     <Flex display="flex" justifyContent={'center'}>
+     <Flex justifyContent={'center'}>
      <Box>
     <Text>{item.label}</Text>
     <Input placeholder={item.name}
              type={item.type}
-            
-            
               size='md' 
               variant="outline"
               bgColor="white"
               borderColor="black"
-              width="333px"
+              width="300px"
               mt="4px" />
          </Box>
          </Flex>

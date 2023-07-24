@@ -59,31 +59,31 @@ const SelectedTaskAssign = () => {
   }
 
 
-    const obj=[
-        {
-          innerbox:"Age 8"
-        },
-        {
-            innerbox:"Age 9"
-          },
-          {
-            innerbox:"Age 10"
-          },
-          {
-            innerbox:"Age 11"
-          },
-          {
-            innerbox:"Age 12"
-          },
-          {
-            innerbox:"Age 13"
-          },
-          {
-            innerbox:"Age 14"
-          },
+    // const obj=[
+    //     {
+    //       innerbox:"Age 8"
+    //     },
+    //     {
+    //         innerbox:"Age 9"
+    //       },
+    //       {
+    //         innerbox:"Age 10"
+    //       },
+    //       {
+    //         innerbox:"Age 11"
+    //       },
+    //       {
+    //         innerbox:"Age 12"
+    //       },
+    //       {
+    //         innerbox:"Age 13"
+    //       },
+    //       {
+    //         innerbox:"Age 14"
+    //       },
           
           
-    ];
+    // ];
 
 
     const data=[
@@ -159,27 +159,46 @@ const SelectedTaskAssign = () => {
         </Box>
           
          
-             <Box style={{overflowX:"scroll",width: '100vw',  whiteSpace: 'nowrap' }} >
+             {/* <Box style={{overflowX:"scroll",width: '100vw',  whiteSpace: 'nowrap' }} >
             <Box style={{ width: '200vw' }}>
             <Flex display={'flex'} gap={'10px'} pt={'10px'} pb={'10px'}    pl={'2px'}>
              {
                 obj.map((item)=>(
            
-            <Button borderEndRadius="10px" width="200px">{item.innerbox}</Button>
+            // <Button borderEndRadius="10px" width="200px">{item.innerbox}</Button>
             
             
              ))
             }
 
-         {/* <Tabs variant='unstyled'>
-         <TabList>
-          <Tab _selected={{ color: 'white', bg: 'blue.500' }}>Tab 1</Tab>
-          <Tab _selected={{ color: 'white', bg: 'green.400' }}>Tab 2</Tab>
-        </TabList> */}
+        
              </Flex>
               </Box>
             
-             </Box>
+             </Box> */}
+  <Box style={{overflowX:"scroll",width: '100vw',  whiteSpace: 'nowrap' }} >
+  <Box style={{ width: '200vw' }}>
+  <Tabs justifyContent="space-evenly">
+  <TabList>
+    <Tab _selected={{ color: 'white', bg: 'blue' }}borderRadius="10px" width="150px" ml="40px" bg={'white'} mb="10px">Age 8</Tab>
+    <Tab _selected={{ color: 'white', bg: 'blue' }}borderRadius="10px" width="150px" ml="40px" bg={'white'} mb="10px">Age 9</Tab>
+    <Tab _selected={{ color: 'white', bg: 'blue' }}borderRadius="10px" width="150px" ml="40px" bg={'white'} mb="10px">Age 10</Tab>
+    <Tab _selected={{ color: 'white', bg: 'blue' }}borderRadius="10px" width="150px" ml="40px" bg={'white'} mb="10px">Age 11</Tab>
+    <Tab _selected={{ color: 'white', bg: 'blue' }}borderRadius="10px" width="150px" ml="40px" bg={'white'} mb="10px">Age 12</Tab>
+    <Tab _selected={{ color: 'white', bg: 'blue' }}borderRadius="10px" width="150px" ml="40px" bg={'white'} mb="10px">Age 13</Tab>
+    <Tab _selected={{ color: 'white', bg: 'blue' }}borderRadius="10px" width="150px" ml="40px" bg={'white'} mb="10px">Age 14</Tab>
+   
+  </TabList>
+ 
+</Tabs>
+</Box>
+</Box>
+
+
+
+
+
+
              
              </Box>
 

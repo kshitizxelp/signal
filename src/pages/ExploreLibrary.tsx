@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Box, Text,HStack,Image,Input,InputGroup ,InputRightElement,IconButton, Flex,Button,ChakraProvider,Avatar} from '@chakra-ui/react'
+import { Box, Text,HStack,Image,Input,InputGroup ,InputRightElement,IconButton, Flex,Button,ChakraProvider,Avatar,Tabs,TabList,Tab} from '@chakra-ui/react'
 import { AiOutlineArrowLeft ,CiSearch ,GiTrophyCup} from 'react-icons/all';
 import { useNavigate } from 'react-router-dom';
 import Login from '../screens/Login';
@@ -18,31 +18,7 @@ export default function ExploreLibrary() {
    
   //   console.log('Searching for:', searchValue);
 
-  const obj=[
-    {
-      innerbox:"Age 8"
-    },
-    {
-        innerbox:"Age 9"
-      },
-      {
-        innerbox:"Age 10"
-      },
-      {
-        innerbox:"Age 11"
-      },
-      {
-        innerbox:"Age 12"
-      },
-      {
-        innerbox:"Age 13"
-      },
-      {
-        innerbox:"Age 12"
-      },
-      
-      
-];
+  
 
 const data=[
   {
@@ -182,20 +158,26 @@ const  Back = ()=>{
         </Box>
           
          
-             <Box style={{overflowX:"scroll",width: '100vw',  whiteSpace: 'nowrap' }} >
-            <Box style={{ width: '200vw' }}>
-            <Flex display={'flex'} gap={'10px'} pt={'10px'} pb={'10px'}    pl={'2px'}>
-             {
-                obj.map((item)=>(
-           
-            <Button borderEndRadius="10px" width="200px"  >{item.innerbox}</Button>
-             ))
-            }
-             </Flex>
-              </Box>
             
-             </Box>
-             
+
+  <Box style={{overflowX:"scroll",width: '100vw',  whiteSpace: 'nowrap' }} >
+  <Box style={{ width: '200vw' }}>
+  <Tabs justifyContent="space-evenly">
+  <TabList>
+    <Tab _selected={{ color: 'white', bg: 'blue' }}borderRadius="10px" width="150px" ml="40px" bg={'white'} mb="10px">Age 8</Tab>
+    <Tab _selected={{ color: 'white', bg: 'blue' }}borderRadius="10px" width="150px" ml="40px" bg={'white'} mb="10px">Age 9</Tab>
+    <Tab _selected={{ color: 'white', bg: 'blue' }}borderRadius="10px" width="150px" ml="40px" bg={'white'} mb="10px">Age 10</Tab>
+    <Tab _selected={{ color: 'white', bg: 'blue' }}borderRadius="10px" width="150px" ml="40px" bg={'white'} mb="10px">Age 11</Tab>
+    <Tab _selected={{ color: 'white', bg: 'blue' }}borderRadius="10px" width="150px" ml="40px" bg={'white'} mb="10px">Age 12</Tab>
+    <Tab _selected={{ color: 'white', bg: 'blue' }}borderRadius="10px" width="150px" ml="40px" bg={'white'} mb="10px">Age 13</Tab>
+    <Tab _selected={{ color: 'white', bg: 'blue' }}borderRadius="10px" width="150px" ml="40px" bg={'white'} mb="10px">Age 14</Tab>
+   
+  </TabList>
+ 
+</Tabs>
+</Box>
+</Box>
+            
              </Box>
 
         <Box bg={'gray'} mt="5px" >
@@ -204,7 +186,7 @@ const  Back = ()=>{
         </Box>
           
          
-             <Box style={{overflowX:"scroll",width: '100vw',  whiteSpace: 'nowrap' }} >
+             {/* <Box style={{overflowX:"scroll",width: '100vw',  whiteSpace: 'nowrap' }} >
             <Box style={{ width: '200vw' }}>
             <Flex display={'flex'} gap={'10px'} pt={'10px'} pb={'10px'}    pl={'2px'}>
              {
@@ -217,7 +199,24 @@ const  Back = ()=>{
               </Box>
             
              </Box>
-             
+              */}
+  <Box style={{overflowX:"scroll",width: '100vw',  whiteSpace: 'nowrap' }} >
+  <Box style={{ width: '200vw' }}>
+  <Tabs justifyContent="space-evenly">
+  <TabList>
+    <Tab _selected={{ color: 'white', bg: 'green.900' }}borderRadius="10px" width="150px" ml="40px" bg={'white'} mb="10px">All</Tab>
+    <Tab _selected={{ color: 'white', bg: 'green.900' }}borderRadius="10px" width="150px" ml="40px" bg={'white'} mb="10px">Task Videos</Tab>
+    <Tab _selected={{ color: 'white', bg: 'green.900' }}borderRadius="10px" width="150px" ml="40px" bg={'white'} mb="10px">Related Podcasts</Tab>
+    <Tab _selected={{ color: 'white', bg: 'green.900' }}borderRadius="10px" width="150px" ml="40px" bg={'white'} mb="10px">Related Games</Tab>
+    <Tab _selected={{ color: 'white', bg: 'green.900' }}borderRadius="10px" width="150px" ml="40px" bg={'white'} mb="10px">Related Books</Tab>
+    <Tab _selected={{ color: 'white', bg: 'green.900' }}borderRadius="10px" width="150px" ml="40px" bg={'white'} mb="10px">Related Pdfs</Tab>
+    
+  </TabList>
+ 
+</Tabs>
+</Box>
+</Box>
+
              </Box>
 
       </Box>
