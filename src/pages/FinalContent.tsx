@@ -224,13 +224,14 @@ console.log(typeof(b),"typeee offff bbb")
       // Update the playback rate
       setPlaybackRate(playbackRate + speedofSpeed);
     
-
+     
     }
+   
     else if(playerTime === AddSpeedendTimeOnlySec){
       setPlaybackRate(1.0);
   
-     };
-   
+      };
+    
   
   
   //  }
@@ -289,7 +290,7 @@ console.log(typeof(b),"typeee offff bbb")
     navigate(-1);
   };
   const Save = () => {
-    dispatch(setfinaldataofreward(finaldata))
+    dispatch(setfinaldataofreward(finaldata));
     
     navigate("/VideoSuccessfullySaved");
   };

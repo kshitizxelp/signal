@@ -19,12 +19,16 @@ import {
     Tab
   } from "@chakra-ui/react";
   import { AiOutlineArrowLeft ,GiTrophyCup ,SlNote } from 'react-icons/all';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,Outlet } from 'react-router-dom';
+import Header from '../component/Header';
+import Nav from '../component/Nav';
+
   
 
 const SelectedTaskAssign = () => {
  
   const navigate = useNavigate()
+  
 
   const [selectedRadio, setSelectedRadio] = useState([]);
 
@@ -135,6 +139,8 @@ const SelectedTaskAssign = () => {
     ]
   return (
     <Box bg={'gray.300'} width={'100%'}>
+     
+      
      <Box  display={"flex"}
             flexDirection={"row"}
             justifyContent={"space-between"}

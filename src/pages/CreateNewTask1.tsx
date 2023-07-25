@@ -77,7 +77,7 @@ export default function CreateNewTask1() {
          bg={'gray.200'}
         
          >
-    <Text marginLeft="20px" color={'#004570'} as="b" >Vineet</Text>
+    <Text marginLeft="20px" color={'#004570'} as="b" >Gopi Sunkara</Text>
     <Image marginRight="10px" src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov"  height={'100px'}/>
    </Box>
 

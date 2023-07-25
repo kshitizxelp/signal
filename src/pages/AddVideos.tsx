@@ -75,7 +75,7 @@ const handleSeek = (value :any) => {
     <Box display={"flex"}
          flexDirection={"column"} >
             <Text marginLeft="20px" color={'#004570'}> Add English Content for </Text>
-    <Text marginLeft="20px" color={'#004570'} as="b" >Vineet</Text>
+    <Text marginLeft="20px" color={'#004570'} as="b" >Gopi Sunkara</Text>
     </Box>
     <Image marginRight="10px" src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov"  height={100}/>
    </Box>

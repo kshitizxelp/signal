@@ -1,12 +1,16 @@
 import { Box, Button, Flex, Image, Input, Text } from '@chakra-ui/react'
-import React from 'react'
+import React, { useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom';
 import {useSelector} from "react-redux"
 
 
 
 export default function ParentVerification1() {
-  const countNum = useSelector <any>((state)=>state?.counter)
+  // const countNum = useSelector <any>((state)=>state?.counter)
+
+  const [dataone ,setDataone] = useState({
+           number:"",
+  });
 
     const location = useLocation();
     const params = location.state;
@@ -18,7 +22,13 @@ export default function ParentVerification1() {
 
     const navigateTo = () =>{
         navigate("/ParentVerification2",{  state : {param:param1}})
-    }
+    };
+
+   
+    const handlechange =(e:any)=>{
+    setDataone({...dataone,[e.target.name]:e.target.value})
+    };
+    console.log(dataone);
 
   return (
     <Box bg={'gray'} >
@@ -50,12 +60,14 @@ export default function ParentVerification1() {
         
          <Flex display={'flex'} justifyContent={'center'}>
           <Box>
-          <Input
-              type="text"
+           <Input
+              type="number"
+              name="number"
               variant="outline"
               bgColor="white"
               borderColor="black"
               width="313px"
+              onChange={handlechange}
             />
            </Box>
            </Flex>

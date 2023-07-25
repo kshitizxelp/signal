@@ -127,6 +127,7 @@ function App() {
         <Route path="/ChildOverview" element={<ChildOverview/>}>
                  <Route path="/ChildOverview/ChildTasks" element={<ChildTasks/>} /> 
                  <Route path="/ChildOverview/ChildRewards" element={<ChildRewards/>} />
+                 
         </Route>
 
         <Route  path="/CreateNewTask1"  element={<CreateNewTask1/>} />
