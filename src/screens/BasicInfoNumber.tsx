@@ -12,12 +12,20 @@ export default function BasicInfoNumber() {
 
     const [formData, setFormData] = useState<any>({
         username: "",
-        password: ""
+        mobile: "",
+        gender:"",
       });
+      console.log(formData)
+
+      const handlechange =(e:any)=>{
+
+        setFormData({...formData,[e.target.name]:e.target.value})
+      }
+
 
       const inputs :any = [
         {
-            name:"name",
+            name:"username",
             label:"Name",
             type:"text",
         },
@@ -34,7 +42,7 @@ export default function BasicInfoNumber() {
       ];
 
   return (
-    <Box bg={'gray'}>
+    <Box bg={'gray'} width="100%">
   <Flex direction="column" alignItems="center" position="relative" pt={'60px'} pb={'100px'}>
   <Box
    boxShadow="dark-lg"
@@ -42,8 +50,7 @@ export default function BasicInfoNumber() {
    rounded=""
    bg="white"
    borderRadius={'50px'}
-   
-   width="450px"
+   width={{base:"300px",md:"320px",lg:"350px"}}
    alignItems="center"
    justifyContent="center"
    mt={'4px'}
@@ -64,13 +71,14 @@ export default function BasicInfoNumber() {
     <Box mt={'4px'}>
      {inputs.map((input: any) => (
           <Box key={input.name} mb={'4px'}>
-                        <Text mb={'1px'}>{input.label}</Text>
+            <Text mb={'1px'}>{input.label}</Text>
             {input.name === "gender" ? ( 
-                <Select placeholder='Select' width="313px"  borderColor="#282828">
-                <option value='Option1'>Male</option>
-                <option value='Option2'>Female</option>
+                <Select placeholder='Select' width={{base:"250px",md:"280px",lg:"313px"}}  borderColor="#282828" onChange={handlechange} >
+                <option value='Male'>Male</option>
+                <option value='Female'>Female</option>
               </Select>
             ):(
+              <Flex justifyContent={'center'}>
             <Input
               type={input.type}
               placeholder={input.placeholder}
@@ -79,8 +87,10 @@ export default function BasicInfoNumber() {
               variant="outline"
               bgColor="white"
               borderColor="black"
-              width="313px"
+              width={{base:"250px",md:"280px",lg:"313px"}}
+              onChange={handlechange}
             />
+            </Flex>
             )}
           </Box>
         ))}
@@ -88,8 +98,9 @@ export default function BasicInfoNumber() {
      </Flex>
      
      <Flex display={'flex'} justifyContent={'center'}>
+      
      <Box mt={'8px'}>
-        <Button colorScheme="blue" size="lg" bg="rgba(0, 69, 112, 1)" width="313px" onClick={Login}>
+        <Button colorScheme="blue" size="lg" bg="rgba(0, 69, 112, 1)" width={{base:"250px",md:"280px",lg:"313px"}} onClick={Login}>
           Save
         </Button>
       </Box>

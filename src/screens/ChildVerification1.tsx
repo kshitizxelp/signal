@@ -9,24 +9,22 @@ export default function ChildVerification1() {
   const navigate = useNavigate();
 
   const navigateTo = () =>{
-    console.log("he;;;ppp")
+    
 
-        navigate("/ChildVerification2")
-  }
+    navigate("/ChildVerification2")
+  };
 
   return (
-    <Box bg={'gray'} width={'100%'} >
-  <Flex direction="column" alignItems="center"  position="relative" pt={'100px'} pb={'200px'} >
-    <Box
+  <Box bg={'gray.300'} width={'100%'} >
+  <Flex justifyContent={'center'}>
+  <Box
    boxShadow="dark-lg"
-   p="0px"
-   rounded=""
    bg="white"
-   borderRadius={'50px'}
-   // height="620px"
-   width="400px"
+   borderRadius='50px'
+   width={{base:"300px",md:"420px",lg:"450px"}}
    alignItems="center"
    justifyContent="center"
+   m="20px"
  >
       <Box>
       <Flex display={'flex'} justifyContent={'center'}>

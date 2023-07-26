@@ -24,26 +24,29 @@ export default function ChildInterest() {
 
   return (
 
-<Box bg={'gray.400'}>
-  <Box  display={"flex"}
-            flexDirection={"row"}
-            justifyContent={"space-between"}
-            alignItems={"center"}
-            bg={'white'}
+ <Box bg={'gray.400'} width="100%">
+  
+  <Box  display={"flex"} 
+        flexDirection={"row"}
+        justifyContent={"space-between"}
+        alignItems={"center"}
+        bg={'white'}
            >
-    <Text pl={10} color={'#004570'} fontWeight={'bold'}> Add Child's Interests</Text>
-    <Image src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov" height={100} pr={10}/>
+    <Text pl="10px" color={'#004570'} fontWeight={'bold'}> Add Child's Interests</Text>
+    <Image src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov" height="100px" pr="10px"/>
    </Box>
+    
     <ChakraProvider>
-      <Box display="grid" gridTemplateColumns="repeat(3, 1fr)" gap={4} p={10}>
+      <Box display="grid" gridTemplateColumns={{base:"repeat(1, 1fr)" ,md:"repeat(2,1fr)",lg:"repeat(3,1fr)" }} gap="10px" m="10px">
         {/* Card 1 */}
         <Flex
           bg="gray.100"
-          p={4}
+          p="4px"
           borderRadius="md"
           boxShadow="md"
           flexDirection="column"
-          height={200}
+          height={{base:"150px",md:"180px",lg:"200px"}}
+          width={{base:"300px",md:"380px",lg:"400px"}}
         >
           <Box bg={'gray.300'} 
                display={"flex"}
@@ -51,44 +54,46 @@ export default function ChildInterest() {
                justifyContent={"space-between"}
                alignItems={"center"}
            >
-          <Text pl={5}>Outdoor Games</Text> 
-          <Text fontSize={30}  pr={5} onClick={LoginTo}><FaAngleUp /></Text> 
+          <Text pl="5px">Outdoor Games</Text> 
+          <Text fontSize="30px"  pr="5px" onClick={LoginTo}><FaAngleUp /></Text> 
           </Box>
           
-          <Box mt={10}>
-          <Flex display={'flex'} alignItems="center" direction="row" gap={2}>
+          <Box mt="10px">
+          <Flex display={'flex'} alignItems="center" direction="row" gap="2px">
             <Radio
              value="1"
              borderColor={'black'}
              colorScheme='green'
             />
-            <Text mt={0}>Cricket</Text>
+            <Text >Cricket</Text>
               <Radio
               value="2"
               borderColor={'black'}
               colorScheme='green'
               />
-            <Text mt={0}>FootBall</Text>
+            <Text >FootBall</Text>
               <Radio
                 value="3"
                 borderColor={'black'}
                 colorScheme='green'
               />
-              <Text mt={0}>Badminton</Text>
+            <Text>Badminton</Text>
             <Flex  alignItems="center" direction="column">
             <BsPlusCircle color="#004570" />
-            <Text mt={2} color="#004570" as="u" >Add New</Text>
+            <Text mt="2px" color="#004570" as="u" >Add New</Text>
             </Flex>
             </Flex>
             </Box>
             </Flex>
-            <Flex
+          
+         <Flex
           bg="gray.100"
-          p={4}
+          p="4px"
           borderRadius="md"
           boxShadow="md"
           flexDirection="column"
-          height={200}
+          height={{base:"150px",md:"180px",lg:"200px"}}
+          width={{base:"300px",md:"380px",lg:"400px"}}
         >
           
           <Box bg={'gray.300'}
@@ -97,18 +102,18 @@ export default function ChildInterest() {
            justifyContent={"space-between"}
            alignItems={"center"}
            >
-           <Text pl={5}>Board Games</Text> 
-           <Text fontSize={30} pr={5} onClick={LoginTo}><FaAngleUp /></Text> 
+           <Text pl="5px">Board Games</Text> 
+           <Text fontSize="30px" pr="5px" onClick={LoginTo}><FaAngleUp /></Text> 
           </Box>
           
-          <Box mt={10}>
-          <Flex display={'flex'} alignItems="center" direction="row" gap={2}>
+          <Box mt="10px">
+          <Flex display={'flex'} alignItems="center" direction="row" gap="2px">
             <Radio
              value="1"
              borderColor={'black'}
              colorScheme='green'
               />
-            <Text mt={0}>Chess</Text>
+            <Text >Chess</Text>
      
        
               <Radio
@@ -116,7 +121,7 @@ export default function ChildInterest() {
               borderColor={'black'}
               colorScheme='green'
               />
-            <Text mt={0}>Scrabble</Text>
+            <Text>Scrabble</Text>
        
           
               <Radio
@@ -124,12 +129,12 @@ export default function ChildInterest() {
                 borderColor={'black'}
                 colorScheme='green'
               />
-              <Text mt={0}>Lego</Text>
+              <Text >Lego</Text>
               
             
             <Flex  alignItems="center" direction="column">
             <BsPlusCircle color="#004570" />
-            <Text mt={2} color="#004570" as="u" >Add New</Text>
+            <Text mt="2px" color="#004570" as="u" >Add New</Text>
             </Flex>
 
             </Flex>
@@ -137,13 +142,14 @@ export default function ChildInterest() {
             </Flex>
 
 
-            <Flex
+          <Flex
           bg="gray.100"
-          p={4}
+          p="4px"
           borderRadius="md"
           boxShadow="md"
           flexDirection="column"
-          height={200}
+          height={{base:"150px",md:"180px",lg:"200px"}}
+          width={{base:"300px",md:"380px",lg:"400px"}}
         >
           
           <Box bg={'gray.300'}
@@ -152,12 +158,12 @@ export default function ChildInterest() {
           justifyContent={"space-between"}
           alignItems={"center"}
           >
-           <Text pl={5}>Creative Arts</Text> 
-           <Text fontSize={30} pr={5} onClick={LoginTo}><FaAngleUp /></Text> 
+           <Text pl="5px">Creative Arts</Text> 
+           <Text fontSize="30px" pr="5px" onClick={LoginTo}><FaAngleUp /></Text> 
           </Box>
           
-          <Box mt={10}>
-          <Flex display={'flex'} alignItems="center" direction="row" gap={2}>
+          <Box mt="10px">
+          <Flex display={'flex'} alignItems="center" direction="row" gap="2px">
             <Radio
              value="1"
              borderColor={'black'}
@@ -192,13 +198,14 @@ export default function ChildInterest() {
             </Flex>
 
 
-            <Flex
+         <Flex
           bg="gray.100"
           p={4}
           borderRadius="md"
           boxShadow="md"
           flexDirection="column"
-          height={200}
+          height={{base:"150px",md:"180px",lg:"200px"}}
+          width={{base:"300px",md:"380px",lg:"400px"}}
         >
           
           <Box bg={'gray.300'} 
@@ -207,18 +214,18 @@ export default function ChildInterest() {
           justifyContent={"space-between"}
           alignItems={"center"}
           >
-           <Text pl={5}>Indoor Activities</Text> 
-           <Text fontSize={30} pr={5} onClick={LoginTo}><FaAngleUp/></Text> 
+           <Text pl="5px">Indoor Activities</Text> 
+           <Text fontSize="30px" pr="5px" onClick={LoginTo}><FaAngleUp/></Text> 
           </Box>
           
-          <Box mt={10}>
-          <Flex display={'flex'} alignItems="center" direction="row" gap={2}>
+          <Box mt="10px">
+          <Flex display={'flex'} alignItems="center" direction="row" gap="2px">
             <Radio
              value="1"
              borderColor={'black'}
              colorScheme='green'
               />
-            <Text mt={0}>Baking</Text>
+            <Text>Baking</Text>
      
        
               <Radio
@@ -226,7 +233,7 @@ export default function ChildInterest() {
               borderColor={'black'}
               colorScheme='green'
               />
-            <Text mt={0}>Origami</Text>
+            <Text>Origami</Text>
        
           
               <Radio
@@ -234,12 +241,12 @@ export default function ChildInterest() {
                 borderColor={'black'}
                 colorScheme='green'
               />
-              <Text mt={0}>Mechanics</Text>
+              <Text>Mechanics</Text>
               
             
             <Flex  alignItems="center" direction="column">
             <BsPlusCircle color="#004570" />
-            <Text mt={2} color="#004570" as="u" >Add New</Text>
+            <Text mt="2px" color="#004570" as="u" >Add New</Text>
             </Flex>
 
             </Flex>
@@ -260,10 +267,10 @@ export default function ChildInterest() {
         {/* Add more cards as needed */}
       </Box>
     </ChakraProvider>
-    <Flex display={'flex'} justifyContent={'center'} m={20} mb={40}>
-    <Checkbox colorScheme='green' defaultChecked>
+    <Flex display={'flex'} justifyContent={'center'}>
+    <Checkbox colorScheme='green' defaultChecked pl="10px">
     </Checkbox>
-    <Text p={10} noOfLines={[1,2,3]}>By checking this box you confirm that you have the right to provide this information either as a parent or carer (for learners under 13 years old) or that you have consent to provide such information (13years and over).</Text>
+    <Text mt="150px">By checking this box you confirm that you have the right to provide this information either as a parent or carer (for learners under 13 years old) or that you have consent to provide such information (13years and over).</Text>
     </Flex>
     {/* </Box> */}
 

@@ -9,14 +9,14 @@ export default function ChildVerification2() {
     navigate("/ChildVerification3")
   }
     return (
-        <Flex direction="column" alignItems="center" position="relative" >
-        <Box
+      <Box>
+      <Flex direction="column" alignItems="center" position="relative" >
+      <Box
        boxShadow="dark-lg"
        p="6"
        rounded=""
        bg="white"
        borderRadius={60}
-       // height="620px"
        width="400px"
       
        alignItems="center"
@@ -76,5 +76,6 @@ export default function ChildVerification2() {
     
     
        </Flex>
+       </Box>
       )
 }

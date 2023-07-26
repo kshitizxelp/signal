@@ -14,27 +14,27 @@ export default function ParentVerification3() {
   return (
     <Box bg={'gray'} >
     <Flex direction="column" alignItems="center" position="relative" >
-       <Box
+      <Box
       boxShadow="dark-lg"
       p="5"
       rounded=""
       bg="white"
-      borderRadius={60}
-      height="620px"
-      width="500px"
-      mt={5}
-      mb={10}
+      borderRadius="50px"
+      height="520px"
+      width={{base:"290px",md:"350px",lg:"450px"}}
+      mt="5px"
+      mb="10px"
     >
       <Flex display={'flex'} justifyContent={'center'}>
-      <Box  mt={10} >
-      <Image src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov" height={200} />
+      <Box  mt="10px" >
+      <Image src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov" height="200px" />
      </Box>
      </Flex>
     
      <Flex display={'flex'} justifyContent={'center'}>
-         <Box mt={10}>
+         <Box mt="10px">
           <Text color="red" as="b" >Yay!</Text>
-          <Text as="b" mt={2} >
+          <Text as="b" mt="2px" >
             <br></br>
             We are exited to have
             <br></br>
@@ -47,8 +47,8 @@ export default function ParentVerification3() {
           </Flex>
       
         <Flex display={'flex'} justifyContent={'center'}>
-        <Box mt={12}>
-        <Button colorScheme="blue" size="lg" bg="#004570" width="313px" onClick={() => navigateTo()} >
+        <Box mt="12px">
+        <Button colorScheme="blue" size="lg" bg="#004570" width={{base:"280px",md:"300px",lg:"312px"}} onClick={() => navigateTo()} >
           Next
         </Button>
       </Box>

@@ -16,7 +16,7 @@ export default function ParentVerification() {
     
 
   return (
-    <Box bg={'gray'}>
+    <Box bg={'gray'} width="100%">
     <Flex direction="column" alignItems="center" pt={'40px'} pb={'50px'}>
        <Box
       boxShadow="dark-lg"
@@ -24,8 +24,7 @@ export default function ParentVerification() {
       rounded=""
       bg="white"
       borderRadius={'50px'}
-      // height="620px"
-      width="450px"
+      width={{base:"290px",md:"330px",lg:"450px"}}
       alignItems="center"
       justifyContent="center"
       mt={'10px'}
@@ -54,7 +53,7 @@ export default function ParentVerification() {
      
       <Flex display={'flex'} justifyContent={'center'}>
       <Box pt={'50px'} mb={'30px'}>
-      <Button mt={'12px'} colorScheme="blue" size="lg" bg="rgba(0, 69, 112, 1)" width="313px" onClick={Login1}>
+      <Button mt={'12px'} colorScheme="blue" size="lg" bg="rgba(0, 69, 112, 1)" width={{base:"280px",md:"320px",lg:"440px"}} onClick={Login1}>
           Aadhaar Card
         </Button>
         
@@ -62,8 +61,8 @@ export default function ParentVerification() {
         </Flex>
 
       <Flex display={'flex'} justifyContent={'center'}>
-      <Box mb={'10px'}>
-        <Button mt={'4px'} colorScheme="blue" size="lg" bg="rgba(0, 69, 112, 1)" width="313px" onClick={Login2} >
+      <Box mb={'30px'}>
+        <Button mt={'4px'} colorScheme="blue" size="lg" bg="rgba(0, 69, 112, 1)" width={{base:"280px",md:"320px",lg:"440px"}}  onClick={Login2} >
           Pan Card
         </Button>
         </Box>

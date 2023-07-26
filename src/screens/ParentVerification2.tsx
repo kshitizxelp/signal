@@ -36,18 +36,17 @@ export default function ParentVerification2() {
 
   
   return (
-    <Box bg={'gray'} pt={50} >
+    <Box bg={'gray'} width="100%" >
     <Flex direction="column" alignItems="center">
     <Box
       boxShadow="dark-lg"
       p="5"
       rounded=""
       bg="white"
-      borderRadius={60}
-      // height="700px"
-      width="500px"
-      mt={2}
-      mb={50}
+      borderRadius="50px"
+      width={{base:"290px",md:"400px",lg:"500px"}}
+      mt="2px"
+      mb="50px"
       
     >
         <Flex display={'flex'} justifyContent={'center'}>
@@ -55,12 +54,12 @@ export default function ParentVerification2() {
         <Image
           src=" src/assets/SIGNAL LOGO (2)@3x.png"
           alt="Dan Abramov"
-          height={150}
+          height="150px"
         />
       </Box>
       </Flex>
     <Flex display={'flex'} justifyContent={'center'}>
-      <Box mr={40} mt={10}>
+      <Box mr="40px" mt="10px">
         <Text>{parm1}</Text>
       </Box>
       </Flex>
@@ -80,13 +79,13 @@ export default function ParentVerification2() {
                 ml={2}
                 borderColor="black"
               /> */}
-               <Text border="1px"  width="260px"  borderRadius="5px"  borderColor="black" textAlign={'center'}>774557556874</Text>
+               <Text border="1px"  width="260px"  borderRadius="5px"  borderColor="black" textAlign={'center'} mt="20px">774557556874</Text>
                 
                 </Box>
             </Flex>
           
        <Flex display={'flex'} justifyContent={'center'}>   
-          <Box  mt={10}>
+          <Box  mt="10px">
           {/* <Input
             type="text"
             placeholder="Generate OTP"
@@ -96,17 +95,17 @@ export default function ParentVerification2() {
             borderColor="black"
             
             /> */}
-            <Text border="1px"  width="260px"  borderRadius="5px"  borderColor="black" textAlign={'center'}> Genarate OTP</Text>
+            <Text border="1px"  width="260px"  borderRadius="5px"  borderColor="black" textAlign={'center'} mt="30px"> Genarate OTP</Text>
           </Box>
           </Flex>
          
            <Flex display={'flex'} justifyContent={'center'}>
-            <Box  pt={20}>
+            <Box  pt="50px">
              <Text>Enter OTP</Text>
             </Box>
             </Flex>
           
-          <Box display="flex" justifyContent="center" mt={10}>
+          <Box display="flex" justifyContent="center" mb="20px">
             {/* <Input
               type="text"
               placeholder=""
@@ -116,7 +115,7 @@ export default function ParentVerification2() {
               borderColor="black"
               ml={3}
             /> */}
-            <HStack>
+            <HStack >
           <PinInput otp>
           <PinInputField borderColor={'green.900'} name="numone"  onChange={handlechange} />
           <PinInputField borderColor={'green.900'} name="numtwo"   onChange={handlechange}/>
@@ -129,12 +128,12 @@ export default function ParentVerification2() {
           </Box>
 
           <Flex display={'flex'} justifyContent={'center'}>
-          <Box mt={10}>
+          <Box >
             <Button
               colorScheme="blue"
               size="lg"
               bg="rgba(0, 69, 112, 1)"
-              width="333px"
+              width={{base:"270px",md:"300px",lg:"312px"}}
               onClick={() => navigateTo()}
             >
               Verify

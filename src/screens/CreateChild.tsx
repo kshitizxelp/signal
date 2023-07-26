@@ -1,5 +1,5 @@
-import { Box, Flex, Image, Input, Text, Radio, Button } from '@chakra-ui/react'
-import React from 'react'
+import { Box, Flex, Image, Input, Text, Radio, Button,RadioGroup,Stack } from '@chakra-ui/react'
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router';
 
 export default function CreateChild() {
@@ -32,43 +32,61 @@ export default function CreateChild() {
           type: "password",
         },
         {
-            name: "password",
+            name: "confirmpassword",
             label: "Confirm Password",
             type: "password",
         },
         {
-            name:"DOB",
+            name:"dateofbirth",
             label: "Date of Birth",
             type:"date"
         }
       ];
 
+      const [addchailddata ,setAddchailddata] = useState({
+
+        name:"",
+        username:"",
+        email:"",
+        password:"",
+        confirmpassword:"",
+        dateofbirth:"",
+        gender:"",
+
+      });
+
+       const handleChange =(e:any)=>{
+
+        setAddchailddata({...addchailddata,[e.target.name]:e.target.value})
+
+       };
+       console.log(addchailddata)
 
   return (
-    <Box bg={'gray'}>
+  <Box bg={'gray'} width="100%">
   <Flex direction="column"  alignItems={'center'}>
-   <Box
+  <Box
    boxShadow="dark-lg"
    p="6"
    rounded=""
    bg="white"
-   borderRadius={60}
-   width="500px"
+   borderRadius="50px"
+   width={{base:"300px",md:"400px",lg:"500px"}}
    alignItems="center"
    justifyContent="center"
-   mt={5}
-   mb={15}
+   mt="50px"
+   mb="15px"
  >
      <Flex display={'flex'} justifyContent={'center'}>
-       <Box  mt={4}>
+       <Box  mt="4px">
        <Text fontSize="20px" as="b" color="#004570" >Create Child Account</Text>
         </Box>
         </Flex>
         <Flex display={'flex'} justifyContent={'center'}>
-        <Box mt={8}>
+        <Box mt="8px">
      {inputs.map((input: any) => (
           <Box key={input.name} mb={4} textAlign="left" >
-            <Text mb={1} size="2px" >{input.label}</Text>
+            <Text mb="2px" size="2px" >{input.label}</Text>
             <Input
               type={input.type}
               placeholder={input.placeholder}
@@ -76,37 +94,28 @@ export default function CreateChild() {
               variant="outline"
               bgColor="white"
               borderColor="black"
-              width="313px"
+              width={{base:"250px",md:"280px",lg:"313px"}}
+              onChange={handleChange}
             />
-          </Box>
+            </Box>
         ))}
+         <Text>Gender</Text>
+            <RadioGroup name='gender' >
+            <Stack direction='row'onChange={handleChange}>
+             <Radio value='Boy'>Boy</Radio>
+             <Radio value='Girl'>Girl</Radio>
+             {/* <Radio value='3'>Third</Radio> */}
+            </Stack>
+            </RadioGroup>
      </Box>
      </Flex>
 
-     <Flex display={'flex'} justifyContent={'center'}>
-     <Box textAlign="left">
-        <Text>Gender</Text>
-     </Box>
-     </Flex>
+    
      
-     <Flex display={'flex'} justifyContent={'center'}>
-     <Box>
-     {/* <Flex mt={2} flexDirection="row"> */}
-     <Radio ml={4} mr={4} borderColor="black" colorScheme='green' value='1'>
-      Boy
-    </Radio>
-    <Radio mr={4} borderColor="black" colorScheme='green' value='2'>
-      Girl
-    </Radio>
-    <Radio borderColor="black" colorScheme='green' value='3'>
-      Prefer not to disclose
-    </Radio>
-     {/* </Flex> */}
-     </Box>
-     </Flex>
+    
      
-     <Flex flexDirection="row" mt={10} justifyContent="center">
-     <Button colorScheme="blue" borderRadius="20px" mr={30} size="lg" bg="#F5F5F5" width="110px" color="black">
+     <Flex flexDirection="row" mt="10px" justifyContent="center">
+     <Button colorScheme="blue" borderRadius="20px" mr="30px" size="lg" bg="#F5F5F5" width="110px" color="black">
           Save
         </Button>
         <Button colorScheme="blue" borderRadius="20px"  size="lg" bg="#004570" width="110px" onClick={() => navigateTo()}>

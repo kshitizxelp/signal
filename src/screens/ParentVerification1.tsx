@@ -31,17 +31,16 @@ export default function ParentVerification1() {
     console.log(dataone);
 
   return (
-    <Box bg={'gray'} >
+    <Box bg={'gray'} width="100%" >
     <Flex direction="column" alignItems="center" pt={'100px'} pb={'200px'}>
-    <Box
+  <Box
    boxShadow="dark-lg"
    p="0"
    rounded=""
    bg="white"
    borderRadius={'50px'}
-    mt={'5px'}
-   
-   width="450px"
+   mt={'5px'}
+   width={{base:"290px",md:"330px",lg:"450px"}}
    alignItems="center"
    justifyContent="center"
  >
@@ -66,7 +65,7 @@ export default function ParentVerification1() {
               variant="outline"
               bgColor="white"
               borderColor="black"
-              width="313px"
+              width={{base:"220px",md:"250px",lg:"312"}}
               onChange={handlechange}
             />
            </Box>
@@ -74,7 +73,7 @@ export default function ParentVerification1() {
            
            <Flex display={'flex'} justifyContent={'center'}>
            <Box pt={'50px'} pb={'20px'}>
-           <Button  colorScheme="blue" size="lg" bg="rgba(0, 69, 112, 1)" width="313px" onClick={() => navigateTo()}>
+           <Button  colorScheme="blue" size="lg" bg="rgba(0, 69, 112, 1)" width={{base:"220px",md:"250px",lg:"312px"}} onClick={() => navigateTo()}>
              Generate OTP
            </Button>
            </Box>
