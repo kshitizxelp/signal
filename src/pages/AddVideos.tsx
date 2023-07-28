@@ -62,8 +62,8 @@ const handleSeek = (value :any) => {
 };
 
   return (
-    <Box display="flex" flexDirection="column" >
-    <Box bg="gray" width="100%" >
+    <Box width="100%">
+    <Box bg="gray"  >
      
     <Box  display={"flex"}
          flexDirection={"row"}
@@ -74,14 +74,14 @@ const handleSeek = (value :any) => {
          >
     <Box display={"flex"}
          flexDirection={"column"} >
-            <Text marginLeft="20px" color={'#004570'}> Add English Content for </Text>
+         <Text marginLeft="20px" color={'#004570'}> Add English Content for </Text>
     <Text marginLeft="20px" color={'#004570'} as="b" >Gopi Sunkara</Text>
     </Box>
     <Image marginRight="10px" src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov"  height={100}/>
    </Box>
    </Box>
   
-      <Flex flexDirection="column" justifyContent="center" alignSelf="center" >
+      <Flex  justifyContent="center"  >
         <Box marginRight="100px" >
           <Text color={'#004570'} as="b" marginBottom="10px" fontSize="15px">Add new Video</Text>
           <Text  marginBottom="10px">Name of the Video</Text>
@@ -91,7 +91,7 @@ const handleSeek = (value :any) => {
               variant="outline"
               bgColor="white"
               borderColor="black"
-              width="373px"
+              width={{base:"240px",md:"260px",lg:"313px"}}
               marginBottom="10px"
               onChange={changeHandler}
             /> <br/>
@@ -101,7 +101,7 @@ const handleSeek = (value :any) => {
               variant="outline"
               bgColor="white"
               borderColor="black"
-              width="373px"
+              width={{base:"240px",md:"260px",lg:"313px"}}
               marginBottom="10px"
               name="text"
               onChange={changeHandler}
@@ -115,7 +115,7 @@ const handleSeek = (value :any) => {
            {/* <Box>
            <Text marginBottom="10px" as="u" color={'#004570'} >Or add video by URL</Text>
            </Box> */}
-           <Text as="b" color={'#004570'} >Preview</Text>
+           {/* <Text as="b" color={'#004570'} >Preview</Text> */}
 
            </Flex>
            {/* <Box alignSelf="center" marginLeft="120px" > 
