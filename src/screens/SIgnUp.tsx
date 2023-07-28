@@ -59,16 +59,15 @@ export default function SIgnUp() {
 
 
   return (
-    <Box bg={'gray'} pt={'50px'} pb={'70px'}>
-    <Flex direction="column" alignItems="center" position="relative" >
+    <Box bg={'gray'} width="100%">
+    <Flex  justifyContent={'center'} >
       <Box
       boxShadow="dark-lg"
       p="1"
       rounded=""
       bg="white"
-      borderRadius={'40px'}
-      
-      width="500px"
+      borderRadius='40px'
+      width={{base:"290px",md:"400px",lg:"500px"}}
       alignItems="center"
       justifyContent="center"
     >
@@ -79,32 +78,21 @@ export default function SIgnUp() {
       </Flex>
 
     <Flex display={'flex'} justifyContent={'center'}>
-     <Box mt={'10px'}>
+     <Box mt='10px'>
      {inputs.map((input: any) => (
          <Box key={input.name} pb={'4px'} alignItems="flex-start">
             <Text mb={'1px'}  >{input.label}</Text>
             <Input
               type={input.type}
               placeholder={input.placeholder}
-              // value={inputs.[input.name]}
               name={input.name}
               variant="outline"
               bgColor="white"
               borderColor="black"
-              width="313px"
+              width={{base:"200px",md:"250px",lg:"313"}}
               onChange={changeHandler}
             />
-             {/* <Input
-              type={inputs.type}
-              variant="outline"
-              bgColor="white"
-              borderColor="black"
-              width="373px"
-              marginBottom="10px"
-              name={inputs.name}
-              placeholder={input.placeholder}
-              onChange={changeHandler}
-            /> */}
+             
           </Box>
          ))}
      </Box>
@@ -112,23 +100,27 @@ export default function SIgnUp() {
      
       <Flex display={'flex'} justifyContent={'center'}>
         <Box mt={'5px'}>
-        <Button colorScheme="blue" size="lg" bg="rgba(0, 69, 112, 1)" width="313px" onClick={Login}>
+        <Button colorScheme="blue" size="lg" bg="rgba(0, 69, 112, 1)" width={{base:"280px",md:"300px",lg:"400px"}} onClick={Login}>
           Sign Up
         </Button>
         </Box>
         </Flex>
 
              <Flex display={'flex'} justifyContent={'center'}>
-             <Box mt={'4px'}>
+             <Box mt='4px'>
               <Text>or</Text>
-               <Text mt={'2px'}>Signup using</Text>
+               <Text mt='2px'>Signup using</Text>
               </Box>
            </Flex>
       
     
       <Box display={"flex"}
-            flexDirection={"row"}
-            justifyContent={"space-evenly"}>  
+           flexDirection={"row"}
+           justifyContent={"space-evenly"}
+           m="8px"
+           >  
+     
+     
       <Button
       leftIcon={<SiGoogle color="#DB4437" />}
       variant="solid"
@@ -138,7 +130,7 @@ export default function SIgnUp() {
       justifyContent="center"
       borderColor="rgba(40, 40, 40, 0.3)"
       bg="white"
-      mr={'8px'}
+      mr='8px'
       
     >
       <Flex alignItems="center" >
@@ -154,7 +146,7 @@ export default function SIgnUp() {
       justifyContent="center"
       borderColor="rgba(40, 40, 40, 0.3)"
       bg="white"
-      mr={'8px'}
+      mr="8px"
     >
       <Flex alignItems="center">
         <Text mt={'1px'}>Office 365</Text>

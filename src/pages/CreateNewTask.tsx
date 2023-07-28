@@ -55,7 +55,7 @@ export default function CreateNewTask() {
 
   return (
 
-<Box bg={'gray.400'} width="100%" height="100%">
+<Box bg={'gray.400'} width="100%">
   
  
   <Box  display={"flex"}
@@ -66,31 +66,30 @@ export default function CreateNewTask() {
            width="100%"
           >
             <Box display={'flex'}>
-            <Text pl={10} color={'#004570'} fontWeight={'bold'}>  <FaArrowLeft/></Text>
-            <Text pl={2} color={'#004570'} fontWeight={'bold'}>GopiSunkara</Text>
+            <Text pl="10px" color={'#004570'} fontWeight={'bold'}>  <FaArrowLeft/></Text>
+            {/* <Text pl="2x" color={'#004570'} fontWeight={'bold'}>GopiSunkara</Text> */}
             </Box>
     
-          <Image src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov" height={100} pr={10}/>
+          <Image src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov" height="100px" pr="10px"/>
           </Box>
 
-         <Flex display={'flex'} justifyContent={'center'} mt={5}>
+         <Flex display={'flex'} justifyContent={'center'} mt="5px">
           <Box>
             <Text  color={'#004570'}  fontWeight={'bold'}>Create Custom Task for GopiSunkaraa</Text>
           </Box>
         </Flex>
     
     <ChakraProvider>
-      <Box display="grid" gridTemplateColumns={{base:'repeat(1,1fr)',md:'repeat(2,1fr)',lg:'repeat(3,1fr)'}} gap={4} p={10}>
+      <Box display="grid" gridTemplateColumns={{base:'repeat(1,1fr)',md:'repeat(2,1fr)',lg:'repeat(3,1fr)'}} gap="5px" m="10px">
         {/* Card 1 */}
        {data.map((item)=>(  
-        <Flex
+        <Box
           bg="gray.100"
-          p={4}
           borderRadius="md"
           boxShadow="md"
           flexDirection="column"
-          height="95%"
-          width="90%"
+          height="150PX"
+          width="300px"
         >
           
           <Box bg={'gray.300'} 
@@ -105,7 +104,7 @@ export default function CreateNewTask() {
           </Box>
           
           <Box mt={10}>
-          <Flex display={'flex'} alignItems="center" direction="row" gap={2}>
+          <Box display={'flex'} alignItems="center"  gap={2}>
           
           <RadioGroup onChange={setValue} value={value} >
           <Stack direction='row'>
@@ -120,9 +119,9 @@ export default function CreateNewTask() {
             <Text mt={2} color="#004570" as="u" >Add New</Text>
             </Flex>
 
-            </Flex>
             </Box>
-            </Flex>
+            </Box>
+            </Box>
             ))}
 
        

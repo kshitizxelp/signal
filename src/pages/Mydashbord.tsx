@@ -79,7 +79,7 @@ function Mydashbord() {
         ))}
         <Flex display={'flex'} justifyContent={'center'}>
         <Box pt={30} mb={20}>
-            <Button colorScheme="blue" size="sm" bg="rgba(0, 69, 112, 1)" width="513px" height={50}>Add Child</Button>
+            <Button colorScheme="blue" size="sm" bg="rgba(0, 69, 112, 1)" width={{base:"270px",md:"350px",lg:"513px"}} height="50px">Add Child</Button>
         </Box>
         </Flex>
         </Box>

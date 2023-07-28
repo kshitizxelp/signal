@@ -9,12 +9,11 @@ import { getPosts } from '../Slice';
 
 export default function SignUpOrLogin() {
   const navigate = useNavigate();
-const dispatch = useDispatch()
-// const countNum = useSelector((state)=>state?.counter)
-const countNum = useSelector((state)=>state?.auth?.posts)
-console.log("countNum",countNum)
+
+
+
 const onClickBtn = () =>{
-  dispatch(getPosts())
+  
 }
   const Login1 = () => {
     onClickBtn()
@@ -25,16 +24,15 @@ const onClickBtn = () =>{
     navigate('SignUp');
   }
   return (
-    <Box bg={'gray.400'}>
+    <Box bg={'gray.400'} width="100%">
     <Flex direction="column" alignItems="center" position="relative" pt={'120px'} pb={'200px'}>
        <Box
       boxShadow="dark-lg"
       p="1"
       rounded=""
       bg="white"
-      borderRadius={'50px'}
-     
-      width="450px"
+      borderRadius='50px'
+      width={{base:"290px",md:"350px",lg:"450px"}}
     >
       
       <Flex display={'flex'} justifyContent={'center'}>
@@ -55,16 +53,16 @@ const onClickBtn = () =>{
    
       
       <Flex display={'flex'} justifyContent={'center'}>
-         <Box mt={'40px'}>
-         <Button colorScheme="blue"  size="lg" bg="rgba(0, 69, 112, 1)" width="313px" onClick={Login2}>
+         <Box mt='20px'>
+         <Button colorScheme="blue"  size="lg" bg="rgba(0, 69, 112, 1)" width={{base:"280px",md:"290px",lg:"313px"}} onClick={Login2}>
           Sign Up
         </Button>
         </Box>
         </Flex>
        
         <Flex display={'flex'} justifyContent={'center'}>
-        <Box mt={'10px'}>
-        <Button colorScheme="blue"   size="lg" variant="outline" borderColor="rgba(0, 69, 112, 1)" color="rgba(0, 69, 112, 1)" width="313px" onClick={Login1}>
+        <Box m='30px'>
+        <Button colorScheme="blue"   size="lg" variant="outline" borderColor="rgba(0, 69, 112, 1)" color="rgba(0, 69, 112, 1)" width={{base:"280px",md:"290px",lg:"313px"}} onClick={Login1}>
           Login
         </Button>
         </Box>

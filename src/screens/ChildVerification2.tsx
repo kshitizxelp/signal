@@ -9,58 +9,58 @@ export default function ChildVerification2() {
     navigate("/ChildVerification3")
   }
     return (
-      <Box>
+      <Box bg={'gray.300'} width="100%">
       <Flex direction="column" alignItems="center" position="relative" >
       <Box
        boxShadow="dark-lg"
        p="6"
        rounded=""
        bg="white"
-       borderRadius={60}
-       width="400px"
-      
+       borderRadius="50px"
+       width={{base:"290px",md:"350px",lg:"400px"}}
        alignItems="center"
        justifyContent="center"
-       mt={20}
+       m="20px"
+       
      >
       
       <Flex display={'flex'} justifyContent={'center'}>
        <Box>
-         <Image src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov" height={120} />
+         <Image src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov" height="120px" />
        </Box>
        </Flex>
     
           <Flex display={'flex'} justifyContent={'center'}>
-           <Box mt={4}>
+           <Box mt="4px">
            <Text fontSize="20px" as="b" color="#004570" >Child Verification</Text>
     
-           <Text mt={4}>Please take a face closeup photo of the child</Text>
+           <Text mt="4px">Please take a face closeup photo of the child</Text>
             </Box>
             </Flex>
            
           <Flex display={'flex'} justifyContent={'center'}>
-          <Box mt={2} >
+          <Box mt="2px" >
           <Image src="src/assets/Mask Group 1@3x.png" alt="Dan Abramov"  width="213px" height="180"/>
            </Box>
           </Flex>
         
         <Flex display={'flex'} justifyContent={'center'}> 
-        <Box mt={1}>
-        <Text p={5} noOfLines={[1,2,3]}>Child Avatar Preview Estimated Age : 5-8 years</Text>
+        <Box mt="2px">
+        <Text p="5px">Child Avatar Preview Estimated Age : 5-8 years</Text>
         <Text></Text>
        </Box>
        </Flex>
 
     
         <Flex display={'flex'} justifyContent={'center'}>
-        <Box mt={0}  mb={0}>
-        <VscDeviceCamera size={30}/>
+        <Box>
+        <VscDeviceCamera size="30px"/>
         </Box>
         </Flex>
         
         
         <Flex display={'flex'} justifyContent={'center'}>
-       <Button colorScheme="blue" borderRadius="20px" mb={50} mr={30} size="sm" bg="#F5F5F5" width="100px" color="black"  >
+       <Button colorScheme="blue" borderRadius="20px" mb="50px" mr="30px" size="sm" bg="#F5F5F5" width="100px" color="black"  >
         Retake
        </Button>
 

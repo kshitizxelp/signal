@@ -119,16 +119,16 @@ const obj=[
 
 
   return (
-    <Box bg={'gray.300'}  width={"100%"}>
+    <Box bg={'gray.300'}  width="100%">
 
      <ChakraProvider>
-      <Box display="grid" gridTemplateColumns= {{ base:'repeat(1,1fr)', md:'repeat(2,1fr)',lg:'repeat(3,1fr)'  }} gap={'10px'} p={'10px'}>
+      <Box display="grid" gridTemplateColumns= {{ base:'repeat(1,1fr)', md:'repeat(2,1fr)',lg:'repeat(3,1fr)'  }} gap='5px' m="10px">
        
        {dataObj.map((item)=>(
         <Box>
         <Text pl={'5px'} color={'#004570'}>{item.Outertitle}</Text>
         
-        <Box bg={'white'} borderRadius={'10px'}>
+        <Box bg={'white'} borderRadius={'10px'} width={{base:"300px",md:"300px",lg:"400"}}>
         <Flex display={'flex'} justifyContent="space-between">
         
             <Box  p={'5px'}>
@@ -142,18 +142,18 @@ const obj=[
                
                 <Flex direction={'row'} justifyContent="space-between">
               
-                <Box p={5}>
+                <Box p="5px">
                     <Text>{item.contentone}</Text>
                     <Text>{item.contenttwo}</Text>
                     <Text>{item.contentthree}</Text>
                 </Box>
                 
-                <Box p={5}>
+                <Box p="5px">
                  <Flex display={'flex'} justifyContent="space-evenly"> 
-                <Box mt={12}>
+                <Box mt="12px">
                 <Text color={'yellow.900'}><GiTrophyCup/></Text>
                 </Box>
-                <Box pl={2}>
+                <Box pl="2px">
                  <Text>{item.valeone}</Text>
                  <Text>{item.valuetwo}</Text>
                  <Text>{item.valuethree}</Text>
@@ -180,15 +180,15 @@ const obj=[
     </Flex>
 
       <ChakraProvider>
-      <Box display="grid" gridTemplateColumns= {{ base:'repeat(1,1fr)', md:'repeat(2,1fr)',lg:'repeat(3,1fr)'}} gap={4} p={10}>
+      <Box display="grid" gridTemplateColumns= {{ base:'repeat(1,1fr)', md:'repeat(2,1fr)',lg:'repeat(3,1fr)'}} gap="10px" m="5px" >
        
       {
             obj.map((item)=>(
         <Box>       
-        <Box bg={'white'} borderRadius={10}>
+        <Box bg={'white'} borderRadius="10px"  width={{base:"300px",md:"300px",lg:"400"}}>
         <Flex display={'flex'} justifyContent="space-between">
         
-            <Box p={5}>
+            <Box p="5px">
             <Avatar name='' size='xl' src={item.image}/>
            </Box>
 
@@ -198,24 +198,24 @@ const obj=[
 
                  <Box>
                     <Flex display={'flex'} justifyContent="space-evenly">
-                    <Text p={2} color={'red'}><FcCalendar/></Text>
-                    <Text p={2} fontSize={14}>{item.date}</Text>
-                    <Text p={2}><FcAlarmClock/></Text>
-                    <Text p={2}fontSize={14}>{item.time}</Text>
+                    <Text p="2px" color={'red'}><FcCalendar/></Text>
+                    <Text  p="2px" fontSize="14px">{item.date}</Text>
+                    <Text p="2px"><FcAlarmClock/></Text>
+                    <Text  p="2px" fontSize="14px">{item.time}</Text>
                     
                     </Flex>
                  </Box>
                  <Box>
                     <Flex display={'flex'} justifyContent="space-evenly" >
-                    <Text  mr={10} fontSize={14}>{item.contentone}</Text>
-                    <Text  mr={10}  fontSize={14}>{item.valueone}</Text>
+                    <Text  mr="10px" fontSize="14px">{item.contentone}</Text>
+                    <Text  mr="10px"  fontSize="14px">{item.valueone}</Text>
                     </Flex>
                  </Box>
                  <Box>
                     <Flex display={'flex'} justifyContent="space-evenly" >
-                    <Text fontSize={14} mr={5}>{item.contenttwo}</Text>
+                    <Text fontSize="14px" mr="5px">{item.contenttwo}</Text>
                     <Text color={'yellow.700'}><GiTrophyCup/></Text>
-                    <Text mr={10}fontSize={14}>{item.valuetwo}</Text>
+                    <Text mr="10px"fontSize="14px">{item.valuetwo}</Text>
                     </Flex>
                  </Box>
                 </Box>

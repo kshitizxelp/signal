@@ -99,16 +99,16 @@ export default function CreateNewTask1() {
            
           
            
-            <Box key={index} bg="gray.300" height="120px"  width={{base:'300px',md:'300px',lg:'400px'}} m={'5px'} >
-                <Text bg={'green'} pt={'5px'}  color={'white'} pl={'10px'}>{item.head}</Text>
+            <Box key={index} bg="gray.300" height="120px"  width={{base:'300px',md:'300px',lg:'400px'}} m='10px' >
+            <Text bg={'green'} pt={'5px'}  color={'white'} pl={'10px'}>{item.head}</Text>
            
-            <HStack spacing="20px" marginLeft="18px" justifyContent="space-between" display="flex"  mt={'20px'}>
+            <HStack spacing="5px" marginLeft="10px" justifyContent="space-between" display="flex"  mt='20px'>
                 
             <Text as="b">{item.title}</Text>
             <Text>{item.itemvalue}</Text>
             <BsPlusCircle onClick={handleOpenModal} style={{ cursor: 'pointer' }} />
             <Text as="u"  onClick={handleOpenModal} style={{ cursor: 'pointer' }} color={'blue'} >Add Content</Text>
-            <Text pr={'10px'}><RiDeleteBinLine/></Text>
+            <Text p="5px"><RiDeleteBinLine/></Text>
             </HStack>
           </Box>
         ))}

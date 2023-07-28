@@ -90,9 +90,9 @@ useEffect(() => {
     // }
    
   return (
-       <Box bg="gray"   >
+       <Box bg="gray" width="100%">
      
-       <Box  display={"flex"}
+       <Box display={"flex"}
             flexDirection={"row"}
             justifyContent={"space-between"}
             alignItems={"center"}

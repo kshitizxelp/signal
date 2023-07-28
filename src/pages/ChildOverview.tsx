@@ -140,25 +140,27 @@ export default function ChildOverview() {
           {isChildTasksRoute && (
          
             <>
-            <Flex justifyContent="center" alignItems="center" bg={'gray.300'} w="100%" flexDirection="column" >
-          <Box height="600px" width="600px" boxShadow="dark-lg"
+   <Flex justifyContent="center" alignItems="center" bg={'gray.300'} w="100%" flexDirection="column" >
+  
+  <Box height={{base:"290px",md:"450px",lg:"600px"}} width={{base:"290px",md:"450px",lg:"600px"}} boxShadow="dark-lg"
    p="0"
    rounded=""
    bg="white"
-   roundedTopLeft="220px"
-   roundedTopRight="220px"
-//    border ={60}
-    mt={5}
-    mb={100}
+   roundedTopLeft="210px"
+   roundedTopRight="210px"
+   mt="5px"
+   mb="100px"
    alignItems="center"
    justifyContent="center">
-    <Box marginTop="0px">
-             <Radar  data={data} options={radarOptions} />
-             
-             </Box>
-          </Box>
+    <Flex justifyContent={'center'}>
+    <Box >
+    <Radar data={data} options={radarOptions}  />
+    </Box>
+    </Flex>
+    </Box>
+    
 
-   <Box height="600px" width="600px" boxShadow="dark-lg"
+   <Box height={{base:"290px",md:"450px",lg:"600px"}} width={{base:"290px",md:"450px",lg:"600px"}} boxShadow="dark-lg"
    p="0"
    rounded=""
    bg="white"
