@@ -43,17 +43,17 @@ export default function RewardSetup() {
   ]
   return (
    <Box bg="gray.300" width="100%">
-    <Flex display={'flex'} justifyContent={'center'}>
+    <Flex  justifyContent={'center'}>
       <form>
-    <Box mt="10px">
+    <Box ml="20px">
      <Text>Reward Name</Text>
     <Input placeholder='medium size' size='md'  variant="outline"
               bgColor="white"
               borderColor="black"
-              width="333px"
+              width={{base:"280px",md:"290px",lg:"313px"}}
               mt="4px" />
               <Text>Select Category</Text>
-   <Select placeholder='Select'  width="333px"   bgColor="white" borderColor="black"  mt="4px">
+   <Select placeholder='Select'  width={{base:"280px",md:"290px",lg:"313px"}}   bgColor="white" borderColor="black"  mt="4px">
     <option value='Option1'>math</option>
     <option value='Option2'>maths</option>
    </Select>
@@ -61,27 +61,28 @@ export default function RewardSetup() {
    <Input placeholder='medium size' size='md'  variant="outline"
               bgColor="white"
               borderColor="black"
-              width="333px"  mt="4px"/>
+              width={{base:"280px",md:"290px",lg:"313px"}}  
+              mt="4px"/>
 
     </Box>
     </form>
     </Flex>
     <Flex display={'flex'} justifyContent={'center'}>
     <Box mt="10px">
-      <Text borderRadius={10} textAlign={'center'} bg={'white'} width="300px">Add to catalogue</Text>
+      <Text borderRadius="10px" textAlign={'center'} bg={'white'} width={{base:"280px",md:"290px",lg:"313px"}}>Add to catalogue</Text>
     </Box>
     </Flex>
-    <Box borderBottom={'2px'} mt={'10px'} w="80%" ml="100px"></Box>
+    <Box borderBottom={'2px'} mt={'10px'} w="80%" ml="30px"></Box>
     <Flex display={'flex'} justifyContent={'center'}>
      
-    <Box mt="20px">
+    <Box mt="10px">
       <Text color={'#004570'}> Reward Catalogue</Text>
     </Box>
     </Flex>
 
     <ChakraProvider>
-        <Box display="grid" gridTemplateColumns="repeat(4, 1fr)" gap={20} p={20}>
-    
+        <Box display="grid" gridTemplateColumns={{base:"repeat(1,1fr)",md:"repeat(2,1fr)",lg:"repeat(3,1fr)"}} gap="50px" m="10px">
+          
          {obg.map((item)=>(
         <Box bg={'white'} h="150px" w="150px" borderRadius="50%">
         <Flex display={'flex'} justifyContent={'center'}>  
@@ -91,16 +92,16 @@ export default function RewardSetup() {
         </Flex>
         <Flex justifyContent={'center'}>
         <Box mt="10px">
-            <Text fontSize={14}>{item.item}</Text>
-            <Text fontSize={14} pl="15px">{item.itemvalue}</Text>
+            <Text fontSize="14px">{item.item}</Text>
+            <Text fontSize="14px" pl="15px">{item.itemvalue}</Text>
             <Link color={'orange.500'} pl="15px">{item.link}</Link>
         </Box>
         </Flex>
            
         </Box>
         ))}
-        
         </Box>
+        
         </ChakraProvider>
 
    </Box>

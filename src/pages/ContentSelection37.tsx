@@ -84,11 +84,11 @@ const dataTwo=[
        <HStack gap={"5"} pr={5}>
        <Text marginLeft="10px" color={'#004570'} ><AiOutlineArrowLeft/></Text>
        <Box>
-       <Text marginLeft="10px" color={'#004570'} mb="2px" fontSize={12}>Add English Content for </Text>
+       <Text marginLeft="10px" color={'#004570'} mb="2px" fontSize="12px">Add English Content for </Text>
        <Text marginLeft="10px" color={'#004570'}mb="3px">GopiSunkara </Text>
        </Box>
        </HStack>
-       <Image marginRight="10px" src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov"  height={100}/>
+       <Image marginRight="10px" src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov"  height="100px"/>
       </Box> 
 
       
@@ -128,6 +128,7 @@ const dataTwo=[
             controls
             playing
             onEnded={() => setIsVideoPlaying(false)}
+           
           />
         )}
       </Box>
@@ -141,7 +142,7 @@ const dataTwo=[
          {data.map((item)=>(
         <Box mt="10px">
          <Flex display={'flex'} justifyContent={'center'}>
-         <Box width="500px" height="300px" bg={'gray'} borderRadius="5px">
+         <Box width="300px" height="300px" bg={'gray'} borderRadius="5px">
               <Box display={'flex'} justifyContent="space-between">
                 <Text padding="5px">{item.headone}</Text>
                 <Text padding="5px" color={'red'} ><RiDeleteBinLine/></Text>
@@ -155,7 +156,7 @@ const dataTwo=[
               <Text ml="10px">{item.headthree}</Text>
               
               <Box ml="10px">
-                <Text bg={'white'} borderRadius="5px" width="400px">{item.quetion}</Text>
+                <Text bg={'white'} borderRadius="5px" width="300px">{item.quetion}</Text>
               </Box>
            
              <Box >
@@ -182,7 +183,7 @@ const dataTwo=[
          {dataTwo.map((item)=>(
         <Box mt="10px">
          <Flex display={'flex'} justifyContent={'center'}>
-         <Box width="500px" height="300px" bg={'gray'} borderRadius="5px">
+         <Box width="300px" height="300px" bg={'gray'} borderRadius="5px">
               <Box display={'flex'} justifyContent="space-between">
                 <Text padding="5px">{item.headone}</Text>
                 <Text padding="5px" color={'red'} ><RiDeleteBinLine/></Text>
