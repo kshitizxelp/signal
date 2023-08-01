@@ -39,20 +39,19 @@ export default function Login() {
       ];
 
   return (
-    <Box bg={'gray.400'}>
-    <Flex direction="column" alignItems="center" pt={'50px'} pb={'100px'}> 
+    <Box bg={'gray.400'} width="100%">
+    <Flex direction="column" alignItems="center" pt='20px' pb="10px" > 
     <Box
       boxShadow="dark-lg"
       p="6"
-      rounded=""
       bg="white"
-      borderRadius={'50px'}
-      width="400px"
+      borderRadius="50px"
+      width={{base:"290px",md:"350px",lg:"400px"}}
       >
      
       <Box>
       <Flex display={'flex'} justifyContent={'center'}>
-        <Image src="src/assets/SIGNAL LOGO (2)@3x.png" alt=""  height={'150px'}/>
+        <Image src="src/assets/SIGNAL LOGO (2)@3x.png" alt=""  height='150px'/>
         </Flex>
       </Box>
      
@@ -75,7 +74,7 @@ export default function Login() {
               variant="outline"
               bgColor="white"
               borderColor="black"
-              width="313px"
+              width={{base:"280px",md:"290px",lg:"313px"}}
             />
            
           </Box>
@@ -85,7 +84,7 @@ export default function Login() {
     
     <Flex display={'flex'} justifyContent={'center'}>
      <Box mt={'5px'}>
-     <Button colorScheme="blue" size="lg" bg="rgba(0, 69, 112, 1)" width="313px" onClick={Login}>
+     <Button colorScheme="blue" size="lg" bg="rgba(0, 69, 112, 1)" width={{base:"270px",md:"290px",lg:"313px"}} onClick={Login}>
           Login
        </Button>
       </Box>
@@ -98,7 +97,7 @@ export default function Login() {
       </Box>
       </Flex> 
 
-      <Flex direction="row"  justifyContent="space-between"  mt={'5px'} >
+      <Flex direction="row"  justifyContent="space-between"  mt='5px' >
       <Button
       leftIcon={<SiGoogle color="#DB4437" />}
       variant="solid"
@@ -108,11 +107,11 @@ export default function Login() {
       justifyContent="center"
       borderColor="rgba(40, 40, 40, 0.3)"
       bg="white"
-      mr={'5px'}
+      mr='50px'
       
     >
       <Flex alignItems="center" >
-        <Text mt={1}>Google</Text>
+        <Text mt="2px" fontSize="12px">Google</Text>
       </Flex>
     </Button>
     <Button
@@ -124,10 +123,10 @@ export default function Login() {
       justifyContent="center"
       borderColor="rgba(40, 40, 40, 0.3)"
       bg="white"
-      mr={'5px'}
+      mr='30px'
     >
       <Flex alignItems="center">
-        <Text mt={'1px'}>Office 365</Text>
+        <Text mt="2px" fontSize="12px">Office365</Text>
       </Flex>
     </Button>
     <Button
@@ -141,11 +140,11 @@ export default function Login() {
       bg="white"
     >
       <Box alignItems="center" onClick={() => navigateTo()}>
-        <Text mt={'1px'}>Mobile</Text>
+        <Text mt='1px' fontSize="12px">Mobile</Text>
       </Box>
     </Button>
     </Flex>
-    <Box mt={'5px'}>
+    <Box mt='5px'>
         <Link color={'blue'}>If u don't have an account.Sign Up</Link>
     </Box>
     </Box>

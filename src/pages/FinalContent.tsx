@@ -218,7 +218,8 @@ console.log(typeof(b),"typeee offff bbb")
     // AddSpeedstartTimeOnlySec and speedofSpeed should be defined with appropriate values
     const AddSpeedstartTimeOnlySec = a; // Replace with your value
     const speedofSpeed = b; // Replace with your value
-    
+    console.log("end time==================>",AddSpeedendTimeOnlySec);
+    console.log("current time=======================>",playerTime)
    
     if (playerTime === AddSpeedstartTimeOnlySec) {
       // Update the playback rate
@@ -227,7 +228,7 @@ console.log(typeof(b),"typeee offff bbb")
      
     }
    
-    else if(playerTime === AddSpeedendTimeOnlySec){
+    else if(playerTime === AddSpeedendTimeOnlySec||playerTime==AddSpeedendTimeOnlySec+1||playerTime==AddSpeedendTimeOnlySec-1){
       setPlaybackRate(1.0);
   
       };

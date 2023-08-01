@@ -3,7 +3,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 const initialState = {
-  posts:[],
+  // posts:[],
   jumpData:{},
   addjump:[],
   insertclicktime:{},
@@ -16,9 +16,9 @@ const authSlice = createSlice({
   initialState,
   reducers: {
    
-    setPosts: (state, action) => {
-      state.posts = action.payload;
-    },
+    // setPosts: (state, action) => {
+    //   state.posts = action.payload;
+    // },
     setJumpData: (state, action) => {
       state.jumpData = action.payload;
     },
@@ -41,7 +41,7 @@ const authSlice = createSlice({
   },
 });
 export const {
-  setPosts,
+  // setPosts,
   setJumpData,
   setAddjump,
   setInsertclicktime,
@@ -55,7 +55,7 @@ export default authSlice.reducer;
 
 
 
-export const getPosts = () => (dispatch:any) => {
+// export const getPosts = () => (dispatch:any) => {
   // const config = {
   //   method: "get",
   //   url: "https://jsonplaceholder.typicode.com/posts",
@@ -79,7 +79,7 @@ export const getPosts = () => (dispatch:any) => {
      
   //   });.
 
- };
+//  };
 
 
 

@@ -198,14 +198,14 @@ console.log(insertclicktime,"clicks");
        )}
 
       <Flex display={"flex"} justifyContent={"center"}>
-        <Box>
+        <Box ml="10px">
           <Text>Add Anecdote</Text>
           <Input
             type="text"
             variant="outline"
             bgColor="white"
             borderColor="black"
-            width="373px"
+            width={{base:"280px", md:"290px", lg:"313px"}}
             marginBottom="10px"
             name="message"
             onChange={handleOnChange}

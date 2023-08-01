@@ -22,7 +22,7 @@ export default function ChildRewards() {
 
         { 
            
-            image:"src/assets/SIGNAL LOGO (2)@3x.png",
+            image:"/home/xelpmoc/Desktop/signelproject/signal/src/assets/boy@3x.png",
             item:"Super Math Spy",
             itemvalue:"2500RP"
         },
@@ -55,7 +55,7 @@ export default function ChildRewards() {
     
         { 
            
-            image:"src/assets/Mask Group 1@3x.png",
+            image:"/home/xelpmoc/Desktop/signelproject/signal/src/assets/SIGNAL LOGO (2)@3x.png",
             item:"Super Math Spy",
             itemvalue:"4000RP",
             link:"Require 1500 RP"

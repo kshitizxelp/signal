@@ -153,7 +153,7 @@ export default function ChildOverview() {
    alignItems="center"
    justifyContent="center">
     <Flex justifyContent={'center'}>
-    <Box >
+    <Box>
     <Radar data={data} options={radarOptions}  />
     </Box>
     </Flex>

@@ -25,7 +25,7 @@ const [show,setShow] = useState(false);
 const [jumpstartnn, setJumpStartnn] = useState({
   
     currentTime:"",
-    endTime:''
+    endTime:'',
    
 });
 
@@ -246,7 +246,7 @@ const handleSeek = (value :any) => {
 {
     show ?<Flex display={'flex'} justifyContent={'center'}>
       
-    <Box width="500px" height="200px" bg={'gray'} borderRadius="5px">
+    <Box width={{base:"290px",md:"400px",lg:"450px"}} height="200px" bg={'gray'} borderRadius="5px">
          <Box display={'flex'} justifyContent="space-between">
            <Text padding="5px">Anecdote 1</Text>
            <Text padding="5px" color={'red'} ><RiDeleteBinLine/></Text>
@@ -268,7 +268,7 @@ const handleSeek = (value :any) => {
           <Box>
            <Text>Reason to Speed</Text>
            {/* <Text bg={'white'} borderRadius={'5px'} height={'50px'} width={'400px'}>(optional)</Text> */}
-           <Input placeholder='medium size' size='md' type="text" name=""/>
+           <Input placeholder='medium size' size='md' type="text" name="" />
           </Box>
          </Flex>
          <Flex display={'flex'} justifyContent={'center'} mt="10px">

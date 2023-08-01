@@ -77,12 +77,12 @@ const handleSeek = (value :any) => {
          <Text marginLeft="20px" color={'#004570'}> Add English Content for </Text>
     <Text marginLeft="20px" color={'#004570'} as="b" >Gopi Sunkara</Text>
     </Box>
-    <Image marginRight="10px" src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov"  height={100}/>
+    <Image marginRight="10px" src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov"  height="100px"/>
    </Box>
    </Box>
   
       <Flex  justifyContent="center"  >
-        <Box marginRight="100px" >
+        <Box marginRight="10px" >
           <Text color={'#004570'} as="b" marginBottom="10px" fontSize="15px">Add new Video</Text>
           <Text  marginBottom="10px">Name of the Video</Text>
           <Input
@@ -122,7 +122,7 @@ const handleSeek = (value :any) => {
               <VideoPlayer videoUrl={videoUrl} thumbnailUrl={thumbnailUrl}  />
            </Box> */}
 
-<Flex  display={'flex'} justifyContent={'center'}>
+    <Flex  display={'flex'} justifyContent={'center'}>
       <ReactPlayer
         ref={reactPlayerRef}
         url={data?.text}
@@ -141,13 +141,13 @@ const handleSeek = (value :any) => {
         onChange={handleSeek}
         colorScheme="blue"
         aria-label="Video progress" 
-        mt={4}
+        mt="4px"
         width="50%"
       >
         <SliderTrack bg="gray.200" >
           <SliderFilledTrack bg="blue.500" />
         </SliderTrack>
-        <SliderThumb boxSize={6} />
+        <SliderThumb boxSize="6px" />
       </Slider>
       </Flex>
       

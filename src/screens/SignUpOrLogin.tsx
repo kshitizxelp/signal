@@ -3,7 +3,7 @@ import { Box, Flex, Image } from '@chakra-ui/react'
 import { Button, ButtonGroup } from '@chakra-ui/react'
 import { useNavigate } from 'react-router-dom';
 import {useDispatch, useSelector} from "react-redux"
-import { getPosts } from '../Slice';
+// import { getPosts } from '../Slice';
 
 
 

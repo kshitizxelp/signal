@@ -33,7 +33,7 @@ export default function Nav() {
             alignItems={"center"}
             >
        
-       <Image src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov"  height={100}/>
+       <Image src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov"  height="100px"/>
        
        <HStack gap={"5"} pr={5}>
         <AiTwotoneBell onClick={() => navigateTo2()} /> 

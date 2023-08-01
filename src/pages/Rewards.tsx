@@ -42,7 +42,7 @@ export default function Rewards() {
 
 
   return (
-    <>
+    <Box>
     <RewardNav/>
     { isChildTasksRoute && (
     <Box bg="gray.300" width="100%">
@@ -88,7 +88,7 @@ export default function Rewards() {
      
     </Box>
     <Text pl="50px">{item.twodaysbefore}</Text>
-    <Box display={'flex'} justifyContent="space-between" bg={'white'} borderRadius="5"  w="90%" ml="15px" pb={3}>
+    <Box display={'flex'} justifyContent="space-between" bg={'white'} borderRadius="5"  w="90%" ml="5px" pb={3}>
       <Box display={'flex'} pl="10px" >
        <Text pl={2}>{item.head2}</Text>
        <Text pl={2}>{item.typefriend}</Text>
@@ -114,7 +114,7 @@ export default function Rewards() {
    </Box>
     )}
    <Outlet/>
-   </>
+   </Box>
 
   )
 }

@@ -79,6 +79,7 @@ function App() {
         <Route path="/Mydashbord" element={<Mydashbord/>}> 
           <Route path="/Mydashbord/more" element={<More/>} />
           <Route path="/Mydashbord/Notifications" element={<Notifications/>} />
+         
         </Route>
         <Route path="/Rewards" element={<Rewards/>}> 
           <Route  path="/Rewards/RewardSetup" element={<RewardSetup/>}  />
