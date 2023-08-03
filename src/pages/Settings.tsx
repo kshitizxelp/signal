@@ -11,6 +11,10 @@ export default function Settings() {
     const navigateTo = () =>{
         navigate("/")
     }
+const back =()=>{
+  navigate("/Mydashbord/more")
+}
+
     const dataObj = [
         {
           image: "src/assets/girl@3x.png" ,
@@ -36,7 +40,7 @@ export default function Settings() {
 
   return (
 
-<Box bg={'gray.400'} width="100%" height="100%">
+<Box bg={'gray.400'} width="100%" >
   
  
   <Box  display={"flex"}
@@ -44,22 +48,22 @@ export default function Settings() {
             justifyContent={"space-between"}
             alignItems={"center"}
             bg={'white'}
-           width="100%"
+            width="100%"
           >
             <Box display={'flex'}>
-            <Text pl={10} color={'#004570'} fontWeight={'bold'}>  <FaArrowLeft/></Text>
-            <Text pl={2} color={'#004570'} fontWeight={'bold'}>Settings</Text>
+            <Text pl="10px" color={'#004570'} fontWeight={'bold'} onClick={back}>  <FaArrowLeft/></Text>
+            <Text pl="2px" color={'#004570'} fontWeight={'bold'}>Settings</Text>
             </Box>
     
-          <Image src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov" height={100} pr={10}/>
+          <Image src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov" height="100px" />
           </Box>
 
         
-          <Box ml={'100px'}>
-          <Text pl={2} color={'#004570'} fontWeight={'bold'}>How to use Signal?</Text>
-          <Text p={1} >1.If using the same device, you will need to sign out of your parent/guardian account first</Text>
-          <Text p={1} >2.Go to app.signal.in</Text>
-          <Text p={1} >3.Sign in using the learner's username and password.</Text>
+          <Box ml='10px'>
+          <Text p="2px" color={'#004570'} fontWeight={'bold'}>How to use Signal?</Text>
+          <Text p="2px" >1.If using the same device, you will need to sign out of your parent/guardian account first</Text>
+          <Text p="2px" >2.Go to app.signal.in</Text>
+          <Text p="2px" >3.Sign in using the learner's username and password.</Text>
           </Box>
         
     
@@ -67,9 +71,9 @@ export default function Settings() {
       <Box display="grid" gridTemplateColumns="repeat(3, 1fr)" gap={4} p={10}>
        */}
 
-<Flex display={'flex'} justifyContent={'center'}>
+     <Flex display={'flex'} justifyContent={'center'}>
        <Box>
-        <Box mt={'40px'}>
+        <Box mt='40px'>
         <Text color={'#004570'} fontWeight={'bold'}> Children</Text>
         </Box>
        {dataObj.map((item)=>(
@@ -79,10 +83,10 @@ export default function Settings() {
             alignItems={"center"}
             mt={'10px'} 
             borderRadius={'5px'}
-            width={'600px'}
-            height={'100px'}
+            width={{base:"280px",md:"400px",lg:"500px"}}
+            height='100px'
             bg={'white'}
-            mb={'10px'} 
+            mb='10px' 
            >
     <Box>      
     <Avatar name='Dan Abrahmov' size='xl' src={item.image} />
@@ -93,18 +97,18 @@ export default function Settings() {
     </Box>
     <Box>
         <Box display={'flex'}>
-            <Link pl={'10px'}>Delete</Link>
-            <Text pl={'10px'} color={'red.700'} fontSize={'2xl'}><RiDeleteBinLine/></Text>
+            <Link pl='10px'>Delete</Link>
+            <Text pl='10px' color={'red.700'} fontSize={'2xl'}><RiDeleteBinLine/></Text>
         </Box>
-        <Box display={'flex'} mt={'10px'}>
-            <Link pl={'18px'}>Edit</Link>
-            <Text pl={'18px'} color={'#004570'} fontSize={'2xl'}><BiEdit/></Text>
+        <Box display={'flex'} mt='10px'>
+            <Link pl='18px'>Edit</Link>
+            <Text pl='18px' color={'#004570'} fontSize={'2xl'}><BiEdit/></Text>
         </Box>
     </Box>
     </Box>   
     ))}
 <Flex display={'flex'} justifyContent={'center'}>
-<Button bg={'#004570'} width={'400px'}>
+<Button bg={'#004570'} width={{base:"270px",md:"300px",lg:"400px"}}>
 ADD Child
 </Button>
 </Flex>
@@ -112,16 +116,16 @@ ADD Child
 </Box>
 </Flex>
        
-       <Box ml={'100px'}>
+       <Box ml='10px'>
        <Text color={'#004570'} fontWeight={'bold'}> My Subsciption</Text>
-       <Text p={2} >You are using Signal UNLIMITED Family Plan.</Text>
-       <Text p={2} >You have unlimited access to all Signal content for upto two learners. You can change your plan at any time.</Text>
+       <Text p="2px" >You are using Signal UNLIMITED Family Plan.</Text>
+       <Text p="2px" >You have unlimited access to all Signal content for upto two learners. You can change your plan at any time.</Text>
        </Box>
 
 
        <Box mt={'50px'} pb={'20px'}>
      <Flex display={'flex'} justifyContent={'center'}>
-       <Button bg={'#004570'} width={'400px'}>
+       <Button bg={'#004570'} width={{base:"270px",md:"300px",lg:"400px"}}>
         Change Plan
        </Button>
        </Flex>

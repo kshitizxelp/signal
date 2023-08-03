@@ -7,8 +7,8 @@ export default function CreateChild() {
     const navigate = useNavigate();
 
     const navigateTo = () =>{
-        navigate("/ChildInterest")
-    }
+        navigate("/addchildinterests")
+    };
  
     const inputs :any = [
         {

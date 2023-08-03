@@ -89,7 +89,7 @@ const obg=[
        <Text marginLeft="10px" color={'#004570'}mb="3px" >GopiSunkara </Text>
        </Box>
        </HStack>
-       <Image marginRight="10px" src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov"  height={100}/>
+       <Image marginRight="10px" src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov"  height="100"/>
       </Box> 
 
       

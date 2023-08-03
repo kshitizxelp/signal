@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Button, Flex, Radio, RadioGroup, Stack, Text ,ChakraProvider,Image,Checkbox} from '@chakra-ui/react'
+import { Box, Button, Flex, Radio, RadioGroup, Stack, Text ,ChakraProvider,Image,Checkbox,Accordion,AccordionItem,AccordionButton,AccordionIcon,AccordionPanel} from '@chakra-ui/react'
 import {FaAngleDown} from "react-icons/all"
 import { useNavigate } from 'react-router'
 const Addchildinterest = () => {
@@ -7,32 +7,44 @@ const Addchildinterest = () => {
     const object=[
         {
             text:"OUTDOOR GAMES",
-            
+            optionOne:"Cricket",
+            optionTwo:"FootBall",
+            optionThree:"Batminton",
+            index:0,
         },
         {
             text:"BOARD GAMES",
-            
+            optionOne:"Chess",
+            optionTwo:"Scrabble",
+            optionThree:"Lego",
+            index:1
         },
         {
             text:"CREATIVE ARTS",
+            optionOne:"Painting",
+            optionTwo:"Singing",
+            optionThree:"Guitar",
+            index:2
         }, 
         {
             text:"INDOOR ACTIVITIES",
+            optionOne:"Baking",
+            optionTwo:"Origami",
+            optionThree:"Mechanics",
+            index:3
             
         }
     ];
 
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
-    const navigateTo = () =>{
-        navigate("/ChildInterest")
-    }
+   
     const Backpage = () =>{
         navigate("/CreateChild")
-    }
+    };
     const Nextpage = () =>{
-        navigate("/ChildInterest")
-    }
+        navigate("/ChildVerification")
+    };
 
   return (
    <Box bg={'gray.400'} width="100%" >
@@ -51,21 +63,61 @@ const Addchildinterest = () => {
       <ChakraProvider>
       <Box display="grid" gridTemplateColumns={{base:"repeat(1, 1fr)",md:"repeat(2, 1fr)",lg:"repeat(3, 1fr)"}} gap="10px" m="5px">
       {object.map((item: any) => (
-       <Box bg={'white'} 
-               display={"flex"}
-               flexDirection={"row"}
-               justifyContent={"space-between"}
-               alignItems={"center"}
-               height={{base:"90px",md:"90px",lg:"90px"}}
-               borderRadius="10px"
-           >
-          <Text pl="5px">{item.text}</Text> 
-          <Text fontSize="30px" pr="5px" onClick={navigateTo}><FaAngleDown/></Text> 
+         <Accordion defaultIndex={[0]} allowMultiple width="290px"  ml="10px" bg={'white'} mt="50px">
+          <AccordionItem>
+   
+         <AccordionButton>
+          <Box as="span" flex='1' textAlign='left'>
+          <Text color="green">{item.text}</Text> 
           </Box>
+          <AccordionIcon />
+          </AccordionButton>
+    
+         <AccordionPanel pb="20px" mt="0px" bg="white">
+          <Box mt="20px">
+         
+          <RadioGroup>
+          <Stack direction='row'>
+          <Radio value='1'>{item.optionOne}</Radio>
+          <Radio value='2'>{item.optionTwo}</Radio>
+          <Radio value='3'>{item.optionThree}</Radio>
+           </Stack>
+         </RadioGroup>
+
+          </Box>
+        </AccordionPanel>
+     </AccordionItem>
+    </Accordion>
+      
       ))}
           </Box>
           </ChakraProvider>
 
+          {/* <Accordion defaultIndex={[0]} allowMultiple width="280px" ml="20px" bg={'white'}>
+          <AccordionItem>
+   
+         <AccordionButton>
+          <Box as="span" flex='1' textAlign='left'>
+          <Text color="green">Section 1 title</Text> 
+          </Box>
+          <AccordionIcon />
+          </AccordionButton>
+    
+         <AccordionPanel pb={4}>
+          <Box>
+         
+          <RadioGroup>
+          <Stack direction='row'>
+          <Radio value='1'>First</Radio>
+          <Radio value='2'>Second</Radio>
+          <Radio value='3'>Third</Radio>
+         </Stack>
+         </RadioGroup>
+
+          </Box>
+        </AccordionPanel>
+     </AccordionItem>
+    </Accordion> */}
          
           <Flex display={'flex'} justifyContent={'center'} mt="20px" >
            <Checkbox colorScheme='green' defaultChecked mb="130px" pl="10px">

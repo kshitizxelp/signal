@@ -99,16 +99,16 @@ export default function CreateNewTask1() {
            
           
            
-            <Box key={index} bg="gray.300" height="120px"  width={{base:'300px',md:'300px',lg:'400px'}} m='10px' >
+            <Box key={index} bg="gray.300" height="120px"  width={{base:'300px',md:'300px',lg:'400px'}} m='5px' >
             <Text bg={'green'} pt={'5px'}  color={'white'} pl={'10px'}>{item.head}</Text>
            
-            <HStack spacing="5px" marginLeft="10px" justifyContent="space-between" display="flex"  mt='20px'>
+            <HStack spacing="2px" marginLeft="8px" justifyContent="space-between" display="flex"  mt='20px'>
                 
-            <Text as="b">{item.title}</Text>
+            <Text as="b" fontSize="14px">{item.title}</Text>
             <Text>{item.itemvalue}</Text>
-            <BsPlusCircle onClick={handleOpenModal} style={{ cursor: 'pointer' }} />
+            <BsPlusCircle onClick={handleOpenModal} style={{ cursor: 'pointer' }} p="2px" />
             <Text as="u"  onClick={handleOpenModal} style={{ cursor: 'pointer' }} color={'blue'} >Add Content</Text>
-            <Text p="5px"><RiDeleteBinLine/></Text>
+            <Text p="2px"><RiDeleteBinLine/></Text>
             </HStack>
           </Box>
         ))}
@@ -121,8 +121,8 @@ export default function CreateNewTask1() {
                         <ModalCloseButton />
                         <ModalBody>
                        
-                            <Flex direction="column" gap={4} justifyContent="center">
-                            <Flex  display={'flex'} alignItems="center" direction="row" gap={2}>
+                            <Flex direction="column" gap="4px" justifyContent="center">
+                            <Flex  display={'flex'} alignItems="center" direction="row" gap="2px">
             <Radio
              value="1"
              borderColor={'black'}

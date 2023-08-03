@@ -110,9 +110,11 @@ export default function ChildRewards() {
          {data.map((item)=>(
         <Box bg={'white'} h="150px" w="150px" borderRadius="50%">
         <Flex display={'flex'} justifyContent={'center'}>  
-        <Image src={item.image} alt="" w="100px"
-          h="140px"
+        <Image src={item.image} alt="" w="100px" h="100px" pt="20px"
           />
+        
+          {/* <Image marginRight="10px" src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov"  height="100px"/> */}
+        
         </Flex>
         <Flex justifyContent={'center'}>
         <Box mt="6px">
