@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Box, Button, Flex, Radio, RadioGroup, Stack, Text ,ChakraProvider,Image,Checkbox,Accordion,AccordionItem,AccordionButton,AccordionIcon,AccordionPanel} from '@chakra-ui/react'
 import {FaAngleDown} from "react-icons/all"
 import { useNavigate } from 'react-router'
@@ -11,34 +11,54 @@ const Addchildinterest = () => {
             optionTwo:"FootBall",
             optionThree:"Batminton",
             index:0,
+            payloadKey:"outdoor_games"
         },
         {
             text:"BOARD GAMES",
             optionOne:"Chess",
             optionTwo:"Scrabble",
             optionThree:"Lego",
-            index:1
+            index:1,
+            payloadKey:"board_games"
+
         },
         {
             text:"CREATIVE ARTS",
             optionOne:"Painting",
             optionTwo:"Singing",
             optionThree:"Guitar",
-            index:2
+            index:2,
+            payloadKey:"creative_arts"
+
         }, 
         {
             text:"INDOOR ACTIVITIES",
             optionOne:"Baking",
             optionTwo:"Origami",
             optionThree:"Mechanics",
-            index:3
+            index:3,
+            payloadKey:"indoor_activities"
+
             
         }
     ];
+    const [addchildinterests ,setAddchildinterests] = useState({
+       
+    });
+   
+    const handleChange=(e:any)=>{
+    console.log(e.target.name,e.target.value)
+    setAddchildinterests({...addchildinterests,[e.target.name]:e.target.value})
+    };
+   
+    console.log(addchildinterests)
+  
 
     const navigate = useNavigate();
+     
+    
 
-   
+
     const Backpage = () =>{
         navigate("/CreateChild")
     };
@@ -76,11 +96,11 @@ const Addchildinterest = () => {
          <AccordionPanel pb="20px" mt="0px" bg="white">
           <Box mt="20px">
          
-          <RadioGroup>
+          <RadioGroup >
           <Stack direction='row'>
-          <Radio value='1'>{item.optionOne}</Radio>
-          <Radio value='2'>{item.optionTwo}</Radio>
-          <Radio value='3'>{item.optionThree}</Radio>
+          <Radio value={item.optionOne} name={item.payloadKey} onChange={handleChange} >{item.optionOne}</Radio>
+          <Radio value={item.optionTwo} name={item.payloadKey} onChange={handleChange}  >{item.optionTwo}</Radio>
+          <Radio value={item.optionThree} name={item.payloadKey} onChange={handleChange} >{item.optionThree}</Radio>
            </Stack>
          </RadioGroup>
 
@@ -125,6 +145,7 @@ const Addchildinterest = () => {
            <Text mt="40px" >By checking this box you confirm that you have the right to provide this information either as a parent or carer (for learners under 13 years old) or that you have consent to provide such information (13years and over).</Text>
           </Flex>
       
+     
           
         <Flex display={'flex'} justifyContent={'center'}>
        <Button colorScheme="blue" borderRadius="20px" mb="50px" mr="30px" size="lg" bg="#F5F5F5" width="110px" color="black"  onClick={Backpage}>

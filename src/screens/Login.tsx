@@ -39,14 +39,15 @@ export default function Login() {
       ];
 
   return (
-    <Box bg={'gray.400'} width="100%">
-    <Flex direction="column" alignItems="center" pt='20px' pb="10px" > 
+    <Box style={{backgroundColor: "#F2F5F7"}} width="100%">
+    <Flex direction="column" alignItems="center" > 
     <Box
-      boxShadow="dark-lg"
+      // boxShadow="dark-lg"
       p="6"
       bg="white"
-      borderRadius="50px"
+      borderRadius="350px"
       width={{base:"290px",md:"350px",lg:"400px"}}
+      px="20px"
       >
      
       <Box>

@@ -85,7 +85,7 @@ const obg=[
        <HStack gap={"5"} pr={5}>
        <Text marginLeft="10px" color={'#004570'} ><AiOutlineArrowLeft/></Text>
        <Box>
-       <Text marginLeft="10px" color={'#004570'} mb="2px" fontSize={12}>Add English Content for </Text>
+       <Text marginLeft="10px" color={'#004570'} mb="2px" fontSize="12px">Add English Content for </Text>
        <Text marginLeft="10px" color={'#004570'}mb="3px" >GopiSunkara </Text>
        </Box>
        </HStack>
@@ -101,7 +101,7 @@ const obg=[
         <Box>
 
         <ChakraProvider>
-        <Box display="grid" gridTemplateColumns="repeat(4, 1fr)" gap={20} p={20}>
+        <Box display="grid" gridTemplateColumns={{base:"repeat(1, 1fr)",md:"repeat(2, 1fr)",lg:"repeat(3, 1fr)"}} gap="10px" p="20px">
     
          {obg.map((item)=>(
         <Box bg={'white'} h="150px" w="150px" borderRadius="50%">

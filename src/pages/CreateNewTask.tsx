@@ -1,5 +1,5 @@
-import { Box, Button, Flex, Radio, RadioGroup, Stack, Text ,ChakraProvider,Image,Checkbox} from '@chakra-ui/react'
-import React from 'react'
+import { Box, Button, Flex, Radio, RadioGroup, Stack, Text ,ChakraProvider,Image,Checkbox,Accordion,AccordionItem,AccordionButton,AccordionIcon,AccordionPanel} from '@chakra-ui/react'
+import React, { useEffect, useState } from 'react'
 
 import {BsPlusCircle ,FaAngleUp ,FaArrowLeft} from "react-icons/all"
 import { useNavigate } from 'react-router'
@@ -21,37 +21,63 @@ export default function CreateNewTask() {
   }
   const data=[
               {
-                head:"GopiSunkara",
+                head:"Learning",
                 itemone:"Light",
                 itemtwo:"Sound",
-                itemthree:"Water"
+                itemthree:"Water",
+                index:0,
+                payload:"Learning"
 
               },
               {
-                head:"GopiSunkara",
-                itemone:"Light",
-                itemtwo:"Sound",
-                itemthree:"Water"
+                head:"Shadow Practice",
+                itemone:"Communi-cation",
+                itemtwo:"Self Retication",
+                itemthree:"Critical Thinking",
+                index:1,
+                payload:"Shadow Practice"
 
               },
               {
-                head:"GopiSunkara",
-                itemone:"Light",
-                itemtwo:"Sound",
-                itemthree:"Water"
+                head:"Interests",
+                itemone:"Art & Craft",
+                itemtwo:"Food",
+                itemthree:"Nature",
+                index:2,
+                payload:"Interests"
 
               },
               {
-                head:"GopiSunkara",
-                itemone:"Light",
-                itemtwo:"Sound",
-                itemthree:"Water"
+                head:"BetterMe",
+                itemone:"Productivity",
+                itemtwo:"Values",
+                itemthree:"Habits",
+                index:3,
+                payload:"BetterMe"
+                
 
               },
-              
-  ];
-  const [value, setValue] = React.useState('1');
-   console.log("hiii",value)
+           ];
+  const [newtaskvalue, setNewtaskValue] = useState({
+          
+  });
+  
+
+  const handledata = (e: any) => {
+  
+    setNewtaskValue((prevTaskValue) => ({ ...prevTaskValue, [e.target.name]:e.target.value }));
+  };
+  console.log(newtaskvalue);
+  
+  // useEffect(() => {
+  //   console.log(newtaskvalue);
+  // }, [newtaskvalue]);
+
+  //   const handledata=(e:any)=>{
+  //   console.log(e.target.name, e.target.value)
+  //   setNewtaskValue({...newtaskvalue,[e.target.name]:e.target.value});
+  //   console.log(newtaskvalue);
+  // };
 
   return (
 
@@ -62,7 +88,7 @@ export default function CreateNewTask() {
             flexDirection={"row"}
             justifyContent={"space-between"}
             alignItems={"center"}
-            bg={'white'}
+            bg={'gray.300'}
            width="100%"
           >
             <Box display={'flex'}>
@@ -80,49 +106,40 @@ export default function CreateNewTask() {
         </Flex>
     
     <ChakraProvider>
-      <Box display="grid" gridTemplateColumns={{base:'repeat(1,1fr)',md:'repeat(2,1fr)',lg:'repeat(3,1fr)'}} gap="5px" m="10px">
-        {/* Card 1 */}
-       {data.map((item)=>(  
-        <Box
-          bg="gray.100"
-          borderRadius="md"
-          boxShadow="md"
-          flexDirection="column"
-          height="150PX"
-          width="300px"
-        >
-          
-          <Box bg={'gray.300'} 
-               display={"flex"}
-               flexDirection={"row"}
-               justifyContent={"space-between"}
-               alignItems={"center"}
-              
-         >
-          <Text pl={5}>{item.head}</Text> 
-          <Text fontSize={30}  pr={5} ><FaAngleUp /></Text> 
-          </Box>
-          
-          <Box mt={10}>
-          <Box display={'flex'} alignItems="center"  gap={2}>
-          
-          <RadioGroup onChange={setValue} value={value} >
-          <Stack direction='row'>
-          <Radio value={item.itemone} borderColor={'red.200'}>{item.itemone}</Radio>
-          <Radio value={item.itemtwo} borderColor={'red.200'}>{item.itemtwo}</Radio>
-          <Radio value={item.itemthree} borderColor={'red.200'}>{item.itemthree}</Radio>
-         </Stack>
-         </RadioGroup>
-           
-            <Flex  alignItems="center" direction="column">
-            <BsPlusCircle color="#004570" />
-            <Text mt={2} color="#004570" as="u" >Add New</Text>
-            </Flex>
+      <Box display="grid" gridTemplateColumns={{base:'repeat(1,1fr)',md:'repeat(2,1fr)',lg:'repeat(3,1fr)'}} gap="5px" m="5px">
+       
+       {data.map((item:any)=>(  
+       <Accordion defaultIndex={[0]} allowMultiple width={{base:"290px",md:"290px",lg:"310px"}}   bg={'white'} mt="50px">
+       <AccordionItem>
 
-            </Box>
-            </Box>
-            </Box>
-            ))}
+      <AccordionButton>
+       <Box as="span" flex='1' textAlign='left'>
+       <Text color="green">{item.head}</Text> 
+       </Box>
+       <AccordionIcon />
+       </AccordionButton>
+ 
+      <AccordionPanel pb="20px" mt="0px" bg="white">
+       <Box mt="20px">
+      
+       <RadioGroup  >
+       <Stack direction='row'>
+       <Radio value={item.itemone}    name={item.payload} size='sm'  onChange={handledata}>{item.itemone}</Radio>
+       <Radio value={item.itemtwo}    name={item.payload} size='sm'  onChange={handledata}>{item.itemtwo}</Radio>
+       <Radio value={item.itemthree}  name={item.payload} size='sm'  onChange={handledata}>{item.itemthree}</Radio>
+        </Stack>
+      </RadioGroup>
+            
+             <Box mt="10px" display={'flex'} >
+             <Text color="blue" fontSize="12px" mt="3px"><BsPlusCircle/></Text>
+             <Text color="blue"fontSize="12px">AddNew</Text>
+             </Box>
+       </Box>
+     </AccordionPanel>
+  </AccordionItem>
+ </Accordion>
+   
+   ))};
 
        
       </Box>
