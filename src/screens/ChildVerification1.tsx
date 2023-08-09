@@ -15,20 +15,22 @@ export default function ChildVerification1() {
   };
 
   return (
-  <Box bg={'gray.300'} width={'100%'} >
+  <Box bg="#F2F5F7" width='100%' >
   <Flex justifyContent={'center'}>
   <Box
    boxShadow="dark-lg"
    bg="white"
-   borderRadius='50px'
+  //  borderRadius='50px'
+   borderTopRadius="200px"
+   borderBottomRadius="200px"
    width={{base:"300px",md:"420px",lg:"450px"}}
    alignItems="center"
    justifyContent="center"
    m="20px"
  >
       <Box>
-      <Flex display={'flex'} justifyContent={'center'}>
-      <Image src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov" height={'150px'}/>
+      <Flex display={'flex'} justifyContent={'center'} m="10px">
+      <Image src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov" height='150px'/>
       </Flex>
       </Box>
      
@@ -37,12 +39,12 @@ export default function ChildVerification1() {
         <Box mt={'4px'}>
          <Text fontSize="20px" as="b" color="#004570" >Child Verification</Text>
 
-        <Text mt={'4px'}>Please take a face closeup photo of the child</Text>
+        <Text mt='4px'>Please take a face closeup photo of the child</Text>
         </Box> 
         </Flex>
 
       <Flex display={'flex'} justifyContent={'center'}>
-       <Box mt={'4px'}>
+       <Box m='10px'>
        <Image src="src/assets/Mask Group 1@3x.png"  height="220px" width="223px"/>
        </Box>
        </Flex>

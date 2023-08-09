@@ -9,14 +9,15 @@ export default function ChildVerification2() {
     navigate("/ChildVerification3")
   }
     return (
-      <Box bg={'gray.300'} width="100%">
+      <Box bg="#F2F5F7" width="100%">
       <Flex direction="column" alignItems="center" position="relative" >
       <Box
        boxShadow="dark-lg"
        p="6"
-       rounded=""
        bg="white"
-       borderRadius="50px"
+      //  borderRadius="50px"
+      borderTopRadius="200px"
+     borderBottomRadius="200px"
        width={{base:"290px",md:"350px",lg:"400px"}}
        alignItems="center"
        justifyContent="center"
@@ -34,7 +35,7 @@ export default function ChildVerification2() {
            <Box mt="4px">
            <Text fontSize="20px" as="b" color="#004570" >Child Verification</Text>
     
-           <Text mt="4px">Please take a face closeup photo of the child</Text>
+           <Text mt="4px" fontSize="18px">Please take a face closeup photo of the child</Text>
             </Box>
             </Flex>
            
@@ -46,7 +47,7 @@ export default function ChildVerification2() {
         
         <Flex display={'flex'} justifyContent={'center'}> 
         <Box mt="2px">
-        <Text p="5px">Child Avatar Preview Estimated Age : 5-8 years</Text>
+        <Text p="5px" fontSize="15px">Child Avatar Preview Estimated Age : 5-8 years</Text>
         <Text></Text>
        </Box>
        </Flex>
@@ -59,7 +60,7 @@ export default function ChildVerification2() {
         </Flex>
         
         
-        <Flex display={'flex'} justifyContent={'center'}>
+      <Flex display={'flex'} justifyContent={'center'} m="30px">
        <Button colorScheme="blue" borderRadius="20px" mb="50px" mr="30px" size="sm" bg="#F5F5F5" width="100px" color="black"  >
         Retake
        </Button>

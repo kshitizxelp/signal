@@ -12,18 +12,19 @@ export default function ParentVerification3() {
 
 
   return (
-    <Box bg={'gray'} >
+    <Box bg="#F2F5F7" width="100%" >
     <Flex direction="column" alignItems="center" position="relative" >
-      <Box
+     <Box
       boxShadow="dark-lg"
       p="5"
-      rounded=""
       bg="white"
-      borderRadius="50px"
+      // borderRadius="50px"
+      borderTopRadius="200px"
+      borderBottomRadius="200px"
       height="520px"
       width={{base:"290px",md:"350px",lg:"450px"}}
-      mt="5px"
-      mb="10px"
+      mt="60px"
+     
     >
       <Flex display={'flex'} justifyContent={'center'}>
       <Box  mt="10px" >
@@ -48,7 +49,7 @@ export default function ParentVerification3() {
       
         <Flex display={'flex'} justifyContent={'center'}>
         <Box mt="12px">
-        <Button colorScheme="blue" size="lg" bg="#004570" width={{base:"280px",md:"300px",lg:"312px"}} onClick={() => navigateTo()} >
+        <Button colorScheme="blue" size="lg" bg="#004570" width={{base:"250px",md:"300px",lg:"312px"}} mt="30px" mb="80px" onClick={() => navigateTo()} >
           Next
         </Button>
       </Box>

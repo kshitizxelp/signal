@@ -36,14 +36,15 @@ export default function ParentVerification2() {
 
   
   return (
-    <Box bg={'gray'} width="100%" >
+    <Box bg="#F2F5F7" width="100%" >
     <Flex direction="column" alignItems="center">
     <Box
       boxShadow="dark-lg"
       p="5"
-      rounded=""
       bg="white"
-      borderRadius="50px"
+      // borderRadius="50px"
+      borderTopRadius="200px"
+      borderBottomRadius="200px" 
       width={{base:"290px",md:"400px",lg:"500px"}}
       mt="2px"
       mb="50px"
@@ -132,6 +133,8 @@ export default function ParentVerification2() {
             <Button
               colorScheme="blue"
               size="lg"
+              mt="30px"
+              mb="50px"
               bg="rgba(0, 69, 112, 1)"
               width={{base:"270px",md:"300px",lg:"312px"}}
               onClick={() => navigateTo()}

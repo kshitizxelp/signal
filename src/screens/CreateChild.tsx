@@ -63,14 +63,15 @@ export default function CreateChild() {
        console.log(addchailddata)
 
   return (
-  <Box bg={'gray'} width="100%">
+  <Box bg="#F2F5F7" width="100%">
   <Flex direction="column"  alignItems={'center'}>
   <Box
-   boxShadow="dark-lg"
+  //  boxShadow="dark-lg"
    p="6"
-   rounded=""
    bg="white"
-   borderRadius="50px"
+  //  borderRadius="50px"
+   borderTopRadius="200px"
+   borderBottomRadius="200px"
    width={{base:"300px",md:"400px",lg:"500px"}}
    alignItems="center"
    justifyContent="center"
@@ -78,7 +79,7 @@ export default function CreateChild() {
    mb="15px"
  >
      <Flex display={'flex'} justifyContent={'center'}>
-       <Box  mt="4px">
+       <Box  mt="10px">
        <Text fontSize="20px" as="b" color="#004570" >Create Child Account</Text>
         </Box>
         </Flex>
@@ -114,7 +115,7 @@ export default function CreateChild() {
      
     
      
-     <Flex flexDirection="row" mt="10px" justifyContent="center">
+     <Flex flexDirection="row" m="20px" justifyContent="center">
      <Button colorScheme="blue" borderRadius="20px" mr="30px" size="lg" bg="#F5F5F5" width="110px" color="black">
           Save
         </Button>

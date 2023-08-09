@@ -18,16 +18,17 @@ export default function SIgnUp() {
       });
 
       const inputs :any = [
-        {
-            name:"email",
-            label:"Email address",
-            type:"text",
-        },
+       
         {
           name: "username",
           label: "Username",
           type: "text",
         },
+        {
+          name:"email",
+          label:"Email address",
+          type:"text",
+      },
         {
           name: "password",
           label: "Password",
@@ -54,19 +55,22 @@ export default function SIgnUp() {
         const changeHandler = (e:any) => {
         console.log(e.target.value,e.target.name,"from mhandle changeeeeeeeeeeee")
         setData({ ...data, [e.target.name]: e.target.value });
+        
       };
-      console.log('data',data)
+     
+     
 
 
   return (
-    <Box bg={'gray'} width="100%">
+    <Box bg={'#F2F5F7'} width="100%">
     <Flex  justifyContent={'center'} >
       <Box
       boxShadow="dark-lg"
-      p="1"
-      rounded=""
+     mt="10px"
+     
       bg="white"
-      borderRadius='40px'
+      borderTopRadius="200px"
+      borderBottomRadius="200px"
       width={{base:"290px",md:"400px",lg:"500px"}}
       alignItems="center"
       justifyContent="center"
@@ -100,7 +104,7 @@ export default function SIgnUp() {
      
       <Flex display={'flex'} justifyContent={'center'}>
         <Box mt={'5px'}>
-        <Button colorScheme="blue" size="lg" bg="rgba(0, 69, 112, 1)" width={{base:"280px",md:"300px",lg:"400px"}} onClick={Login}>
+        <Button  colorScheme="blue" size="lg" bg="rgba(0, 69, 112, 1)" width={{base:"280px",md:"300px",lg:"380px"}} onClick={Login}>
           Sign Up
         </Button>
         </Box>
@@ -124,13 +128,13 @@ export default function SIgnUp() {
       <Button
       leftIcon={<SiGoogle color="#DB4437" />}
       variant="solid"
-      size="lg"
+      size="sm"
       display="flex"
       alignItems="center"
       justifyContent="center"
       borderColor="rgba(40, 40, 40, 0.3)"
       bg="white"
-      mr='8px'
+      ml='20px'
       
     >
       <Flex alignItems="center" >
@@ -140,7 +144,7 @@ export default function SIgnUp() {
     <Button
       leftIcon={<SiMicrosoftoffice color="red" />}
       variant="solid"
-      size="lg"
+      size="sm"
       display="flex"
       alignItems="center"
       justifyContent="center"
@@ -155,15 +159,17 @@ export default function SIgnUp() {
     <Button
       leftIcon={<AiOutlineMobile color="rgba(0, 69, 112, 1)"/>}
       variant="solid"
-      size="lg"
+      size="sm"
       display="flex"
       alignItems="center"
       justifyContent="center"
       borderColor="rgba(40, 40, 40, 0.3)"
       bg="white"
-    >
+      mr="20px"
+      mb="30px"
+      >
       <Flex alignItems="center">
-        <Text mt={'1px'}>Mobile</Text>
+        <Text mt='1px'>Mobile</Text>
       </Flex>
     </Button>
    

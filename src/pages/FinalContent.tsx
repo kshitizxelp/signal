@@ -348,6 +348,11 @@ console.log(typeof(b),"typeee offff bbb")
       </Box> :null
        }
        </Flex> */}
+       <Flex  justifyContent={"center"} mb="20px">
+       <Box>
+        <Text color="#004570" fontWeight={'bold'} fontSize="26px">Preview</Text>
+       </Box>
+       </Flex>
        
        
         <Flex  justifyContent={"center"}>

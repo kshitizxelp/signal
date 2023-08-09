@@ -13,27 +13,28 @@ export default function ChildVerification3() {
 
 
   return (
-    <Box bg={'gray.300'} width="100%">
-    <Flex direction="column" alignItems="center" position="relative" >
+    <Box bg="#F2F5F7" width="100%">
+    <Flex direction="column" alignItems="center" position="relative" > 
       <Box
-      boxShadow="dark-lg"
+      // boxShadow="dark-lg"
       p="5"
-      rounded=""
       bg="white"
-      borderRadius="50px"
+      // borderRadius="50px"
+      borderTopRadius="200px"
+      borderBottomRadius="200px"
       width={{base:"290px",md:"350px",lg:"500px"}}
       m="10px"
        >
       <Flex display={'flex'} justifyContent={'center'}>
-      <Box  mt="10px" >
-      <Image src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov" height="200px" />
+      <Box  m="20px" >
+      <Image src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov" height="150px" />
      </Box>
      </Flex>
 
     
     <Flex display={'flex'} justifyContent={'center'}>
-    <Image src="src/assets/Mask Group 1@3x.png" alt="Dan Abramov" height="100px" width="100px" m="5px"/>
-   <Text mt="6px" mr="2px">Avathar Added</Text>
+    <Image src="src/assets/Mask Group 1@3x.png" alt="Dan Abramov" height="100px" width="100px" m="0px"/>
+    <Text mt="6px" mr="2px">Avathar Added</Text>
     <Text fontSize="70px" color={'green'} > <FaRegCheckCircle /></Text>
     </Flex>
    
@@ -42,7 +43,7 @@ export default function ChildVerification3() {
 
     
      <Flex display={'flex'} justifyContent={'center'}>
-         <Box mt="10px">
+         <Box m="20px">
           <Text color="orange" as="b" >Yay!</Text>
           <Text as="b" mt="2px" >
             <br></br>
@@ -56,9 +57,9 @@ export default function ChildVerification3() {
           </Box>
           </Flex>
       
-        <Flex display={'flex'} justifyContent={'center'}>
+        <Flex display={'flex'} justifyContent={'center'} m="30px">
         <Box mt="12px">
-        <Button colorScheme="blue" size="lg" bg="#004570" width={{base:"280px",md:"290px",lg:"313px"}} borderRadius="20px"  onClick={navigateTo} >
+        <Button colorScheme="blue"   m="40pxz"  size="lg" bg="#004570" width={{base:"250px",md:"290px",lg:"313px"}} borderRadius="20px"  onClick={navigateTo} >
           Let's get started
         </Button>
       </Box>

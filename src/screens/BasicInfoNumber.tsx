@@ -42,14 +42,16 @@ export default function BasicInfoNumber() {
       ];
 
   return (
-    <Box bg={'gray'} width="100%">
+  <Box bg={"#F2F5F7"} width="100%">
   <Flex direction="column" alignItems="center" position="relative" pt={'60px'} pb={'100px'}>
   <Box
    boxShadow="dark-lg"
    p="6"
    rounded=""
    bg="white"
-   borderRadius={'50px'}
+  //  borderRadius={'50px'}
+  borderBottomRadius="200px"
+  borderTopRadius="200px"
    width={{base:"300px",md:"320px",lg:"350px"}}
    alignItems="center"
    justifyContent="center"
@@ -63,14 +65,14 @@ export default function BasicInfoNumber() {
     
     <Flex flexDirection="row">
     <Box justifyContent="center" textAlign="left" alignItems="center" marginLeft="110px" mt={'4px'} >
-        <Text fontSize="22px"  textAlign={'center'} color="rgba(0, 69, 112, 1)">Enter Basic Information</Text>
+        <Text fontSize="12px"  textAlign={'center'} color="rgba(0, 69, 112, 1)">Enter Basic Information</Text>
     </Box>
     </Flex>
    
     <Flex display={'flex'} justifyContent={'center'}>
-    <Box mt={'4px'}>
+    <Box mt='4px' mb="20px">
      {inputs.map((input: any) => (
-          <Box key={input.name} mb={'4px'}>
+          <Box key={input.name} mb='4px'>
             <Text mb={'1px'}>{input.label}</Text>
             {input.name === "gender" ? ( 
                 <Select placeholder='Select' width={{base:"250px",md:"280px",lg:"313px"}}  borderColor="#282828" onChange={handlechange} >
@@ -99,7 +101,7 @@ export default function BasicInfoNumber() {
      
      <Flex display={'flex'} justifyContent={'center'}>
       
-     <Box mt={'8px'}>
+     <Box mb="70px">
         <Button colorScheme="blue" size="lg" bg="rgba(0, 69, 112, 1)" width={{base:"250px",md:"280px",lg:"313px"}} onClick={Login}>
           Save
         </Button>

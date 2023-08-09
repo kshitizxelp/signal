@@ -39,7 +39,7 @@ export default function Login() {
       ];
 
   return (
-    <Box style={{backgroundColor: "#F2F5F7"}} width="100%">
+    <Box bg="#F2F5F7" width="100%">
     <Flex direction="column" alignItems="center" > 
     <Box
       // boxShadow="dark-lg"
@@ -102,13 +102,13 @@ export default function Login() {
       <Button
       leftIcon={<SiGoogle color="#DB4437" />}
       variant="solid"
-      size="lg"
+      size="sm"
       display="flex"
       // alignItems="center"
       justifyContent="center"
       borderColor="rgba(40, 40, 40, 0.3)"
-      bg="white"
-      mr='50px'
+      bg="gray"
+      ml='40px'
       
     >
       <Flex alignItems="center" >
@@ -118,13 +118,13 @@ export default function Login() {
     <Button
       leftIcon={<SiMicrosoftoffice color="red" />}
       variant="solid"
-      size="lg"
+      size="sm"
       display="flex"
       alignItems="center"
       justifyContent="center"
       borderColor="rgba(40, 40, 40, 0.3)"
-      bg="white"
-      mr='30px'
+      bg="gray"
+      ml='5px'
     >
       <Flex alignItems="center">
         <Text mt="2px" fontSize="12px">Office365</Text>
@@ -133,21 +133,26 @@ export default function Login() {
     <Button
       leftIcon={<AiOutlineMobile color="rgba(0, 69, 112, 1)"/>}
       variant="solid"
-      size="lg"
+      size="sm"
       display="flex"
       alignItems="center"
       justifyContent="center"
       borderColor="rgba(40, 40, 40, 0.3)"
-      bg="white"
+      bg="gray"
+      mr="40px"
     >
       <Box alignItems="center" onClick={() => navigateTo()}>
         <Text mt='1px' fontSize="12px">Mobile</Text>
       </Box>
     </Button>
     </Flex>
-    <Box mt='5px'>
-        <Link color={'blue'}>If u don't have an account.Sign Up</Link>
-    </Box>
+
+    <Flex justifyContent={'center'}>
+      <Box mt='1px'>
+        <Link color={'blue'} fontSize="12px">If u don't have an account.Sign Up</Link>
+      </Box>
+    </Flex>
+
     </Box>
     </Flex>
     </Box>

@@ -14,14 +14,17 @@ export default function ChildVerification() {
    }
 
     return (
-      <Box bg={"gray.300"} width={'100%'}>
+      <Box bg="#F2F5F7" width={'100%'}>
         <Flex justifyContent={'center'}>
          <Box
-          boxShadow="dark-lg"
+          // boxShadow="dark-lg"
           p="6"
           rounded=""
           bg="white"
-          borderRadius="60px"
+          mt="50px"
+          // borderRadius="60px"
+          borderTopRadius="200px"
+          borderBottomRadius="200px"
           width={{base:"300px",md:"400px",lg:"500px"}}
         >
           <Flex display={'flex'} justifyContent={'center'}>
@@ -36,7 +39,7 @@ export default function ChildVerification() {
          </Box>
          </Flex>
 
-        <Box textAlign="left" mt="2px">
+        <Box textAlign="left" m="10px">
             <Text>Online safety of children is top priority to us. 
                 <br></br>
                 <br></br>
@@ -49,7 +52,7 @@ export default function ChildVerification() {
                  Our algorithms will also verify whether the user is really a child. </Text>
 
         </Box>
-        <Flex flexDirection="row" mt="10px" justifyContent="center">
+        <Flex flexDirection="row" m="20px" justifyContent="center">
         <Button colorScheme="blue" borderRadius="20px" mr="30px" size="lg" bg="#004570" width="110px" color="white">
           Save
         </Button>
