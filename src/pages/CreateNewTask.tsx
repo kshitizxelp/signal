@@ -61,6 +61,7 @@ export default function CreateNewTask() {
   const [newtaskvalue, setNewtaskValue] = useState({
           
   });
+  const [show,setShow] = useState(false) ;
   
 
   const handledata = (e: any) => {
@@ -68,6 +69,13 @@ export default function CreateNewTask() {
     setNewtaskValue((prevTaskValue) => ({ ...prevTaskValue, [e.target.name]:e.target.value }));
   };
   console.log(newtaskvalue);
+  
+
+  const handleClick =()=>{
+    
+    setShow(!show)
+    
+  };
   
   // useEffect(() => {
   //   console.log(newtaskvalue);
@@ -81,16 +89,16 @@ export default function CreateNewTask() {
 
   return (
 
-<Box bg={'gray.400'} width="100%">
+  <Box bg="#F2F5F7" width="100%">
   
  
   <Box  display={"flex"}
             flexDirection={"row"}
             justifyContent={"space-between"}
             alignItems={"center"}
-            bg={'gray.300'}
-           width="100%"
-          >
+            bg="#F2F5F7"
+            width="100%"
+            >
             <Box display={'flex'}>
             <Text pl="10px" color={'#004570'} fontWeight={'bold'}>  <FaArrowLeft/></Text>
             {/* <Text pl="2x" color={'#004570'} fontWeight={'bold'}>GopiSunkara</Text> */}
@@ -109,17 +117,20 @@ export default function CreateNewTask() {
       <Box display="grid" gridTemplateColumns={{base:'repeat(1,1fr)',md:'repeat(2,1fr)',lg:'repeat(3,1fr)'}} gap="5px" m="5px">
        
        {data.map((item:any)=>(  
-       <Accordion defaultIndex={[0]} allowMultiple width={{base:"290px",md:"290px",lg:"310px"}}   bg={'white'} mt="50px">
+       <Accordion defaultIndex={[0]} allowMultiple width={{base:"290px",md:"290px",lg:"310px"}}   bg={'white'} mt="50px" >
        <AccordionItem>
 
-      <AccordionButton>
+      <AccordionButton  onClick={handleClick}>
        <Box as="span" flex='1' textAlign='left'>
        <Text color="green">{item.head}</Text> 
        </Box>
        <AccordionIcon />
        </AccordionButton>
- 
+       {
+        show ?
+   
       <AccordionPanel pb="20px" mt="0px" bg="white">
+       
        <Box mt="20px">
       
        <RadioGroup  >
@@ -135,7 +146,11 @@ export default function CreateNewTask() {
              <Text color="blue"fontSize="12px">AddNew</Text>
              </Box>
        </Box>
+   
      </AccordionPanel>
+     :null
+       }
+    
   </AccordionItem>
  </Accordion>
    

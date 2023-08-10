@@ -222,14 +222,13 @@ text === 'Stop Speed'? */}
           <Flex display={'flex'} alignItems="center" direction="row" gap={2} ml={'100px'}>
          
           <RadioGroup onChange={setSpeed} value={speed}>
-      <Stack direction='row'>
-        <Radio value='0.5'>0.5x</Radio>
-        <Radio value='1'>1x</Radio>
-        <Radio value='1.5'>1.5x</Radio>
-        <Radio value='2'>2x</Radio>
-       
-      </Stack>
-    </RadioGroup>
+          <Stack direction='row'>
+           <Radio value='0.5'>0.5x</Radio>
+           <Radio value='1'>1x</Radio>
+           <Radio value='1.5'>1.5x</Radio>
+           <Radio value='2'>2x</Radio>
+            </Stack>
+            </RadioGroup>
             </Flex>
             </Box>
 

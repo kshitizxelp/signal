@@ -39,7 +39,7 @@ const FinalContent = () => {
   const insertclicktime = useSelector<any>((state) => state?.auth?.insertclicktime);
   const AddSpeed = useSelector<any>((state)=>state?.auth?.speedofAdd);
   const AddspeedValue= useSelector<any>((state)=>state?.auth?.speedofValue);
-
+ 
   console.log("jumpdata", jumpdata);
   console.log(addjump, "jjsjkjjjjjjs..");
   console.log(insertclicktime, "clicktimee..");

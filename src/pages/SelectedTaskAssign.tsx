@@ -138,14 +138,14 @@ const SelectedTaskAssign = () => {
           },
     ]
   return (
-    <Box bg={'gray.300'} width={'100%'}>
+    <Box bg="#F2F5F7" width='100%'>
      
       
      <Box  display={"flex"}
             flexDirection={"row"}
             justifyContent={"space-between"}
             alignItems={"center"}
-            bg={'gray.200'}
+            bg="#F2F5F7"
             width="100%"
             >
        <HStack gap={"5"} pr={5}>
@@ -217,12 +217,12 @@ const SelectedTaskAssign = () => {
       <Box display="grid" gridTemplateColumns={{ base:'repeat(1,1fr)',md:'repeat(2,1fr)', lg: 'repeat(3, 1fr)'}} gap={'5px'} p={'10px'}> 
           
     {data.map((item)=>(
- <Box bg={'gray.100'}  width={'310px'}height={'200px'} >
+     <Box bg={'gray.100'}  width={'310px'}height={'200px'} >
      <Text pl={'10px'} color={'#004570'}>{item.outerhead}</Text>
       
- <Box  bg={'gray-100'} pl={'2px'}  >
+     <Box  bg={'gray-100'} pl={'2px'}  >
         
-        <Box bg={'white'} borderRadius={'5px'} width={'280px'}  ml={'10px'}>    
+         <Box bg={'white'} borderRadius={'5px'} width={'280px'}  ml={'10px'}>    
             <Box ml={'10px'}>
                <Flex display={'flex'} justifyContent="space-evenly">
                 <Text>{item.innerheadfirst}</Text>
@@ -234,9 +234,9 @@ const SelectedTaskAssign = () => {
                 <Flex display={'flex'} justifyContent="space-evenly">
                 <Radio value="1"
           // isChecked={selectedRadio === '1' || (ischeckboxChecked && selectedRadio !== null)}
-          isChecked={selectedRadio.includes('1')}
+            isChecked={selectedRadio.includes('1')}
 
-          onChange={() => handleRadioChange('1')}
+           onChange={() => handleRadioChange('1')}
                   
                 ></Radio>
                 <Avatar name='Dan Abrahmov' size='md' src={item.imageone} />
@@ -259,9 +259,9 @@ const SelectedTaskAssign = () => {
                 <Flex display={'flex'} justifyContent="space-evenly">
                 <Radio  value="2"
           // isChecked={selectedRadio === '2' || (ischeckboxChecked && selectedRadio !== null)}
-          isChecked={selectedRadio.includes('2')}
+               isChecked={selectedRadio.includes('2')}
 
-          onChange={() => handleRadioChange('2')}
+               onChange={() => handleRadioChange('2')}
                   
                 ></Radio>
                 <Avatar name='Dan Abrahmov' size='md' src={item.imagetwo} />

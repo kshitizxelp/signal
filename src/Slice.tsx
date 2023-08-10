@@ -4,6 +4,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 const initialState = {
   // posts:[],
+  GetPagesList:[],
   jumpData:{},
   addjump:[],
   insertclicktime:{},
@@ -19,6 +20,9 @@ const authSlice = createSlice({
     // setPosts: (state, action) => {
     //   state.posts = action.payload;
     // },
+    setGetPagesList:(state,action) =>{
+       state.GetPagesList = action.payload;
+    },
     setJumpData: (state, action) => {
       state.jumpData = action.payload;
     },
@@ -42,6 +46,7 @@ const authSlice = createSlice({
 });
 export const {
   // setPosts,
+  setGetPagesList,
   setJumpData,
   setAddjump,
   setInsertclicktime,
@@ -56,30 +61,48 @@ export default authSlice.reducer;
 
 
 // export const getPosts = () => (dispatch:any) => {
-  // const config = {
-  //   method: "get",
-  //   url: "https://jsonplaceholder.typicode.com/posts",
-  //   headers: {
-  //     "Content-Type": "application/json",
-  //   },
+//   const config = {
+//     method: "get",
+//     url: "https://jsonplaceholder.typicode.com/posts",
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
     
-  // };
-  // axios(config)
+//   };
+//   axios(config)
 
-  //   .then((response) => {
+//     .then((response) => {
 
-  //     console.log(response, "responseeeeeeeee")
+//       console.log(response, "responseeeeeeeee")
      
-  //     dispatch(setPosts(response?.data));
+//       dispatch(setPosts(response?.data));
      
      
-  //   })
-  //   .catch((error) => {
-  //     console.log("error", error);
+//     })
+//     .catch((error) => {
+//       console.log("error", error);
      
-  //   });.
+//     });
 
 //  };
 
-
-
+export const getPagesApi = () => (dispatch:any) => {
+    const config = {
+      method: "get",
+      url:" ${BASE_URL}/pages",
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+      },
+    };
+  
+    axios(config)
+      .then((response) => {
+        console.log(response, "iam pages response");
+        dispatch(setGetPagesList(response.data));
+      })
+  
+      .catch((error) => {
+        console.log(error, "iam pages error");
+      });
+  };

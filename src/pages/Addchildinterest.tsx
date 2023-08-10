@@ -67,7 +67,7 @@ const Addchildinterest = () => {
     };
 
   return (
-   <Box bg={'gray.400'} width="100%" >
+   <Box bg="#F2F5F7" width="100%" >
   
   <Box  display={"flex"}
         flexDirection={"row"}

@@ -8,7 +8,13 @@ import {useDispatch, useSelector} from "react-redux"
 
 
 export default function SignUpOrLogin() {
+ 
+  const countNum=useSelector<any>((state)=>state?.auth?.GetPagesList);
+  console.log(countNum,"api>>>>>>>>>>>>>>>>>>>>>");
+  
+  
   const navigate = useNavigate();
+
 
 
 
@@ -42,18 +48,17 @@ const onClickBtn = () =>{
       <Image src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov" height={'150px'} />
       </Box>
       </Flex>
-
+      
       {/* {countNum?.map((each: any) => (
 
-<Box>
+<Box key={each.id}>
   {each?.title}
 </Box>
 
 
-      ))} */}
+      ))};
+     */}
 
-   
-      
       <Flex display={'flex'} justifyContent={'center'} m="30px">
          <Box mt='50px'>
          <Button colorScheme="blue"  size="lg" bg="rgba(0, 69, 112, 1)" width={{base:"280px",md:"290px",lg:"313px"}} onClick={Login2}>
