@@ -1,5 +1,5 @@
-import { Box, Image, Flex, Text, Button } from '@chakra-ui/react'
-import React from 'react'
+import { Box, Image, Flex, Text, Button,Input } from '@chakra-ui/react'
+import React, { useState } from 'react'
 
 import { VscDeviceCamera } from 'react-icons/all';
 import { useNavigate } from 'react-router';
@@ -13,6 +13,15 @@ export default function ChildVerification1() {
 
     navigate("/ChildVerification2")
   };
+  const[uploadimage,setUploadimage] = useState(null);
+
+  const handleChange=(e:any)=>{
+
+   setUploadimage(URL.createObjectURL(e.target.files[0]));
+   
+  };
+  
+  console.log(uploadimage,"imageeeeeee")
 
   return (
   <Box bg="#F2F5F7" width='100%' >
@@ -45,10 +54,14 @@ export default function ChildVerification1() {
 
       <Flex display={'flex'} justifyContent={'center'}>
        <Box m='10px'>
-       <Image src="src/assets/Mask Group 1@3x.png"  height="220px" width="223px"/>
+       <Image src={uploadimage}  height="220px" width="223px"/>
        </Box>
        </Flex>
-     
+      
+       <Box width="200px" ml="100px">
+       <Input type="file" bg="green" name="image" onChange={(e)=>{handleChange(e)}}/>
+       </Box>
+   
     <Flex display={'flex'} justifyContent={'center'}>
      <Box mt={'20px'} as="button" onClick={() => navigateTo()} mb={'20px'} >
      <VscDeviceCamera onClick={() => navigateTo()} size={30}/>

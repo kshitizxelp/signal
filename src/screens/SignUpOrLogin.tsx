@@ -3,6 +3,7 @@ import { Box, Flex, Image ,UnorderedList,ListItem} from '@chakra-ui/react'
 import { Button, ButtonGroup } from '@chakra-ui/react'
 import { useNavigate } from 'react-router-dom';
 import {useDispatch, useSelector} from "react-redux"
+import { getPagesApi } from '../Slice';
 // import { getPosts } from '../Slice';
 
 
@@ -11,7 +12,7 @@ export default function SignUpOrLogin() {
  
   const countNum=useSelector<any>((state)=>state?.auth?.GetPagesList);
   console.log(countNum,"api>>>>>>>>>>>>>>>>>>>>>");
-  
+  const dispatch = useDispatch()
   
   const navigate = useNavigate();
 
@@ -27,6 +28,7 @@ const onClickBtn = () =>{
   };
 
   const Login2 = () => {
+    dispatch(getPagesApi())
     navigate('SignUp');
   }
   return (

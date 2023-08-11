@@ -90,7 +90,7 @@ const handleProgress = (progress:any) => {
 console.log(playedduration,"played>>>>>>>>>>.")
 
 
-const handleSeek = (value :any) => {
+ const handleSeek = (value :any) => {
   setPlayed(value);
   reactPlayerRef.current?.seekTo(value);
   reactPlayerRef.current?.getInternalPlayer()?.playVideo();
@@ -175,7 +175,7 @@ const handleSeek = (value :any) => {
        <HStack gap={"5"} pr={5}>
        <Text marginLeft="10px" color={'#004570'} ><AiOutlineArrowLeft/></Text>
        <Box>
-       <Text marginLeft="10px" color={'#004570'} mb="2px" fontSize={12}>Add English Content for </Text>
+       <Text marginLeft="10px" color={'#004570'} mb="2px" fontSize="12px">Add English Content for </Text>
        <Text marginLeft="10px" color={'#004570'}mb="3px">GopiSunkara </Text>
        </Box>
        </HStack>
@@ -189,7 +189,7 @@ const handleSeek = (value :any) => {
         </Box>
            <Flex display={'flex'} justifyContent={'center'}>
             <Box>
-            <Text color="#004570">Preview</Text>
+            {/* <Text color="#004570">Preview</Text> */}
            </Box>
            </Flex>
 
@@ -256,11 +256,11 @@ const handleSeek = (value :any) => {
       <Box display={'flex'} justifyContent="space-around">
            <Box display={'flex'} m="5px">
            <Text>Start Time:</Text>
-           <Text bg={'white'} borderRadius={'5px'}>{jumpstartnn?.currentTime}</Text>
+           <Text bg={'white'} borderRadius='5px' color="blue.900">{jumpstartnn?.currentTime}</Text>
           </Box>
           <Box display={'flex'} m="5px" >
            <Text>End Time:</Text>
-           <Text bg={'white'} borderRadius={'5px'}>{jumpstartnn?.endTime}</Text>
+           <Text bg={'white'} borderRadius="5px" color="blue.900">{jumpstartnn?.endTime}</Text>
           </Box>
           </Box>
 

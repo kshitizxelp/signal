@@ -151,8 +151,8 @@ console.log(finaldata,">>>>>>>>>>>>>>>")
   
 
 
-  useEffect(() => {
-
+    useEffect(() => {
+ 
     if (playerTime === formatNum2) {
 
       setSelectplay((prevState:any) => ({

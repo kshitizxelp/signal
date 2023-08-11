@@ -127,7 +127,7 @@ export default function CreateNewTask() {
        <AccordionIcon />
        </AccordionButton>
        {
-        show ?
+        show ? 
    
       <AccordionPanel pb="20px" mt="0px" bg="white">
        

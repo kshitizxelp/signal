@@ -87,22 +87,22 @@ export default authSlice.reducer;
 //  };
 
 export const getPagesApi = () => (dispatch:any) => {
-    const config = {
-      method: "get",
-      url:" ${BASE_URL}/pages",
-      headers: {
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "*",
-      },
-    };
+   const config = {
+   method: "get",
+   url:"https://jsonplaceholder.typicode.com/posts",
+   headers: {
+   "Content-Type": "application/json",
+   "Access-Control-Allow-Origin": "*",
+  },
+  };
   
-    axios(config)
-      .then((response) => {
-        console.log(response, "iam pages response");
-        dispatch(setGetPagesList(response.data));
-      })
+   axios(config)
+   .then((response) => {
+   console.log(response, "iam pages response");
+   dispatch(setGetPagesList(response.data));
+ }) 
   
-      .catch((error) => {
-        console.log(error, "iam pages error");
-      });
+   .catch((error) => {
+   console.log(error, "iam pages error");
+   });
   };
