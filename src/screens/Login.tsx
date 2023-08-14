@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Icon, IconButton, Image, Input,Text, InputGroup, InputLeftElement, Link} from '@chakra-ui/react'
+import { Box, Button, Flex, Icon, IconButton, Image, Input,Text, InputGroup, InputLeftElement, Link,Divider,AbsoluteCenter} from '@chakra-ui/react'
 import React, { useState ,} from 'react'
 import { SiGoogle, SiMicrosoftoffice, AiOutlineMobile } from 'react-icons/all';
 import { useNavigate, useNavigation } from "react-router-dom";
@@ -23,12 +23,16 @@ export default function Login() {
         username: "",
         password: ""
       });
+      const handlechange =(e:any)=>{
+        setFormData({...formData,[e.target.name]:e.target.value})
+      };
+      console.log(formData,"dataaaaaaaaaaaa")
 
       const inputs :any = [
         {
           name: "username",
           label: "Username or email",
-          type: "text",
+          type: "email",
         },
         {
           name: "password",
@@ -70,12 +74,13 @@ export default function Login() {
             <Input
               type={input.type}
               placeholder={input.placeholder}
-              value={formData[input.name]}
+              // value={formData[input.name]}
               name={input.name}
               variant="outline"
               bgColor="white"
               borderColor="black"
               width={{base:"280px",md:"290px",lg:"313px"}}
+              onChange={handlechange}
             />
            
           </Box>
@@ -91,24 +96,36 @@ export default function Login() {
       </Box>
       </Flex>
 
+      <Box position='relative' padding='20px' >
+        <Divider  />
+       <AbsoluteCenter bg='white' px='2px' >
+       Or
+       </AbsoluteCenter>
+       </Box>
+       
+
+
      <Flex display={'flex'} justifyContent={'center'}>
       <Box mt={'5px'}>
-      <Text>or</Text>
       <Text mt={'2px'}>Login Using</Text>
       </Box>
       </Flex> 
 
-      <Flex direction="row"  justifyContent="space-between"  mt='5px' >
+   <Box display={"flex"}
+           flexDirection={"row"}
+           justifyContent={"space-evenly"}
+           mb="70px"
+           >  
+     
       <Button
       leftIcon={<SiGoogle color="#DB4437" />}
       variant="solid"
       size="sm"
       display="flex"
-      // alignItems="center"
       justifyContent="center"
       borderColor="rgba(40, 40, 40, 0.3)"
       bg="gray"
-      ml='40px'
+      m='5px'
       
     >
       <Flex alignItems="center" >
@@ -124,7 +141,7 @@ export default function Login() {
       justifyContent="center"
       borderColor="rgba(40, 40, 40, 0.3)"
       bg="gray"
-      ml='5px'
+      m='4px'
     >
       <Flex alignItems="center">
         <Text mt="2px" fontSize="12px">Office365</Text>
@@ -139,16 +156,17 @@ export default function Login() {
       justifyContent="center"
       borderColor="rgba(40, 40, 40, 0.3)"
       bg="gray"
-      mr="40px"
+      m="5px"
     >
       <Box alignItems="center" onClick={() => navigateTo()}>
         <Text mt='1px' fontSize="12px">Mobile</Text>
       </Box>
     </Button>
-    </Flex>
+    {/* </Flex> */}
+    </Box>
 
     <Flex justifyContent={'center'}>
-      <Box mt='1px'>
+      <Box mb='10px'>
         <Link color={'blue'} fontSize="12px">If u don't have an account.Sign Up</Link>
       </Box>
     </Flex>

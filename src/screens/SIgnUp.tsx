@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Icon, IconButton, Image, Input,Text, InputGroup, InputLeftElement} from '@chakra-ui/react'
+import { Box, Button, Flex, Icon, IconButton, Image, Input,Text, InputGroup, InputLeftElement,Divider,AbsoluteCenter} from '@chakra-ui/react'
 import { useState } from 'react';
 import { SiGoogle, SiMicrosoftoffice, AiOutlineMobile } from 'react-icons/all';
 import { useNavigate, useNavigation } from 'react-router-dom';
@@ -65,8 +65,8 @@ export default function SIgnUp() {
     <Box bg={'#F2F5F7'} width="100%">
     <Flex  justifyContent={'center'} >
       <Box
-      boxShadow="dark-lg"
-     mt="10px"
+      // boxShadow="dark-lg"
+      mt="10px"
      
       bg="white"
       borderTopRadius="200px"
@@ -109,19 +109,26 @@ export default function SIgnUp() {
         </Button>
         </Box>
         </Flex>
+       
+        <Box position='relative' padding='20px' >
+        <Divider  />
+        <AbsoluteCenter bg='white' px='2px' >
+         Or
+        </AbsoluteCenter>
+       </Box>
+       
 
              <Flex display={'flex'} justifyContent={'center'}>
-             <Box mt='4px'>
-              <Text>or</Text>
+               <Box mt='4px'>
                <Text mt='2px'>Signup using</Text>
               </Box>
-           </Flex>
+              </Flex>
       
     
-      <Box display={"flex"}
+    <Box display={"flex"}
            flexDirection={"row"}
            justifyContent={"space-evenly"}
-           m="8px"
+           mb="70px"
            >  
      
      
@@ -134,11 +141,11 @@ export default function SIgnUp() {
       justifyContent="center"
       borderColor="rgba(40, 40, 40, 0.3)"
       bg="white"
-      ml='20px'
+      ml="30px"
       
     >
       <Flex alignItems="center" >
-        <Text mt={'1px'}>Google</Text>
+        <Text mt={'1px'} fontSize="12px">Google</Text>
       </Flex>
     </Button>
     <Button
@@ -150,10 +157,10 @@ export default function SIgnUp() {
       justifyContent="center"
       borderColor="rgba(40, 40, 40, 0.3)"
       bg="white"
-      mr="8px"
-    >
+      ml="10px"
+     >
       <Flex alignItems="center">
-        <Text mt={'1px'}>Office 365</Text>
+      <Text fontSize="12px">Office 365</Text>
       </Flex>
     </Button>
     <Button
@@ -165,11 +172,11 @@ export default function SIgnUp() {
       justifyContent="center"
       borderColor="rgba(40, 40, 40, 0.3)"
       bg="white"
-      mr="20px"
-      mb="30px"
+      // mr="20px"
+      mr="30px"
       >
       <Flex alignItems="center">
-        <Text mt='1px'>Mobile</Text>
+        <Text mt='1px' fontSize="12px">Mobile</Text>
       </Flex>
     </Button>
    

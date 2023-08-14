@@ -126,8 +126,8 @@ export default function CreateNewTask() {
        </Box>
        <AccordionIcon />
        </AccordionButton>
-       {
-        show ? 
+       {/* {
+        show ?  */}
    
       <AccordionPanel pb="20px" mt="0px" bg="white">
        
@@ -148,8 +148,8 @@ export default function CreateNewTask() {
        </Box>
    
      </AccordionPanel>
-     :null
-       }
+     {/* :null
+       } */}
     
   </AccordionItem>
  </Accordion>
