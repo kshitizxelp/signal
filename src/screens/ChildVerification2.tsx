@@ -2,9 +2,14 @@ import { Box, Image, Flex, Text ,Button} from '@chakra-ui/react'
 import React from 'react'
 
 import { VscDeviceCamera } from 'react-icons/all';
-import { useNavigate } from 'react-router'
+import { useNavigate } from 'react-router';
+import { useDispatch,useSelector } from 'react-redux';
 export default function ChildVerification2() {
+ 
   const navigate = useNavigate()
+  const dispatch = useDispatch()
+
+  const uploadedImage = useSelector<any>((state)=>state?.auth?.upload);
   const Next =()=>{
     navigate("/ChildVerification3")
   }
@@ -17,7 +22,7 @@ export default function ChildVerification2() {
        bg="white"
       //  borderRadius="50px"
       borderTopRadius="200px"
-     borderBottomRadius="200px"
+      borderBottomRadius="200px"
        width={{base:"290px",md:"350px",lg:"400px"}}
        alignItems="center"
        justifyContent="center"
@@ -40,8 +45,8 @@ export default function ChildVerification2() {
             </Flex>
            
           <Flex display={'flex'} justifyContent={'center'}>
-          <Box mt="2px" >
-          <Image src="src/assets/Mask Group 1@3x.png" alt="Dan Abramov"  width="213px" height="180"/>
+           <Box mt="2px" >
+          <Image src={uploadedImage}  alt="Dan Abramov"  width="213px" height="180"/>
            </Box>
           </Flex>
         

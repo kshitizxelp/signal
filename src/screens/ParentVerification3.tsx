@@ -7,7 +7,7 @@ export default function ParentVerification3() {
     const navigate = useNavigate();
 
     const navigateTo = () =>{
-         navigate("/CreateChild")
+         navigate("/Mydashbord")
     }
 
 

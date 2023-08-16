@@ -1,11 +1,13 @@
-import { Box, Button, Flex, Image, Text } from '@chakra-ui/react'
+import { Box, Button, Flex, Image, Text,Avatar } from '@chakra-ui/react'
 import React from 'react'
 import { useNavigate } from 'react-router'
 import {FaRegCheckCircle} from "react-icons/all"
+import { useSelector } from 'react-redux';
 
 export default function ChildVerification3() {
   
     const navigate = useNavigate();
+    const addAvatar = useSelector<any>((state)=>state?.auth?.upload);
 
     const navigateTo = () =>{
          navigate("/Mydashbord")
@@ -33,7 +35,8 @@ export default function ChildVerification3() {
 
     
     <Flex display={'flex'} justifyContent={'center'}>
-    <Image src="src/assets/Mask Group 1@3x.png" alt="Dan Abramov" height="100px" width="100px" m="0px"/>
+    {/* <Image src="src/assets/Mask Group 1@3x.png" alt="Dan Abramov" height="100px" width="100px" m="0px"/> */}
+    <Avatar name='' src={addAvatar} size='xl'  />
     <Text mt="6px" mr="2px">Avathar Added</Text>
     <Text fontSize="70px" color={'green'} > <FaRegCheckCircle /></Text>
     </Flex>

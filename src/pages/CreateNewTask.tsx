@@ -72,11 +72,14 @@ export default function CreateNewTask() {
   
 
   const handleClick =()=>{
-    
-    setShow(!show)
-    
-  };
+     setShow(!show)
+    };
   
+  
+
+
+
+
   // useEffect(() => {
   //   console.log(newtaskvalue);
   // }, [newtaskvalue]);
@@ -133,7 +136,7 @@ export default function CreateNewTask() {
        
        <Box mt="20px">
       
-       <RadioGroup  >
+       <RadioGroup>
        <Stack direction='row'>
        <Radio value={item.itemone}    name={item.payload} size='sm'  onChange={handledata}>{item.itemone}</Radio>
        <Radio value={item.itemtwo}    name={item.payload} size='sm'  onChange={handledata}>{item.itemtwo}</Radio>
@@ -154,7 +157,7 @@ export default function CreateNewTask() {
   </AccordionItem>
  </Accordion>
    
-   ))};
+   ))}
 
        
       </Box>

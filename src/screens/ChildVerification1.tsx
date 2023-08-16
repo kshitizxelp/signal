@@ -2,26 +2,29 @@ import { Box, Image, Flex, Text, Button,Input } from '@chakra-ui/react'
 import React, { useState } from 'react'
 
 import { VscDeviceCamera } from 'react-icons/all';
+import { useDispatch,useSelector } from 'react-redux';
 import { useNavigate } from 'react-router';
+import { setUpload } from '../Slice';
 
 export default function ChildVerification1() {
 
   const navigate = useNavigate();
-
+  const dispatch = useDispatch();
   const navigateTo = () =>{
     
 
     navigate("/ChildVerification2")
   };
-  const[uploadimage,setUploadimage] = useState(null);
-
+  // const[uploadimage,setUploadimage] = useState(null);
+  const uploadImg = useSelector<any>((state)=>state?.auth?.upload)
+  console.log("uploadImg",uploadImg)
   const handleChange=(e:any)=>{
-
-   setUploadimage(URL.createObjectURL(e.target.files[0]));
+    dispatch(setUpload(URL.createObjectURL(e.target.files[0])))
+  //  setUploadimage(URL.createObjectURL(e.target.files[0]));
    
   };
   
-  console.log(uploadimage,"imageeeeeee")
+  // console.log(uploadimage,"imageeeeeee")
 
   return (
   <Box bg="#F2F5F7" width='100%' >
@@ -52,15 +55,17 @@ export default function ChildVerification1() {
         </Box> 
         </Flex>
 
-      <Flex display={'flex'} justifyContent={'center'}>
+      <Flex  justifyContent={'center'} >
        <Box m='10px'>
-       <Image src={uploadimage}  height="220px" width="223px"/>
+       <Image src={uploadImg}  height="220px" width="223px"/>
        </Box>
        </Flex>
       
-       <Box width="200px" ml="100px">
+       <Flex justifyContent={'center'}   >
+       <Box width="200px" >
        <Input type="file" bg="green" name="image" onChange={(e)=>{handleChange(e)}}/>
        </Box>
+      </Flex>
    
     <Flex display={'flex'} justifyContent={'center'}>
      <Box mt={'20px'} as="button" onClick={() => navigateTo()} mb={'20px'} >

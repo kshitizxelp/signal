@@ -4,6 +4,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 const initialState = {
   // posts:[],
+  upload:null,
   GetPagesList:[],
   jumpData:{},
   addjump:[],
@@ -23,6 +24,9 @@ const authSlice = createSlice({
     setGetPagesList:(state,action) =>{
        state.GetPagesList = action.payload;
     },
+    setUpload:(state,action) =>{
+      state.upload = action.payload;
+   },
     setJumpData: (state, action) => {
       state.jumpData = action.payload;
     },
@@ -53,6 +57,7 @@ export const {
   setspeedofAdd,
   setspeedofValue,
   setfinaldataofreward,
+  setUpload
 } = authSlice.actions;
 export default authSlice.reducer;
 

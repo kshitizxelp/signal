@@ -24,6 +24,9 @@ function Mydashbord() {
 
   const navigateTo = ( par:any ) => {
       navigate("/ChildOverview",{ state:{param1:par} })
+  };
+  const addchaild =()=>{
+    navigate("/CreateChild")
   }
 
     const dataObj = [
@@ -63,12 +66,12 @@ function Mydashbord() {
             flexDirection={"row"}
             justifyContent={"space-evenly"}
             alignItems={"center"}
-            mt={10} 
-            borderRadius={50}
-            width={500}
-            height={100}
+            mt="10px" 
+            borderRadius="50px"
+            width="500px"
+            height="100px"
             bg={'white'}
-            mb={10} 
+            mb="10px" 
             onClick={() => navigateTo(item.text)} cursor={"pointer"}>
     <Avatar name='Dan Abrahmov' size='xl' src={item.image} />
     <Text>{item.text}</Text>
@@ -79,7 +82,7 @@ function Mydashbord() {
         ))}
         <Flex display={'flex'} justifyContent={'center'}>
         <Box pt={30} mb={20}>
-            <Button colorScheme="blue" size="sm" bg="rgba(0, 69, 112, 1)" width={{base:"270px",md:"350px",lg:"513px"}} height="50px">Add Child</Button>
+            <Button colorScheme="blue" size="sm" bg="rgba(0, 69, 112, 1)" width={{base:"270px",md:"350px",lg:"513px"}} height="50px" onClick={addchaild}>Add Child</Button>
         </Box>
         </Flex>
         </Box>
