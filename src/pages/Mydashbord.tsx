@@ -14,10 +14,19 @@ import {
   } from "@chakra-ui/react";
 import Nav from '../component/Nav';
 import { Outlet, useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 function Mydashbord() {
 
   const isChildTasksRoute = location.pathname   === "/Mydashbord"
+
+  const createdata = useSelector<any>((state)=>state?.auth?.createchildData);
+  const uploadImg = useSelector<any>((state)=>state?.auth?.upload);
+  const combinedArray = [createdata, uploadImg];
+
+console.log(combinedArray,">>>>>>>"); 
+
+
 
    
   const navigate = useNavigate();
@@ -60,7 +69,8 @@ function Mydashbord() {
         <Text fontSize={16} fontWeight={'bold'} color={'#004570'} ml={30}>My Dashboard</Text>
         </Box>
       
-        {dataObj.map((item) => (
+        {/* {dataObj.map((item) => ( */}
+        {combinedArray.map((item,index)=>(
    <Flex display={'flex'} justifyContent={'center'}>
     <Box  display={"flex"}
             flexDirection={"row"}
@@ -72,16 +82,16 @@ function Mydashbord() {
             height="100px"
             bg={'white'}
             mb="10px" 
-            onClick={() => navigateTo(item.text)} cursor={"pointer"}>
-    <Avatar name='Dan Abrahmov' size='xl' src={item.image} />
-    <Text>{item.text}</Text>
+            onClick={() => navigateTo(combinedArray[0]?.createdata?.name)} cursor={"pointer"}>
+    <Avatar name='Dan Abrahmov' size='xl' src={uploadImg} />
+    <Text>{combinedArray[0]?.createdata?.name}</Text>
     
     </Box>   
     </Flex>
    
         ))}
         <Flex display={'flex'} justifyContent={'center'}>
-        <Box pt={30} mb={20}>
+        <Box pt="30px" mb="20px">
             <Button colorScheme="blue" size="sm" bg="rgba(0, 69, 112, 1)" width={{base:"270px",md:"350px",lg:"513px"}} height="50px" onClick={addchaild}>Add Child</Button>
         </Box>
         </Flex>

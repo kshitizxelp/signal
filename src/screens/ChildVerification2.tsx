@@ -21,8 +21,8 @@ export default function ChildVerification2() {
        p="6"
        bg="white"
       //  borderRadius="50px"
-      borderTopRadius="200px"
-      borderBottomRadius="200px"
+       borderTopRadius="200px"
+       borderBottomRadius="200px"
        width={{base:"290px",md:"350px",lg:"400px"}}
        alignItems="center"
        justifyContent="center"
@@ -46,7 +46,7 @@ export default function ChildVerification2() {
            
           <Flex display={'flex'} justifyContent={'center'}>
            <Box mt="2px" >
-          <Image src={uploadedImage}  alt="Dan Abramov"  width="213px" height="180"/>
+           <Image src={uploadedImage}  alt="Dan Abramov"  width="213px" height="180"/>
            </Box>
           </Flex>
         
@@ -56,7 +56,7 @@ export default function ChildVerification2() {
         <Text></Text>
        </Box>
        </Flex>
-
+      
     
         <Flex display={'flex'} justifyContent={'center'}>
         <Box>

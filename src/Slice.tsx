@@ -5,6 +5,7 @@ import axios from "axios";
 const initialState = {
   // posts:[],
   upload:null,
+  createchildData:{},
   GetPagesList:[],
   jumpData:{},
   addjump:[],
@@ -21,6 +22,9 @@ const authSlice = createSlice({
     // setPosts: (state, action) => {
     //   state.posts = action.payload;
     // },
+    setCreatechildData:(state,action)=>{
+      state.createchildData = action.payload;
+    },
     setGetPagesList:(state,action) =>{
        state.GetPagesList = action.payload;
     },
@@ -50,6 +54,7 @@ const authSlice = createSlice({
 });
 export const {
   // setPosts,
+  setCreatechildData,
   setGetPagesList,
   setJumpData,
   setAddjump,

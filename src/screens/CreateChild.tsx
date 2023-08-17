@@ -1,14 +1,14 @@
 import { Box, Flex, Image, Input, Text, Radio, Button,RadioGroup,Stack } from '@chakra-ui/react'
 import React, { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router';
+import { setCreatechildData } from '../Slice';
 
 export default function CreateChild() {
 
     const navigate = useNavigate();
 
-    const navigateTo = () =>{
-        navigate("/addchildinterests")
-    };
+   
  
     const inputs :any = [
         {
@@ -43,6 +43,8 @@ export default function CreateChild() {
         }
       ];
 
+      const dispatch = useDispatch();
+     
       const [addchailddata ,setAddchailddata] = useState({
 
         name:"",
@@ -57,11 +59,19 @@ export default function CreateChild() {
 
        const handleChange =(e:any)=>{
 
-        setAddchailddata({...addchailddata,[e.target.name]:e.target.value})
+        setAddchailddata({...addchailddata,[e.target.name]:e.target.value});
+        dispatch(setCreatechildData(addchailddata));
+        };
 
+        
+       console.log(addchailddata);
+       
+     
+       const navigateTo = () =>{
+        navigate("/addchildinterests");
+       
        };
-       console.log(addchailddata)
-
+  
   return (
   <Box bg="#F2F5F7" width="100%">
   <Flex direction="column"  alignItems={'center'}>
