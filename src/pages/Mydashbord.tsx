@@ -22,9 +22,22 @@ function Mydashbord() {
 
   const createdata = useSelector<any>((state)=>state?.auth?.createchildData);
   const uploadImg = useSelector<any>((state)=>state?.auth?.upload);
-  const combinedArray = [createdata, uploadImg];
 
-console.log(combinedArray,">>>>>>>"); 
+  const newObj = {
+    ...createdata,
+    "img":uploadImg
+  }
+console.log("newObj",newObj)
+
+ 
+  // const combinedArray = [newObj];
+
+
+  const combinedArray = []
+
+  combinedArray.push(newObj)
+  
+console.log(combinedArray,"combinedArray"); 
 
 
 
@@ -66,12 +79,13 @@ console.log(combinedArray,">>>>>>>");
          
         <Box>
         
-        <Text fontSize={16} fontWeight={'bold'} color={'#004570'} ml={30}>My Dashboard</Text>
+        <Text fontSize="16px" fontWeight={'bold'} color={'#004570'} ml="30px">My Dashboard</Text>
         </Box>
       
         {/* {dataObj.map((item) => ( */}
+        {console.log("combinedArray",combinedArray)}
         {combinedArray.map((item,index)=>(
-   <Flex display={'flex'} justifyContent={'center'}>
+   <Flex display={'flex'} justifyContent={'center'} key={index}>
     <Box  display={"flex"}
             flexDirection={"row"}
             justifyContent={"space-evenly"}
@@ -82,11 +96,10 @@ console.log(combinedArray,">>>>>>>");
             height="100px"
             bg={'white'}
             mb="10px" 
-            onClick={() => navigateTo(combinedArray[0]?.createdata?.name)} cursor={"pointer"}>
-    <Avatar name='Dan Abrahmov' size='xl' src={uploadImg} />
-    <Text>{combinedArray[0]?.createdata?.name}</Text>
-    
-    </Box>   
+            onClick={() => navigateTo(item?.name)} cursor={"pointer"}>
+    <Avatar name='Dan Abrahmov' size='xl' src={item?.img}/>
+    <Text>{item?.name}</Text>
+    </Box>    
     </Flex>
    
         ))}
