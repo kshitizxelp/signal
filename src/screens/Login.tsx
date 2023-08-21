@@ -17,8 +17,27 @@ export default function Login() {
 
   const navigateTo = () =>{
     navigate("/LoginMobileOtp");
-  }
+  };
     
+
+
+const HandleSubmit =(e:any)=>{
+  e.preventDefault();
+  if(!formData.username) {
+    alert("please enter the valid email");
+  } 
+ else if(formData.password.length < 8) {
+    alert("password must be at least 8 characters");
+  } 
+  else{
+    console.log(formData,"dataaaaaaaaaaaa")
+  }
+  navigate("/welcomeback");
+  
+    
+
+};
+
     const [formData, setFormData] = useState<any>({
         username: "",
         password: ""
@@ -33,7 +52,7 @@ export default function Login() {
           name: "username",
           label: "Username or email",
           type: "email",
-        },
+        }, 
         {
           name: "password",
           label: "Password",
@@ -90,7 +109,7 @@ export default function Login() {
     
     <Flex display={'flex'} justifyContent={'center'}>
      <Box mt={'5px'}>
-     <Button colorScheme="blue" size="lg" bg="rgba(0, 69, 112, 1)" width={{base:"270px",md:"290px",lg:"313px"}} onClick={Login}>
+     <Button colorScheme="blue" size="lg" bg="rgba(0, 69, 112, 1)" width={{base:"270px",md:"290px",lg:"313px"}} onClick={HandleSubmit}>
           Login
        </Button>
       </Box>

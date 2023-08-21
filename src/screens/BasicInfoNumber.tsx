@@ -55,11 +55,11 @@ export default function BasicInfoNumber() {
    width={{base:"300px",md:"320px",lg:"350px"}}
    alignItems="center"
    justifyContent="center"
-   mt={'4px'}
+   mt='4px'
  >
   <Flex display={'flex'} justifyContent={'center'}>
       <Box>
-      <Image src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov" height={'150px'}/>
+      <Image src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov" height='150px'/>
       </Box>
       </Flex>
     

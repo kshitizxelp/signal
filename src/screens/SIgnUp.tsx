@@ -11,11 +11,7 @@ export default function SIgnUp() {
     navigate('/BasicInfoNumber')
   }
 
-    const [formData, setFormData] = useState<any>({
-        email:"",
-        username: "",
-        password: ""
-      });
+   
 
       const inputs :any = [
        
@@ -27,7 +23,7 @@ export default function SIgnUp() {
         {
           name:"email",
           label:"Email address",
-          type:"text",
+          type:"email",
       },
         {
           name: "password",
@@ -42,21 +38,46 @@ export default function SIgnUp() {
       ];
       
       const [data, setData] = useState({
-        email: "",
         username: "",
+        email: "",
         password:"",
         confirmpassword:"",
        
       });
      
     
-      console.log("ssssss", data)
+      console.log("ssssss", data);
+
+      const submitHandler = (e:any) => {
+        e.preventDefault();
     
+        if (data.username.length < 5) {
+          alert("Username must be at least 5 characters");
+        }
+        else if (!data.email) {
+          alert("please enter the valid email");
+        } 
+
+        else if (data.password !== data.confirmpassword) {
+          alert("Passwords do not match");
+         
+        } 
+       
+        else {
+          console.log(data);
+        }
+        navigate('/BasicInfoNumber')
+      };
+      
+    
+       
+      
         const changeHandler = (e:any) => {
         console.log(e.target.value,e.target.name,"from mhandle changeeeeeeeeeeee")
         setData({ ...data, [e.target.name]: e.target.value });
-        
-      };
+       
+           };
+   
      
      
 
@@ -104,7 +125,7 @@ export default function SIgnUp() {
      
       <Flex display={'flex'} justifyContent={'center'}>
         <Box mt={'5px'}>
-        <Button  colorScheme="blue" size="lg" bg="rgba(0, 69, 112, 1)" width={{base:"280px",md:"300px",lg:"380px"}} onClick={Login}>
+        <Button  colorScheme="blue" size="lg" bg="rgba(0, 69, 112, 1)" width={{base:"280px",md:"300px",lg:"380px"}} onClick={submitHandler}>
           Sign Up
         </Button>
         </Box>
