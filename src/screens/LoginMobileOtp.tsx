@@ -47,7 +47,7 @@ export default function LoginMobileOtp() {
             <option value='option2'>92</option>
             <option value='option3'>93</option>
            </Select>
-           <Input placeholder='medium size' size='md' width="250px" type="number" pl="10px"/>
+           <Input placeholder='medium size' size='md' width={{base:"200px",md:"220px",lg:"250px"}} type="number" pl="10px"/>
            </InputGroup>
       </FormControl>
       

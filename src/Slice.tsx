@@ -13,6 +13,7 @@ const initialState = {
   speedofAdd:{},
   speedofValue:{},
   finaldataofreward:{},
+  addChildArray:[]
 };
 const authSlice = createSlice({
   name: "auth",
@@ -48,8 +49,10 @@ const authSlice = createSlice({
    },
    setfinaldataofreward:(state,action)=>{
     state.finaldataofreward=action.payload;
+   }, 
+   setAddChildArray:(state,action)=>{
+    state.addChildArray=action.payload;
    },
-  
   },
 });
 export const {
@@ -62,7 +65,7 @@ export const {
   setspeedofAdd,
   setspeedofValue,
   setfinaldataofreward,
-  setUpload
+  setUpload,setAddChildArray,
 } = authSlice.actions;
 export default authSlice.reducer;
 

@@ -68,7 +68,7 @@ export default function SIgnUp() {
         }
         navigate('/BasicInfoNumber')
       };
-      
+
     
        
       
@@ -92,7 +92,7 @@ export default function SIgnUp() {
       bg="white"
       borderTopRadius="200px"
       borderBottomRadius="200px"
-      width={{base:"290px",md:"400px",lg:"500px"}}
+      width={{base:"290px",md:"380px",lg:"400px"}}
       alignItems="center"
       justifyContent="center"
     >
@@ -125,7 +125,7 @@ export default function SIgnUp() {
      
       <Flex display={'flex'} justifyContent={'center'}>
         <Box mt={'5px'}>
-        <Button  colorScheme="blue" size="lg" bg="rgba(0, 69, 112, 1)" width={{base:"280px",md:"300px",lg:"380px"}} onClick={submitHandler}>
+        <Button  colorScheme="blue" size="lg" bg="rgba(0, 69, 112, 1)" width={{base:"280px",md:"300px",lg:"300px"}} onClick={submitHandler}>
           Sign Up
         </Button>
         </Box>

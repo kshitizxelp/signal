@@ -35,14 +35,14 @@ const onClickBtn = () =>{
     <Box bg="#F2F5F7" width="100%">
     <Flex direction="column" alignItems="center" position="relative" pt={'120px'} pb={'200px'}>
        <Box
-      boxShadow="dark-lg"
+      // boxShadow="dark-lg"
       p="1"
       rounded=""
       bg="white"
       // borderRadius='50px'
-      borderTopRadius="200px"
-      borderBottomRadius="200px"
-      width={{base:"290px",md:"350px",lg:"450px"}}
+      borderTopRadius="180px"
+      borderBottomRadius="180px"
+      width={{base:"290px",md:"350px",lg:"400px"}}
     >
       
       <Flex display={'flex'} justifyContent={'center'}  m="50px">
@@ -68,9 +68,9 @@ const onClickBtn = () =>{
         </Button>
         </Box>
         </Flex>
-        <Box>
-        <UnorderedList  ml="200px">
-        <ListItem>Only for Parent</ListItem>
+        <Box >
+        <UnorderedList  ml="190px">
+        <ListItem >Only for Parent</ListItem>
         </UnorderedList>
         </Box>
        

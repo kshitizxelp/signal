@@ -35,7 +35,7 @@ export default function ChildVerification1() {
   //  borderRadius='50px'
    borderTopRadius="200px"
    borderBottomRadius="200px"
-   width={{base:"300px",md:"420px",lg:"450px"}}
+   width={{base:"290px",md:"320px",lg:"400px"}}
    alignItems="center"
    justifyContent="center"
    m="20px"

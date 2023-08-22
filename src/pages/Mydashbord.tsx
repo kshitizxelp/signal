@@ -14,32 +14,33 @@ import {
   } from "@chakra-ui/react";
 import Nav from '../component/Nav';
 import { Outlet, useNavigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector,useDispatch } from 'react-redux';
+import { setAddChildArray } from '../Slice';
 
 function Mydashbord() {
+  const dispatch = useDispatch()
 
   const isChildTasksRoute = location.pathname   === "/Mydashbord"
-
+  // const totalArray = useSelector<any>(state=>state?.auth?.addChildArray)
   const createdata = useSelector<any>((state)=>state?.auth?.createchildData);
   const uploadImg = useSelector<any>((state)=>state?.auth?.upload);
+ 
 
   const newObj = {
     ...createdata,
     "img":uploadImg
   }
-console.log("newObj",newObj)
-
- 
-  // const combinedArray = [newObj];
-
-
-  const combinedArray = []
-
-  combinedArray.push(newObj)
+  const combinedArray = [newObj]
+console.log("newObj",newObj);
+console.log(combinedArray,">>>>")
   
-console.log(combinedArray,"combinedArray"); 
+  // combinedArray.push(newObj);
+
+  // const newArray = [...combinedArray,{newObj}]
+  // console.log(newArray,"new dataaaaaaaaa")
 
 
+// console.log("totalArray",totalArray)
 
    
   const navigate = useNavigate();
@@ -48,6 +49,7 @@ console.log(combinedArray,"combinedArray");
       navigate("/ChildOverview",{ state:{param1:par} })
   };
   const addchaild =()=>{
+    
     navigate("/CreateChild")
   }
 
@@ -82,8 +84,8 @@ console.log(combinedArray,"combinedArray");
         <Text fontSize="16px" fontWeight={'bold'} color={'#004570'} ml="30px">My Dashboard</Text>
         </Box>
       
-        {/* {dataObj.map((item) => ( */}
-        {console.log("combinedArray",combinedArray)}
+       
+      
         {combinedArray.map((item,index)=>(
    <Flex display={'flex'} justifyContent={'center'} key={index}>
     <Box  display={"flex"}

@@ -15,14 +15,14 @@ export default function ParentVerification3() {
     <Box bg="#F2F5F7" width="100%" >
     <Flex direction="column" alignItems="center" position="relative" >
      <Box
-      boxShadow="dark-lg"
+      // boxShadow="dark-lg"
       p="5"
       bg="white"
       // borderRadius="50px"
       borderTopRadius="200px"
       borderBottomRadius="200px"
       height="520px"
-      width={{base:"290px",md:"350px",lg:"450px"}}
+      width={{base:"290px",md:"320px",lg:"390px"}}
       mt="60px"
      
     >
@@ -49,7 +49,7 @@ export default function ParentVerification3() {
       
         <Flex display={'flex'} justifyContent={'center'}>
         <Box mt="12px">
-        <Button colorScheme="blue" size="lg" bg="#004570" width={{base:"250px",md:"300px",lg:"312px"}} mt="30px" mb="80px" onClick={() => navigateTo()} >
+        <Button colorScheme="blue" size="lg" bg="#004570" width={{base:"220px",md:"280px",lg:"290px"}} mt="30px" mb="80px" onClick={() => navigateTo()} >
           Next
         </Button>
       </Box>

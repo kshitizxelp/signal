@@ -39,13 +39,13 @@ export default function ParentVerification2() {
     <Box bg="#F2F5F7" width="100%" >
     <Flex direction="column" alignItems="center">
     <Box
-      boxShadow="dark-lg"
+      // boxShadow="dark-lg"
       p="5"
       bg="white"
       // borderRadius="50px"
       borderTopRadius="200px"
       borderBottomRadius="200px" 
-      width={{base:"290px",md:"400px",lg:"500px"}}
+      width={{base:"260px",md:"300px",lg:"350px"}}
       mt="2px"
       mb="50px"
       
@@ -80,7 +80,7 @@ export default function ParentVerification2() {
                 ml={2}
                 borderColor="black"
               /> */}
-               <Text border="1px"  width="260px"  borderRadius="5px"  borderColor="black" textAlign={'center'} mt="20px">774557556874</Text>
+               <Text border="1px"  width="240px"  borderRadius="5px"  borderColor="black" textAlign={'center'} mt="20px">774557556874</Text>
                 
                 </Box>
             </Flex>
@@ -96,7 +96,7 @@ export default function ParentVerification2() {
             borderColor="black"
             
             /> */}
-            <Text border="1px"  width="260px"  borderRadius="5px"  borderColor="black" textAlign={'center'} mt="30px"> Genarate OTP</Text>
+            <Text border="1px"  width="240px"  borderRadius="5px"  borderColor="black" textAlign={'center'} mt="30px"> Genarate OTP</Text>
           </Box>
           </Flex>
          
@@ -117,8 +117,8 @@ export default function ParentVerification2() {
               ml={3}
             /> */}
             <HStack >
-          <PinInput otp>
-          <PinInputField borderColor={'green.900'} name="numone"  onChange={handlechange} />
+          <PinInput otp size='sm'>
+          <PinInputField borderColor={'green.900'} name="numone"  onChange={handlechange}  />
           <PinInputField borderColor={'green.900'} name="numtwo"   onChange={handlechange}/>
           <PinInputField borderColor={'green.900'} name="numthree" onChange={handlechange}/>
           <PinInputField borderColor={'green.900'} name="numfoure" onChange={handlechange}/>
@@ -136,7 +136,7 @@ export default function ParentVerification2() {
               mt="30px"
               mb="50px"
               bg="rgba(0, 69, 112, 1)"
-              width={{base:"270px",md:"300px",lg:"312px"}}
+              width={{base:"220px",md:"260px",lg:"280px"}}
               onClick={() => navigateTo()}
             >
               Verify

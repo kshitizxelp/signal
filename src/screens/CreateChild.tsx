@@ -48,7 +48,7 @@ export default function CreateChild() {
       const [addchailddata ,setAddchailddata] = useState({
 
         name:"",
-        username:"",
+        username:"",          
         email:"",
         password:"",
         confirmpassword:"",
@@ -67,7 +67,8 @@ export default function CreateChild() {
        console.log(addchailddata);
        
      
-       const navigateTo = () =>{
+       const handleSubmit = () =>{
+        dispatch(setCreatechildData(addchailddata));
         navigate("/addchildinterests");
        
        };
@@ -129,7 +130,7 @@ export default function CreateChild() {
      <Button colorScheme="blue" borderRadius="20px" mr="30px" size="lg" bg="#F5F5F5" width="110px" color="black">
           Save
         </Button>
-        <Button colorScheme="blue" borderRadius="20px"  size="lg" bg="#004570" width="110px" onClick={() => navigateTo()}>
+        <Button colorScheme="blue" borderRadius="20px"  size="lg" bg="#004570" width="110px" onClick={handleSubmit}>
           Next
         </Button>
      </Flex>

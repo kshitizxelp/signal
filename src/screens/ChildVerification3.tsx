@@ -2,17 +2,42 @@ import { Box, Button, Flex, Image, Text,Avatar } from '@chakra-ui/react'
 import React from 'react'
 import { useNavigate } from 'react-router'
 import {FaRegCheckCircle} from "react-icons/all"
-import { useSelector } from 'react-redux';
+import { useSelector,useDispatch } from 'react-redux';
+import { setAddChildArray } from '../Slice';
 
 export default function ChildVerification3() {
-  
+  const dispatch = useDispatch()
     const navigate = useNavigate();
     const addAvatar = useSelector<any>((state)=>state?.auth?.upload);
 
-    const navigateTo = () =>{
+
+  //   const createdata = useSelector<any>((state)=>state?.auth?.createchildData);
+  //   const uploadImg = useSelector<any>((state)=>state?.auth?.upload);
+   
+  
+  //   const newObj = {
+  //     ...createdata,
+  //     "img":uploadImg
+  //   }
+  // console.log("newObj",newObj)
+  
+   
+    // const combinedArray = [newObj];
+  
+  
+  //   const combinedArray = [newObj]
+  
+  //   const newArray = [...combinedArray]
+  
+  
+  // console.log("newArray",newArray)
+
+
+  const navigateTo = () =>{
+    // dispatch(setAddChildArray(newArray))
+      
          navigate("/Mydashbord")
     }
-
 
   return (
     <Box bg="#F2F5F7" width="100%">
@@ -62,7 +87,8 @@ export default function ChildVerification3() {
       
         <Flex display={'flex'} justifyContent={'center'} m="30px">
         <Box mt="12px">
-        <Button colorScheme="blue"   m="40pxz"  size="lg" bg="#004570" width={{base:"250px",md:"290px",lg:"313px"}} borderRadius="20px"  onClick={navigateTo} >
+        <Button colorScheme="blue"   m="40pxz"  size="lg" bg="#004570" 
+        width={{base:"250px",md:"290px",lg:"313px"}} borderRadius="20px"  onClick={navigateTo} >
           Let's get started
         </Button>
       </Box>

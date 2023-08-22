@@ -25,11 +25,11 @@ export default function ChildVerification() {
           // borderRadius="60px"
           borderTopRadius="200px"
           borderBottomRadius="200px"
-          width={{base:"300px",md:"400px",lg:"500px"}}
+          width={{base:"290px",md:"300px",lg:"390px"}}
         >
           <Flex display={'flex'} justifyContent={'center'}>
             <Box>
-            <Image src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov" height="200px"/>
+            <Image src="src/assets/SIGNAL LOGO (2)@3x.png" alt="Dan Abramov" height="150px"/>
            </Box>
            </Flex>
 

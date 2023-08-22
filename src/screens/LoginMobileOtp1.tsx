@@ -31,7 +31,7 @@ export default function LoginMobileOtp1() {
       rounded=""
       bg="white"
       borderRadius='130px'
-      width="400px"
+      width={{base:"280px",md:"360px",lg:"400px"}}
       mt='10px'   
     >
       <Box display="flex" justifyContent="center">
@@ -49,7 +49,7 @@ export default function LoginMobileOtp1() {
         <form>
           <Box>
             <Flex display={'flex'} justifyContent={'center'}>
-              <Text border="2px" borderColor="blackAlpha.600" width="40px" borderRadius="10px" m="10px" textAlign={'center'}>91</Text>
+              <Text border="2px" borderColor="blackAlpha.600" width="30px" borderRadius="10px" m="10px" textAlign={'center'}>91</Text>
             {/* <InputGroup>
               <Input
                 type="number"
@@ -74,11 +74,11 @@ export default function LoginMobileOtp1() {
                 onChange={changeHandler}
               />
                */}
-               <Text border="2px" borderColor={'gray.200'} width="250px"  borderRadius="10px" m="10px" textAlign={'center'}>999555865</Text>
+               <Text border="2px" borderColor={'gray.200'} width="220px"  borderRadius="10px" m="10px" textAlign={'center'}>999555865</Text>
             {/* </InputGroup> */}
             </Flex>
           </Box>
-          <Box pl='200px' color={'blue'}>
+          <Box pl='100px' color={'blue'}>
           <Link>Edit mobile number</Link>
           </Box>
 
@@ -93,14 +93,14 @@ export default function LoginMobileOtp1() {
             pl='10px'
            
           /> */}
-          <Text borderRadius="10px" borderColor={'gray.200'} border="2px" width="313px" textAlign={'center'}>Ganarate OTP</Text>
+          <Text borderRadius="10px" borderColor={'gray.200'} border="2px" width={{base:"220px", md:"260px",lg:"270px"}} textAlign={'center'}ml="40px">Ganarate OTP</Text>
           </Box> 
           </Flex>
-          <Box pl={'200px'} color={'blue'}>
+          <Box pl={'100px'} color={'blue'}>
           <Link>Resend OTP</Link>
           </Box>
          
-          <Box ml={'50px'} mt={'10px'} color={'blue'}>
+          <Box ml={'60px'} mt={'10px'} color={'blue'}>
             <Text>Enter OTP</Text>
           </Box>
           
@@ -122,7 +122,7 @@ export default function LoginMobileOtp1() {
               colorScheme="blue"
               size="lg"
               bg="rgba(0, 69, 112, 1)"
-              width="300px"
+              width={{base:"220px",md:"250px",lg:"290px"}}
               onClick={() => navigateTo()}
             >
               Next
