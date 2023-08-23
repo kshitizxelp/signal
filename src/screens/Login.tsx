@@ -26,13 +26,20 @@ const HandleSubmit =(e:any)=>{
   if(!formData.username) {
     alert("please enter the valid email");
   } 
+  else if(formData.username.length < 5){
+    alert("username must be  at least  5 characters ")
+  }
+  else if(!formData.password) {
+    alert("please enter the valid passward");
+  } 
  else if(formData.password.length < 8) {
     alert("password must be at least 8 characters");
   } 
   else{
     console.log(formData,"dataaaaaaaaaaaa")
+    navigate("/welcomeback");
   }
-  navigate("/welcomeback");
+  
   
     
 
@@ -50,8 +57,8 @@ const HandleSubmit =(e:any)=>{
       const inputs :any = [
         {
           name: "username",
-          label: "Username or email",
-          type: "email",
+          label: "Username", 
+          type: "text",
         }, 
         {
           name: "password",

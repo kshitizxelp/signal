@@ -58,6 +58,10 @@ export default function SIgnUp() {
           alert("please enter the valid email");
         } 
 
+        else if (!data.password) {
+          alert("please enter the valid password");
+        } 
+
         else if (data.password !== data.confirmpassword) {
           alert("Passwords do not match");
          
@@ -65,8 +69,9 @@ export default function SIgnUp() {
        
         else {
           console.log(data);
+          navigate('/BasicInfoNumber')
         }
-        navigate('/BasicInfoNumber')
+       
       };
 
     

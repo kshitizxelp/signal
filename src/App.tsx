@@ -55,6 +55,8 @@ import AddQuiz from "./pages/AddQuiz";
 import FinalContent from "./pages/FinalContent";
 import SelectedRewards from "./pages/SelectedRewards";
 import VideoSuccessfullySaved from "./screens/VideoSuccessfullySaved";
+import CreateNewTask2 from "./pages/CreateNewTask2";
+
 
 // 
 
@@ -140,6 +142,7 @@ function App() {
         <Route path="/UserNameSuccess" element={<UserNameSuccess/>} />
 
         <Route path="/CreateNewTask" element={<CreateNewTask/>} />
+        <Route path="/CreateNewTask2" element={<CreateNewTask2/>}/>
       </Routes>
     </Router>
     </ChakraProvider>

@@ -2,15 +2,20 @@ import { Box, Button, Flex, Radio, RadioGroup, Stack, Text ,ChakraProvider,Image
 import React, { useEffect, useState } from 'react'
 
 import {BsPlusCircle ,FaAngleUp ,FaArrowLeft} from "react-icons/all"
+import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router'
+import { setCreateNewTaskdata } from '../Slice'
 
 export default function CreateNewTask() {
-  
+
+     const dispatch = useDispatch()
+
     const navigate = useNavigate()
 
     const navigateTo = () =>{
         navigate("/CreateNewTask1")
-    }
+        dispatch(setCreateNewTaskdata(newtaskvalue));
+    };
 
     const Back = () =>{
       navigate("/SelectedTaskAssign")
@@ -67,8 +72,9 @@ export default function CreateNewTask() {
   const handledata = (e: any) => {
   
     setNewtaskValue((prevTaskValue) => ({ ...prevTaskValue, [e.target.name]:e.target.value }));
+   
   };
-  console.log(newtaskvalue);
+  console.log(newtaskvalue,"new Task value");
   
 
   const handleClick =()=>{

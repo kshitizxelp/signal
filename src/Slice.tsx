@@ -13,7 +13,8 @@ const initialState = {
   speedofAdd:{},
   speedofValue:{},
   finaldataofreward:{},
-  addChildArray:[]
+  addChildArray:[],
+  createNewTaskdata:{}
 };
 const authSlice = createSlice({
   name: "auth",
@@ -53,10 +54,14 @@ const authSlice = createSlice({
    setAddChildArray:(state,action)=>{
     state.addChildArray=action.payload;
    },
+   setCreateNewTaskdata:(state,action)=>{
+    state.createNewTaskdata=action.payload;
+   },
   },
 });
 export const {
   // setPosts,
+  setCreateNewTaskdata,
   setCreatechildData,
   setGetPagesList,
   setJumpData,
