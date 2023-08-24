@@ -75,14 +75,14 @@ export default function CreateNewTask1() {
 
 
     return (
-        <Box display="flex" flexDirection="column" >
+        <Box display="flex" flexDirection="column" bg="#F2F5F7" >
             <Box width="100%" >
 
                 <Box display={"flex"}
                     flexDirection={"row"}
                     justifyContent={"space-between"}
                     alignItems={"center"}
-                    bg={'gray.200'}
+                    bg={'white'}
 
                 >
                     <Text marginLeft="20px" color={'#004570'} as="b" >Gopi Sunkara</Text>
