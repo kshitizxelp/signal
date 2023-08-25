@@ -57,6 +57,7 @@ import SelectedRewards from "./pages/SelectedRewards";
 import VideoSuccessfullySaved from "./screens/VideoSuccessfullySaved";
 import CreateNewTask2 from "./pages/CreateNewTask2";
 import CreateNewTask3 from "./pages/CreateNewTask3";
+import TaskAddedSuccessfully from "./screens/TaskAddedSuccessfully";
 
 
 // 
@@ -145,6 +146,8 @@ function App() {
         <Route path="/CreateNewTask" element={<CreateNewTask/>} />
         <Route path="/CreateNewTask2" element={<CreateNewTask2/>}/>
         <Route path="/CreateNewTask3"  element={<CreateNewTask3/>}/>
+        <Route path="/TaskAddedSuccessfully"  element={<TaskAddedSuccessfully/>}/>
+        
       </Routes>
     </Router>
     </ChakraProvider>

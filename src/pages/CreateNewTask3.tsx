@@ -12,7 +12,7 @@ const CreateNewTask3 =()=>{
     };
      
     const nextpage =()=>{
-        navigate("")
+        navigate("/TaskAddedSuccessfully")
     };
 
 
@@ -84,7 +84,7 @@ const CreateNewTask3 =()=>{
                         Back
                     </Button>
 
-                    <Button colorScheme="blue" borderRadius="20px" size="lg" bg="#004570" width="110px"  >
+                    <Button colorScheme="blue" borderRadius="20px" size="lg" bg="#004570" width="110px" onClick={nextpage} >
                         Save
                     </Button>
                    </Flex>
